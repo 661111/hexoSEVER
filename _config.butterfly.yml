@@ -38,8 +38,8 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  fab fa-github: https://github.com/661111 || Github
-  fas fa-envelope: mailto:3227988255@qq.com || Email
+  # fab fa-github: https://github.com/xxxxx || Github
+  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -53,7 +53,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: true
+  enable: false
   preload: false
   CDN:
 
@@ -79,11 +79,11 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/avatar.jpg
+favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: /img/avatar.jpg
+  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
   effect: false
 
 # Disable all banner image
@@ -141,11 +141,11 @@ error_404:
 
 post_meta:
   page: # Home Page
-    date_type: both # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
+    date_type: created # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
     date_format: date # date/relative 顯示日期還是相對日期
     categories: true # true or false 主頁是否顯示分類
-    tags: true # true or false 主頁是否顯示標籤
-    label: false # true or false 顯示描述性文字
+    tags: false # true or false 主頁是否顯示標籤
+    label: true # true or false 顯示描述性文字
   post:
     date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
     date_format: date # date/relative 顯示日期還是相對日期
@@ -167,8 +167,8 @@ wordcount:
 # 3: auto_excerpt (default)
 # false: do not show the article introduction
 index_post_content:
-  method: 2
-  length: 100 # if you set method to 2 or 3, the length need to config
+  method: 3
+  length: 500 # if you set method to 2 or 3, the length need to config
 
 # anchor
 anchor:
@@ -267,13 +267,13 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: artalk # Valine,Disqus
+  use: # Valine,Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
   lazyload: false
-  count: true # Display comment count in post's top_img
-  card_post_count: true # Display comment count in Home Page
+  count: false # Display comment count in post's top_img
+  card_post_count: false # Display comment count in Home Page
 
 # disqus
 # https://disqus.com/
@@ -371,8 +371,8 @@ remark42:
 # Artalk
 # https://artalk.js.org/guide/frontend/config.html
 artalk:
-  server: https://comment.sxiaohe.top
-  site: 苏晓河DawnRiver
+  server:
+  site:
   visitor: false
   option:
 
@@ -606,7 +606,7 @@ beautify:
 font:
   global-font-size:
   code-font-size:
-  font-family: AaTaoTaoWuLongNaiLaoSu
+  font-family:
   code-font-family:
 
 # Font settings for the site title and site subtitle
@@ -644,15 +644,13 @@ subtitle:
 
 # Loading Animation (加載動畫)
 preloader:
-  enable: true
+  enable: false
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
-  # else all
-  source: 3
+  source: 1
   # pace theme (see https://codebyzach.github.io/pace/)
-  pace_css_url: /sxiaohe_source/css/loading/pace/full_pace.css
-  avatar: # 自定义头像
+  pace_css_url:
 
 # aside (側邊欄)
 # --------------------------------------
@@ -907,14 +905,14 @@ CDN:
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: local/jsdelivr/unpkg/cdnjs/custom
   # when set it to local, you need to install hexo-butterfly-extjs
-  third_party_provider: custom
+  third_party_provider: jsdelivr
 
   # Add version number to CDN, true or false  
   version: false
 
   # Custom format
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-  custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
+  custom_format:
 
   option:
     # main_css:
@@ -948,8 +946,8 @@ CDN:
     # instantpage:
     # typed:
     # pangu:
-    fancybox_css_v4: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css
-    fancybox_v4: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js
+    # fancybox_css_v4:
+    # fancybox_v4:
     # medium_zoom:
     # snackbar_css:
     # snackbar:
@@ -966,8 +964,8 @@ CDN:
     # prismjs_js:
     # prismjs_lineNumber_js:
     # prismjs_autoloader:
-    artalk_js: https://comment.sxiaohe.top/dist/Artalk.js
-    artalk_css: https://comment.sxiaohe.top/dist/Artalk.css
+    # artalk_js:
+    # artalk_css:
 
 #hexo-butterfly-footer-marcus
 #see https://blog.marcus233.top/p/footer.html
