@@ -905,14 +905,14 @@ CDN:
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: local/jsdelivr/unpkg/cdnjs/custom
   # when set it to local, you need to install hexo-butterfly-extjs
-  third_party_provider: jsdelivr
+  third_party_provider: custom
 
   # Add version number to CDN, true or false  
   version: false
 
   # Custom format
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-  custom_format:
+  custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
     # main_css:
@@ -964,8 +964,8 @@ CDN:
     # prismjs_js:
     # prismjs_lineNumber_js:
     # prismjs_autoloader:
-    # artalk_js:
-    # artalk_css:
+    artalk_js: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.js
+    artalk_css: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.css
 
 #hexo-butterfly-footer-marcus
 #see https://blog.marcus233.top/p/footer.html
