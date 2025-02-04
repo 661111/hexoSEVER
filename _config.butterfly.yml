@@ -1083,21 +1083,9 @@ footer_beautify:
       link: https://marcus233.top/
       time: 2022
     left:
-      - text: 雨云
+      - text: Staticfile
         desrc: 本站CDN支持
-        link: https://rainyun.com/
-      - text: 网盾星球
-        desrc: 本站CDN防护主要提供商:网盾星球
-        link: https://www.netdun.net/
-      - text: 萌ICP备20230221
-        desrc: 萌ICP备20230221
-        link: https://icp.gov.moe/?keyword=20230221
-      - text: 萌ICP备20236688
-        desrc: 萌ICP备20236688
-        link: https://icp.gov.moe/?keyword=20236688
-      - text: 萌ICP备20230002
-        desrc: 萌ICP备20230002
-        link: https://icp.gov.moe/?keyword=20230002
+        link: https://www.staticfile.net/
     right:
       - text: Hexo
         desrc: 框架
