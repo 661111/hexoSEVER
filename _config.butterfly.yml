@@ -889,6 +889,7 @@ inject:
     # - <script src="xxxx"></script>
     - <script src="/js/sxiaohe.js"></script>
     - <script src="/js/qcqx.js"></script>
+    - <link rel="stylesheet" href="/css/swiper-bundle.min.css">
     - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3612150_gkavascgf3n.js"></script>
