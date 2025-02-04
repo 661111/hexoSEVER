@@ -28,10 +28,6 @@
     color: #666;
   }
   
-  #web_bg ~ .page:has(#about-page) {
-    background: var(--anzhiyu-background);
-  }
-  
   #about-page .author-box {
     position: relative;
   }

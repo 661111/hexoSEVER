@@ -21,3 +21,7 @@ svg.icon {
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta-label {
     display: inline;
 }
+/* 3.强制开启页面固定长度 */
+.layout.hide-aside {
+    max-width: 1300px;
+}
