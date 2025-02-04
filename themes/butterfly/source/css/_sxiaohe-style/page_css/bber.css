@@ -7,9 +7,6 @@
 #page:has(#essay_page) .page-title {
     display: none;
 }
-#web_bg ~ .page:has(#essay_page) {
-    background: var(--june-background);
-}
 #bber .bber-container-img {
     display: flex;
     align-items: center;
