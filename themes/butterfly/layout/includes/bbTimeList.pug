@@ -1,0 +1,14 @@
+#main_top.main_top
+    #bbTimeList.bbTimeList.container
+        i.iconfont.icon-laba.bber-logo
+        #bbtalk.swiper-container.swiper-no-swiping.essay_bar_swiper_container(tabindex="-1")
+            #bber-talk.swiper-wrapper(onclick=`pjax.loadUrl("/essay/")`)
+                each i in site.data.essay
+                    each item, index in i.essay_list
+                        if index < 20
+                            -
+                                var regexBr = /<br\s*\/?>/gi;
+                                var contentText = item.content.replace(regexBr, '');
+                                contentText += item.image ? ' [图片]' : '';
+                                contentText += item.bilibili ? ' [视频]' : '';
+                            .li-style.swiper-slide= contentText

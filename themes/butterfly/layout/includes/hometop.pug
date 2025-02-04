@@ -1,18 +1,5 @@
 if is_home()
     #home_top
-        #bbTimeList.bbTimeList.container
-            i.iconfont.icon-laba.bber-logo
-            #bbtalk.swiper-container.swiper-no-swiping.essay_bar_swiper_container(tabindex="-1")
-                #bber-talk.swiper-wrapper(onclick=`pjax.loadUrl("/essay/")`)
-                    each i in site.data.essay
-                        each item, index in i.essay_list
-                            if index < 20
-                                -
-                                    var regexBr = /<br\s*\/?>/gi;
-                                    var contentText = item.content.replace(regexBr, '');
-                                    contentText += item.image ? ' [图片]' : '';
-                                    contentText += item.bilibili ? ' [视频]' : '';
-                                .li-style.swiper-slide= contentText
         .recent-top-post-group#recent-top-post-group
             .recent-post-top#recent-post-top
                 #bannerGroup
@@ -76,7 +63,7 @@ if is_home()
                                 | 山河远阔，人间烟火
                                 br
                                 | 无一是你，无一不是你
-                        .todayCard-cover(style='background:url(/img/todayCardCover.jpg) no-repeat center/cover', onerror='this.onerror=null,this.src="/img/404.png"')
+                        .todayCard-cover(style='background:url(/img/todayCardCover.jpeg) no-repeat center/cover', onerror='this.onerror=null,this.src="/img/404.png"')
                         .banner-button-group
                             a.banner-button(onclick='window.event.cancelBubble=!0,bywind.hideTodayCard()')
                                 i.hnfont.icon-add-circle-fill
