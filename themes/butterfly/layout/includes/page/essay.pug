@@ -1,21 +1,54 @@
-.title-and-tips
-  h1.page-title(style='display: inline;')= page.title
-  .page-tips 静态部署版
-#bber
-  section.timeline.page-1
-    ul#waterfall.list
-      each i in site.data.essay
-        each item, index in i.essay_list
-          if index < 30
-            li.item
-              .bber-content
-                p.datacont= item.content
-                  if item.image
-                    a.bber-content-img(href=item.image, target="_blank")
-                      img(src=item.image)
-              .bber-bottom
-                .bber-info
-                  - var datedata = new Date(item.date).toISOString()
-                  time.datatime(datetime= item.date)= datedata
-#bber-tips(style='color: var(--heo-secondtext);')
-  | - 只展示最近30条短文 -
+#essay_page
+    #bber
+        section.timeline.page-1
+            ul#waterfall.list
+                each i in site.data.essay
+                    each item, index in i.essay_list
+                        if index < 50
+                            li.bber-item
+                                .bber-content
+                                    p.datacont!= item.content
+                                        if item.image
+                                            .bber-container-img
+                                                if item.image.length === 1
+                                                    a.bber-content-img-one(href=item.image[0], target="_blank", data-fancybox="gallery", data-caption="")
+                                                        img(src=item.image[0])
+                                                else
+                                                    each iten, indey in item.image
+                                                        a.bber-content-img(href=item.image[indey], target="_blank", data-fancybox="gallery", data-caption="")
+                                                            img(src=item.image[indey])
+                                                .bber-content-noimg
+                                                .bber-content-noimg
+                                                .bber-content-noimg
+                                        if item.aplayer
+                                            .bber-music
+                                                .aplayer.no-destroy(data-id=item.aplayer.id data-server=item.aplayer.server data-type="song"  data-order="list" data-preload="none" data-autoplay="false" data-mutex="true" data-theme='var(--june-main)')
+                                        if item.bilibili
+                                            div.aspect-ratio
+                                                iframe(src="https://player.bilibili.com/player.html?bvid="+ item.bilibili +"&&page=1&as_wide=1&high_quality=1&danmaku=0&autoplay=false", scrolling="no", border="0", frameborder="no", framespacing="0", high_quality="1", danmaku="1", allowfullscreen="true")
+                                hr
+                                .bber-bottom
+                                    .bber-info
+                                        .bber-info-time
+                                            - var datedata = new Date(item.date).toISOString()
+                                            i.far.fa-clock
+                                            time.datatime(datetime= item.date)= datedata
+                                        if item.link
+                                            a.bber-content-link(target="_blank", title="跳转到短文指引的链接", href=item.link, rel="external nofollow")
+                                                i.fas.fa-link
+                                                | 链接
+                                        if item.from
+                                            .bber-info-from
+                                                i.fas.fa-fire
+                                                span=item.from
+                                        if item.location
+                                            .bber-info-from
+                                                i.fas.fa-location-dot
+                                                span=item.location
+                                    -
+                                        var regexBr = /<br\s*\/?>/gi;
+                                        var contentText = item.content.replace(regexBr, '');
+                                    .bber-reply(onclick="june.commentText(" + `'${contentText}'` + ")", title="评论一下吧")
+                                        i.fa-solid.fa-comment
+    #bber-tips(style='color: var(--june-secondtext);')
+        | - 只展示最近50条短文 -
