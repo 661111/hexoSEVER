@@ -1,9 +1,9 @@
 #post {
-    padding: 50px 40px;!important;
+    padding: 50px 40px!important;
 }
 @media screen and (max-width: 900px) {
     #post {
-        padding: 20px 20px 30px;!important;
+        padding: 20px 20px 30px!important;
     }
 }
 .layout {

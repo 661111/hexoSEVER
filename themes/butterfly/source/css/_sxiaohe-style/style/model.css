@@ -98,3 +98,7 @@
     transition: all .3s;
     bottom: 0
 }
+/* 首页文章卡片的图片样式 */
+#recent-posts>.recent-post-item .post_cover img.post_bg:hover {
+    transform: none
+}
