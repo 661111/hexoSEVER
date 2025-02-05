@@ -25,3 +25,35 @@ svg.icon {
 .layout.hide-aside {
     max-width: 1300px;
 }
+
+/* 4.即刻短文卡片颜色更改 */
+#bbTimeList {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6);
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67);
+}
+/* 5.首页hometop卡片更改 */
+/** 5.1: 随机文章卡片设置 **/
+#banner-hover {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6)!important;
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67)!important;
+}
+/** 5.2：文章展示卡片设置 **/
+.recent-post-top .recent-post-item {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6)!important;
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67)!important;
+}
