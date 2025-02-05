@@ -102,6 +102,3 @@
 #recent-posts>.recent-post-item .post_cover img.post_bg:hover {
     transform: none
 }
-.category-bar-group {
-    justify-content: space-between;
-}
