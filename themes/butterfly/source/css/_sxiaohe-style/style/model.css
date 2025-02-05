@@ -140,15 +140,12 @@
 }
 
 .layout #recent-posts #catalog-bar .catalog-shouye-item {
-    margin-right: 3px;
+    margin-right: 10px;
 }
 
 .layout #recent-posts #catalog-bar #home-catalog-item a {
     background: #00c4b6f1;
     color: #fff !important;
-}
-
-.catalog-list-item a {
     margin: 0 .2em;
     padding: .2em .4em .3em;
     font-weight: 700;
