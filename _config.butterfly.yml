@@ -27,7 +27,6 @@ essay:
   strip: 50
   mode: local # local：本地静态 / json：动态json / memos：动态Memos
   mode_link: https://memos.meuicat.com/api/v1/memo?creatorId=1&tag=说说 #动态模式地址
-  home_mini: true
 
 # Code Blocks (代碼相關)
 # --------------------------------------
