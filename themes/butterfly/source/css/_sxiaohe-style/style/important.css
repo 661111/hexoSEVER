@@ -5,3 +5,7 @@
 #page-header.not-top-img {
     background-image: none!important
 }
+/* 2.调整首页分类条 */
+.layout #recent-posts .home-catalog-bar {
+    margin-top: 0;
+}
