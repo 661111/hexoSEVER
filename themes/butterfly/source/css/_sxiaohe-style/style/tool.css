@@ -38,7 +38,7 @@ svg.icon {
 }
 /* 5.首页hometop卡片更改 */
 /** 5.1: 随机文章卡片设置 **/
-#banner-hover {
+div#banners {
     font-size: 14.5px;
     font-weight: 700;
     border-width: 2px;
