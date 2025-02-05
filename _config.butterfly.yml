@@ -899,8 +899,6 @@ inject:
     - <link rel="stylesheet" href="/sxiaohe_source/css/page_css/equipment/index.css">
     - <link rel="stylesheet" href="/sxiaohe_source/font.css">
     - <link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
-    - <link rel="stylesheet" type="text/css" href="https://cdn.jsdmirror.com/npm/js-heo@1.0.11/mainColor/heoMainColor.css">
-    - <link rel="stylesheet" type="text/css" href="https://cdn.jsdmirror.com/npm/js-heo@1.0.11/404/404.css">
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>

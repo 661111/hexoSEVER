@@ -1,0 +1,62 @@
+#body-wrap.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 100px;
+  }
+  
+  #body-wrap.error .aside-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1rem;
+    max-width: 100%;
+  }
+  
+  #body-wrap.error .aside-list .aside-list-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  
+  #body-wrap.error .aside-list .aside-list-item {
+    padding: 0.5rem 0;
+    width: 49%;
+  }
+  
+  #body-wrap.error .aside-list .aside-list-item img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  #body-wrap.error .aside-list .aside-list-item .thumbnail {
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    background: var(--heo-card-bg);
+    display: flex;
+  }
+  
+  #body-wrap.error .aside-list .aside-list-item .content .title {
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+    padding-top: 0.5rem;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  #body-wrap.error .aside-list .aside-list-item .content time {
+    display: none;
+  }
