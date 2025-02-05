@@ -2,5 +2,9 @@ essay_list:
   - content: 目前基本上已经完成了仿照轻笑的博客样式
     date: 2025-02-04 15:30:50
     from: 天选4锐龙版
-    video: 
-      bilibili: //player.bilibili.com/player.html?aid=913951276&bvid=BV1RM4y1p75T&cid=1211165267&page=1
+    image:
+    - /img/screen.png
+
+  - content: 有新电脑，基本上已经不太想用动态博客，所以最近准备从动态博客迁移到静态博客
+    date: 2025-02-03 15:30:50
+    from: 天选4锐龙版
