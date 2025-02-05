@@ -57,3 +57,32 @@ div#banners {
     border-image: initial;
     background: rgba(255, 255, 255, 0.67)!important;
 }
+/* 6.HOMETOP 移动端部分适配 */
+.right-arrow-tip {
+    right: 0;
+    opacity: 1;
+    padding: 0 4px 0 2px;
+}
+
+.left-arrow-tip {
+    left: 0;
+    opacity: 0;
+    padding: 0 2px 0 4px;
+}
+
+.left-arrow-tip, .right-arrow-tip {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .3s ease;
+    overflow: hidden;
+    -webkit-transition: opacity .3s ease;
+    -moz-transition: opacity .3s ease;
+    -ms-transition: opacity .3s ease;
+    -o-transition: opacity .3s ease;
+    font-size: 15px;
+}

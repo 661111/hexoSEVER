@@ -131,8 +131,6 @@
 #catalog-list {
     margin: 0 .5rem;
     display: flex;
-    /* white-space: nowrap; */
-    overflow-x: scroll;
 }
 
 .layout #recent-posts #catalog-bar #home-catalog-item {

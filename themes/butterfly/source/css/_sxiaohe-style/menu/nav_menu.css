@@ -327,7 +327,6 @@ center#name-container {
   margin-right: .5rem;
   transition: .2s;
   border-radius: 8px;
-  color: var(--heo-white);
   padding: 0 !important;
 }
 
