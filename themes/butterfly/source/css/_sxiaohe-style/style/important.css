@@ -1,0 +1,7 @@
+/* css强调性设置 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年2月4日 */
+/* 1.禁止所有页面出现导航栏图片 */
+#page-header.not-top-img {
+    background-image: none!important
+}

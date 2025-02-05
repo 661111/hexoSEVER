@@ -1,10 +1,9 @@
 - var top_img = theme.error_404.background || theme.default_top_img
 - var bg_img = `background-image: url('${url_for(top_img)}')`
 
-#body-wrap.error
-  div
-    include ./header/index.pug
+include ./header/index.pug
 
+#body-wrap.error
   #error-wrap
     .error-content
       .error-img(style=bg_img)
