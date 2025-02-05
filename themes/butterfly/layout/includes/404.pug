@@ -1,24 +1,24 @@
 extends /layout.pug
 
 block content
-    #error-wrap
-        .error-content
-            .error-img(style=`background-image: url(${url_for(theme.error_404.background)})`)
-            .error-info
-                h1.error_title 404
-                .error_subtitle= theme.error_404.text
-                a.button--animated(href=url_for("/"))
-                    i.solitude.fas.fa-arrow-up-right-from-square
+  #error-wrap
+    .error-content
+      .error-img(style=`background-image: url(${url_for(theme.error_404.background)})`)
+      .error-info
+        h1.error_title 404
+          .error_subtitle= theme.error_404.subtitle
+            a.button--animated(href=url_for("/"))
+              i.fas.fa-arrow-up-right-from-square
                     =_p('404.button')
 
-    if theme.error_404.recommendList
-        .aside-list
-            .aside-list-group
-                each post, index in site.posts.sort('-date').data.slice(0, 6)
-                    if index >= 5
-                        break
-                    .aside-list-item
-                        a.thumbnail(href=url_for(post.path), title=post.title)
-                            img(src=url_for(post.cover), alt=post.title)
-                        .content
-                            a.title(href=url_for(post.path), title=post.title)= post.title
+  if theme.error_404.recommendList
+    .aside-list
+      .aside-list-group
+        each post, index in site.posts.sort('-date').data.slice(0, 6)
+          if index >= 5
+            break
+          .aside-list-item
+            a.thumbnail(href=url_for(post.path), title=post.title)
+              img(src=url_for(post.cover), alt=post.title)
+            .content
+              a.title(href=url_for(post.path), title=post.title)= post.title
