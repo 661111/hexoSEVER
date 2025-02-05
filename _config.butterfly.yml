@@ -16,11 +16,17 @@ menu:
     关于本站: /about/ || icon-paperplane || faa-tada
     我的装备: /equipment/ || icon-paperplane || faa-tada
 
-# swiper
-swiper:
-  enable: false
-  swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
-  swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
+# essay 即刻短文
+# MeuiCat设计
+# https://meuicat.com/blog/67/
+# --------------------------------------
+essay:
+  enable: true
+  # 即刻短文仅展示前n条
+  # Jike short text only shows the first n
+  strip: 50
+  mode: memos # local：本地静态 / json：动态json / memos：动态Memos
+  mode_link: https://memos.meuicat.com/api/v1/memo?creatorId=1&tag=说说 #动态模式地址
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -896,9 +902,10 @@ inject:
   bottom:
     # - <script src="xxxx"></script>
     - <script src="/js/sxiaohe.js"></script>
-    - <script type="text/javascript" src="/js/waterfall.js"></script>
-    - <script type="text/javascript" src="/js/essay.js"></script>
-    - <script src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script>
+    - <script async src="/js/waterfall.js"></script> # 瀑布流JS
+    - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
+    - <script defer src="/js/bbtalk.js"></script> # 即刻逻辑文件
+    - <script src="https://cdn.staticfile.net/Swiper/10.3.1/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
     - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3612150_gkavascgf3n.js"></script>
