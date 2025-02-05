@@ -3,7 +3,9 @@ extends includes/layout.pug
 block content
   if theme.category_ui == 'index'
     include ./includes/mixins/post-ui.pug
-    #recent-posts.recent-posts.category_ui
+    #recent-posts.recent-posts.
+      #category-bar.category-bar
+        include includes/categoryBar.pug
       +postUI
       include includes/pagination.pug
   else
