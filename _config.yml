@@ -103,8 +103,8 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:661111/hexoSEVER.git
-  branch: gh-page
+  repository: https://github.com/661111/hexo-site-page
+  branch: main
 
 # Generator-Search
 search:
