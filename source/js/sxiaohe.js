@@ -28,103 +28,104 @@ $(".topGroup").hover((function() {}
     }
 ))
 /* hometop滚动 JS */
-// 封装获取元素的函数，增强代码复用性
-const getElement = (selector) => document.querySelector(selector);
-const getElementById = (id) => document.getElementById(id);
-
-// 获取必要的 DOM 元素
-const leftArrowTip = getElement(".left-arrow-tip");
-const rightArrowTip = getElement(".right-arrow-tip");
-const xscroll = getElementById("homeTopGroup");
-
-// 处理左箭头点击事件，滚动到最左边
-const handleLeftArrowClick = () => {
-    if (xscroll) {
-        xscroll.scrollTo({ left: 0, behavior: "smooth" });
-    }
-};
-
-// 处理右箭头点击事件，滚动到最右边
-const handleRightArrowClick = () => {
-    if (xscroll) {
-        xscroll.scrollTo({ left: xscroll.scrollWidth, behavior: "smooth" });
-    }
-};
-
-// 绑定点击事件
-if (leftArrowTip) {
-    leftArrowTip.addEventListener("click", handleLeftArrowClick);
-}
-if (rightArrowTip) {
-    rightArrowTip.addEventListener("click", handleRightArrowClick);
+// 封装获取元素的函数，提高代码复用性
+function getElement(selector) {
+  return document.querySelector(selector);
 }
 
-// 切换箭头可见性的函数
-const toggleArrowVisibility = () => {
-    if (!xscroll) return;
+function getElementById(id) {
+  return document.getElementById(id);
+}
 
-    const scrollDiff = xscroll.scrollWidth - xscroll.scrollLeft - xscroll.clientWidth;
-    const showLeft = xscroll.scrollLeft > 0;
-    const showRight = scrollDiff > 1;
+// 主函数，用于初始化整个功能
+function initScrollFeature() {
+  // 获取所需的 DOM 元素
+  const leftArrow = getElement('.left-arrow-tip');
+  const rightArrow = getElement('.right-arrow-tip');
+  const scrollContainer = getElementById('homeTopGroup');
 
-    const setArrowStyles = (arrow, visible) => {
-        arrow.style.opacity = visible ? "1" : "0";
-        arrow.style.zIndex = visible ? "1" : "-1";
-    };
+  // 如果元素未找到，提前返回
+  if (!leftArrow || !rightArrow || !scrollContainer) {
+      console.warn('Some required elements are not found.');
+      return;
+  }
 
-    if (leftArrowTip) {
-        setArrowStyles(leftArrowTip, showLeft);
-    }
-    if (rightArrowTip) {
-        setArrowStyles(rightArrowTip, showRight);
-    }
-};
+  // 处理左箭头点击事件，滚动到最左边
+  function handleLeftArrowClick() {
+      scrollContainer.scrollTo({
+          left: 0,
+          behavior: 'smooth'
+      });
+  }
 
-// 处理鼠标滚轮滚动事件
-const handleMouseWheel = (e) => {
-    if (xscroll) {
-        const v = -e.wheelDelta / 2;
-        xscroll.scrollLeft += v;
-        e.preventDefault();
-    }
-};
+  // 处理右箭头点击事件，滚动到最右边
+  function handleRightArrowClick() {
+      scrollContainer.scrollTo({
+          left: scrollContainer.scrollWidth,
+          behavior: 'smooth'
+      });
+  }
 
-// 处理滚动事件，节流调用 toggleArrowVisibility
-const throttle = (func, delay) => {
-    let timer = null;
-    return function () {
-        if (!timer) {
-            func.apply(this, arguments);
-            timer = setTimeout(() => {
-                timer = null;
-            }, delay);
-        }
-    };
-};
+  // 绑定箭头点击事件
+  leftArrow.addEventListener('click', handleLeftArrowClick);
+  rightArrow.addEventListener('click', handleRightArrowClick);
 
-const throttledToggleArrowVisibility = throttle(toggleArrowVisibility, 100);
+  // 切换箭头可见性的函数
+  function updateArrowVisibility() {
+      const scrollDiff = scrollContainer.scrollWidth - scrollContainer.scrollLeft - scrollContainer.clientWidth;
+      const isAtLeft = scrollContainer.scrollLeft === 0;
+      const isAtRight = scrollDiff <= 1;
 
-const handleScroll = () => {
-    throttledToggleArrowVisibility();
-};
+      // 设置箭头样式的辅助函数
+      function setArrowStyle(arrow, isVisible) {
+          arrow.style.opacity = isVisible ? '1' : '0';
+          arrow.style.zIndex = isVisible ? '1' : '-1';
+      }
 
-// 初始化滚动相关事件
-const initScroll = () => {
-    if (xscroll) {
-        xscroll.addEventListener("mousewheel", handleMouseWheel);
-        xscroll.addEventListener("scroll", handleScroll);
-    }
-};
+      setArrowStyle(leftArrow, !isAtLeft);
+      setArrowStyle(rightArrow, !isAtRight);
+  }
 
-// 初始化箭头可见性
-toggleArrowVisibility();
-// 初始化滚动功能
-initScroll();
+  // 节流函数，避免滚动事件频繁触发
+  function throttle(func, delay) {
+      let timer = null;
+      return function () {
+          if (!timer) {
+              func.apply(this, arguments);
+              timer = setTimeout(() => {
+                  timer = null;
+              }, delay);
+          }
+      };
+  }
+
+  // 处理鼠标滚轮滚动事件
+  function handleMouseWheel(e) {
+      const scrollStep = -e.wheelDelta / 2;
+      scrollContainer.scrollLeft += scrollStep;
+      e.preventDefault();
+  }
+
+  // 初始化滚动事件处理
+  function setupScrollEvents() {
+      scrollContainer.addEventListener('mousewheel', handleMouseWheel);
+      const throttledUpdate = throttle(updateArrowVisibility, 100);
+      scrollContainer.addEventListener('scroll', throttledUpdate);
+  }
+
+  // 初始更新箭头可见性
+  updateArrowVisibility();
+  // 初始化滚动事件
+  setupScrollEvents();
+}
+
+// 调用主函数进行初始化
+initScrollFeature();
 
 // 处理 pjax:complete 事件
 try {
-    document.removeEventListener('pjax:complete', catalogActive);
-    document.addEventListener('pjax:complete', catalogActive);
-} catch (e) {
-    console.error('Error handling pjax:complete event:', e);
+  document.removeEventListener('pjax:complete', catalogActive);
+  document.addEventListener('pjax:complete', catalogActive);
+} catch (error) {
+  console.error('Error handling pjax:complete event:', error);
 }
