@@ -83,6 +83,7 @@ if theme.menu
                         use(xlink:href=`#`+ icon_val)                    
                   span=' '+ lab
 ```
+<!-- endtab -->
 
 <!-- tab 4.5.0 版本 -->
 
@@ -133,6 +134,8 @@ if theme.menu
                         use(xlink:href=`#`+ icon_val)
                   span=' '+ lab
 ```
+
+<!-- endtab -->
 
 {% endtabs %}
 
