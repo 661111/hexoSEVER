@@ -1,19 +1,22 @@
-#post {
-    padding: 50px 40px!important;
-}
-@media screen and (max-width: 900px) {
-    #post {
-        padding: 20px 20px 30px!important;
-    }
-}
-.layout {
-    max-width: 1300px;
-    padding: 0.35rem 2.5px;
-
-}
-#site-name.title {
-    font-size: 1.2rem;
-}
+---
+title: Butterfly美化-1
+description: 从零开始美化butterfly，并且魔改
+date: 2025-02-05 8:00
+cover: /img/2025/01/meihua-post/cover.webp
+category: hexo
+top_img: /img/2025/01/meihua-post/cover.webp
+tags: hexo,butterfly
+---
+# 一.仿轻笑博客背景美化
+<details>
+<summary>请查看教程内容</summary>
+在 [blogroot]\themes\butterfly\layout\includes\head.pug 中引入 div模块
+``` pug
+#web_bg
+#svg_bg
+```
+在自定义css里面引入以下样式
+``` css
 #web_bg {
     position: fixed;
     z-index: -999;
@@ -43,3 +46,5 @@
     background-position: center;
     z-index: -998;
 }
+```
+</details>
