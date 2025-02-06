@@ -47,6 +47,7 @@ if is_home()
                                 span.categoryButtonText 实用教程
                                 i.fas.fa-book
                 .topGroup
+                    .left-arrow-tip
                     if site.data.slider
                         each i in site.data.slider
                             .recent-post-item
@@ -56,6 +57,7 @@ if is_home()
                                         img.post_bg.entered.loaded(src=url_for(i.cover) onerror="this.onerror=null,this.src='/img/404.png'")
                                 .recent-post-info(onclick=`pjax.loadUrl("`+i.link+`")`)
                                     a.article-title(href=url_for(i.link), title=i.title)= i.title
+                    .right-arrow-tip
                     .todayCard#todayCard(onclick='pjax.loadUrl(/about/)', style='z-index: 1;')
                         .todayCard-info
                             .todayCard-tips 最佳记忆
