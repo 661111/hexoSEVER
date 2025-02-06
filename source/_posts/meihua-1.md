@@ -3,9 +3,12 @@ title: 博客魔改教程总结(一)
 description: 从零开始魔改butterfly
 date: 2025-02-05 8:00
 cover: /img/2025/01/meihua-post/cover.webp
-category: hexo
+category: 
+  - hexo
 top_img: /img/2025/01/meihua-post/cover.webp
-tags: hexo,butterfly
+tags: 
+  - hexo
+  - butterfly
 ---
 > **魔改前必看（我当你们都懂了，太细节的就不写在教程中了🤣🤣🤣）**
 > 1.博客魔改有风险，如果博客魔改出问题了又没有备份，可通过此项目查看基础源码进行回滚：jerryc127/hexo-theme-butterfly、ccknbc-actions/blog-butterfly.这部分魔改基本上都是大佬们造好的轮子，我按照大佬们的轮子结合自己的喜好进行魔改的，具体见我友人帐第一个栏目大佬们的网站，本处仅做一个总结，如有侵权请联系删除。
@@ -77,3 +80,4 @@ tags: hexo,butterfly
 {% link butterfly导航栏修改方案(自用方案),安知鱼,https://blog.anheyu.com/posts/8e53.html %}
 {% link 关于Butterfly的导航栏的一些教程,Ariasakaの小窝,https://blog.yaria.top/posts/895003b5 %}
 {% link Butterfly的魔改教程：导航栏魔改美化,Meuicat,https://meuicat.com/posts/2dbd58d6.html %}
+{% link butterfly导航栏修改方案,苏晓河,https://www.sxiaohe.top/posts/36435.html %}

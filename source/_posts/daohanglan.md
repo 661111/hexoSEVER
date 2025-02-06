@@ -3,9 +3,12 @@ title: butterfly导航栏修改方案
 description: 对导航栏进行修改
 date: 2025-02-05 8:00
 cover: /img/2025/01/daohanglan/cover.webp
-category: hexo
+category: 
+  - hexo
 top_img: /img/2025/01/daohanglan/cover.webp
-tags: hexo,butterfly
+tags: 
+  - hexo
+  - butterfly
 ---
 # 一.前言
 由于我想要修改一下导航栏，对一些功能进行优化，所以有了这篇文章，那么就来修改吧
