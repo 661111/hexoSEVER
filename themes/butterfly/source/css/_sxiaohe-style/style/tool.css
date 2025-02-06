@@ -78,7 +78,7 @@ div#banners {
     background-color: #e58a8a;
 }
 /* 7.markdown展开收回栏 */
-details.folding-tag[cyan] >summary {
+summary {
     background: #e8fafe;
 }
 /* 8.文章页面整体修改 */

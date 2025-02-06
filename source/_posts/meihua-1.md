@@ -2,10 +2,10 @@
 title: 博客魔改教程总结(一)
 description: 从零开始魔改butterfly
 date: '2025-02-05 8:00'
-cover: /img/2025/01/meihua-post/cover.webp
+cover: /img/2025/01/meihua-post/cover.avif
 category:
   - hexo
-top_img: /img/2025/01/meihua-post/cover.webp
+top_img: /img/2025/01/meihua-post/cover.avif
 tags:
   - hexo
   - butterfly
@@ -85,3 +85,150 @@ abbrlink: 4220
 
 # 三.图标引入
 这里分为两种不同位置的自定义iconfont图标
+**1.导航栏添加**
+{% link 菜单栏多色动态图标（店长）,Fomalhaut🥝,https://www.fomal.cc/posts/5389e93f.html#%E5%BC%95%E5%85%A5iconfont%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E6%A0%87%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89 %}
+{% link 菜单栏多色动态图标,苏晓河,https://www.fomal.cc/ %}
+
+**2.社交添加**
+{% link Social卡片彩色图标引入（店长）,Fomalhaut🥝,https://www.fomal.cc/posts/5389e93f.html#Social%E5%8D%A1%E7%89%87%E5%BD%A9%E8%89%B2%E5%9B%BE%E6%A0%87%E5%BC%95%E5%85%A5%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89 %}
+
+# 四.侧边栏美化以及侧边栏卡片美化（轻笑）
+<details>
+<summary>请查看教程内容</summary>
+一.前言
+因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找，喜欢这个风格的可以进行CTRL+C和CTRL+V
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+
+二.教程开始
+大部分已经有进行标识，对于以后可以进行维护
+``` CSS
+/* 侧边栏整体卡片样式调整 */
+#aside-content .card-widget {
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6);
+    border-image: initial;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, .67);
+}
+/* 侧边栏整体卡片文字样式调整 */
+#aside-content .card-widget.card-friend-link, .card-webinfo {
+    font-size: 105%;
+}
+/* 侧边栏整体卡片和首页文章列表样式调整 */
+#aside-content .card-widget, #recent-posts>.recent-post-item {
+    border-radius: 18px;
+}
+/* 侧边栏本人介绍卡片样式调整 */
+.avatar-img {
+    border-radius: 25px!important;
+    box-shadow: 2.2px 2.2px 2.2px rgba(10, 207, 233, .3)!important;
+}
+#aside-content > .card-widget:first-child {
+    clip-path: polygon(0px 0px, 100% 0px, 100% 50%, 100% 100%, 80% 100%, 75% 99%, 25% 99%, 20% 100%, 0px 100%);
+}
+#aside-content .card-info .author-info__name {
+    font-weight: 800!important;
+    font-size: 1.8em!important;
+}
+#aside-content .card-info .author-info__description {
+    margin-top: -.2em!important;
+    font-size: 16.5px!important;
+    font-weight: 700;
+}
+.card-info-data-item:not(:last-child)::after {
+    opacity: .3;
+    position: absolute;
+    top: 11px;
+    right: 0;
+    content: "";
+    width: 1px;
+    height: 35px;
+    background: var(--font-color);
+}
+.site-data > a .headline {
+    color: var(--font-color);
+    font-size: 1em!important;
+}
+.site-data > a .length-num {
+    margin-top: -.42em!important;
+    color: var(--text-highlight-color);
+    font-size: 1.4em!important;
+}
+/* 侧边栏其他卡片样式调整 */
+#aside-content .card-widget:not(.card-info):not(#card-tuijian):before {
+    content: "";
+    width: 12.5px;
+    background: linear-gradient(to top, transparent, #ee6363bb);
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 113px;
+    bottom: 27px;
+}
+#aside-content .card-widget:not(.card-info):not(#card-tuijian) {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 52.5px), 12.5px calc(100% - 40px), 12.5px calc(100% - 50px), 0 calc(100% - 62.5px), 0 calc(100% - 82.5px), 12.5px calc(100% - 70px), 12.5px calc(100% - 80px), 0 calc(100% - 92.5px), 0 calc(100% - 112.5px), 12.5px calc(100% - 100px), 12.5px calc(100% - 112.5px), 12.5px calc(100% - 110px), 0 calc(100% - 122.5px), 0 calc(100% - 142.5px), 12.5px calc(100% - 130px), 12.5px calc(100% - 141.5px), 0 calc(100% - 154px), 0 0);
+    border-left: none !important;
+}
+```
+</details>
+
+# 五.侧边栏美化以及侧边栏卡片美化（轻笑）
+<details>
+<summary>请查看教程内容</summary>
+一.前言
+因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找，喜欢这个风格的可以进行CTRL+C和CTRL+V
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+
+二.教程开始
+``` CSS
+/* 首页文章卡片样式表调整 */
+#recent-posts > .recent-post-item >.recent-post-info > .article-title {
+    text-align: center;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap {
+    text-align: center;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .content {
+    text-align: center;
+}
+/* QCQX 首页文章卡片设置 */
+#recent-posts>.recent-post-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    overflow: hidden;
+    height: 200px
+}
+@media screen and (max-width: 768px) {
+    #recent-posts>.recent-post-item {
+        -webkit-box-orient:vertical;
+        -moz-box-orient: vertical;
+        -o-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: 300px
+    }
+}
+/* QCQX 首页文章卡片设置 */
+#recent-posts > .recent-post-item .post_cover img.post_bg {
+    border-radius: 12px;
+    transform: none;
+}
+```
