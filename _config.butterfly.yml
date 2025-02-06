@@ -634,7 +634,7 @@ beautify:
 font:
   global-font-size:
   code-font-size:
-  font-family:
+  font-family: LXGWBright-Regular
   code-font-family:
 
 # Font settings for the site title and site subtitle
@@ -912,7 +912,7 @@ inject:
     - <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
     - <link rel="stylesheet" href="https://cdn.sxiaohe.top/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="/sxiaohe_source/css/page_css/equipment/index.css">
-    - <link rel="stylesheet" href="/sxiaohe_source/font.css">
+    - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
     - <link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
