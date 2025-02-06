@@ -30,7 +30,7 @@ inject:
 ```
 {% endnote %}
 **1.修改PUG文件**
-替换<code>[BlogRoot]\themes\butterfly\layout\includes\header\menu_item.pug</code>为以下代码，本方案默认使用观感最佳的悬停父元素触发子元素动画效果，默认动画为faa-tada。**注意：可以把之前的代码注释掉，再在后面加上如下代码，以便于回滚**。我这里放出**[fomal](https://www.fomal.cc/posts/5389e93f.html#%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%A4%9A%E8%89%B2%E5%8A%A8%E6%80%81%E5%9B%BE%E6%A0%87%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89)**的4.3.1版本以及**我**修改的4.5.0版本（当然4.5.1也可以自己进行修改）。
+替换**BlogRoot\themes\butterfly\layout\includes\header\menu_item.pug**为以下代码，本方案默认使用观感最佳的悬停父元素触发子元素动画效果，默认动画为faa-tada。**注意：可以把之前的代码注释掉，再在后面加上如下代码，以便于回滚**。我这里放出fomal的4.3.1版本以及我修改的4.5.0版本（当然4.5.1也可以自己进行修改）。
 {% tabs 分栏 %}
 <!-- tab 4.3.1版本 -->
 ``` PUG
@@ -129,6 +129,7 @@ if theme.menu
                         use(xlink:href=`#`+ icon_val)
                   span=' '+ lab
 ```
+{% endtabs %}
 **2.修改配置文件**
 以下是填写示例，在[BlogRoot]\_config.butterfly.yml中修改。icon-xxx字样的为iconfont的symbol引入方案的id值，可以在你的iconfont图标库内查询，其中hide属性也是可以用的。
 ``` YML
