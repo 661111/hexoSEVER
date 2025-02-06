@@ -57,6 +57,9 @@ div#banners {
     border-image: initial;
     background: rgba(255, 255, 255, 0.67)!important;
 }
+.sticky {
+    font-size: 0.5em;
+}
 /* 6.滚动条调整适配 */
 ::-webkit-scrollbar {
     width: 10px;

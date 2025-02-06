@@ -17,13 +17,13 @@ mixin postUI(posts)
             img.post_bg(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.error_img.post_page) + `'` alt=title)
       .recent-post-info(class=no_cover)
         a.article-title(href=url_for(link) title=title)= title
-          svg.meta_icon(style="width:16px;height:16px;position:relative;top:3px").post-ui-icon
-            use(xlink:href='#icon-tuding')
-          span.sticky= _p('sticky')
+        if (is_home() && (article.top || article.sticky > 0))
+          span.article-meta
+            svg.meta_icon(style="width:16px;height:16px;position:relative;top:3px").post-ui-icon
+              use(xlink:href='#icon-tuding')
+            span.sticky= _p('sticky')
         .article-meta-wrap
-          if (is_home() && (article.top || article.sticky > 0))
-            span.article-meta
-              //- i.fas.fa-thumbtack.sticky
+          //- i.fas.fa-thumbtack.sticky
           if (theme.post_meta.page.date_type)
             span.post-meta-date
               if (theme.post_meta.page.date_type === 'both')
