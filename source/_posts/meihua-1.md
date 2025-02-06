@@ -76,8 +76,11 @@ tags:
 </details>
 
 # 二.导航栏居中教程
-这里我放当前大部分教程
+这里我放当前比较有效的教程
 {% link butterfly导航栏修改方案(自用方案),安知鱼,https://blog.anheyu.com/posts/8e53.html %}
 {% link 关于Butterfly的导航栏的一些教程,Ariasakaの小窝,https://blog.yaria.top/posts/895003b5 %}
 {% link Butterfly的魔改教程：导航栏魔改美化,Meuicat,https://meuicat.com/posts/2dbd58d6.html %}
 {% link butterfly导航栏修改方案,苏晓河,https://www.sxiaohe.top/posts/36435.html %}
+
+# 三.图标引入
+这里分为两种不同位置的自定义iconfont图标

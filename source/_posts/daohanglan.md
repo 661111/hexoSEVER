@@ -1,7 +1,7 @@
 ---
 title: butterfly导航栏修改方案
 description: 对导航栏进行修改
-date: 2025-02-05 8:00
+date: 2025-02-05 9:00
 cover: /img/2025/01/daohanglan/cover.webp
 category: 
   - hexo
