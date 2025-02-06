@@ -903,7 +903,6 @@ inject:
   bottom:
     # - <script src="xxxx"></script>
     - <script src="/js/sxiaohe.js"></script>
-    - <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css">
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
     - <script defer src="/js/bbtalk.js"></script> # 即刻逻辑文件
