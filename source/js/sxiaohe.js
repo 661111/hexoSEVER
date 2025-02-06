@@ -40,6 +40,7 @@ if(true){
   });
   function toggleArrowVisibility() {
     // 计算滚动位置与容器宽度的差值
+    const xscroll = document.getElementById('recent-post-top');
     const scrollDiff = xscroll.scrollWidth - xscroll.scrollLeft - xscroll.clientWidth;
     if (xscroll.scrollLeft === 0) {
       // 在最左边，隐藏左箭头，显示右箭头
