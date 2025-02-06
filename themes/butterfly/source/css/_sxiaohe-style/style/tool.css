@@ -77,3 +77,7 @@ div#banners {
     color: #fff;
     background-color: #e58a8a;
 }
+/* 7.markdown展开收回栏 */
+details.folding-tag[cyan] >summary {
+    background: #e8fafe;
+}
