@@ -26,7 +26,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
     width: 100%;
-    overflow-x: hidden
 }
 
 .recent-post-top::-webkit-scrollbar {
