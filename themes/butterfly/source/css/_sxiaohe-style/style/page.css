@@ -1,3 +1,4 @@
+/* 一.即刻短文页面样式 */
 #page:has(#essay_page) {
     border: 0;
     box-shadow: none !important;
@@ -245,8 +246,6 @@
 #bber .aplayer .aplayer-info .aplayer-controller .aplayer-time {
     position: initial;
 }
-
-/* 顶部样式 */
 .author-content.author-content-item.essayPage {
     height: 19rem;
     background: url(https://img.june-pj.cn/img/cover.webp) left 28% / cover no-repeat;
@@ -258,8 +257,6 @@
     color: var(--june-white);
     border-radius: 20px !important;
 }
-
-/* 响应式 */
 @media screen and (max-width: 1300px) {
     #bber .timeline ul li.bber-item {
         width: 49%;

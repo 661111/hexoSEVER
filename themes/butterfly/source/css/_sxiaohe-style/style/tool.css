@@ -81,3 +81,11 @@ div#banners {
 details.folding-tag[cyan] >summary {
     background: #e8fafe;
 }
+/* 8.文章页面整体修改 */
+#post {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-size: 14.5px;
+    background: rgba(255, 255, 255, .67);
+    animation: slide-in .5s .1s backwards;
+    -webkit-animation: slide-in .5s .1s backwards;
+}
