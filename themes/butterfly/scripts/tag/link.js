@@ -6,21 +6,14 @@ function link(args) {
 
     // 定义不同域名对应的头像URL
     const avatarUrls = {
-        'github.com': 'https://cdn.qyliu.top/i/2024/07/27/66a461a3098aa.webp',
-        'csdn.net': 'https://cdn.qyliu.top/i/2024/07/27/66a461b627dc2.webp',
-        'gitee.com': 'https://cdn.qyliu.top/i/2024/07/27/66a461c3dea80.webp',
-        'zhihu.com': 'https://cdn.qyliu.top/i/2024/07/27/66a461cc20eb4.webp',
-        'stackoverflow.com': 'https://cdn.qyliu.top/i/2024/07/27/66a461d3be02e.webp',
-        'wikipedia.org': 'https://cdn.qyliu.top/i/2024/07/27/66a461db48579.webp',
-        'baidu.com': 'https://cdn.qyliu.top/i/2024/07/27/66a461e1ae5b5.webp',
-        'qyliu.top': 'https://cdn.qyliu.top/i/2024/08/01/66aae601dbc9b.webp',
-        'liushen.fun': 'https://cdn.qyliu.top/i/2024/08/01/66aae601dbc9b.webp',
-        'lius.me': 'https://cdn.qyliu.top/i/2024/08/01/66aae601dbc9b.webp',
+        'github.com': '/img/icon/github.webp',
+        'gitee.com': '/img/icon/gitee.webp',
+        'zhihu.com': '/img/icon/zhihu.webp',
     };
     
     // 定义白名单域名
     const whitelistDomains = [
-        'lius.me', 'qyliu.top', 'liushen.fun'
+        'www.sxiaohe.top', 'blog.liushen.fun', 'www.fomal.cc', 'www.qcqx.cn', 'qcqx.cn', 'blog.yaria.top'
     ];
 
     // 获取URL的根域名
@@ -41,7 +34,7 @@ function link(args) {
                 return avatarUrls[domain];
             }
         }
-        return 'https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp';  // 默认头像URL
+        return '/img/icon/link.webp';  // 默认头像URL
     }
 
     // 检查是否在白名单中
