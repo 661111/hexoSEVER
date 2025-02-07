@@ -746,7 +746,9 @@ preloader:
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
+  # else all
   source: 3
+  # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url: /sxiaohe_source/css/loading/pace/full_pace.css
   avatar: # 自定义头像
 
@@ -980,6 +982,7 @@ css_prefix: true
 inject:
   head:
     - <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
+    - <link rel="stylesheet" href="/sxiaohe_source/css/loading/loading_img.css">
     - <link rel="stylesheet" href="https://cdn.sxiaohe.top/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
     - <link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
