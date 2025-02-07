@@ -267,9 +267,7 @@ block content
     include includes/pagination.pug
 ```
 <!-- endtab -->
-
 {% endtabs %}
-
 3.在[BlogRoot]\source\css\custom.css自定义样式的文件中引入如下代码（这是我的，你可以自行微调）：
 ```CSS
 /* 首页分类条 */
