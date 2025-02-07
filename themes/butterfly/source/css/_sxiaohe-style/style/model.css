@@ -169,6 +169,19 @@
     transition: all .15s ease-in-out;
 }
 
+.catalog-list-item a {
+    margin: 0 .2em;
+    padding: .2em .4em .3em;
+    font-weight: 700;
+    border-radius: .5rem;
+    color: var(--font-color);
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
 /* 5.首页文章列表修改 */
 .recent-posts {
     padding-left: 0px;
