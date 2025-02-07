@@ -29,3 +29,178 @@ abbrlink: 4221
 > 8.[🍊博客魔改教程总结(五)]()
 
 # 一.首页文章隐藏文字
+**效果来源**
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+
+{% folding cyan, 请查看教程内容 %}
+
+这种隐藏文字的方式可以给大家展示出来，整个效果是非常可观的。
+``` CSS
+#recent-posts>.recent-post-item:hover .recent-post-info .content {
+    opacity: 1;
+    line-height: 1.5;
+    transition: all .3s
+}
+
+#recent-posts>.recent-post-item:hover .recent-post-info {
+    top: 0;
+    transition: all .3s
+}
+
+#recent-posts>.recent-post-item>.recent-post-info>.content {
+    opacity: 0;
+    line-height: .7;
+    transition: all .3s;
+    bottom: 0
+}
+```
+{% endfolding %}
+
+# 二.首页文章卡片美化
+**效果来源**
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+
+{% folding cyan, 请查看教程内容 %}
+既然已经添加了文章文字隐藏，那么就可以进行美化文章卡片
+``` CSS
+/* 首页文章卡片颜色 */
+#recent-posts>.recent-post-item {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-size: 14.5px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .67);
+}
+/* 首页文章卡片的图片样式 */
+#recent-posts>.recent-post-item .post_cover img.post_bg:hover {
+    transform: none
+}
+/* 首页文章卡片样式表调整 */
+#recent-posts > .recent-post-item >.recent-post-info > .article-title {
+    text-align: center;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap {
+    text-align: center;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .content {
+    text-align: center;
+}
+/* QCQX 首页文章卡片设置 */
+#recent-posts>.recent-post-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    overflow: hidden;
+    height: 200px
+}
+@media screen and (max-width: 768px) {
+    #recent-posts>.recent-post-item {
+        -webkit-box-orient:vertical;
+        -moz-box-orient: vertical;
+        -o-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: 300px
+    }
+}
+/* QCQX 首页文章卡片设置 */
+#recent-posts > .recent-post-item .post_cover img.post_bg {
+    border-radius: 12px;
+    transform: none;
+}
+/* 首页文章卡片bar */
+#recent-posts>.recent-post-item>.recent-post-info {
+    padding: 0 40px;
+    width: 57%
+}
+
+@media screen and (max-width: 768px) {
+    #recent-posts>.recent-post-item>.recent-post-info {
+        padding:2px 10px;
+        width: 100%
+    }
+}
+.recent-posts .recent-post-item .post-card-bar {
+    width: 5px;
+    height: 60px;
+    margin: auto;
+    position: absolute;
+    border-radius: 30px
+}
+.recent-posts .recent-post-item .left+.recent-post-info+.post-card-bar {
+    background: #00c4b6b6;
+    right: 5px
+}
+.recent-posts .recent-post-item .right+.recent-post-info+.post-card-bar {
+    background: #1dbfffb6;
+    left: 5px
+}
+@media screen and (min-width: 768px) {
+    #recent-posts>.recent-post-item .post_cover.left {
+        padding:7px 0 7px 7px;
+    }
+
+    #recent-posts>.recent-post-item .post_cover.right {
+        padding: 7px 7px 7px 0
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .recent-posts .recent-post-item .post-card-bar {
+        display:none
+    }
+
+    .ai-btn-box {
+        justify-content: center
+    }
+
+    .ai-recommend .ai-recommend-item {
+        width: 100%
+    }
+
+    #recent-posts>.recent-post-item .post_cover.left,#recent-posts>.recent-post-item .post_cover.right {
+        transition: all .3s;
+        padding: 5px 5px 0 5px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s
+    }
+
+    #recent-posts>.recent-post-item:hover .post_cover.left,#recent-posts>.recent-post-item:hover .post_cover.right {
+        padding: 0
+    }
+
+    #recent-posts>.recent-post-item .post_cover img.post_bg {
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s
+    }
+
+    #recent-posts>.recent-post-item:hover .post_cover img.post_bg {
+        border-radius: 12px 12px 5px 5px;
+        -webkit-border-radius: 12px 12px 5px 5px;
+        -moz-border-radius: 12px 12px 5px 5px;
+        -ms-border-radius: 12px 12px 5px 5px;
+        -o-border-radius: 12px 12px 5px 5px
+    }
+}
+```
+{% endfolding %}
