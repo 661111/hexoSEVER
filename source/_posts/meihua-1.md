@@ -29,8 +29,8 @@ abbrlink: 4220
 > 8.🍊博客魔改教程总结(五)
 
 # 一.仿轻笑博客背景美化
-<details>
 <summary>请查看教程内容</summary>
+<details>
 一.前言
 因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
@@ -174,8 +174,8 @@ abbrlink: 4220
 </details>
 
 # 五.侧边栏美化以及侧边栏卡片美化（轻笑）
-<details>
 <summary>请查看教程内容</summary>
+<details>
 一.前言
 因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找，喜欢这个风格的可以进行CTRL+C和CTRL+V
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
