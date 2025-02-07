@@ -81,23 +81,7 @@
     }
 }
 /* 2.首页文章卡片隐藏简介 */
-#recent-posts>.recent-post-item:hover .recent-post-info .content {
-    opacity: 1;
-    line-height: 1.5;
-    transition: all .3s
-}
 
-#recent-posts>.recent-post-item:hover .recent-post-info {
-    top: 0;
-    transition: all .3s
-}
-
-#recent-posts>.recent-post-item>.recent-post-info>.content {
-    opacity: 0;
-    line-height: .7;
-    transition: all .3s;
-    bottom: 0
-}
 /* 3.首页文章卡片的图片样式 */
 #recent-posts>.recent-post-item .post_cover img.post_bg:hover {
     transform: none
