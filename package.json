@@ -17,6 +17,7 @@
     "hexo-abbrlink": "^2.2.1",
     "hexo-butterfly-footer-marcus": "^1.1.3",
     "hexo-butterfly-tag-plugins-plus": "^1.0.18",
+    "hexo-butterfly-wowjs": "^1.0.5",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^4.0.0",

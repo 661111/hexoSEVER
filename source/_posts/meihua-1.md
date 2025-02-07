@@ -29,8 +29,7 @@ abbrlink: 4220
 > 8.🍊博客魔改教程总结(五)
 
 # 一.仿轻笑博客背景美化
-<details>
-<summary>请查看教程内容</summary>
+{% folding 请查看教程内容 %}
 一.前言
 因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
@@ -74,7 +73,7 @@ abbrlink: 4220
     z-index: -998;
 }
 ```
-</details>
+{% endfolding %}
 
 # 二.导航栏居中教程
 这里我放当前比较有效的教程
@@ -93,8 +92,8 @@ abbrlink: 4220
 {% link Social卡片彩色图标引入（店长）,Fomalhaut🥝,https://www.fomal.cc/posts/5389e93f.html#Social%E5%8D%A1%E7%89%87%E5%BD%A9%E8%89%B2%E5%9B%BE%E6%A0%87%E5%BC%95%E5%85%A5%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89 %}
 
 # 四.侧边栏美化以及侧边栏卡片美化（轻笑）
-<details>
-<summary>请查看教程内容</summary>
+{% folding 请查看教程内容 %}
+
 一.前言
 因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找，喜欢这个风格的可以进行CTRL+C和CTRL+V
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
@@ -171,11 +170,11 @@ abbrlink: 4220
     border-left: none !important;
 }
 ```
-</details>
+{% endfolding %}
 
 # 五.侧边栏美化以及侧边栏卡片美化（轻笑）
-<details>
-<summary>请查看教程内容</summary>
+{% folding 请查看教程内容 %}
+
 一.前言
 因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找，喜欢这个风格的可以进行CTRL+C和CTRL+V
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
@@ -232,3 +231,4 @@ abbrlink: 4220
     transform: none;
 }
 ```
+{% endfolding %}
