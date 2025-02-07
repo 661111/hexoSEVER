@@ -979,7 +979,7 @@ css_prefix: true
 # 如果需要引用跨域文件，需要添加网址
 inject:
   head:
-    - <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js" data-pjax="" defer=""></script>
+    - <script data-pjax src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
     - <link rel="stylesheet" href="/sxiaohe_source/css/loading/loading_img.css">
     - <link rel="stylesheet" href="https://cdn.sxiaohe.top/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
@@ -987,15 +987,15 @@ inject:
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
-    # - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://cdn.jsdmirror.com/npm/pace-js@latest/pace.min.js"></script>
-    - <script src="/js/sxiaohe.js" data-pjax="" defer=""></script>
-    - <script async src="/js/waterfall.js" data-pjax="" defer=""></script> # 瀑布流JS
-    - <script defer src="/js/essay.js" data-pjax="" defer=""></script> # 即刻逻辑文件
-    - <script defer src="/js/bbtalk.js" data-pjax="" defer=""></script> # 即刻逻辑文件
-    - <script src="https://cdn.staticfile.net/Swiper/10.3.1/swiper-bundle.min.js" data-pjax="" defer=""></script> # Swiper - 轮播动画库
-    - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js" data-pjax="" defer=""></script>
-    - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js" data-pjax="" defer=""></script>
-    - <script async src="https://cdn.sxiaohe.top/js/font_3612150_gkavascgf3n.js" data-pjax="" defer=""></script>
+    - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://cdn.jsdmirror.com/npm/pace-js@latest/pace.min.js"></script>
+    - <script data-pjax src="/js/sxiaohe.js"></script>
+    - <script async src="/js/waterfall.js"></script> # 瀑布流JS
+    - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
+    - <script defer src="/js/bbtalk.js"></script> # 即刻逻辑文件
+    - <script data-pjax src="https://cdn.staticfile.net/Swiper/10.3.1/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
+    - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js"></script>
+    - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js" ></script>
+    - <script async src="https://cdn.sxiaohe.top/js/font_3612150_gkavascgf3n.js" ></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
