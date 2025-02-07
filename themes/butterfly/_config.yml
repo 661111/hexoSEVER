@@ -79,11 +79,11 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: https://www.sxiaohe.top/img/avatar.avif
 
 # Avatar (頭像)
 avatar:
-  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
+  img: https://www.sxiaohe.top/img/avatar.avif
   effect: false
 
 # Disable all banner image
