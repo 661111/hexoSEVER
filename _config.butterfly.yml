@@ -987,6 +987,7 @@ inject:
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
+    - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://cdn.jsdmirror.com/npm/pace-js@latest/pace.min.js"></script>
     - <script src="/js/sxiaohe.js" data-pjax="" defer=""></script>
     - <script async src="/js/waterfall.js" data-pjax="" defer=""></script> # 瀑布流JS
     - <script defer src="/js/essay.js" data-pjax="" defer=""></script> # 即刻逻辑文件
