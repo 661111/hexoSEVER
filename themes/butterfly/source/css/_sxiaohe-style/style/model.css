@@ -105,7 +105,7 @@
 /* 4.首页分类条 */
 .layout #recent-posts .home-catalog-bar {
     background: var(--mj-card-bg);
-    border: var(--style-border);
+    border: var(--mj-style-border);
     margin-top: 12px;
     border-radius: 11px !important;
     transition: .3s;
