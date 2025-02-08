@@ -44,10 +44,11 @@ jobs:
         run: |
           npm install gulp-cli -g #全局安装gulp
           npm install --save
-          npm install yamljs --save
+          
 
       - name: 生成轻量朋友圈需要的json文件
         run: |
+          npm install yamljs --save
           node link.js
 
       - name: 生成静态文件
