@@ -483,4 +483,18 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 {% endtabs %}
 {% endfolding %}
 
-# 3.说说部署
+# 3.说说部署（主流）
+
+{% folding cyan, 请查看教程内容 %}
+注意：本章节没有bbtalk，artitalk和ispeak（配置麻烦），因为教程方案有些老需要额外修改配置
+{% tabs 部署方式 %}
+<!-- tab icat部署（即刻短文和memos） -->
+<!-- endtab -->
+
+<!-- tab 随风起（即刻短文） -->
+<!-- endtab -->
+
+<!-- tab 安知鱼（即刻短文） -->
+<!-- endtab -->
+{% endtabs %}
+{% endfolding %}
