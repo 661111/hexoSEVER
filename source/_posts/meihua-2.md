@@ -28,7 +28,7 @@ abbrlink: 4221
 > 7.[🥕博客魔改教程总结(四)]()
 > 8.[🍊博客魔改教程总结(五)]()
 
-# 一.首页文章隐藏文字
+# 1.首页文章隐藏文字
 **效果来源**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 
@@ -56,7 +56,7 @@ abbrlink: 4221
 ```
 {% endfolding %}
 
-# 二.首页文章卡片美化
+# 2.首页文章卡片美化
 **效果来源**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 
@@ -205,7 +205,7 @@ abbrlink: 4221
 ```
 {% endfolding %}
 
-# 三.首页分类条美化
+# 3.首页分类条美化
 **效果来源**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 {% link 魔改笔记七：分类条及外链卡片,清羽飞扬,https://blog.liushen.fun/posts/a64defb4/ %}
@@ -395,8 +395,9 @@ window.refreshFn = function () {
 
 {% endfolding %}
 
-# 四.底部美化
-
+# 4.底部美化
+{% link 博客魔改教程总结(四),Fomalhaut🥝,https://www.fomal.cc/posts/d739261b.html %}
+{% link 页脚插件版,Marcus,https://blog.marcus233.top/p/footer.html %}
 {% folding cyan, 请查看教程内容 %}
 
 {% tabs 分栏 %}
@@ -404,7 +405,7 @@ window.refreshFn = function () {
 <!-- tab 插件版 -->
 
 **hexo-butterfly-footer-marcus**
-# 1.安装依赖
+**1.安装依赖**
 
 {% note warning flat %}
 注意：随机友链需要删除店长的插件，否则冲突
@@ -421,7 +422,7 @@ npm install hexo-butterfly-footer-marcus --save
 npm i yamljs --save
 ```
 
-# 2.添加配置信息
+**2.添加配置信息**
 在站点配置文件_config.yml或者主题配置文件**_config.butterfly.yml**中添加：
 ``` YAML
 #hexo-butterfly-footer-marcus
@@ -573,7 +574,7 @@ footer_beautify:
 注意：请自行下载footer_js修改建站日期
 {% endnote %}
 
-# 3.CSS修改
+**3.CSS修改**
 在自己的**custom.css**中插入css：
 ``` CSS
 #footer_content, #footer_icons {
@@ -587,8 +588,7 @@ footer_beautify:
     border-top: none!important;
 }
 ```
-# 4.参数释义
-## 参数释义
+**4.参数释义**
  **参数**                             | **备选值/类型**  | **释义**                                                                                                
 ------------------------------------|-------------|-------------------------------------------------------------------------------------------------------
  **enable**                         | true/false  | 【必选】控制开关                                                                                              
@@ -1074,6 +1074,319 @@ inject:
 
 <!-- endtab -->
 
+{% endtabs %}
+
+{% endfolding %}
+
+# 5.侧边栏widget
+{% link 博客魔改教程总结(四),Fomalhaut🥝,https://www.fomal.cc/posts/d739261b.html %}
+{% link Butterfly 微博热搜侧边栏,Eurkon,https://blog.eurkon.com/post/38b005e1.html %}
+
+{% folding cyan, 请查看教程内容 %}
+
+{% tabs 分栏 %}
+<!-- tab 友链通讯录 -->
+1.新建[BlogRoot]\themes\butterfly\layout\includes\widget\card_friend_link.pug
+``` PUG
+if theme.aside.card_friend_link.enable
+  .card-widget.card-friend-link
+    .item-headline
+      i.far.fa-address-book
+      span= _p('aside.card_friend_link')
+    .card-friend-link-container
+      if site.data.link
+        each i in site.data.link
+          if i.class_name
+            details.card-friend-class-name
+              summary.card-friend-class-desc(title=i.class_desc)
+                sapn!=i.class_name
+                span.online-friend-number
+                sapn!=i.link_list.length
+              each item in i.link_list
+                if !(item.offline)
+                  a.card-friend-item.online-friend-link(href=url_for(item.link)  title=item.name target="_blank")
+                    img.no-lightbox.card-friend-avatar(src=url_for(item.avatar) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=item.name )
+                    .card-friend-details
+                      .card-friend-name= item.name
+                      .card-friend-descr(title=item.descr)= item.descr
+              each item in i.link_list
+                if item.offline
+                  a.card-friend-item.offline-friend-link(href=url_for(item.link)  title=item.name target="_blank")
+                    img.no-lightbox.card-friend-avatar(src=url_for(item.avatar) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=item.name )
+                    .card-friend-details
+                      .card-friend-name= item.name
+                      .card-friend-descr(title=item.descr)= item.descr
+    .js-pjax
+      script.
+        var addressbook = document.getElementsByClassName("card-friend-class-name");
+        for (var i=0; i<addressbook.length; i++){
+          var online = addressbook[i].getElementsByClassName("online-friend-link").length;
+          addressbook[i].getElementsByClassName("online-friend-number")[0].innerHTML = "  "+online+"/";
+        }
+```
+2.新建[BlogRoot]\themes\butterfly\source\css\_layout\card_friend_link.styl，其中var(--text-bg-hover)为悬浮选项背景色，可以根据你的喜好进行设置
+``` CSS
+if hexo-config('aside.card_friend_link.enable')
+  :root
+    --card-friend-class-desc-bgcolor: #e7e7e7
+    --card-friend-name-color: #000
+    --card-friend-item-hover: var(--text-bg-hover)
+    --card-friend-descr-color: #797979
+  [data-theme="dark"]
+    --card-friend-class-desc-bgcolor: #111111
+    --card-friend-name-color: #fff
+    --card-friend-item-hover: var(--text-bg-hover)
+    --card-friend-descr-color: #797979
+  #aside-content
+    .card-widget.card-friend-link
+      padding: 20px
+  .card-widget.card-friend-link
+    .card-friend-link-container
+      max-height 460px
+      overflow scroll
+      &::-webkit-scrollbar
+        display: none
+    summary.card-friend-class-desc
+      padding 0px 15px
+    details.card-friend-class-name[open]
+      summary.card-friend-class-desc
+        position: sticky;
+        top: 0px;
+        background: var(--card-friend-class-desc-bgcolor);
+        z-index: 1
+    a
+      &.card-friend-item
+        padding 0px 15px
+        height 60px
+        width auto
+        display flex
+        align-items center
+        flex-wrap nowrap
+        &:hover
+          background-color var(--card-friend-item-hover)
+          border-radius: 12px
+          transition: all 0.3s ease-in-out
+
+    img
+      &.card-friend-avatar
+        width 40px
+        height 40px
+        border-radius 50%
+        margin 10px 10px
+    .offline-friend-link
+      img
+        &.card-friend-avatar
+          filter: grayscale(100%)
+
+    .card-friend-details
+      width auto
+      height 60px
+      display flex
+      flex-wrap nowrap
+      flex-direction column
+      justify-content center
+      align-items flex-start
+
+    .card-friend-name
+      color var(--card-friend-name-color)
+
+    .card-friend-descr
+      font-size 12px
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      width 12em
+      color var(--card-friend-descr-color)
+```
+3.修改[BlogRoot]\themes\butterfly\layout\includes\widget\index.pug,视版本不同，此文件会有所出入，请读者参考以前的侧栏类魔改教程自行观察规律进行调整。
+{% note danger simple %}
+不建议：不建议你们在post页面添加友链通讯录版块。这会让你每页的dom数量爆表。
+{% endnote %}
+``` PUG
+  #aside-content.aside-content
+    //- post
+    if is_post()
+      - const tocStyle = page.toc_style_simple
+      - const tocStyleVal = tocStyle === true || tocStyle === false ? tocStyle : theme.toc.style_simple
+      if showToc && tocStyleVal
+        .sticky_layout
+          include ./card_post_toc.pug
+      else
+        !=partial('includes/widget/card_author', {}, {cache: true})
+        !=partial('includes/widget/card_announcement', {}, {cache: true})
+        !=partial('includes/widget/card_top_self', {}, {cache: true})
+        .sticky_layout
+          if showToc
+            include ./card_post_toc.pug
+          !=partial('includes/widget/card_recent_post', {}, {cache: true})
+          !=partial('includes/widget/card_ad', {}, {cache: true})
+    else
+      //- page
+      !=partial('includes/widget/card_author', {}, {cache: true})
+      !=partial('includes/widget/card_announcement', {}, {cache: true})
+      !=partial('includes/widget/card_top_self', {}, {cache: true})      
+
+      .sticky_layout
+        if showToc
+          include ./card_post_toc.pug
++       !=partial('includes/widget/card_friend_link', {}, {cache: true})
+        !=partial('includes/widget/card_recent_post', {}, {cache: true})
+        !=partial('includes/widget/card_ad', {}, {cache: true})
+        !=partial('includes/widget/card_newest_comment', {}, {cache: true})
+        !=partial('includes/widget/card_categories', {}, {cache: true})
+        !=partial('includes/widget/card_tags', {}, {cache: true})
+        !=partial('includes/widget/card_archives', {}, {cache: true})
+        !=partial('includes/widget/card_webinfo', {}, {cache: true})
+        !=partial('includes/widget/card_bottom_self', {}, {cache: true})
+```
+4.修改[BlogRoot]\themes\butterfly\languages\zh-CN.yml,新增内容。非简中用户自行修改对应的language文件:
+``` YAML
+  aside:
+    articles: 文章
+    tags: 标签
+    categories: 分类
+    card_announcement: 公告
+    card_categories: 分类
+    card_tags: 标签
+    card_archives: 归档
+    card_recent_post: 最新文章
++   card_friend_link: 通讯录
+```
+5.修改[BlogRoot]\_config.butterfly.yml,新增配置项：
+``` YML
+  aside:
+    enable: true
+    hide: true
+    button: true
+    mobile: false # display on mobile
+    position: right # left or right
+    card_author:
+      enable: true
+      description:
+      button:
+        icon: fa fa-paper-plane faa-tada
+        text: 加入糖果屋群聊
+        link: https://jq.qq.com/?_wv=1027&k=tNuEdliQ
+        enable: true
+    card_announcement:
+      enable: false
+      content:
++   card_friend_link: #友链通讯录
++     enable: true
++     sort_order: # Don't modify the setting unless you know
+```
+6.对需要显示离线状态的友链，可以在[BlogRoot]\source\_data\link.yml中给他添加一个离线的标签,例如：
+``` YML
+  name: 🧊小冰博客 #152
++ offline: true
+  link: https://zfe.space/
+  avatar: https://npm.elemecdn.com/akilar-friends@latest/avatar/zfe.space.jpg
+  descr: 做个有梦想的人！
+  siteshot: https://npm.elemecdn.com/akilar-friends@latest/siteshot/zfe.space.jpg
+```
+<!-- endtab -->
+
+<!-- tab 微博热搜侧边栏 -->
+1.新建card_weibo.js:
+``` JS
+fetch('https://weibo-top-api.vercel.app/api').then(data => data.json()).then(data => {
+  let html = '<style>.weibo-new{background:#ff3852}.weibo-hot{background:#ff9406}.weibo-jyzy{background:#ffc000}.weibo-recommend{background:#00b7ee}.weibo-adrecommend{background:#febd22}.weibo-friend{background:#8fc21e}.weibo-boom{background:#bd0000}.weibo-topic{background:#ff6f49}.weibo-topic-ad{background:#4dadff}.weibo-boil{background:#f86400}#weibo-container{overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}#weibo-container::-webkit-scrollbar{display:none}.weibo-list-item{display:flex;flex-direction:row;justify-content:space-between;flex-wrap:nowrap}.weibo-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:auto}.weibo-num{float:right}.weibo-hotness{display:inline-block;padding:0 6px;transform:scale(.8) translateX(-3px);color:#fff;border-radius:8px}</style>'
+  html += '<div class="weibo-list">'
+  let hotness = {
+    '爆': 'weibo-boom',
+    '热': 'weibo-hot',
+    '沸': 'weibo-boil',
+    '新': 'weibo-new',
+    '荐': 'weibo-recommend',
+    '音': 'weibo-jyzy',
+    '影': 'weibo-jyzy',
+    '剧': 'weibo-jyzy',
+    '综': 'weibo-jyzy'
+  }
+  for (let item of data) {
+    html += '<div class="weibo-list-item"><div class="weibo-hotness ' + hotness[(item.hot || '荐')] + '">' + (item.hot || '荐') + '</div>'
+      + '<span class="weibo-title"><a title="' + item.title + '"href="' + item.url + '" target="_blank" rel="external nofollow noreferrer">' + item.title + '</a></span>'
+      + '<div class="weibo-num"><span>' + item.num + '</span></div></div>'
+  }
+  html += '</div>'
+  document.getElementById('weibo-container').innerHTML = html
+}).catch(function (error) {
+  console.log(error);
+});
+```
+2.在 [Blogroot]\_config.butterfly.yml 的侧边栏配置项和 CDN 配置项增加以下内容。
+``` YML
+  # aside (側邊欄)
+  # --------------------------------------
+  aside:
+    enable: true
+    ...
++   card_weibo:
++     enable: true
+
+  # CDN
+  # Don't modify the following settings unless you know how they work
+  # 非必要請不要修改
+  CDN:
+    # main
+    main_css: /css/index.css
+    jquery: https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js
+    main: /js/main.js
+    utils: /js/utils.js
++   card_weibo: https://npm.elemecdn.com/eurkon-cdn/hexo/js/card_weibo.js ## 或者填写自己的 js 地址
+```
+3.在 [Blogroot]\themes\butterfly\layout\includes\widget 目录下创建 card_weibo.pug 文件，添加以下内容。
+``` PUG
+if theme.aside.card_weibo.enable
+  .card-widget.card-weibo
+    .card-content
+      .item-headline
+        i.fab.fa-weibo
+        span= _p('微博热搜')
+      #weibo-container(style="width: 100%; height: 150px;font-size: 95%;")
+  script(defer data-pjax src=url_for(theme.CDN.card_weibo))
+```
+4.在 [Blogroot]\themes\butterfly\layout\includes\widget\index.pug 文件中增加以下内容。
+``` PUG
+  #aside-content.aside-content
+    //- post
+    if is_post()
+      if showToc && theme.toc.style_simple
+        .sticky_layout
+          include ./card_post_toc.pug
+      else
+        !=partial('includes/widget/card_author', {}, {cache: true})
+        !=partial('includes/widget/card_announcement', {}, {cache: true})
+        .sticky_layout
+          if showToc
+            include ./card_post_toc.pug
++         !=partial('includes/widget/card_weibo', {}, {cache: true})
+          !=partial('includes/widget/card_recent_post', {}, {cache: true})
+          !=partial('includes/widget/card_ad', {}, {cache: true})
+    else
+      //- page
+      !=partial('includes/widget/card_author', {}, {cache: true})
+      !=partial('includes/widget/card_announcement', {}, {cache: true})
+      .sticky_layout
++       !=partial('includes/widget/card_weibo', {}, {cache: true})
+        !=partial('includes/widget/card_recent_post', {}, {cache: true})
+        !=partial('includes/widget/card_ad', {}, {cache: true})
+        !=partial('includes/widget/card_newest_comment', {}, {cache: true})
+        !=partial('includes/widget/card_categories', {}, {cache: true})
+        !=partial('includes/widget/card_tags', {}, {cache: true})
+        !=partial('includes/widget/card_archives', {}, {cache: true})
+        !=partial('includes/widget/card_webinfo', {}, {cache: true})
+        !=partial('includes/widget/card_self', {}, {cache: true})
+
+```
+6.虽然 Vercel 的访问应当没有次数限制，但是不排除存在因访问次数过多而限流等限制。所以还是建议各位自建 API。使用 Vercel 部署，完全免费。且无需服务器。
+部署完成后将获取到的默认域名替换 card_weibo.js 中的 weibo-top-api.vercel.app，如：
+``` JS
+- fetch('https://weibo-top-api.vercel.app/api').then(data => data.json()).then(data => {
++ fetch('https://域名/api').then(data => data.json()).then(data => {
+```
+{% link Eurkon/weibo-top-api,Github,https://github.com/Eurkon/weibo-top-api %}
+<!-- endtab -->
 {% endtabs %}
 
 {% endfolding %}
