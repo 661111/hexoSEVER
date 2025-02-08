@@ -29,7 +29,10 @@ abbrlink: 4222
 > 8.[🍊博客魔改教程总结(五)]()
 
 # 1.友链朋友圈部署(后端篇)
-由于这个非常复杂所以我这里会给大家分出两个不同的教程，旧朋友圈目前已经暂停维护了，建议可以选择新朋友圈，功能有点
+由于这个非常复杂所以我这里会给大家分出两个不同的教程，旧朋友圈目前已经暂停维护了，建议可以选择新朋友圈。
+
+{% link Friend-Circle-Lite:轻量友链朋友圈,liushen,https://blog.liushen.fun/posts/4dc716ec/ %}
+
 {% folding cyan, 请查看教程内容 %}
 {% tabs 部署方式 %}
 <!-- tab 旧朋友圈部署 -->
@@ -199,6 +202,13 @@ url：该友链对应RSS地址
 
 # 2.友链朋友圈部署(前端篇)
 这个就是前端篇了，前端版本偏多
+
+旧朋友圈：
+{% link 友链朋友圈5 - 我的部署历程与主题样式分享,张洪Heo,https://blog.zhheo.com/p/4e18a507.html %}
+{% link 鱼塘朋友圈部署前端方案,安知鱼,https://blog.anheyu.com/posts/3753.html %}
+
+新朋友圈：
+{% link Friend-Circle-Lite:轻量友链朋友圈,liushen,https://blog.liushen.fun/posts/4dc716ec/ %}
 
 {% folding cyan, 请查看旧朋友圈教程内容 %}
 {% tabs 部署方式 %}
