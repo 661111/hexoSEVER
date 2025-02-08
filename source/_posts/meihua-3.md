@@ -121,8 +121,8 @@ SMTP_PWD: SMTP 服务器的密码，用于发送电子邮件。(如果需要可�
 GitHub Actions 已经配置好在仓库的 .github/workflows/*.yml 文件中，当到一定时间时将自动执行，也可以手动运行。
 其中，每个action功能如下：
 
-friend_circle_lite.yml实现核心功能，爬取并发送邮箱；
-deal_subscribe_issue.yml处理固定格式的issue，打上固定标签，评论，并关闭issue；
+**friend_circle_lite.yml**实现核心功能，爬取并发送邮箱；
+**deal_subscribe_issue.yml**处理固定格式的issue，打上固定标签，评论，并关闭issue；
 设置issue格式：
 这个我已经设置好了，你只需要进行自定义即可。
 <!-- endtab -->
