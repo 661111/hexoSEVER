@@ -1,7 +1,7 @@
 ---
 title: 博客魔改教程总结(三)
 description: 从零开始魔改butterfly
-date: '2025-02-07 8:00'
+date: '2025-02-08 8:00'
 cover: /img/2025/01/meihua-post/cover.avif
 category:
   - hexo
@@ -23,8 +23,8 @@ abbrlink: 4222
 > 2.[🍒Hexo博客搭建基础教程(二)]()
 > 3.[🥪Hexo博客搭建基础教程(三)]()
 > 4.[🍀博客魔改教程总结(一)](https://www.sxiaohe.top/posts/4220.html)
-> 5.[🍚博客魔改教程总结(二)](https://www.sxiaohe.top/posts/4221.html) ⇦当前位置🪂
-> 6.[🎋博客魔改教程总结(三)](https://www.sxiaohe.top/posts/4222.html)
+> 5.[🍚博客魔改教程总结(二)](https://www.sxiaohe.top/posts/4221.html)
+> 6.[🎋博客魔改教程总结(三)](https://www.sxiaohe.top/posts/4222.html) ⇦当前位置🪂
 > 7.[🥕博客魔改教程总结(四)]()
 > 8.[🍊博客魔改教程总结(五)]()
 
@@ -482,3 +482,5 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 <!-- endtab -->
 {% endtabs %}
 {% endfolding %}
+
+# 3.说说部署

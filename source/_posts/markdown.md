@@ -10,6 +10,7 @@ categories:
 abbrlink: 2013454d
 sticky: 2
 swiper_index: 2
+cover: /img/2025/01/meihua-post/cover.avif
 date: 2022-08-09 18:19:03
 updated: 2022-10-23 22:00:00
 ---
