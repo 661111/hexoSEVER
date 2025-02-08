@@ -610,11 +610,459 @@ footer_beautify:
 <!-- fomal页脚版 -->
 
 {% note warning flat %}
-注意：如果有安装店长的hexo-butterfly-footer-beautify插件，建议卸载或者关闭
-卸载插件：
+注意：如果有安装店长的hexo-butterfly-footer-beautify插件，建议卸载并删除配置项或者关闭配置项
+**卸载插件**：
 ``` BASH
+npm un hexo-butterfly-footer-beautify --save
+```
+在主题配置文件_config.butterfly.yml或者站点配置文件_config.yml删除插件相关的配置项：
+``` YAML
+-footer_beautify:
+-  enable:
+-    timer: true # 计时器开关
+-    bdage: true # 徽标开关
+-  priority: 5 #过滤器优先权
+-  enable_page: all # 应用页面
+-  exclude: #屏蔽页面
+-    # - /posts/
+-    # - /about/
+-  layout: # 挂载容器类型
+-    type: id
+-    name: footer-wrap
+-    index: 0
+-  runtime_js: https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js
+-  runtime_css: https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css
+-  # 徽标部分配置项
+-  swiperpara: 0 #若非0，则开启轮播功能，每行徽标个数
+-  bdageitem:
+-    - link: https://hexo.io/ #徽标指向网站链接
+-      shields: https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo #徽标API
+-      message: 博客框架为Hexo_v6.2.0 #徽标提示语
+-    - link: https://butterfly.js.org/
+-      shields: https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender
+-      message: 主题版本Butterfly_v4.3.1
+-    - link: https://vercel.com/
+-      shields: https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&logo=Vercel
+-      message: 本站采用多线部署，主线路托管于Vercel
+-    - link: https://dashboard.4everland.org/
+-    # https://img.shields.io/badge/Hosted-4EVERLAND-3FE2C1?style=flat&logo=IPFS
+-      shields: https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&logo=IPFS
+-      message: 本站采用多线部署，备用线路托管于4EVERLAND
+-    - link: https://github.com/
+-      shields: https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub
+-      message: 本站项目由Github托管
+-    - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
+-      shields: https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris
+-      message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
+-  swiper_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css
+-  swiper_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js
+-  swiperbdage_init_js: https://npm.elemecdn.com/hexo-butterfly-footer-beautify/lib/swiperbdage_init.min.js
 ```
 {% endnote %}
+
+1.将[BlogRoot]/themes/butterfly/layout/includes/footer.pug替换成如下代码这块东西分为几个部分，一个是以#ft为块的DOM，其中分为了格言、猜你想看、推荐友链三部分，参考图中的位置结合自己的喜好进行修改即可，图像、文字和链接均替换成你自己的（记住不要用我的链接！！！）；if theme.footer.owner.enable起这一块是主题指定的信息版权信息，我把主题配置项的copyright和custom_text这两项留空了，因此只会显示©2022 By Fomalhaut🥝；再然后就是#workboard这块，这块的信息由js逻辑写入与更新，可以自定义；最后是p#ghbdages这块，是徽标显示，大家可以到shields.io按照自己的信息生成（不要用我的！！！）:
+
+``` PUG
+#footer-wrap
+  #ft
+    .ft-item-1
+      .t-top
+        .t-t-l
+          p.ft-t.t-l-t 格言🧬
+          .bg-ad
+            div
+              | 再看看那个光点，它就在这里，这是家园，这是我们 —— 你所爱的每一个人，你认识的一个人，你听说过的每一个人，曾经有过的每一个人，都在它上面度过他们的一生✨
+            .btn-xz-box
+              a.btn-xz(href='https://stellarium.org/') 点击开启星辰之旅
+        .t-t-r
+          p.ft-t.t-l-t 猜你想看💡
+          ul.ft-links
+            li
+              a(href='/posts/eec9786.html') 魔改指南
+              a(href='/box/nav/') 网址导航
+            li
+              a(href='/social/link/') 我的朋友
+              a(href='/comments/') 留点什么
+            li
+              a(href='/personal/about/') 关于作者
+              a(href='/archives/') 文章归档
+            li
+              a(href='/categories/') 文章分类
+              a(href='/tags/') 文章标签
+            li
+              a(href='/box/Gallery/') 我的画廊
+              a(href='/personal/bb/') 我的唠叨
+            li
+              a(href='/site/time/') 建设进程
+              a(href='/site/census/') 网站统计
+    .ft-item-2
+      p.ft-t 推荐友链⌛
+      .ft-img-group
+        .img-group-item
+          a(href='https://www.fomal.cc/' title='Fomalhaut🥝')
+            img(src='https://lskypro.acozycotage.net/LightPicture/2022/12/60e5d4e39da7c077.webp' alt='')
+        .img-group-item
+          a(href='https://tzy1997.com/' title='唐志远の博客')
+            img(src='https://lskypro.acozycotage.net/LightPicture/2022/12/4ab83cdce942463b.jpg' alt='')
+        .img-group-item
+          a(href='https://akilar.top/' title='Akilarの糖果屋')
+            img(src='https://lskypro.acozycotage.net/LightPicture/2022/12/6bf1ed05796db59c.jpg' alt='')
+        .img-group-item
+          a(href='https://butterfly.js.org/' title='Butterfly')
+            img(src='https://lskypro.acozycotage.net/LightPicture/2022/12/64cc6a7d508026e1.png' alt='')
+        .img-group-item
+          a(href='https://anzhiy.cn/' title='安知鱼')
+            img(src='https://lskypro.acozycotage.net/LightPicture/2022/12/1b33fef8f5fb7e63.jpg' alt='')
+        .img-group-item
+          a(href='https://www.acozycotage.net/' title='Acozycotage')
+            img(src='https://lskypro.acozycotage.net/LightPicture/2022/12/6a6fe6ebfd19c465.jpg' alt='')
+        .img-group-item
+          a(href='https://cdn.netdun.net/' title='网盾星球')
+            img(src='https://lskypro.acozycotage.net/LightPicture/2022/12/70dee3f9d1ca10f3.webp' alt='')
+        .img-group-item
+          a(href='javascript:void(0)' title='广告位招租')
+            img(src='https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp' alt='')
+
+  if theme.footer.owner.enable
+    - var now = new Date()
+    - var nowYear = now.getFullYear()
+    if theme.footer.owner.since && theme.footer.owner.since != nowYear
+      .copyright
+        span!= `<b>&copy;${theme.footer.owner.since} - ${nowYear}</b>`
+        span!= `<b>&nbsp;&nbsp;By ${config.author}</b>`
+    else
+       .copyright
+         span!= `<b>&copy;${nowYear}</b>`
+         span!= `<b>&nbsp;&nbsp;By ${config.author}</b>`
+  if theme.footer.copyright
+    .framework-info
+      span= _p('footer.framework') + ' '
+      a(href='https://hexo.io')= 'Hexo'
+      span.footer-separator |
+      span= _p('footer.theme') + ' '
+      a(href='https://github.com/jerryc127/hexo-theme-butterfly')= 'Butterfly'
+  if theme.footer.custom_text
+    .footer_custom_text!=`${theme.footer.custom_text}`
+    
+  #workboard
+  
+  p#ghbdages
+    a.github-badge(target='_blank' href="https://hexo.io/" style='margin-inline:5px' title="博客框架为Hexo_v6.3.0")
+      img(src="https://sourcebucket.s3.ladydaily.com/badge/Frame-Hexo-blue.svg" alt='')
+
+    a.github-badge(target='_blank' href="https://butterfly.js.org/" style='margin-inline:5px' title="主题版本Butterfly_v4.3.1")
+      img(src="https://sourcebucket.s3.ladydaily.com/badge/Theme-Butterfly-6513df.svg" alt='')
+
+    a.github-badge(target='_blank' href="https://vercel.com/" style='margin-inline:5px' title="本站采用多线部署，主线路托管于Vercel")
+      img(src="https://sourcebucket.s3.ladydaily.com/badge/Hosted-Vercel-brightgreen.svg" alt='')
+
+    a.github-badge(target='_blank' href="https://user.51.la/" style='margin-inline:5px' title="本站数据分析得益于51la技术支持")
+      img(src="https://sourcebucket.s3.ladydaily.com/badge/Analytics-51la-3db1eb.svg" alt='')
+
+    a.github-badge(target='_blank' href="https://icp.gov.moe/?keyword=20226665" style='margin-inline:5px' title="本站已加入萌ICP豪华套餐，萌ICP备20226665号")
+      img(src="https://sourcebucket.s3.ladydaily.com/badge/萌ICP备-20226665-fe1384.svg" alt='')
+
+    a.github-badge(target='_blank' href="https://bitiful.dogecast.com/buckets" style='margin-inline:5px' title="本网站经Service Worker分流至缤纷云对象存储")
+      img(src=" https://sourcebucket.s3.ladydaily.com/badge/Bucket-缤纷云-9c62da.svg" alt='')
+
+    a.github-badge(target='_blank' href="https://www.netdun.net/" style='margin-inline:5px' title="本站使用网盾星球提供CDN加速与防护")
+      img(src="https://sourcebucket.s3.ladydaily.com/badge/CDN-网盾星球-fff2cc.svg" alt='')
+
+    a.github-badge(target='_blank' href="https://github.com/" style='margin-inline:5px' title="本网站源码由Github提供存储仓库")
+      img(src=" https://sourcebucket.s3.ladydaily.com/badge/Source-Github-d021d6.svg" alt='')
+```
+
+2.将以下代码复制到自定义的custom.css中，其中颜色、圆角等可以根据你自己的喜好进行修改:
+``` CSS
+/* tzy页脚样式 */
+#ft {
+  max-width: 1200px;
+  margin: 0 auto 12px;
+  display: flex;
+  color: rgb(255 255 255 / 80%) !important;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.ft-item-1,
+.ft-item-2 {
+  display: flex;
+  height: 100%;
+  padding: 2px 14px;
+}
+
+.ft-item-1 {
+  flex-direction: column;
+  flex: 2;
+}
+
+.ft-item-2 {
+  flex: 1;
+  flex-direction: column;
+}
+
+.t-top {
+  display: flex;
+}
+
+.t-top .t-t-l {
+  display: flex;
+  flex-direction: column;
+  flex: 1.4;
+  margin-right: 10px;
+}
+
+.t-top .t-t-l .bg-ad {
+  width: 85%;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.btn-xz-box {
+  margin-top: 10px;
+}
+
+/* 按钮背景颜色等 */
+.btn-xz {
+  display: block;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  text-align: center;
+  line-height: 2.4;
+  margin: 8px 0;
+}
+
+.btn-xz:hover {
+  text-decoration: none !important;
+}
+/* 按钮悬浮颜色 */
+.btn-xz-box:hover .btn-xz {
+  background-color: var(--text-bg-hover);
+}
+
+.t-top .t-t-r {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ft-links {
+  padding: 0 14px;
+  list-style: none;
+  margin-top: 0 !important;
+}
+
+.ft-links li a {
+  display: inline-block !important;
+  width: 50%;
+}
+/* 链接悬浮颜色 */
+.ft-links li a:hover {
+  text-decoration: none !important;
+  color: var(--theme-color) !important;
+}
+
+.ft-item-2 .ft-img-group {
+  width: 100%;
+}
+
+.ft-t {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.t-l-t {
+  padding-left: 14px;
+}
+
+.ft-item-2 .ft-img-group .img-group-item {
+  display: inline-block;
+  width: 18.4%;
+  margin-right: 14px;
+  margin-bottom: 6px;
+}
+
+.ft-item-2 .ft-img-group .img-group-item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.ft-item-2 .ft-img-group .img-group-item a img {
+  width: 100%;
+  max-height: 80px;
+  border-radius: 10px;
+}
+/* 头像悬浮颜色框 */
+.ft-item-2 .ft-img-group .img-group-item a img:hover {
+  border: 2px solid var(--theme-color);
+}
+
+@media screen and (max-width: 768px) {
+  .ft-item-1 {
+    flex-basis: 100% !important;
+  }
+
+  .ft-item-2 {
+    flex-basis: 100% !important;
+  }
+
+  .t-top .t-t-l .bg-ad {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .t-top {
+    flex-wrap: wrap;
+  }
+
+  .t-top .t-t-l {
+    flex-basis: 100% !important;
+  }
+
+  .t-top .t-t-r {
+    margin-top: 16px;
+    flex-basis: 100% !important;
+  }
+}
+#footer-wrap a {
+  border-radius: 30px;
+}
+#footer-wrap {
+  padding: 20px 20px;
+}
+
+/* 页脚心跳动画 */
+#heartbeat {
+  color: red;
+  animation: iconAnimate 1s ease-in-out infinite;
+}
+@-moz-keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+@-webkit-keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+@-o-keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+@keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+
+```
+
+3.然后计时器还要往#footer-wrap这块元素上面写入网站运行时间等信息，新建文件[BlogRoot]\source\js\runtime.js，写入如下代码。这里要修改的几块东西是：网站诞生时间、currentTimeHtml这块东西；其中currentTimeHtml分为了两种模式，对应两个不同的图标，自行研究一下就懂！
+``` JS
+var now = new Date();
+function createtime() {
+  // 当前时间
+  now.setTime(now.getTime() + 1000);
+  var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
+  var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
+  var unit = (dis / 149600000).toFixed(6);  // 天文单位
+  var grt = new Date("08/09/2022 00:00:00");	// 网站诞生时间
+  var days = (now - grt) / 1e3 / 60 / 60 / 24,
+    dnum = Math.floor(days),
+    hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,
+    hnum = Math.floor(hours);
+  1 == String(hnum).length && (hnum = "0" + hnum);
+  var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
+    mnum = Math.floor(minutes);
+  1 == String(mnum).length && (mnum = "0" + mnum);
+  var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
+    snum = Math.round(seconds);
+  1 == String(snum).length && (snum = "0" + snum);
+  let currentTimeHtml = "";
+  (currentTimeHtml =
+    hnum < 18 && hnum >= 9
+    ? `<img class='boardsign' src='https://sourcebucket.s3.ladydaily.com/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
+    : `<img class='boardsign' src='https://sourcebucket.s3.ladydaily.com/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
+    document.getElementById("workboard") &&
+    (document.getElementById("workboard").innerHTML = currentTimeHtml);
+}
+// 设置重复执行函数，周期1000ms
+setInterval(() => {
+  createtime();
+}, 1000);
+```
+4.在主题配置文件_config.butterfly.yml引入该runtime.js文件：
+``` YML
+inject:
+  bottom: 
++    - <script defer src="/js/runtime.js"></script> # 页脚计时器
+```
 
 <!-- endtab -->
 
