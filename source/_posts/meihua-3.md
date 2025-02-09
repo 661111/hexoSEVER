@@ -1874,12 +1874,286 @@ JSON文件可参照以下格式
 <!-- endtab -->
 
 <!-- tab 动态memos -->
-``` YML
+Memos用法：
+``` MARKDOWN
+#说说 {标识符} 我是内容 [我是链接](https://meuicat.com) ![](https://img.meuicat.cn/blog/8.png)
+<!-- 常规写法 -->
 
+#说说 网易云音乐 {music netease 29947420 }
+#说说 腾讯音乐 {music tencent 330977131 }
+<!-- 音乐写法 -->
+
+#说说 普通视频 { player https://v.meuicat.com/video/1.mp4 }
+#说说 哔哩哔哩手机视频 { bilibili https://m.bilibili.com/video/BV17T4y1A7eW }
+#说说 哔哩哔哩网页视频 { bilibili https://www.bilibili.com/video/BV17T4y1A7eW/?spm_id_from=333.1007.tianma.1-3-3.click }
+<!-- 视频写法 -->
+
+#说说 #top
+我是内容 ![我是图片描述](https://img.meuicat.cn/blog/8.png)![](https://img.meuicat.cn/blog/8.png)
+<!-- 置顶写法 -->
 ```
 <!-- endtab -->
 
 {% endtabs %}
+
+**2.即刻Mini**
+新增 [blogRoot]/themes/butterfly/layout/includes/mixins/post-ui.pug 页面内容
+（ + 号直接删除 即是正常缩进）
+``` PUG
+mixin postUI(posts)
+  - let newTitle= newPost()
++  if theme.essay.enable && theme.essay.home_mini
++    include ./essay_mini.pug
+  each article , index in page.posts.data
+    .recent-post-item
+  
+  ···
+```
+创建 [blogRoot]/themes/butterfly/layout/includes/mixins/essay_mini.pug 页面，并新增以下内容
+（注意该内容中 fontawesome 图标 需要自行替换）
+``` PUG
+.essay-mini
+    i.iconfont.icat-essay-mini(onclick=`pjax.loadUrl('${theme.essay.home_mini_link}')` title="即刻短文" style="font-size: 2.25rem; margin-right: 1rem")
+    .swiper-container.swiper-no-swiping#Essay(tabindex="-1" onclick=`pjax.loadUrl('${theme.essay.home_mini_link}')`)
+        .swiper-wrapper#essay-mini
+.essay-mini.wow.animation-slide-in(data-wow-duration="1s" data-wow-delay="200ms" data-wow-offset="100" data-wow-iteration="1")
+    i.iconfont.icat-essay-mini(onclick=`pjax.loadUrl('${theme.essay.home_mini_link}')` title="即刻短文" style="font-size: 2.25rem; margin-right: 1rem")
+    .swiper-container.swiper-no-swiping#Essay(tabindex="-1" onclick=`pjax.loadUrl('${theme.essay.home_mini_link}')`)
+        .swiper-wrapper#essay-mini
+            case theme.essay.mode
+                when 'local'
+                    each item, i in site.data.essay.essay_list.slice(0, 10)
+                        .li-style.swiper-slide
+                            | #{item.content}
+                            if item.image
+                                | 【图片】
+                            else if item.aplayer
+                                | 【音乐】
+                            else if item.video || item.bilibili
+                                | 【视频】
+                when 'json'
+                    .li-style.essay-loading(style="text-align: center") 正在加载...
+                    script.
+                        (async function () {
+                            const response = await fetch('!{url_for(theme.essay.mode_link)}');
+                            const data = await response.json();
+                            const list = data[0].essay_list.slice(0, 10).map(item => {
+                                let type = item.image ? '【图片】' : item.aplayer ? '【音乐】' : item.video ? '【视频】' : '';
+                                return `<div class="li-style swiper-slide">${item.content + type}</div>`
+                            });
+                            document.querySelector('#essay-mini').innerHTML = list.join(' ');
+                        })()
+                when 'memos'
+                    .li-style.essay-loading(style="text-align: center") 正在加载...
+                    script.
+                        (async function () {
+                            const response = await fetch('!{url_for(theme.essay.mode_link)}');
+                            const data = await response.json();
+                            const list = data.slice(0, 10).map(item => {
+                                let data = item.content,
+                                    content = data.replace(/#(.*?)\s|\n/g, '').replace(/\!\[(.*?)\]\((.*?)\)/g, '').replace(/\{(.*?)\}/g, '').replace(/(?<!\!)\[(.*?)\]\((.*?)\)/g, '').trim();
+                                    type = data.match(/\!\[(.*?)\]\((.*?)\)/g) ? '【图片】' : data.match(/{\s*music\s*(.*?)\s*(.*?)\s*}/g) ? '【音乐】' : data.match(/{\s*player\s*(.*)\s*}/g) || data.match(/{\s*bilibili\s*(.*?)\s*}/g) ? '【视频】' : '';
+                                return `<div class="li-style swiper-slide">${content + type}</div>`
+                            });
+                            document.querySelector('#essay-mini').innerHTML = list.join(' ');
+                        })()
+    i.iconfont.icat-right-btn(title="查看全文" onclick=`pjax.loadUrl('${theme.essay.home_mini_link}')` style="margin-left: 1rem")
+```
+新建 [blogRoot]/themes/butterfly/source/css/_page/homepage.styl 样式文件内容
+（ + 号直接删除 即是正常缩进）
+``` STYL
++if hexo-config('essay.enable') && hexo-config('essay.home_mini')
++  .essay-mini
++    background: var(--card-bg)
++    color: var(--font-color)
++    padding: 0.5rem 1rem
++    border-radius: 8px
++    box-shadow: var(--icat-shadow-border)
++    display: flex
++    border: var(--style-border)
++    align-items: center
++    height: 50px
++    animation: slide-in 0.6s 0.4s backwards
++    will-change: transform
++    transition: .6s
++
++    &:hover
++      border: var(--style-border-hover-always)
++
++    #Essay
++      overflow: hidden
++      width: 100%
++      overflow: hidden
++      text-overflow: ellipsis
++      white-space: nowrap
++
++      #essay-mini
++        width: 100%
++        height: 25px
++        line-height: 25px
++        display: flex
++        flex-direction: column
++
++      .li-style
++        width: auto
++        max-width: 100%
++        height: 25px
++        text-align: center
++        overflow: hidden
++        text-overflow: ellipsis
++        font-weight: 700
++        margin: auto
++        cursor: pointer
++        white-space: nowrap
++        user-select: none
++
++    i, .li-style
++      transition: .6s
++      cursor: pointer
++
++      &:hover
++        color: var(--icat-blue)
+
+#recent-posts
+  & > .recent-post-item:not(:first-child)
+
+  ···
+```
+{% folding cyan, 可选CSS样式 %}
+
+新增 [blogRoot]/source/css/essay.css 样式文件内容
+（也可以在自建的css文件里新增内容）
+``` CSS
+.essay-mini {
+  background: var(--card-bg);
+  color: var(--font-color);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  -webkit-box-shadow: var(--icat-shadow-border);
+  box-shadow: var(--icat-shadow-border);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  border: var(--style-border);
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 50px;
+  -webkit-animation: slide-in 0.6s 0.4s backwards;
+  -moz-animation: slide-in 0.6s 0.4s backwards;
+  -o-animation: slide-in 0.6s 0.4s backwards;
+  -ms-animation: slide-in 0.6s 0.4s backwards;
+  animation: slide-in 0.6s 0.4s backwards;
+  will-change: transform;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  -ms-transition: 0.6s;
+  transition: 0.6s;
+}
+.essay-mini:hover {
+  border: var(--style-border-hover-always);
+}
+.essay-mini #Essay {
+  overflow: hidden;
+  width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.essay-mini #Essay #essay-mini {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.essay-mini #Essay .li-style {
+  width: auto;
+  max-width: 100%;
+  height: 25px;
+  text-align: center;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  margin: auto;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.essay-mini i,
+.essay-mini .li-style {
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  -ms-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+.essay-mini i:hover,
+.essay-mini .li-style:hover {
+  color: var(--icat-blue);
+}
+
+/* 即刻mini样式 */
+```
+{% endfolding %}
+新增 [blogRoot]/source/js/essay.js 文件内容
+（或写在自建的公共 js 中也可以）
+``` JS
+function whenDOMReady() {
+	initEssay();
+};
+
+whenDOMReady()
+document.addEventListener("pjax:complete", whenDOMReady)
+
+function initEssay() {
+  if (document.querySelector('#essay-mini')) {
+    let swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            pauseOnMouseEnter: true
+        },
+    });
+  }
+} // Swiper轮播 - 即刻mini
+```
+在 _config.butterfly.yml 主题配置文件中 inject 下的 bottom 引入 essay.js 和 waterfall.js
+``` YML
+  ···
+
+inject:
+  head:
+    - ···
+  bottom:
+    - <script src="https://cdn.staticfile.net/Swiper/10.3.1/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
+
+  ···
+```
 <!-- endtab -->
 
 <!-- tab 随风起（即刻短文） -->
