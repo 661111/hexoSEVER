@@ -213,3 +213,15 @@
   }
   
   /* 即刻mini样式 */
+
+/* 即刻mini样式优化 */
+.essay-mini {
+    width: 1300px;
+    margin: auto;
+}
+@media screen and (max-width: 768px) {
+    .essay-mini {
+        padding: 0;
+        margin: 0;
+    }
+}
