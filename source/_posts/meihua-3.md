@@ -489,6 +489,1396 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 注意：本章节没有bbtalk，artitalk和ispeak（配置麻烦），因为教程方案有些老需要额外修改配置
 {% tabs 部署方式 %}
 <!-- tab icat部署（即刻短文和memos） -->
+**一.功能对比**
+
+**todolist**  |	**本地yml**     | ***动态JSON**  |	**动态Memos**
+--------------|------------|------------|-----------------------------
+**瀑布流**	   | ✔️支持支持 |	✔️支持    |	✔️支持
+**图片灯箱**	 | ✔️支持支持 |	✔️支持    |	✔️支持
+**多图显示**	 | ✔️支持支持 |	✔️支持    |	✔️支持
+**外部链接**	 | ✔️支持支持 |	✔️支持    |	✔️支持
+**自定标识**	 | ✔️支持     |	✔️支持    |	✔️支持
+**快速评论**	 | ✔️支持     |✔️支持    |	✔️支持
+**音乐模块**	 | ✔️支持     |✔️支持    |	✔️支持
+**视频模块**	 | ✔️支持     |✔️支持    |	✔️支持
+**说说置顶**	 | ✔️支持     |✔️支持    |	✔️支持
+
+**二.部署历程**
+**1.创建数据**
+创建 [blogRoot]/source/essay/index.md 页面，配置以下内容：
+``` MARKDOWN
+---
+title: 即刻短文
+date: 2023-01-17 13:38:17
+type: essay
+top_img: false
+aside: false
+top_page: true
+top_bg: https://img.meuicat.com/banner
+top_item: 即刻短文
+top_title: 封の碎碎念
+top_tips: 使用 即刻短文动态部署版 构建
+top_link: /about/
+top_text: 关于博主
+---
+创建 [blogRoot]/themes/butterfly/layout/includes/page/essay.pug 页面文件，并新增以下内容:
+``` PUG
+#icat-bber
+    section.icat-page
+        case theme.essay.mode
+            when 'local'
+                include ./essay/local.pug
+            when 'json'
+                include ./essay/json.pug
+            when 'memos'
+                include ./essay/memos.pug
+```
+创建 [blogRoot]/themes/butterfly/layout/includes/page/essay/local.pug 页面文件，并新增以下内容
+（注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
+``` PUG
+mixin renderArticle(item)
+    .icat-bber-item
+        .icat-bber-content
+            if item.content
+                p.datacont=item.content
+            if item.image
+                .icat-bber-image
+                    each iten, indey in item.image
+                        .imgbox
+                            - let image = item.image[indey].split('||')
+                            img(src=image[0] alt=image[1] ? image[1] : '' title=image[1] ? '' : '即刻短文配图' )
+            if item.video
+                .icat-bber-video
+                    if item.video.bilibili
+                        - let autoplay = item.video.autoplay ? '&autoplay=1' : '&autoplay=0'
+                        - let biliurl = '//player.bilibili.com/player.html?bvid=' + item.video.bilibili.match(/(BV\w+)/)[1] + autoplay
+                        iframe(src=biliurl scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true")
+                    else if item.video.player
+                        video(src=item.video.player controls="controls" style="object-fit: cover;")
+            if item.aplayer
+                .icat-bber-music
+                    meting-js(id=item.aplayer.id server=item.aplayer.server type="song" preload="none" autoplay="false" mutex="true" theme='var(--icat-blue)')
+        hr
+        .icat-bber-bottom
+            .icat-bber-info
+                .icat-bber-info-time
+                    i.iconfont.icat-time-fill
+                    time.datatime(datetime=item.date)= 'Loading'
+                if item.from
+                    .icat-bber-info-from
+                        span=item.from
+                if item.link
+                    - let link = item.link.split('||')
+                    a.icat-bber-content-link(target="_blank" href=link[0] title=link[1] ? link[1] : '跳转到短文指引的链接')
+                        i.iconfont.icat-jump-link
+                        | 链接
+                if item.top
+                    .icat-bber-info-top
+                        i.iconfont.icat-thumbtack
+                        | 置顶
+            if item.content
+                .icat-bber-reply(onclick="commentText(" + `'${item.content}'` + ")")
+                    i.iconfont.icat-message
+
+#waterfall.list
+    if theme.essay.strip === -1
+        - var limitedList = site.data.essay.essay_list
+    else
+        - var limitedList = site.data.essay.essay_list.slice(0, theme.essay.strip)
+
+    - var topArticles = site.data.essay.essay_list.filter(item => item.top === true)
+    each item in topArticles
+        +renderArticle(item)
+
+    each item in limitedList.filter(item => !item.top)
+        +renderArticle(item)
+
+#icat-bber-tips
+    if theme.essay.strip === -1 || Math.abs(theme.essay.strip) >= site.data.essay.essay_list.length
+        | - 已展开所有短文 -
+    else
+        | - 只展示最近 #{theme.essay.strip} 条短文 -
+```
+建 [blogRoot]/themes/butterfly/layout/includes/page/essay/json.pug 页面文件，并新增以下内容
+（注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
+``` PUG
+#waterfall.list
+    .icat-bber-loading
+        img(src="https://img.meuicat.com/blog/loading.svg")
+    script.
+        (async function () {
+            const response = await fetch('!{url_for(theme.essay.mode_link)}');
+            const data = await response.json();
+            const strip = !{theme.essay.strip};
+            let items = [],
+                topitem = [],
+                essayTips = '';
+
+            const processedData = await Promise.all(data[0].essay_list.map(async (item) => {
+                const formatdata = await essayFormat(item);
+                if (!formatdata) return null;
+                if (item.top) {
+                    topitem.push(formatdata);
+                } else {
+                    items.push(formatdata);
+                }
+                return formatdata;
+            }));
+
+            essayTips = strip === -1 || strip >= items.length ? `<div id="icat-bber-tips">- 已展开所有短文 -</div>` : (items = items.slice(0, strip), `<div id="icat-bber-tips">- 只展示最近 ${strip} 条短文 -</div>`);
+
+            document.getElementsByClassName('list')[0].innerHTML = topitem.concat(items).filter(item => item !== null).join('');
+            document.querySelector(".icat-page").insertAdjacentHTML("beforeend", essayTips);
+        })();
+        async function essayFormat(item) {
+            let image = '',
+                video = '',
+                type = '';
+
+            if (item.image) item.image.map(e => image += `<div class="imgbox"><img src="${e.split(' || ')[0]}" ${e.split(' || ').length > 1 ? `alt='${e.split(' || ')[1]}'` : `title="即刻短文配图"`} /></div>`).join('');
+            let aplayer = item.aplayer ? `<div class="icat-bber-music"><meting-js server="${item.aplayer.server}" type="song" id="${item.aplayer.id}" mutex="true" preload="none" theme="var(--icat-blue)" data-lrctype="0"></meting-js></div>` : '';
+            if (item.video) video = item.video.player ? `<div class="icat-bber-video"><video src="${item.video.player}" controls="controls" style="object-fit: cover;"></video></div>` : item.video.bilibili ? `<div class="icat-bber-video"><iframe src="//player.bilibili.com/player.html?bvid=${item.video.bilibili.match(/(BV\w+)/)[1]}${item.video.autoplay ? '&autoplay=1' : '&autoplay=0'}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : '';
+            let link = item.link ? ((type = item.link.split(' || ')), `<a class="icat-bber-content-link" href='${type[0].startsWith('/') ? type[0] : (type[0].startsWith('http') ? type[0] : 'https://' + type[0])}' title="${type.length > 1 ? type[1] : '跳转到短文指引的链接' }" target="_blank"><i class="iconfont icat-jump-link"></i>链接</a>`) : '';
+            
+            return `
+                <div class="icat-bber-item">
+                    <div class="icat-bber-content">
+                        ${item.content ? `<p class="datacont">${item.content}</p>` : ''}
+                        ${image ? `<div class="icat-bber-image">${image}</div>` : ''}
+                        ${aplayer}
+                        ${video}
+                    </div>
+                    <hr>
+                    <div class="icat-bber-bottom">
+                        <div class="icat-bber-info">
+                            <div class="icat-bber-info-time">
+                                <i class="iconfont icat-time-fill"></i>
+                                <time class="datatime" datetime="${item.date}"></time>
+                            </div>
+                            ${link}
+                            ${item.from ? `<div class="icat-bber-info-from"><span>${item.from}</span></div>` : ''}
+                            ${item.top ? `<div class="icat-bber-info-top"><i class="iconfont icat-thumbtack"></i>置顶</div>` : ''}
+                        </div>
+                        ${item.content ? `<div class="icat-bber-reply" onclick="commentText('${item.content}')"><i class="iconfont icat-message"></i></div>` : ''}
+                    </div>
+                </div>`;
+        }
+```
+创建 [blogRoot]/themes/butterfly/layout/includes/page/essay/memos.pug 页面文件，并新增以下内容
+（注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
+``` PUG
+#waterfall.list
+    .icat-bber-loading
+        img(src="https://img.meuicat.com/blog/loading.svg")
+    script.
+        (async function () {
+            let url = '!{url_for(theme.essay.mode_link)}';
+            const baseUrl = url.substring(0, url.indexOf("/", url.indexOf("//") + 2));
+            const response = await fetch(url);
+            const data = await response.json();
+            const strip = !{theme.essay.strip};
+            let items = [],
+                topitem = [],
+                essayTips = '';
+
+            const processedData = await Promise.all(data.map(async (item) => {
+                const formatdata = await essayFormat(item,baseUrl);
+                if (!formatdata) return null;
+                if (item.content.includes('#top')) {
+                    topitem.push(formatdata);
+                } else {
+                    items.push(formatdata);
+                }
+                return formatdata;
+            }));
+
+            essayTips = strip === -1 || strip >= items.length ? `<div id="icat-bber-tips">- 已展开所有短文 -</div>` : (items = items.slice(0, strip), `<div id="icat-bber-tips">- 只展示最近 ${strip} 条短文 -</div>`);
+
+            document.getElementsByClassName('list')[0].innerHTML = topitem.concat(items).filter(item => item !== null).join('');
+            document.querySelector(".icat-page").insertAdjacentHTML("beforeend", essayTips);
+        })();
+        async function essayFormat(item,baseUrl) {
+            const contentRegex = /#(.*?)\s|\n/g,
+                imageRegex = /\!\[(.*?)\]\((.*?)\)/g,
+                playerRegex = /{\s*player\s*(.*)\s*}/g,
+                linkRegex = /(?<!\!)\[(.*?)\]\((.*?)\)/g,
+                topRegex = /#top/g,
+                fromRegex = /(?<![\w\/])(?<!\{)\{([^{}\s]+)\}(?!\})(?![\w\/])/g;
+            let time = new Date((item.createdTs - (new Date().getTimezoneOffset() * 60)) * 1000).toISOString(),
+                content = item.content,
+                image = '',
+                img = content.match(imageRegex);
+                aplayer = content.match(/{\s*music\s*(.*?)\s*(.*?)\s*}/g),
+                video = content.match(playerRegex),
+                link = content.match(linkRegex),
+                type = '',
+                from = content.match(fromRegex);
+            
+            if (item.resourceList.length) {
+                if (!img) img = [];  
+                item.resourceList.forEach(e => {
+                    if (e.externalLink) img.push(e.externalLink);
+                    else img.push(`${baseUrl}/o/r/${e.uid}`);
+                });
+            }
+            if (img) image += img.map(e => `<div class="imgbox"><img src="${e.replace(imageRegex, '$2')}" ${e.replace(imageRegex, '$1') ? `alt="${e.replace(imageRegex, '$1')}"` : `title="即刻短文配图"`} /></div>`).join('');
+            aplayer = aplayer ? `<div class="icat-bber-music"><meting-js server="${aplayer[0].match(/\{\s*music\s*(.*?)\s*\d+\s*\}/)[1]}" type="song" id="${aplayer[0].match(/\d+/)[0]}" mutex="true" preload="none" theme="var(--icat-blue)" data-lrctype="0"></meting-js></div>` : '';
+            video = video ? `<div class="icat-bber-video"><video src="${video[0].replace(playerRegex, '$1').trim()}" controls="controls" style="object-fit: cover;"></video></div>` : content.match(/{\s*bilibili\s*(.*?)\s*}/g);
+            video = Array.isArray(video) ? `<div class="icat-bber-video"><iframe src="//player.bilibili.com/player.html?bvid=${video[0].match(/(BV\w+)/)[1]}${video[0].match(/{\s*bilibili\s*(.*?)\s*true\s*}/g) ? '&autoplay=1' : '&autoplay=0'}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : '';
+            link = link ? ((type = link[0].replace(linkRegex, '$2')), `<a class="icat-bber-content-link" href='${type.startsWith('/') ? type : (type.startsWith('http') ? type : 'https://' + type)}' title="${link[0].replace(linkRegex, '$1') ? link[0].replace(linkRegex, '$1') : '跳转到短文指引的链接' }" target="_blank"><i class="iconfont icat-jump-link"></i>链接</a>`) : '';
+            from = from ? `<div class="icat-bber-info-from"><span>${from[0].replace(fromRegex, '$1')}</span></div>` : '';
+            content = content.replace(contentRegex, '').replace(imageRegex, '').replace(/\{(.*?)\}/g, '').replace(linkRegex, '').trim();
+
+            return `
+                <div class="icat-bber-item">
+                    <div class="icat-bber-content">
+                        ${content ? `<p class="datacont">${content}</p>` : ''}
+                        ${image ? `<div class="icat-bber-image">${image}</div>` : ''}
+                        ${aplayer}
+                        ${video}
+                    </div>
+                    <hr>
+                    <div class="icat-bber-bottom">
+                        <div class="icat-bber-info">
+                            <div class="icat-bber-info-time">
+                                <i class="iconfont icat-time-fill"></i>
+                                <time class="datatime" datetime="${time}"></time>
+                            </div>
+                            ${link}
+                            ${from}
+                            ${item.content.includes('#top') ? `<div class="icat-bber-info-top"><i class="iconfont icat-thumbtack"></i>置顶</div>` : ''}
+                        </div>
+                        ${content ? `<div class="icat-bber-reply" onclick="commentText('${content}')"><i class="iconfont icat-message"></i></div>` : ''}
+                    </div>
+                </div>`;
+        }
+```
+修改 [blogRoot]/themes/butterfly/layout/page.pug 来使页面匹配
+（ + 号直接删除 即是正常缩进）
+``` PUG
+      when 'categories'
+        include includes/page/categories.pug
++      when 'essay'
++        include includes/page/essay.pug
+      default
+        include includes/page/default-page.pug
+```
+【可选】在 _config.butterfly.yml 主题配置文件中开启站点的 pjax
+``` YML
+# Pjax
+# https://github.com/MoOx/pjax
+# 当用户点击链接，通过ajax更新页面需要变化的部分，然后使用HTML5的pushState修改浏览器的URL地址；这样可以不用重复加载相同的资源（css/js）， 从而提升网页的加载速度
+# 使用pjax后，一些自己DIY的js可能会无效，跳转页面时需要重新调用；使用pjax后，一些个别页面加载的js/css，将会改为所有页面都加载
+# --------------------------------------
+pjax:
+  enable: true
+  exclude:
+    # - xxxx
+    # - xxxx
+```
+新建 [blogRoot]/themes/butterfly/source/css/_page/essay.styl 样式文件，并新增以下内容:
+``` STYL
+#icat-bber
+    margin-top: 1.5rem
+    width: 100%
+
+    .icat-page
+        #waterfall
+            opacity: 0
+            transition: .3s
+
+            &.list
+                display: flex
+                flex-flow: row wrap
+                justify-content: space-between
+
+            &.show
+                opacity: 1
+
+            .icat-bber-item
+                position: relative
+                width: 32%
+                border: var(--style-border)
+                border-radius: 12px
+                padding: 1rem 1rem 0.9rem
+                transition: all 0.3s ease 0s
+                display: flex
+                flex-flow: column nowrap
+                justify-content: space-between
+                align-items: flex-start
+                background: var(--icat-card-bg)
+                box-shadow: var(--icat-shadow-border)
+                margin-right: 2%
+                margin-bottom: 1rem
+                animation: slide-in .6s .4s backwards
+
+                +maxWidth1024()
+                    width: 49%
+                    margin-right: 1%
+
+                +maxWidth768()
+                    width: 100%
+                    margin-right: 0px
+                    
+                &:hover
+                    border-color: var(--icat-blue)
+
+                .icat-bber-content
+                    display: flex
+                    flex-flow: wrap
+                    border-radius: 12px
+                    width: 100%
+                    height: 100%
+
+                    p
+                        margin: 0px
+
+                    .datacont
+                        order: 0
+                        font-size: 0.8rem
+                        font-weight: 700
+                        color: var(--icat-fontcolor)
+                        width: 100%
+                        line-height: 1.38
+                        border-radius: 12px
+                        margin-bottom: 0.8rem
+                        display: flex
+                        flex-direction: column
+                        text-align: justify
+                        padding: 0px 8px
+
+                    .icat-bber-image
+                        display: flex
+                        gap: 8px
+                        width: 100%
+                        flex-wrap: wrap
+                        margin-bottom: 10px
+                        padding-left: 8px
+
+                        .imgbox
+                            width: calc(100% / 4 - 8px)
+                            aspect-ratio: 1 / 1
+                            overflow: hidden
+                            border-radius: 6px
+
+                            a
+                                height: 100px
+                                display: flex
+                                position: relative
+
+                                img
+                                    object-fit: cover
+                                    width: 100%
+                                    max-height: 100%
+                                    border-radius: 6px
+                                    animation: slide-in .6s .4s backwards
+
+                    .icat-bber-video
+                        position: relative
+                        padding: 30% 50%
+                        margin-bottom: 10px
+
+                        video,
+                        iframe
+                            position: absolute
+                            width: 100%
+                            height: 100%
+                            left: 0
+                            top: 0
+                            margin: 0
+                            border-radius: 6px
+                            border: var(--style-border)
+
+                    .icat-bber-music
+                        width: 100%
+                        height: 90px
+                        margin: 0 0 0.5rem
+                        border-radius: 8px
+                        overflow: hidden
+                        border: var(--style-border)
+                        background: var(--icat-secondbg)
+
+                hr
+                    display: flex
+                    position: relative
+                    margin: 8px 0px
+                    border: 1px dashed var(--icat-blue)
+                    width: 100%
+                    opacity: 0.4
+
+                .icat-bber-bottom
+                    display: flex
+                    justify-content: space-between
+                    width: 100%
+                    margin-top: 10px
+                    user-select: none
+
+                    .icat-bber-info
+                        display: flex
+
+                        .icat-bber-info-time
+                            color: var(--icat-fontcolor)
+                            font-size: 0.7rem
+                            background-color: var(--icat-gray-op)
+                            padding: 8px
+                            border-radius: 20px
+                            cursor: default
+                            display: flex
+                            align-items: center
+                            padding-right: 12px
+                            line-height: 1
+
+                            i
+                                padding-right: 4px
+
+                        .icat-bber-info-from
+                            @extend .icat-bber-info-time
+                            margin-left: 0.5rem
+
+                            span
+                                margin-left: 0.35rem
+
+                        .icat-bber-content-link
+                            display: flex
+                            margin-left: 0.5rem
+                            font-size: 0.7rem
+                            align-items: center
+                            background-color: rgba(103, 194, 58, 0.13)
+                            color: rgb(103, 194, 58)
+                            padding: 0px 8px
+                            border-radius: 20px
+                            padding-right: 10px
+                            line-height: 1
+
+                            i
+                                margin-right: 4px
+
+                            &:hover
+                                background-color: var(--icat-blue)
+                                color: var(--icat-white)
+
+                        .icat-bber-info-top
+                            background-color: rgba(245, 108, 108, 0.13)
+                            color: rgb(245, 108, 108)
+                            display: flex
+                            margin-left: 0.5rem
+                            font-size: 0.7rem
+                            align-items: center
+                            padding: 0px 8px
+                            border-radius: 20px
+                            padding-right: 10px
+                            line-height: 1
+
+                            i
+                                margin-right: 4px
+                                font-size: 14px
+                                transform: rotateZ(35deg)
+
+                    .icat-bber-reply
+                        cursor: pointer
+                        transition: .6s
+
+                        &:hover
+                            color: var(--icat-blue)
+
+        #icat-bber-tips
+            font-size: 14px
+            display: flex
+            justify-content: center
+            margin-bottom: 2rem
+            color: var(--icat-secondtext)
+    
+    .icat-bber-loading
+        position: revert !important
+        margin: 0 auto
+
+    .aplayer
+        margin: 0
+
+        &.aplayer-withlrc
+            .aplayer-pic
+                height: 82px
+                width: 82px
+                margin: 3px
+                border-radius: 4px
+
+            .aplayer-info
+                margin-left: 84px
+                padding: 5px 7px 0
+
+                .aplayer-music
+                    height: 23px
+                    text-align: center
+
+                    .aplayer-title
+                        font-size: 0.8rem
+                        font-weight: 700
+                        margin: 0
+                        color: var(--icat-fontcolor)
+
+                .aplayer-controller
+                    align-items: center
+
+                    .aplayer-bar-wrap
+                        padding: 0
+
+                        .aplayer-bar
+                            background: var(--icat-gray)
+                            height: 8px
+                            border-radius: 12px
+                            transition: 0.3s
+                            overflow: hidden
+
+                            .aplayer-loaded
+                                height: 100%
+                                border-radius: 12px
+
+                            .aplayer-played
+                                height: 100%
+                                border-radius: 12px
+
+                                .aplayer-thumb
+                                    display: none
+
+                    .aplayer-time
+                        position: initial
+
+        .aplayer-lrc
+            height: 36px
+            margin: -12px 0 3px
+
+            &::after
+                height: 20%
+            &::before
+                height: 4%
+
+            p
+                color: var(--icat-fontcolor)
+
+[data-theme='dark']
+    #icat-bber
+        .icat-page
+            #waterfall
+                .icat-bber-item
+                    hr
+                        opacity: 0.2
+            
+            .icat-bber-music .aplayer,
+            .aplayer .aplayer-lrc:before,
+            .aplayer .aplayer-lrc:after
+                background: var(--icat-card-bg)
+                color: var(--icat-fontcolor)
+```
+{% folding cyan, 可选CSS样式 %}
+新建 [blogRoot]/source/css/essay.css 样式文件，并新增以下内容
+（也可以在自建的css文件里新增内容）
+``` CSS
+#icat-bber {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+#icat-bber .icat-page #waterfall {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+#icat-bber .icat-page #waterfall.list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+#icat-bber .icat-page #waterfall.show {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item {
+  position: relative;
+  width: 32%;
+  border: var(--style-border);
+  border-radius: 12px;
+  padding: 1rem 1rem 0.9rem;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -o-box-lines: single;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  background: var(--icat-card-bg);
+  -webkit-box-shadow: var(--icat-shadow-border);
+  box-shadow: var(--icat-shadow-border);
+  margin-right: 2%;
+  margin-bottom: 1rem;
+  -webkit-animation: slide-in 0.6s 0.4s backwards;
+  -moz-animation: slide-in 0.6s 0.4s backwards;
+  -o-animation: slide-in 0.6s 0.4s backwards;
+  -ms-animation: slide-in 0.6s 0.4s backwards;
+  animation: slide-in 0.6s 0.4s backwards;
+}
+@media screen and (max-width: 1024px) {
+  #icat-bber .icat-page #waterfall .icat-bber-item {
+    width: 49%;
+    margin-right: 1%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #icat-bber .icat-page #waterfall .icat-bber-item {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+#icat-bber .icat-page #waterfall .icat-bber-item:hover {
+  border-color: var(--icat-blue);
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content p {
+  margin: 0px;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .datacont {
+  -webkit-box-ordinal-group: 0;
+  -moz-box-ordinal-group: 0;
+  -o-box-ordinal-group: 0;
+  -ms-flex-order: 0;
+  -webkit-order: 0;
+  order: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--icat-fontcolor);
+  width: 100%;
+  line-height: 1.38;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: justify;
+  padding: 0px 8px;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-image {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-left: 8px;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-image .imgbox {
+  width: calc(100% / 4 - 8px);
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-image .imgbox a {
+  height: 100px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  position: relative;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-image .imgbox a img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+  -webkit-animation: slide-in 0.6s 0.4s backwards;
+  -moz-animation: slide-in 0.6s 0.4s backwards;
+  -o-animation: slide-in 0.6s 0.4s backwards;
+  -ms-animation: slide-in 0.6s 0.4s backwards;
+  animation: slide-in 0.6s 0.4s backwards;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-video {
+  position: relative;
+  padding: 30% 50%;
+  margin-bottom: 10px;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-video video,
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  border-radius: 6px;
+  border: var(--style-border);
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-music {
+  width: 100%;
+  height: 90px;
+  margin: 0 0 0.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: var(--style-border);
+  background: var(--icat-secondbg);
+}
+#icat-bber .icat-page #waterfall .icat-bber-item hr {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  position: relative;
+  margin: 8px 0px;
+  border: 1px dashed var(--icat-blue);
+  width: 100%;
+  opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-info-time,
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-info-from {
+  color: var(--icat-fontcolor);
+  font-size: 0.7rem;
+  background-color: var(--icat-gray-op);
+  padding: 8px;
+  border-radius: 20px;
+  cursor: default;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding-right: 12px;
+  line-height: 1;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-info-time i,
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-info-from i {
+  padding-right: 4px;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-info-from {
+  margin-left: 0.5rem;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-info-from span {
+  margin-left: 0.35rem;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-content-link {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: rgba(103,194,58,0.13);
+  color: #67c23a;
+  padding: 0px 8px;
+  border-radius: 20px;
+  padding-right: 10px;
+  line-height: 1;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-content-link i {
+  margin-right: 4px;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-content-link:hover {
+  background-color: var(--icat-blue);
+  color: var(--icat-white);
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-info-top {
+  background-color: rgba(245,108,108,0.13);
+  color: #f56c6c;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0px 8px;
+  border-radius: 20px;
+  padding-right: 10px;
+  line-height: 1;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-info .icat-bber-info-top i {
+  margin-right: 4px;
+  font-size: 14px;
+  -webkit-transform: rotateZ(35deg);
+  -moz-transform: rotateZ(35deg);
+  -o-transform: rotateZ(35deg);
+  -ms-transform: rotateZ(35deg);
+  transform: rotateZ(35deg);
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-reply {
+  cursor: pointer;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  -ms-transition: 0.6s;
+  transition: 0.6s;
+}
+#icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-bottom .icat-bber-reply:hover {
+  color: var(--icat-blue);
+}
+#icat-bber .icat-page #icat-bber-tips {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--icat-secondtext);
+}
+#icat-bber .icat-bber-loading {
+  position: revert !important;
+  margin: 0 auto;
+}
+#icat-bber .aplayer {
+  margin: 0;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-pic {
+  height: 82px;
+  width: 82px;
+  margin: 3px;
+  border-radius: 4px;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info {
+  margin-left: 84px;
+  padding: 5px 7px 0;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-music {
+  height: 23px;
+  text-align: center;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-music .aplayer-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--icat-fontcolor);
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-controller {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+  padding: 0;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
+  background: var(--icat-gray);
+  height: 8px;
+  border-radius: 12px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded {
+  height: 100%;
+  border-radius: 12px;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
+  height: 100%;
+  border-radius: 12px;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
+  display: none;
+}
+#icat-bber .aplayer.aplayer-withlrc .aplayer-info .aplayer-controller .aplayer-time {
+  position: initial;
+}
+#icat-bber .aplayer .aplayer-lrc {
+  height: 36px;
+  margin: -12px 0 3px;
+}
+#icat-bber .aplayer .aplayer-lrc::after {
+  height: 20%;
+}
+#icat-bber .aplayer .aplayer-lrc::before {
+  height: 4%;
+}
+#icat-bber .aplayer .aplayer-lrc p {
+  color: var(--icat-fontcolor);
+}
+[data-theme='dark'] #icat-bber .icat-page #waterfall .icat-bber-item hr {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+[data-theme='dark'] #icat-bber .icat-page .icat-bber-music .aplayer,
+[data-theme='dark'] #icat-bber .icat-page .aplayer .aplayer-lrc:before,
+[data-theme='dark'] #icat-bber .icat-page .aplayer .aplayer-lrc:after {
+  background: var(--icat-card-bg);
+  color: var(--icat-fontcolor);
+}
+
+/* 即刻短文样式 */
+```
+在 _config.butterfly.yml 主题配置文件中 inject 下的 head 引入 essay.css 样式文件:
+``` YML
+  ···
+
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/essay.css"> # 即刻短文样式
+  bottom:
+    - ···
+
+  ···
+```
+{% endfolding %}
+创建 [blogRoot]/source/js/essay.js 文件，并新增以下内容，用来处理即刻短文的逻辑
+（或写在自建的公共 js 中也可以）
+``` JS
+function whenDOMReady() {
+  if (location.pathname == '/essay/') document.addEventListener('DOMContentLoaded', function () {setTimeout(() => { changeTime(), btf.loadLightbox(document.querySelectorAll('#icat-bber img')), window.lazyLoadInstance && window.lazyLoadInstance.update(), reflashWaterFall();}, 300)})
+}
+whenDOMReady()
+document.addEventListener("pjax:complete", whenDOMReady)
+
+// 适配pjax
+
+window.onresize = () => {
+  waterfall('#waterfall');
+};
+
+// 自适应
+
+function timeDiff(timeObj, today) => {
+  const timeObjUTC = Date.UTC(timeObj.getFullYear(), timeObj.getMonth(), timeObj.getDate());
+  const todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+
+  const timeDiff = todayUTC - timeObjUTC;
+  return Math.floor(timeDiff / (1000 * 3600 * 24));
+}
+function changeTime() {
+  const timeElements = Array.from(document.getElementsByTagName("time"));
+  const currentDate = new Date();
+
+  timeElements.forEach(timeElement => {
+    const datetime = timeElement.getAttribute("datetime");
+    const timeObj = new Date(datetime);
+    const daysDiff = timeDiff(timeObj, currentDate);
+
+    let timeString;
+    if (daysDiff === 0) {
+      timeString = `最近`;
+    } else if (daysDiff === 1) {
+      timeString = `昨天`;
+    } else if (daysDiff === 2) {
+      timeString = `前天`;
+    } else if (daysDiff <= 7) {
+      timeString = `${daysDiff}天前`;
+    } else {
+      if (timeObj.getFullYear() !== currentDate.getFullYear()) {
+        timeString = `${timeObj.getFullYear()}/${timeObj.getMonth() + 1}/${timeObj.getDate()}`;
+      } else {
+        timeString = `${timeObj.getMonth() + 1}/${timeObj.getDate()}`;
+      }
+    }
+    timeElement.textContent = timeString;
+  });
+}
+function reflashWaterFall() {
+  document.querySelector("#waterfall") &&
+    setTimeout(function() {
+      waterfall("#waterfall");
+      document.getElementById("waterfall")
+        .classList.add("show");
+    }, 500);
+} // 加载显示 - 即刻短文
+function commentText(txt) {
+  const inputs = ["#wl-edit", ".el-textarea__inner"];
+  for (let i = 0; i < inputs.length; i++) {
+    let el = document.querySelector(inputs[i]);
+    if (el != null) {
+      el.dispatchEvent(new Event('input', { bubble: true, cancelable: true }));
+      el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n';
+      el.focus();
+      el.setSelectionRange(-1, -1);
+    }
+  }
+} // 引用评论跳转 - 即刻短文
+```
+创建 [blogRoot]/source/js/waterfall.js 文件，并新增以下内容，用于处理瀑布流
+（或写在公共 js 中也可以）
+``` JS
+function waterfall(a) {
+  function b(a, b) {
+    var c = window.getComputedStyle(b);
+    return parseFloat(c["margin" + a]) || 0;
+  }
+  function c(a) {
+    return a + "px";
+  }
+  function d(a) {
+    return parseFloat(a.style.top);
+  }
+  function e(a) {
+    return parseFloat(a.style.left);
+  }
+  function f(a) {
+    return a.clientWidth;
+  }
+  function g(a) {
+    return a.clientHeight;
+  }
+  function h(a) {
+    return d(a) + g(a) + b("Bottom", a);
+  }
+  function i(a) {
+    return e(a) + f(a) + b("Right", a);
+  }
+  function j(a) {
+    a = a.sort(function (a, b) {
+      return h(a) === h(b) ? e(b) - e(a) : h(b) - h(a);
+    });
+  }
+  function k(b) {
+    f(a) != t && (b.target.removeEventListener(b.type, arguments.callee), waterfall(a));
+  }
+  "string" == typeof a && (a = document.querySelector(a));
+  var l = [].map.call(a.children, function (a) {
+    return (a.style.position = "absolute"), a;
+  });
+  a.style.position = "relative";
+  var m = [];
+  l.length && ((l[0].style.top = "0px"), (l[0].style.left = c(b("Left", l[0]))), m.push(l[0]));
+  for (var n = 1; n < l.length; n++) {
+    var o = l[n - 1],
+      p = l[n],
+      q = i(o) + f(p) <= f(a);
+    if (!q) break;
+    (p.style.top = o.style.top), (p.style.left = c(i(o) + b("Left", p))), m.push(p);
+  }
+  for (; n < l.length; n++) {
+    j(m);
+    var p = l[n],
+      r = m.pop();
+    (p.style.top = c(h(r) + b("Top", p))), (p.style.left = c(e(r))), m.push(p);
+  }
+  j(m);
+  var s = m[0];
+  a.style.height = c(h(s) + b("Bottom", s));
+  var t = f(a);
+  window.addEventListener ? window.addEventListener("resize", k) : (document.body.onresize = k);
+}
+```
+在 _config.butterfly.yml 主题配置文件中 inject 下的 bottom 引入 essay.js 和 waterfall.js
+``` YML
+  ···
+
+inject:
+  head:
+    - ···
+  bottom:
+    - <script async src="/js/waterfall.js"></script> # 瀑布流JS
+    - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
+
+  ···
+```
+在 _config.butterfly.yml 主题配置文件中，新增以下配置项
+``` YML
+# essay 即刻短文
+# MeuiCat设计
+# https://meuicat.com/blog/67/
+# --------------------------------------
+
+essay:
+  enable: true
+  # 即刻短文仅展示前n条
+  # Jike short text only shows the first n
+  strip: 50
+  mode: memos # local：本地静态 / json：动态json / memos：动态Memos
+  mode_link: https://memos.meuicat.com/api/v1/memo?creatorId=1&tag=说说 #动态模式地址
+```
+{% tabs 数据模式 %}
+
+<!-- tab 本地静态 -->
+创建 [blogRoot]/source/_data/essay.yml 文件，并新增以下内容
+``` YML
+essay_list:
+  - content: 即刻短文测试
+    date: 2023/07/31 15:30:50
+    from: iPhone XR
+    video: 
+      player: /video/1.mp4
+
+  - content: 测试bilibili视频
+    date: 2023/07/31 15:30:50
+    video: 
+      bilibili: //player.bilibili.com/player.html?aid=913951276&bvid=BV1RM4y1p75T&cid=1211165267&page=1
+
+  - content: bilibili网页链接
+    date: 2023/07/31 15:30:50
+    video: 
+      bilibili: https://www.bilibili.com/video/BV17T4y1A7eW/?spm_id_from=333.1007.tianma.1-3-3.click
+
+  - content: bilibili单bv号
+    date: 2023/07/31 15:30:50
+    video: 
+      bilibili: BV17T4y1A7eW
+      autoplay: true
+
+  - content: 完噜 还剩一天让我咋准备 😭
+    date: 2023/05/11 20:35:42
+    from: iPhone XR
+    image: 
+      - https://s11.ax1x.com/2023/05/11/p9sKEh8.jpg
+
+  - content: 如果要定义 那就是下班后的日落和在家等我下班的她~
+    date: 2023/05/10 16:16:15
+    aplayer:
+      server: netease
+      id: 1949516216
+    top: true
+
+  - content: Melancholia - 欭 | 一款纯记录写作类Hexo主题 ✍️
+    date: 2023/04/23 22:27:22
+    from: Macbook Pro
+    link: https://github.com/yife68/Hexo-Theme-Melancholia || Melancholia
+
+  - content: 爱看 但还是得吃我一拳
+    date: 2023/04/22 15:10:30
+    from: iPhone XR
+    image: 
+      - https://s11.ax1x.com/2023/05/03/p9JqGXd.jpg
+      - https://s11.ax1x.com/2023/05/03/p9Jq86H.jpg
+
+  - content: iCat 新启程
+    date: 2023/03/24 16:54:25
+    from: iPhone XR
+    link: https://meuicat.com/blog/14/
+    image: 
+      - https://s11.ax1x.com/2023/05/02/p9GosYQ.jpg
+
+  - content: 各种观影史集于一体！人生足迹页诞生咯~
+    date: 2023/02/19 14:50:17
+    from: Macbook Pro
+    link: /collect/ || 链接描述
+```
+<!-- endtab -->
+
+<!-- tab 动态json -->
+JSON文件可参照以下格式
+``` JSON
+[
+   {
+      "class_name": "即刻短文",
+      "essay_list": [
+          {
+            "content": "园长新造型！爱死",
+            "date": "2023/08/01 17:12:30",
+            "video": {
+                "bilibili": "//player.bilibili.com/player.html?aid=701381935&bvid=BV1dm4y1L7vj&cid=1212026428&page=1",
+                "autoplay": true
+            }
+         },
+         {
+            "content": "这辈子都不想完善项目了 😭 两点了 一看才搓完三分之一..",
+            "date": "2023/08/01 02:02:44",
+            "video": {
+                "player": "https://meuicat.com/video/1.mp4"
+            }
+         },
+         {
+            "content": "让我看看是谁在路上都还在敲键盘 噢 原来是我自己啊..",
+            "date": "2023/07/31 15:54:26",
+            "from": "iPhone XR"
+         },
+         {
+            "content": "落班 烧个排骨778~",
+            "date": "2023/07/26 17:55:36",
+            "from": "iPhone XR",
+            "image": [
+               "https://s11.ax1x.com/2023/07/26/pCjWbY4.jpg || 图片描述",
+               "https://s11.ax1x.com/2023/07/26/pCjWqfJ.jpg"
+            ]
+         },
+         {
+            "content": "嘘..听歌..睡觉...",
+            "date": "2023/07/20 00:38:41",
+            "aplayer": {
+               "server": "netease",
+               "id": "1430702919"
+            },
+            "top": true
+         },
+         {
+            "content": "人生应该是一个轴对称的形状，最后失去的，也就是最开始拥有的。现在没人记得你的生日，有好处也有坏处，至少我是这么理解的。但无论是好还是坏，忍一忍，都会很快过去的",
+            "date": "2023/07/19 01:48:36",
+            "from": "iPhone XR",
+            "link": "/blog/64 || 链接描述"
+         },
+         {
+            "content": "用堆AI重绘一下我最爱的头像（图一 👉 图二）",
+            "date": "2023/07/06 16:30:32",
+            "from": "iPhone XR",
+            "link": "/blog/61",
+            "image": [
+               "https://img.meuicat.com/posts/2023/7/10.webp",
+               "https://img.meuicat.com/posts/2023/7/11.webp"
+            ]
+         },
+         {
+            "content": "",
+            "date": "2023/06/30 08:26:22",
+            "aplayer": {
+               "server": "netease",
+               "id": "2009974513"
+            }
+         }
+      ]
+   }
+]
+```
+<!-- endtab -->
+
+<!-- tab 动态memos -->
+``` YML
+
+```
+<!-- endtab -->
+
+{% endtabs %}
 <!-- endtab -->
 
 <!-- tab 随风起（即刻短文） -->
