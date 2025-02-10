@@ -21,10 +21,8 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
         include ./header/index.pug
         if is_home()
           #home_top
-          if theme.jike.enable && theme.jike.home_mini
-            include ./jike_mini.pug
-          if theme.essay.enable && theme.essay.home_mini
-            include ./bbtimelist.pug
+            if theme.essay.enable && theme.essay.home_mini
+              include ./bbtimelist.pug
             include ./hometop.pug
 
         main#content-inner.layout(class=hideAside)
