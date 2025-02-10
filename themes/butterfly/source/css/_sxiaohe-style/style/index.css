@@ -262,6 +262,7 @@
     align-items: center;
     height: 50px;
     width: 100%;
+    margin-top: 0;
   }
   [data-theme="dark"] #bbTimeList {
     background: #000 !important;
