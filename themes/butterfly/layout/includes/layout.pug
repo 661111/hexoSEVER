@@ -20,8 +20,10 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       #body-wrap(class=pageType)
         include ./header/index.pug
         if is_home()
+          if theme.jike.enable && theme.jike.home_mini
+            include ./jike_mini.pug
           if theme.essay.enable && theme.essay.home_mini
-            include ./essay_mini.pug
+            include includes/bbTimeList.pug
         include ./hometop.pug
 
         main#content-inner.layout(class=hideAside)

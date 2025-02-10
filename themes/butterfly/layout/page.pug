@@ -9,6 +9,8 @@ block content
         h1.page-title= page.title
 
     case page.type
+      when 'jike'
+        include includes/page/jike.pug
       when 'essay'
         include includes/page/essay.pug
       when 'about'

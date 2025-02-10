@@ -20,8 +20,8 @@ menu:
 # MeuiCat设计
 # https://meuicat.com/blog/67/
 # --------------------------------------
-essay:
-  enable: true
+jike:
+  enable: false
   # 即刻短文仅展示前n条
   # Jike short text only shows the first n
   strip: 50
@@ -29,6 +29,12 @@ essay:
   mode_link: #动态模式地址
   home_mini: true
   home_mini_link: /essay
+
+## essay 即刻短文
+# --------------------------------------
+essay:
+  enable: true
+  home_mini: true
 
 ## abbrlink config
 abbrlink:

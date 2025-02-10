@@ -1,0 +1,9 @@
+#icat-bber
+    section.icat-page
+        case theme.jike.mode
+            when 'local'
+                include ./jike-custom/local.pug
+            when 'json'
+                include ./jike-custom/json.pug
+            when 'memos'
+                include ./jike-custom/memos.pug
