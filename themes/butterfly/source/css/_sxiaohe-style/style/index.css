@@ -253,7 +253,7 @@
     background: var(--anzhiyu-white);
     color: var(--anzhiyu-fontcolor);
     padding: 0.5rem 1rem;
-    border-radius: 30px;
+    border-radius: 10px;
     box-shadow: var(--anzhiyu-shadow-lightblack);
     display: flex;
     transition: all 0.3s ease 0s;
