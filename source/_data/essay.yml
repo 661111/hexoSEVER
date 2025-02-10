@@ -1,10 +1,11 @@
-essay_list:
-  - content: 目前基本上已经完成了仿照轻笑的博客样式
-    date: 2025-02-04 15:30:50
-    from: 天选4锐龙版
-    image:
-    - /img/screen.avif
+- class_name: 即刻短文
+  essay_list:
+    - content: 目前基本上已经完成了仿照轻笑的博客样式
+      date: 2025-02-04 15:30:50
+      from: 天选4锐龙版
+      image:
+      - /img/screen.avif
 
-  - content: 有新电脑，基本上已经不太想用动态博客，所以最近准备从动态博客迁移到静态博客
-    date: 2025-02-03 15:30:50
-    from: 天选4锐龙版
+    - content: 有新电脑，基本上已经不太想用动态博客，所以最近准备从动态博客迁移到静态博客
+      date: 2025-02-03 15:30:50
+      from: 天选4锐龙版
