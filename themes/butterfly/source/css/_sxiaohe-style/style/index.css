@@ -218,10 +218,19 @@
 .essay-mini {
     width: 1300px;
     margin: auto;
+    border: 2px solid rgba(0, 255, 255, .6);
+    background: rgba(255, 255, 255, .67)
 }
 @media screen and (max-width: 768px) {
     .essay-mini {
         width: auto;
         margin: 0;
+        margin-bottom: 10px
+    }
+}
+@media screen and (max-width: 900px) {
+    .essay-mini {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }

@@ -57,7 +57,6 @@ tag_plugins:
     anima: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
     jquery: https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js #issues标签依赖
     issues: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
-    iconfont: //at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
     carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
     tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
 
@@ -994,7 +993,7 @@ inject:
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
     - <script defer src="/js/bbtalk.js"></script> # 即刻逻辑文件
-    - <script data-pjax src="https://cdn.bootcdn.net/ajax/libs/Swiper/11.0.5/swiper-bundle.js"></script> # Swiper - 轮播动画库
+    - <script data-pjax src="https://cdn.bootcdn.net/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
     - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js" ></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3612150_gkavascgf3n.js" ></script>
