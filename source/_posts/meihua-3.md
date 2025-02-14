@@ -28,7 +28,7 @@ abbrlink: 4222
 > 7.[🥕博客魔改教程总结(四)]()
 > 8.[🍊博客魔改教程总结(五)]()
 
-# 1.友链朋友圈后端部署
+## 1.友链朋友圈后端部署
 由于这个非常复杂所以我这里会给大家分出两个不同的教程，旧朋友圈目前已经暂停维护了，建议可以选择新朋友圈。
 
 {% link Friend-Circle-Lite:轻量友链朋友圈,liushen,https://blog.liushen.fun/posts/4dc716ec/ %}
@@ -200,7 +200,7 @@ url：该友链对应RSS地址
 
 {% endfolding %}
 
-# 2.友链朋友圈前端部署
+## 2.友链朋友圈前端部署
 这个就是前端篇了，前端版本偏多
 
 旧朋友圈：
@@ -483,7 +483,7 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 {% endtabs %}
 {% endfolding %}
 
-# 3.主流说说部署
+## 3.主流说说部署
 
 {% link Butterfly的魔改教程：即刻短文页,亦小封,https://meuicat.com/posts/1cdf15f7.html %}
 {% link 即刻短文（瀑布流）部署方案,安知鱼,https://blog.anheyu.com/posts/3753.html %}
@@ -3307,3 +3307,5 @@ anzhiyu.reflashEssayWaterFall();
 <!-- endtab -->
 {% endtabs %}
 {% endfolding %}
+
+## 4.
