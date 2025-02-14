@@ -40,7 +40,7 @@ abbrlink: 4222
 <!-- endtab -->
 
 <!-- tab 新朋友圈部署(butterfly主题支持) -->
-**部署前的操作**
+## 部署前的操作
 
 在根目录下创建一个js，例如link.js，把文件内容写下去：
 ``` JS
@@ -105,9 +105,9 @@ node link.js
 如果一切正常，在你的网站根目录将会出现一个friend.json文件，这个就是我们需要的json啦！
 哪怕你不需要轻量友圈，我也推荐你使用json格式生成并填入到友链朋友圈的对应配置中，首先，json文件的读取速度比网站快很多，并且不需要解析页面格式，可以更加快捷的实现爬取，其次，json文件有效文本密度大，比直接爬取友链页面更加节省流量。
 
-**部署爬取项目**
+## 部署爬取项目
 
-**一.前置工作**
+### 一.前置工作
 1.Fork 本仓库:
 点击页面右上角的 Fork 按钮，将本仓库复制到你自己的GitHub账号下。
 
@@ -129,7 +129,7 @@ GitHub Actions 已经配置好在仓库的 .github/workflows/*.yml 文件中，�
 5.设置issue格式：
 这个我已经设置好了，你只需要进行自定义即可。
 
-**二.配置选项**
+### 二.配置选项
 
 1.如果需要修改爬虫设置或邮件模板等配置，需要修改仓库中的 config.yaml 文件：
 > 爬虫相关配置(必选)
@@ -213,11 +213,11 @@ url：该友链对应RSS地址
 {% folding cyan, 请查看旧朋友圈教程内容 %}
 {% tabs 部署方式 %}
 <!-- tab zhheo版本 -->
-1.添加朋友圈页面
+## 1.添加朋友圈页面
 ``` CODE
 hexo new page fcircle
 ```
-2.进入[blogroot]/source/fcircle/index.md，添加以下代码
+## 2.进入[blogroot]/source/fcircle/index.md，添加以下代码
 ``` MARKDOWN
 ---
 title: 朋友圈
@@ -244,14 +244,14 @@ date: 2022-10-09 00:38:16
 <!-- endtab -->
 
 <!-- tab 安知鱼版本-->
-**1.安装插件**
+## 1.安装插件
 在博客根目录[Blogroot]下打开终端，运行以下指令（与旧版前端方案不兼容，如有安装旧版请先卸载）：
 ``` BASH
 npm uninstall hexo-butterfly-fcircle --save
 npm uninstall hexo-filter-fcircle --save
 npm install hexo-filter-fcircle-anzhiyu --save
 ```
-**2.添加配置信息**
+## 2.添加配置信息
 在站点配置文件_config.yml或者主题配置文件例如_config.butterfly.yml中添加:
 ``` YML
 # fcircle
@@ -275,7 +275,7 @@ fcircle:
     aside: false
     top_img: false
 ```
-插件参数释义:
+## 3.插件参数释义:
 **参数**                            | **备选值/类型**  |	**释义**
 ------------------------------------|-------------|-------------------------------------------------------------------------------------------------------
 **enable**                          | true/false  |	控制开关
@@ -293,7 +293,7 @@ fcircle:
 **front_matter**                    | object	  |【可选】写法见上文示例，fcircle 页面的 front_matter 配置
 **top_background**                  | URL         |【可选】字符串，页面顶部模块背景图
 
-**3.样式适配**
+## 4.样式适配
 样式适配
 安装完成 ✅ 以后，会发现顶部样式有亿点奇怪, 需要与自己的主题样式进行适配, 可以尝试加入以下自定义 css。
 1.颜色说明: 该项目中 css 使用了 css 变量, 添加变量 css 如下, 您可自行修改。
@@ -400,7 +400,7 @@ fcircle:
   background-color: #f7f9fe !important;
 }
 ```
-**4.顶部图片样式修改**
+## 5.顶部图片样式修改
 可以通过配置项top_background修改
 <!-- endtab -->
 
@@ -489,7 +489,7 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 注意：本章节没有bbtalk，artitalk和ispeak（配置麻烦），因为教程方案有些老需要额外修改配置
 {% tabs 部署方式 %}
 <!-- tab icat部署（即刻短文和memos） -->
-**一.功能对比**
+## 一.功能对比
 
 **todolist**  |	**本地yml**     | ***动态JSON**  |	**动态Memos**
 --------------|------------|------------|-----------------------------
@@ -503,8 +503,9 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 **视频模块**	 | ✔️支持     |✔️支持    |	✔️支持
 **说说置顶**	 | ✔️支持     |✔️支持    |	✔️支持
 
-**二.部署历程**
-**1.创建数据**
+## 二.部署历程
+### 1.创建数据
+#### (1).创建页面配置
 创建 [blogRoot]/source/essay/index.md 页面，配置以下内容：
 ``` MARKDOWN
 ---
@@ -521,6 +522,9 @@ top_tips: 使用 即刻短文动态部署版 构建
 top_link: /about/
 top_text: 关于博主
 ---
+```
+#### (2).新建页面内容
+##### 新建页面选择（在配置文件中进行设置）
 创建 [blogRoot]/themes/butterfly/layout/includes/page/essay.pug 页面文件，并新增以下内容:
 ``` PUG
 #icat-bber
@@ -533,6 +537,7 @@ top_text: 关于博主
             when 'memos'
                 include ./essay/memos.pug
 ```
+##### 新建静态本地
 创建 [blogRoot]/themes/butterfly/layout/includes/page/essay/local.pug 页面文件，并新增以下内容
 （注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
 ``` PUG
@@ -599,7 +604,8 @@ mixin renderArticle(item)
     else
         | - 只展示最近 #{theme.essay.strip} 条短文 -
 ```
-建 [blogRoot]/themes/butterfly/layout/includes/page/essay/json.pug 页面文件，并新增以下内容
+##### 新建动态JSON
+新建 [blogRoot]/themes/butterfly/layout/includes/page/essay/json.pug 页面文件，并新增以下内容
 （注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
 ``` PUG
 #waterfall.list
@@ -664,6 +670,7 @@ mixin renderArticle(item)
                 </div>`;
         }
 ```
+##### 新建MEMOS页面
 创建 [blogRoot]/themes/butterfly/layout/includes/page/essay/memos.pug 页面文件，并新增以下内容
 （注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
 ``` PUG
@@ -753,6 +760,7 @@ mixin renderArticle(item)
                 </div>`;
         }
 ```
+##### 修改页面文件（页面匹配markdown的type）
 修改 [blogRoot]/themes/butterfly/layout/page.pug 来使页面匹配
 （ + 号直接删除 即是正常缩进）
 ``` PUG
@@ -763,6 +771,7 @@ mixin renderArticle(item)
       default
         include includes/page/default-page.pug
 ```
+##### 开启PJAX设置（可选）
 【可选】在 _config.butterfly.yml 主题配置文件中开启站点的 pjax
 ``` YML
 # Pjax
@@ -776,6 +785,7 @@ pjax:
     # - xxxx
     # - xxxx
 ```
+##### 设置样式（styl或者css）
 新建 [blogRoot]/themes/butterfly/source/css/_page/essay.styl 样式文件，并新增以下内容:
 ``` STYL
 #icat-bber
@@ -1552,6 +1562,7 @@ pjax:
 
 /* 即刻短文样式 */
 ```
+##### 添加css样式到配置文件
 在 _config.butterfly.yml 主题配置文件中 inject 下的 head 引入 essay.css 样式文件:
 ``` YML
   ···
@@ -1565,6 +1576,8 @@ inject:
   ···
 ```
 {% endfolding %}
+
+##### 新建js文件
 创建 [blogRoot]/source/js/essay.js 文件，并新增以下内容，用来处理即刻短文的逻辑
 （或写在自建的公共 js 中也可以）
 ``` JS
@@ -1702,6 +1715,7 @@ function waterfall(a) {
   window.addEventListener ? window.addEventListener("resize", k) : (document.body.onresize = k);
 }
 ```
+##### 引入js文件
 在 _config.butterfly.yml 主题配置文件中 inject 下的 bottom 引入 essay.js 和 waterfall.js
 ``` YML
   ···
@@ -1715,6 +1729,7 @@ inject:
 
   ···
 ```
+##### 添加以下配置
 在 _config.butterfly.yml 主题配置文件中，新增以下配置项
 ``` YML
 # essay 即刻短文
@@ -1730,6 +1745,8 @@ essay:
   mode: memos # local：本地静态 / json：动态json / memos：动态Memos
   mode_link: https://memos.meuicat.com/api/v1/memo?creatorId=1&tag=说说 #动态模式地址
 ```
+### 2.创建数据内容
+
 {% tabs 数据模式 %}
 
 <!-- tab 本地静态 -->
@@ -1896,7 +1913,8 @@ Memos用法：
 
 {% endtabs %}
 
-**2.即刻Mini**
+### 3.即刻Mini
+#### (1)创建页面内容
 新增 [blogRoot]/themes/butterfly/layout/includes/mixins/post-ui.pug 页面内容
 （ + 号直接删除 即是正常缩进）
 ``` PUG
@@ -1959,6 +1977,8 @@ mixin postUI(posts)
                         })()
     i.iconfont.icat-right-btn(title="查看全文" onclick=`pjax.loadUrl('${theme.essay.home_mini_link}')` style="margin-left: 1rem")
 ```
+#### (2).新建样式文件
+
 新建 [blogRoot]/themes/butterfly/source/css/_page/homepage.styl 样式文件内容
 （ + 号直接删除 即是正常缩进）
 ``` STYL
@@ -2119,6 +2139,8 @@ mixin postUI(posts)
 /* 即刻mini样式 */
 ```
 {% endfolding %}
+#### (3).新建js文件
+
 新增 [blogRoot]/source/js/essay.js 文件内容
 （或写在自建的公共 js 中也可以）
 ``` JS
@@ -2157,9 +2179,257 @@ inject:
 <!-- endtab -->
 
 <!-- tab 随风起（即刻短文） -->
+## 1.支持类型
+
+**列表**	     | **是否支持**
+---------------|----------------
+**图片**       |	✅
+**链接**       |	✅
+**音乐**       |	✅
+**瀑布流**     |	✅
+**首页滚动**   |	✅
+**位置信息**   |	✅
+
+## 2.创建数据
+
+在source/_data目录下创建essay.yml：
+``` YML
+- class_name: 即刻短文
+  essay_list:
+    - content: 文章推荐卡片教程推出
+      image: https://cdn.bywind.xyz/img/cover/image-20221221154442479.png
+      link: https://blog.bywind.xyz/posts/ab6e072d.html
+      location: 山西
+      date: 2022-12-21
+    - content: 关于本站
+      link: https://blog.bywind.xyz/about/
+      location: 天津
+      date: 2022-12-20
+    - content: 即刻短文头图换成视频，更显动态感
+      date: 2022-12-19 23:07:23
+    - content: 李荣浩的歌还是那么好听，两人配合太棒了！
+      music:
+        server: tencent
+        id: 001wG84E4bOj3V
+      date: 2022-12-19 08:07:23
+```
+## 3.配置参数介绍
+
+**参数**                                     |	**含义**
+---------------------------------------------|---------------------------------------------
+**content**                                  |	即刻短文内容
+**image**                                    |	图片
+**link**                                     |	链接
+**music.server**                             |	音乐服务商（tencentQQ，netease网易云，,kugou酷狗, xiami虾米）
+**music.id**                                 |	音乐id
+**location**                                 |	位置信息
+**date**                                     |	日期
+
+## 4.创建md页面
+创建md页面，在控制台输入hexo new page essay，生成文件在source/essay/index.md
+``` MARKDOWN
+---
+title: 即刻短文
+date: 2022-12-20 22:06:17
+comments: true
+aside: false
+top_img: false
+type: essay
+---
+```
+
+## 5.创建页面文件
+
+在themes/butterfly/layout/includes/page目录下创建essay.pug
+``` PUG
+.author-content.author-content-item.essayPage.single.essayVideo
+    .card-content
+        .author-content-item-tips 即刻短文
+        span.author-content-item-title 分享生活的小确幸
+        .content-bottom
+            .tips 使用 即刻短文静态部署版 构建
+        .banner-button-group
+            a.banner-button(onclick='pjax.loadUrl("/about/")', data-pjax-state)
+                i.fas.fa-circle-chevron-right
+                span.banner-button-text 部署项目
+#bber
+    section.timeline.page-1
+        ul#waterfall.list.show
+            each i in site.data.essay
+                each item, index in i.essay_list
+                    if index < 30
+                        li.item
+                            .bber-content
+                                p.datacont= item.content
+                                    if item.image
+                                        .bber-content-img
+                                            a.fancybox(target='_blank', rel='noopener', href=item.image, data-fancybox='gallery', data-caption)
+                                                img.bber-content-image-self(src=item.image)
+                            if item.music
+                                .bber-music
+                                    meting-js(server=item.music.server, type='song', id=item.music.id, mutex='true', preload='none', theme='var(--bywind-main)', data-lrctype='0')
+                            hr
+                            .bber-bottom
+                                .bber-info
+                                    .bber-info-time
+                                        i.fa-solid.fa-calendar-days
+                                        - var datedata = new Date(item.date).toISOString()
+
+                                        time.datatime(datetime= item.date)= datedata
+                                    if item.link
+                                        a.bber-content-link(href=item.link, target="_blank", rel="external nofollow", title="跳转到短文指引的链接")
+                                            i.fas.fa-link
+                                            | 链接
+                                    - let location = item.location ? item.location : 山西
+                                    .bber-info-address
+                                        i.hnfont.icon-location-fill
+                                        span=location
+                                a.bber-reply(onclick=`rm.rightMenuCommentText('${item.content}')`)
+                                    i.fa-solid.fa-message
+
+#bber-tips(style='color: var(--bywind-secondtext);')
+    | - 只展示最近30条短文 -
+```
+
+## 6.修改Page文件
+
+修改themes/butterfly/layout/page.pug
+
+```PUG
+    case page.type
+      when 'tags'
+        include includes/page/tags.pug
+      when 'link'
+        include includes/page/flink.pug
++      when 'essay'
++        include includes/page/essay.pug
+```
+
+##7.首页即刻（可选）
+
+新建themes/butterfly/layout/includes/bbTimeList.pug
+``` PUG
+#bbTimeList.bbTimeList.container
+    i.bber-logo.iconfont.icon-bblogo(onclick=`pjax.loadUrl("/essay/")`,title="即刻短文",style="font-size: 2rem;")
+    #bbtalk.swiper-container.swiper-no-swiping(tabindex="-1")
+        #bber-talk.swiper-wrapper(onclick=`pjax.loadUrl("/essay/")`)
+            each i in site.data.essay
+                each item, index in i.essay_list
+                    if index < 10
+                        - var contentText = item.content
+                        if item.image
+                            - contentText= item.content + ' [图片]'
+                        else if item.music
+                            - contentText= item.content + ' [音乐]'
+                        .li-style.swiper-slide= contentText
+
+    i.bber-gotobb.fas.fa-arrow-circle-right(onclick=`pjax.loadUrl("/essay/")`,title="查看全文")
+script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',data-pjax='')
+
+```
+
+## 8.首页即刻（可选）
+
+### (1).新建首页轮播内容
+
+新建themes/butterfly/layout/includes/bbTimeList.pug
+
+``` PUG
+#bbTimeList.bbTimeList.container
+    i.bber-logo.iconfont.icon-bblogo(onclick=`pjax.loadUrl("/essay/")`,title="即刻短文",style="font-size: 2rem;")
+    #bbtalk.swiper-container.swiper-no-swiping(tabindex="-1")
+        #bber-talk.swiper-wrapper(onclick=`pjax.loadUrl("/essay/")`)
+            each i in site.data.essay
+                each item, index in i.essay_list
+                    if index < 10
+                        - var contentText = item.content
+                        if item.image
+                            - contentText= item.content + ' [图片]'
+                        else if item.music
+                            - contentText= item.content + ' [音乐]'
+                        .li-style.swiper-slide= contentText
+
+    i.bber-gotobb.fas.fa-arrow-circle-right(onclick=`pjax.loadUrl("/essay/")`,title="查看全文")
+script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',data-pjax='')
+```
+### (2).引入到主页
+
+``` PUG
+block content
+  include ./includes/mixins/post-ui.pug
+  #recent-posts.recent-posts
+    include includes/categoryList.pug
++    include includes/bbTimeList.pug
+    +postUI
+    include includes/pagination.pug
+```
+
+### (3).引入样式文件
+``` YML
+inject:
+  head:
+		- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+		- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/bb/showbb_in_index.css">
+		- <script src="https://cdn.staticaly.com/gh/haonan15/CDN@main/source/waterfall.min.js"></script> # 瀑布流
+```
+
+### (4).添加自定义js
+``` JS
+if (document.querySelector('#bber-talk')) {
+      var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical', 
+        loop: true,
+        autoplay: {
+        delay: 3000,
+        pauseOnMouseEnter: true
+      },
+      });
+    }
+```
+
+### (5).添加CSS文件
+``` CSS
+#bber>section>ul>li>div .bber-info-time ,
+#bber > section > ul > li > div .bber-info-address{
+    color: var(--bywind-fontcolor);
+    font-size: 0.7rem;
+    background-color: var(--bywind-gray-op);
+    padding: 0 8px;
+    border-radius: 20px;
+    cursor: default;
+    display: flex;
+    align-items: center;
+}
+
+#bber>section>ul>li>div .bber-info-time i ,
+#bber > section > ul > li > div .bber-info-address i{
+    margin-right: 8px;
+    font-size: 16px;
+}
+#bber > section > ul > li > div .bber-info-address {
+    margin-left: 0.5rem;
+}
+```
 <!-- endtab -->
 
 <!-- tab 安知鱼（即刻短文） -->
+## 一.功能对比
+
+**todolist**              |	**支持度**
+--------------------------|--------------------------
+**图片灯箱**              |   ✅
+**多图片多行显示**        |	  ✅
+**外部链接**              |  ✅
+**瀑布流**                |	 ✅
+**首页滚动**              |	 ✅
+**快速评论**              |	 ✅
+**本地修改yml发布**       |	 ✅
+**aplayer**               |	✅ 
+**单曲音乐**              |  ✅
+**插件版本**	            |  ❌
+
+## 二.添加颜色内容
+详情可以前往这个文章查看[颜色样式](https://www.sxiaohe.top/posts/90908.html)
 <!-- endtab -->
 {% endtabs %}
 {% endfolding %}
