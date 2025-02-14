@@ -197,17 +197,14 @@ url：该友链对应RSS地址
 
 {% endtabs %}
 
-# 2.友链朋友圈前端部署
+# 2.友链朋友圈前端部署(旧朋友圈)
+
 这个就是前端篇了，前端版本偏多
 
 旧朋友圈：
 {% link 友链朋友圈5 - 我的部署历程与主题样式分享,张洪Heo,https://blog.zhheo.com/p/4e18a507.html %}
 {% link 鱼塘朋友圈部署前端方案,安知鱼,https://blog.anheyu.com/posts/3753.html %}
 
-新朋友圈：
-{% link Friend-Circle-Lite:轻量友链朋友圈,liushen,https://blog.liushen.fun/posts/4dc716ec/ %}
-
-{% folding cyan, 请查看旧朋友圈教程内容 %}
 {% tabs 部署方式 %}
 <!-- tab zhheo版本 -->
 ## 1.添加朋友圈页面
@@ -459,9 +456,12 @@ fcircle:
 ```
 <!-- endtab -->
 {% endtabs %}
-{% endfolding %}
 
-{% folding cyan, 请查看新朋友圈教程内容 %}
+# 3.友链朋友圈前端部署(新朋友圈)
+
+新朋友圈：
+{% link Friend-Circle-Lite:轻量友链朋友圈,liushen,https://blog.liushen.fun/posts/4dc716ec/ %}
+
 注意，一定要部署到page分支上！
 {% tabs 部署方式 %}
 <!-- tab vercel部署 -->
@@ -479,7 +479,7 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 <!-- endtab -->
 {% endtabs %}
 
-# 3.主流说说部署
+# 4.主流说说部署
 
 {% link Butterfly的魔改教程：即刻短文页,亦小封,https://meuicat.com/posts/1cdf15f7.html %}
 {% link 即刻短文（瀑布流）部署方案,安知鱼,https://blog.anheyu.com/posts/3753.html %}
