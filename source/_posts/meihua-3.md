@@ -28,7 +28,7 @@ abbrlink: 4222
 > 7.[🥕博客魔改教程总结(四)]()
 > 8.[🍊博客魔改教程总结(五)]()
 
-## 友链朋友圈部署(后端篇)
+# 1.友链朋友圈后端部署
 由于这个非常复杂所以我这里会给大家分出两个不同的教程，旧朋友圈目前已经暂停维护了，建议可以选择新朋友圈。
 
 {% link Friend-Circle-Lite:轻量友链朋友圈,liushen,https://blog.liushen.fun/posts/4dc716ec/ %}
@@ -107,7 +107,7 @@ node link.js
 
 ## 部署爬取项目
 
-### 前置工作
+### 一.前置工作
 1.Fork 本仓库:
 点击页面右上角的 Fork 按钮，将本仓库复制到你自己的GitHub账号下。
 
@@ -129,7 +129,7 @@ GitHub Actions 已经配置好在仓库的 .github/workflows/*.yml 文件中，�
 5.设置issue格式：
 这个我已经设置好了，你只需要进行自定义即可。
 
-### 配置选项
+### 二.配置选项
 
 1.如果需要修改爬虫设置或邮件模板等配置，需要修改仓库中的 config.yaml 文件：
 > 爬虫相关配置(必选)
@@ -200,7 +200,7 @@ url：该友链对应RSS地址
 
 {% endfolding %}
 
-## 友链朋友圈部署(前端篇)
+# 2.友链朋友圈前端部署
 这个就是前端篇了，前端版本偏多
 
 旧朋友圈：
@@ -213,11 +213,11 @@ url：该友链对应RSS地址
 {% folding cyan, 请查看旧朋友圈教程内容 %}
 {% tabs 部署方式 %}
 <!-- tab zhheo版本 -->
-## 添加朋友圈页面
+## 1.添加朋友圈页面
 ``` CODE
 hexo new page fcircle
 ```
-## 进入[blogroot]/source/fcircle/index.md，添加以下代码
+## 2.进入[blogroot]/source/fcircle/index.md，添加以下代码
 ``` MARKDOWN
 ---
 title: 朋友圈
@@ -244,14 +244,14 @@ date: 2022-10-09 00:38:16
 <!-- endtab -->
 
 <!-- tab 安知鱼版本-->
-## 安装插件
+## 1.安装插件
 在博客根目录[Blogroot]下打开终端，运行以下指令（与旧版前端方案不兼容，如有安装旧版请先卸载）：
 ``` BASH
 npm uninstall hexo-butterfly-fcircle --save
 npm uninstall hexo-filter-fcircle --save
 npm install hexo-filter-fcircle-anzhiyu --save
 ```
-## 添加配置信息
+## 2.添加配置信息
 在站点配置文件_config.yml或者主题配置文件例如_config.butterfly.yml中添加:
 ``` YML
 # fcircle
@@ -275,7 +275,7 @@ fcircle:
     aside: false
     top_img: false
 ```
-## 插件参数释义:
+## 3.插件参数释义:
 **参数**                            | **备选值/类型**  |	**释义**
 ------------------------------------|-------------|-------------------------------------------------------------------------------------------------------
 **enable**                          | true/false  |	控制开关
@@ -293,7 +293,7 @@ fcircle:
 **front_matter**                    | object	  |【可选】写法见上文示例，fcircle 页面的 front_matter 配置
 **top_background**                  | URL         |【可选】字符串，页面顶部模块背景图
 
-## 样式适配
+## 4.样式适配
 样式适配
 安装完成 ✅ 以后，会发现顶部样式有亿点奇怪, 需要与自己的主题样式进行适配, 可以尝试加入以下自定义 css。
 1.颜色说明: 该项目中 css 使用了 css 变量, 添加变量 css 如下, 您可自行修改。
@@ -400,7 +400,7 @@ fcircle:
   background-color: #f7f9fe !important;
 }
 ```
-## 顶部图片样式修改
+## 5.顶部图片样式修改
 可以通过配置项top_background修改
 <!-- endtab -->
 
@@ -483,13 +483,17 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 {% endtabs %}
 {% endfolding %}
 
-## 说说部署（主流）
+# 3.主流说说部署
+
+{% link Butterfly的魔改教程：即刻短文页,亦小封,https://meuicat.com/posts/1cdf15f7.html %}
+{% link 即刻短文（瀑布流）部署方案,安知鱼,https://blog.anheyu.com/posts/3753.html %}
+{% link Heo即刻短文：分享自我与精彩生活,随风起,https://blog.bywind.xyz/posts/10b1d3b5.html %}
 
 {% folding cyan, 请查看教程内容 %}
 注意：本章节没有bbtalk，artitalk和ispeak（配置麻烦），因为教程方案有些老需要额外修改配置
 {% tabs 部署方式 %}
 <!-- tab icat部署（即刻短文和memos） -->
-## 功能对比
+## 一.功能对比
 
 **todolist**  |	**本地yml**     | ***动态JSON**  |	**动态Memos**
 --------------|------------|------------|-----------------------------
@@ -503,9 +507,9 @@ vercel 部署完成后，检查对应页面，如果页面中没有数据，且 
 **视频模块**	 | ✔️支持     |✔️支持    |	✔️支持
 **说说置顶**	 | ✔️支持     |✔️支持    |	✔️支持
 
-## 部署历程
-### 创建数据
-#### 创建页面配置
+## 二.部署历程
+### 1.创建数据
+#### (1).创建页面配置
 创建 [blogRoot]/source/essay/index.md 页面，配置以下内容：
 ``` MARKDOWN
 ---
@@ -523,7 +527,7 @@ top_link: /about/
 top_text: 关于博主
 ---
 ```
-#### 新建页面内容
+#### (2).新建页面内容
 ##### 新建页面选择（在配置文件中进行设置）
 创建 [blogRoot]/themes/butterfly/layout/includes/page/essay.pug 页面文件，并新增以下内容:
 ``` PUG
@@ -1745,7 +1749,7 @@ essay:
   mode: memos # local：本地静态 / json：动态json / memos：动态Memos
   mode_link: https://memos.meuicat.com/api/v1/memo?creatorId=1&tag=说说 #动态模式地址
 ```
-### 创建数据内容
+### 2.创建数据内容
 
 {% tabs 数据模式 %}
 
@@ -1913,7 +1917,7 @@ Memos用法：
 
 {% endtabs %}
 
-### 即刻Mini
+### 3.即刻Mini
 #### (1)创建页面内容
 新增 [blogRoot]/themes/butterfly/layout/includes/mixins/post-ui.pug 页面内容
 （ + 号直接删除 即是正常缩进）
@@ -1977,7 +1981,7 @@ mixin postUI(posts)
                         })()
     i.iconfont.icat-right-btn(title="查看全文" onclick=`pjax.loadUrl('${theme.essay.home_mini_link}')` style="margin-left: 1rem")
 ```
-#### 新建样式文件
+#### (2).新建样式文件
 
 新建 [blogRoot]/themes/butterfly/source/css/_page/homepage.styl 样式文件内容
 （ + 号直接删除 即是正常缩进）
@@ -2139,7 +2143,7 @@ mixin postUI(posts)
 /* 即刻mini样式 */
 ```
 {% endfolding %}
-#### 新建js文件
+#### (3).新建js文件
 
 新增 [blogRoot]/source/js/essay.js 文件内容
 （或写在自建的公共 js 中也可以）
@@ -2179,7 +2183,7 @@ inject:
 <!-- endtab -->
 
 <!-- tab 随风起（即刻短文） -->
-## 支持类型
+## 1.支持类型
 
 **列表**	     | **是否支持**
 ---------------|----------------
@@ -2190,7 +2194,7 @@ inject:
 **首页滚动**   |	✅
 **位置信息**   |	✅
 
-## 创建数据
+## 2.创建数据
 
 在source/_data目录下创建essay.yml：
 ``` YML
@@ -2213,7 +2217,7 @@ inject:
         id: 001wG84E4bOj3V
       date: 2022-12-19 08:07:23
 ```
-## 配置参数介绍
+## 3.配置参数介绍
 
 **参数**                                     |	**含义**
 ---------------------------------------------|---------------------------------------------
@@ -2225,7 +2229,7 @@ inject:
 **location**                                 |	位置信息
 **date**                                     |	日期
 
-## 创建md页面
+## 4.创建md页面
 创建md页面，在控制台输入hexo new page essay，生成文件在source/essay/index.md
 ``` MARKDOWN
 ---
@@ -2238,7 +2242,7 @@ type: essay
 ---
 ```
 
-## 创建页面文件
+## 5.创建页面文件
 
 在themes/butterfly/layout/includes/page目录下创建essay.pug
 ``` PUG
@@ -2291,7 +2295,7 @@ type: essay
     | - 只展示最近30条短文 -
 ```
 
-## 修改Page文件
+## 6.修改Page文件
 
 修改themes/butterfly/layout/page.pug
 
@@ -2328,9 +2332,9 @@ script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',data-pjax=
 
 ```
 
-## 首页即刻（可选）
+## 8.首页即刻（可选）
 
-### 新建首页轮播内容
+### (1).新建首页轮播内容
 
 新建themes/butterfly/layout/includes/bbTimeList.pug
 
@@ -2352,7 +2356,7 @@ script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',data-pjax=
     i.bber-gotobb.fas.fa-arrow-circle-right(onclick=`pjax.loadUrl("/essay/")`,title="查看全文")
 script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',data-pjax='')
 ```
-### 引入到主页
+### (2).引入到主页
 
 ``` PUG
 block content
@@ -2364,7 +2368,7 @@ block content
     include includes/pagination.pug
 ```
 
-### 引入样式文件
+### (3).引入样式文件
 ``` YML
 inject:
   head:
@@ -2373,7 +2377,7 @@ inject:
 		- <script src="https://cdn.staticaly.com/gh/haonan15/CDN@main/source/waterfall.min.js"></script> # 瀑布流
 ```
 
-### 添加自定义js
+### (4).添加自定义js
 ``` JS
 if (document.querySelector('#bber-talk')) {
       var swiper = new Swiper('.swiper-container', {
@@ -2387,7 +2391,7 @@ if (document.querySelector('#bber-talk')) {
     }
 ```
 
-### 添加CSS文件
+### (5).添加CSS文件
 ``` CSS
 #bber>section>ul>li>div .bber-info-time ,
 #bber > section > ul > li > div .bber-info-address{
@@ -2413,7 +2417,7 @@ if (document.querySelector('#bber-talk')) {
 <!-- endtab -->
 
 <!-- tab 安知鱼（即刻短文） -->
-## 功能对比
+## 一.功能对比
 
 **todolist**              |	**支持度**
 --------------------------|--------------------------
@@ -2428,8 +2432,878 @@ if (document.querySelector('#bber-talk')) {
 **单曲音乐**              |  ✅
 **插件版本**	            |  ❌
 
-## 添加颜色内容
-详情可以前往这个文章查看[颜色样式](https://www.sxiaohe.top/posts/90908.html)
+## 二.添加颜色内容
+详情可以前往这个文章查看[颜色样式](https://www.sxiaohe.top/posts/2013454d.html)
+
+## 三.创建数据
+
+创建 source/_data/essay.yml
+
+``` YML
+- class_name: 即刻短文
+  essay_list:
+    - content: 终于把相册集搞定了, 耶✌️, 瀑布流在滑动滚动条一个视口范围上下100的情况执行一次, 到底部停止监听让性能高了好多，再也不会布局混乱🤪了
+      date: 2022/10/25
+      link: https://blog.anheyu.com/album/
+    - content: 搜索🔍支持缩略图显示啦（默认获取文章内容的第一张图片）
+      date: 2022/10/23 08:00:00
+      from: 安知鱼
+    - content: 遇见彩虹🌈吃定彩虹
+      date: 2022/10/23 10:00:00
+      image:
+        - https://img02.anheyu.com/adminuploads/1/2022/10/23/6354ea92960ef.webp
+    - content: ThreeJs API真多丫
+      date: 2022/10/19
+    - content: 歌曲推荐
+      date: 2022/09/25
+      aplayer:
+        server: tencent
+        id: 001FGQba3i10mw
+```
+
+## 四.数据参数释义
+**参数** 	                       | **备选值/类型**             |	**释义**
+---------------------------------|----------------------------|---------------------------------------------------------------
+**class_name**                   |	String	                  |  【可选】标识符，无实际意义，选填
+**essay_list**                   |	Array		                  |  【必选】即刻短文数据列表
+**essay_list.content**           |	String	                  |	 【必选】短文 文字内容
+**essay_list.date**              |	Time		                  |  【必选】短文发布时间 格式建议为 2022/10/26 08:00:00
+**essay_list.image**             |	Array		                  |  【可选】短文图片内容, 可填写多张图片
+**essay_list.from**              |	String	                  |	 【可选】短文 来自何处, 当然也可以填任何你想填写的标识
+**essay_list.link**              |  String	                  |	 【可选】外部链接
+**essay_list.aplayer**           |	Array		                  |  【可选】aplayer 播放器的单曲音乐, 需 aplayer 支持
+**essay_list.aplayer.server**    |	String	                  |	 【essay_list.aplayer 后必选】aplayer 服务商
+**essay_list.aplayer.id**        |	String	                  |  【essay_list.aplayer 后必选】单曲 id
+
+## 五.创建 md 页面文件
+创建source/essay/index.md 来生成页面 page
+
+``` MARKDOWN
+---
+title: 即刻短文
+date: 2020-07-22 22:06:17
+comments: true
+aside: false
+top_img: false
+type: essay
+---
+```
+
+## 六.创建 dom 文件
+创建themes/butterfly/layout/includes/page/essay.pug, 页面内容, 注意该页面中可能存在部分fontawesome 图标需要自行替换。
+``` PUG
+#essay_page
+  .author-content.author-content-item.essayPage.single
+    .card-content
+      .author-content-item-tips 即刻短文
+      span.author-content-item-title 咸鱼的日常生活。
+      .content-bottom
+        .tips 使用 即刻短文静态部署版 构建
+      .banner-button-group
+        a.banner-button(onclick='pjax.loadUrl("/about/")', data-pjax-state)
+          i.fas.fa-circle-right(style='font-size: 1.5rem')
+          span.banner-button-text 关于我
+  #bber
+    section.timeline.page-1
+      ul#waterfall.list
+        each i in site.data.essay
+          each item, index in i.essay_list
+            if index < 30
+              li.bber-item
+                .bber-content
+                  p.datacont= item.content
+                    if item.image
+                      .bber-container-img
+                        each iten, indey in item.image
+                          a.bber-content-img(href=item.image[indey], target="_blank", data-fancybox="gallery", data-caption="")
+                            img(src=item.image[indey])
+                        .bber-content-noimg
+                        .bber-content-noimg
+                        .bber-content-noimg
+                    if item.aplayer
+                      .bber-music
+                        .aplayer.no-destroy(data-id=item.aplayer.id data-server=item.aplayer.server data-type="song"  data-order="list" data-preload="none" data-autoplay="false" data-mutex="true" data-theme='var(--anzhiyu-main)')
+                hr
+                .bber-bottom
+                  .bber-info
+                    .bber-info-time
+                      - var datedata = new Date(item.date).toISOString()
+                      i.far.fa-clock
+                      time.datatime(datetime= item.date)= datedata
+                    if item.link
+                      a.bber-content-link(target="_blank", title="跳转到短文指引的链接", href=item.link, rel="external nofollow")
+                        i.fas.fa-link
+                        | 链接
+                    if item.from
+                      .bber-info-from
+                        i.fas.fa-fire
+                        span=item.from
+                  .bber-reply(onclick="anzhiyu.commentText(" + `'${item.content}'` + ")")
+                    i.fa-solid.fa-message
+  #bber-tips(style='color: var(--anzhiyu-secondtext);')
+    | - 只展示最近30条短文 -
+```
+
+## 七.修改 Page 文件
+修改themes/butterfly/layout/page.pug 来使页面内容匹配
+在 case page.type 子项里面添加, 注意缩进
+``` pug
+    case page.type
++     when 'essay'
++       include includes/page/essay.pug
+      when 'tags'
+        include includes/page/tags.pug
+      when 'link'
+        include includes/page/flink.pug
+      when 'categories'
+        include includes/page/categories.pug
+```
+
+## 八.加入 css
+创建source/css/essay_page/essay_page.css, 然后在_config.butterfly.yml中的inject下的head引入, 注意缩进
+``` YML
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/essay_page/essay_page.css">
+```
+``` CSS
+#page:has(#essay_page) {
+  border: 0;
+  box-shadow: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+#page:has(#essay_page) .page-title {
+  display: none;
+}
+#web_bg ~ .page:has(#essay_page) {
+  background: var(--anzhiyu-background);
+}
+#bber .bber-container-img {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+#bber .bber-container-img .bber-content-noimg {
+  width: calc(100% / 4 - 5px);
+}
+
+#bber .bber-content-img img {
+  object-fit: cover;
+  max-height: 100%;
+  border-radius: 12px;
+}
+
+#bber .bber-content-img {
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  width: calc(100% / 4 - 5px);
+  margin-bottom: 10px;
+}
+
+#bber .bber-content .datacont {
+  order: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--anzhiyu-fontcolor);
+  width: 100%;
+  line-height: 1.38;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+#bber p {
+  margin: 0px;
+}
+#bber div.bber-content {
+  display: flex;
+  flex-flow: wrap;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+}
+#bber .timeline ul li.bber-item {
+  position: relative;
+  width: 32%;
+  border: var(--style-border-always);
+  border-radius: 12px;
+  padding: 1rem 1rem 0.5rem;
+  transition: all 0.3s ease 0s;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--anzhiyu-card-bg);
+  box-shadow: var(--anzhiyu-shadow-border);
+  margin-right: 2%;
+}
+#bber .timeline #waterfall.show {
+  opacity: 1;
+}
+#bber .timeline #waterfall {
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+#bber ul.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+#bber {
+  margin-top: 1rem;
+  width: 100%;
+}
+#bber > section > ul > li.bber-item {
+  margin-bottom: 1rem;
+}
+
+#bber-tips {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#bber .timeline ul li.bber-item hr {
+  display: flex;
+  position: relative;
+  margin: 8px 0px;
+  border: 1px dashed var(--anzhiyu-theme-op);
+  width: 100%;
+}
+
+#bber .bber-info {
+  display: flex;
+  align-items: center;
+}
+
+#bber > section > ul > li > div .bber-info-time,
+#bber > section > ul > li > div .bber-info-from {
+  color: var(--anzhiyu-fontcolor);
+  font-size: 0.7rem;
+  background-color: var(--anzhiyu-gray-op);
+  padding: 0px 8px;
+  border-radius: 20px;
+  cursor: default;
+  display: flex;
+  align-items: center;
+}
+
+#bber .bber-info .far.fa-clock {
+  margin-right: 4px;
+}
+#bber > section > ul > li > div .bber-info-from span,
+#bber > section > ul > li > div .bber-info-from {
+  margin-left: 4px;
+}
+
+#bber .bber-bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#bber .bber-bottom .bber-reply {
+  cursor: pointer;
+}
+
+#bber .timeline ul li.bber-item:hover {
+  border: var(--style-border-hover);
+}
+
+#bber .bber-content-link {
+  display: flex;
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  align-items: center;
+  background-color: rgba(245, 108, 108, 0.13);
+  color: rgb(245, 108, 108);
+  padding: 0px 8px;
+  border-radius: 20px;
+}
+#bber .bber-content-link i {
+  margin-right: 3px;
+}
+#bber .bber-content-link:hover {
+  background-color: var(--anzhiyu-main);
+  color: var(--anzhiyu-white);
+}
+#bber .bber-music {
+  width: 100%;
+  height: 90px;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: var(--style-border-always);
+  background: var(--anzhiyu-secondbg);
+}
+#bber .aplayer {
+  margin: 0;
+}
+
+#bber .aplayer.aplayer-withlrc .aplayer-pic {
+  height: 82px;
+  width: 82px;
+  margin: 4px;
+  border-radius: 4px;
+}
+.bber-music .aplayer.aplayer-withlrc .aplayer-info {
+  padding: 5px 7px 0;
+}
+#bber .aplayer .aplayer-info .aplayer-music {
+  height: 23px;
+}
+#bber .aplayer .aplayer-info .aplayer-music .aplayer-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--anzhiyu-fontcolor);
+}
+
+#bber .aplayer .aplayer-info .aplayer-controller {
+  align-items: center;
+}
+#bber .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+  padding: 0;
+}
+#bber .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+  position: initial;
+}
+#bber .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
+  background: var(--anzhiyu-gray);
+  height: 8px;
+  border-radius: 12px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+#bber .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded {
+  height: 100%;
+  border-radius: 12px;
+}
+#bber .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
+  height: 100%;
+  border-radius: 12px;
+}
+#bber .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
+  display: none;
+}
+#bber .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+  position: initial;
+}
+
+/* 顶部样式 */
+.author-content.author-content-item.essayPage {
+  height: 19rem;
+  background: url(https://img02.anheyu.com/adminuploads/1/2022/08/21/630249e2df20f.jpg) left 28% / cover no-repeat;
+  color: var(--anzhiyu-white);
+  overflow: hidden;
+  margin-top: 0px;
+}
+#page:has(#essay_page) .author-content-item .card-content .banner-button-group .banner-button:hover {
+  color: var(--anzhiyu-white);
+  border-radius: 20px !important;
+}
+
+/* 响应式 */
+@media screen and (max-width: 1300px) {
+  #bber .timeline ul li.bber-item {
+    width: 49%;
+    margin-right: 1%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #bber .timeline ul li.bber-item {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+[data-theme="dark"] #bber .bber-music .aplayer,
+[data-theme="dark"] #bber .aplayer .aplayer-lrc:before,
+[data-theme="dark"] #bber .aplayer .aplayer-lrc:after {
+  background: var(--anzhiyu-card-bg);
+  color: var(--anzhiyu-fontcolor);
+}
+#bber .aplayer .aplayer-lrc p {
+  color: var(--anzhiyu-fontcolor);
+}
+```
+## 九.js 处理
+新建一个 js 文件用来处理即刻短文的逻辑, 或者写在公共 js 中也可以, 博主写在公共 js 中, 即custom.js, 该 js 在_config.butterfly.yml中的inject使用如下方式引入, 加入了data-pjax, 并且开启了站点的pjax, 然后再引入waterfall.js用于处理瀑布流。
+``` YML
+inject:
+  bottom:
+    - <script async data-pjax src="/js/custom.js"></script>
+    # 即刻依赖waterfall
+    - <script async data-pjax src="/js/waterfall/waterfall.js"></script>
+```
+``` YML
+# Pjax
+# It may contain bugs and unstable, give feedback when you find the bugs.
+# https://github.com/MoOx/pjax
+pjax:
+  enable: true
+  exclude:
+```
+新建 source/js/waterfall/waterfall.js 内容如下
+``` JS
+function waterfall(a) {
+  function b(a, b) {
+    var c = window.getComputedStyle(b);
+    return parseFloat(c["margin" + a]) || 0;
+  }
+  function c(a) {
+    return a + "px";
+  }
+  function d(a) {
+    return parseFloat(a.style.top);
+  }
+  function e(a) {
+    return parseFloat(a.style.left);
+  }
+  function f(a) {
+    return a.clientWidth;
+  }
+  function g(a) {
+    return a.clientHeight;
+  }
+  function h(a) {
+    return d(a) + g(a) + b("Bottom", a);
+  }
+  function i(a) {
+    return e(a) + f(a) + b("Right", a);
+  }
+  function j(a) {
+    a = a.sort(function (a, b) {
+      return h(a) === h(b) ? e(b) - e(a) : h(b) - h(a);
+    });
+  }
+  function k(b) {
+    f(a) != t && (b.target.removeEventListener(b.type, arguments.callee), waterfall(a));
+  }
+  "string" == typeof a && (a = document.querySelector(a));
+  var l = [].map.call(a.children, function (a) {
+    return (a.style.position = "absolute"), a;
+  });
+  a.style.position = "relative";
+  var m = [];
+  l.length && ((l[0].style.top = "0px"), (l[0].style.left = c(b("Left", l[0]))), m.push(l[0]));
+  for (var n = 1; n < l.length; n++) {
+    var o = l[n - 1],
+      p = l[n],
+      q = i(o) + f(p) <= f(a);
+    if (!q) break;
+    (p.style.top = o.style.top), (p.style.left = c(i(o) + b("Left", p))), m.push(p);
+  }
+  for (; n < l.length; n++) {
+    j(m);
+    var p = l[n],
+      r = m.pop();
+    (p.style.top = c(h(r) + b("Top", p))), (p.style.left = c(e(r))), m.push(p);
+  }
+  j(m);
+  var s = m[0];
+  a.style.height = c(h(s) + b("Bottom", s));
+  var t = f(a);
+  window.addEventListener ? window.addEventListener("resize", k) : (document.body.onresize = k);
+}
+```
+custom.js内容如下
+``` JS
+var percentFlag = false; // 节流阀
+function essayScroll() {
+  let a = document.documentElement.scrollTop || window.pageYOffset; // 卷去高度
+  const waterfallResult = a % document.documentElement.clientHeight; // 卷去一个视口
+  result <= 99 || (result = 99);
+
+  if (
+    !percentFlag &&
+    waterfallResult + 100 >= document.documentElement.clientHeight &&
+    document.querySelector("#waterfall")
+  ) {
+    // console.info(waterfallResult, document.documentElement.clientHeight);
+    setTimeout(() => {
+      waterfall("#waterfall");
+    }, 500);
+  } else {
+    setTimeout(() => {
+      document.querySelector("#waterfall") && waterfall("#waterfall");
+    }, 500);
+  }
+
+  const r = window.scrollY + document.documentElement.clientHeight;
+
+  let p = document.getElementById("post-comment") || document.getElementById("footer");
+
+  (p.offsetTop + p.offsetHeight / 2 < r || 90 < result) && (percentFlag = true);
+}
+function replaceAll(e, n, t) {
+  return e.split(n).join(t);
+}
+var anzhiyu = {
+  diffDate: function (d, more = false) {
+    const dateNow = new Date();
+    const datePost = new Date(d);
+    const dateDiff = dateNow.getTime() - datePost.getTime();
+    const minute = 1000 * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+    const month = day * 30;
+
+    let result;
+    if (more) {
+      const monthCount = dateDiff / month;
+      const dayCount = dateDiff / day;
+      const hourCount = dateDiff / hour;
+      const minuteCount = dateDiff / minute;
+
+      if (monthCount >= 1) {
+        result = datePost.toLocaleDateString().replace(/\//g, "-");
+      } else if (dayCount >= 1) {
+        result = parseInt(dayCount) + " " + GLOBAL_CONFIG.date_suffix.day;
+      } else if (hourCount >= 1) {
+        result = parseInt(hourCount) + " " + GLOBAL_CONFIG.date_suffix.hour;
+      } else if (minuteCount >= 1) {
+        result = parseInt(minuteCount) + " " + GLOBAL_CONFIG.date_suffix.min;
+      } else {
+        result = GLOBAL_CONFIG.date_suffix.just;
+      }
+    } else {
+      result = parseInt(dateDiff / day);
+    }
+    return result;
+  },
+  changeTimeInEssay: function () {
+    document.querySelector("#bber") &&
+      document.querySelectorAll("#bber time").forEach(function (e) {
+        var t = e,
+          datetime = t.getAttribute("datetime");
+        (t.innerText = anzhiyu.diffDate(datetime, true)), (t.style.display = "inline");
+      });
+  },
+  reflashEssayWaterFall: function () {
+    document.querySelector("#waterfall") &&
+      setTimeout(function () {
+        waterfall("#waterfall");
+        document.getElementById("waterfall").classList.add("show");
+      }, 500);
+  },
+  commentText: function (e) {
+    if (e == "undefined" || e == "null") e = "好棒！";
+    var n = document.getElementsByClassName("el-textarea__inner")[0],
+      t = document.createEvent("HTMLEvents");
+    if (!n) return;
+    t.initEvent("input", !0, !0);
+    var o = replaceAll(e, "\n", "\n> ");
+    (n.value = "> " + o + "\n\n"), n.dispatchEvent(t);
+    var i = document.querySelector("#post-comment").offsetTop;
+    window.scrollTo(0, i - 80),
+      n.focus(),
+      n.setSelectionRange(-1, -1),
+      document.getElementById("comment-tips") && document.getElementById("comment-tips").classList.add("show");
+  },
+};
+
+anzhiyu.changeTimeInEssay();
+anzhiyu.reflashEssayWaterFall();
+```
+其中anzhiyu变量中存储的四个方法
+**变量**                     | **变量特点**
+-----------------------------|---------------------------------------------------------------------------
+**diffDate**                 |  为处理时间的方法,其实 btf 中也有,只是不太喜欢那个的显示方式,就改成现在这个了。
+**changeTimeInEssay**        |  初始化即刻时间
+**reflashEssayWaterFall**    |  处理瀑布流显示
+**commentText**              |  处理点击跳转评论并添加评论
+
+方法essayScroll为检查滚动条卷去一个视口高度的 100 范围内执行一次, 滑动到底部或评论区取消监听执行。此处博主未做 else 处理取消监听, 如果有写percent函数监听滑动可以一起写在同一个方法里面。（博主就是写在同一个方法里面）, 如果即刻文章很少的话其实是可以不监听滑动的, 即只显示近 30 条, 因为进入页面后会执行一次瀑布流, 页面不会乱, 但是如果您把 essay.pug 中 17 行左右修改后可以达到无限的效果就会出现 dom 结构还没渲染瀑布流就已经执行完了的情况就需要监听滚动来再次执行瀑布流以完成布局。
+
+## 十.首页滚动显示即刻(可选)
+创建 themes/butterfly/layout/includes/bbTimeList.pug, 部分fontawesome图标可能需要您自行修改。
+``` PUG
+#bbTimeList.bbTimeList.container
+    svg.icon.bber-logo.iconfont.icon-chrome(onclick=`pjax.loadUrl("/essay/")`,title="即刻短文",aria-hidden="true")
+      use(xlink:href="#icon-chrome")
+    #bbtalk.swiper-container.swiper-no-swiping.essay_bar_swiper_container(tabindex="-1")
+      #bber-talk.swiper-wrapper(onclick=`pjax.loadUrl("/essay/")`)
+        each i in site.data.essay
+          each item, index in i.essay_list
+            if index < 10
+              - var contentText = item.image ? item.content + ' [图片]' : item.content
+              .li-style.swiper-slide= contentText
+
+    i.bber-gotobb.fas.fa-arrow-circle-right(onclick=`pjax.loadUrl("/essay/")`,title="查看全文")
+```
+
+## 十一.引入到主页
+修改themes/butterfly/layout/index.pug, 注意缩进
+``` PUG
+block content
+  include ./includes/mixins/post-ui.pug
+  #recent-posts.recent-posts
+    include includes/categoryList.pug
++   include includes/bbTimeList.pug
+    +postUI
+    include includes/pagination.pug
+```
+如果需要像本站一样在整个顶部引入的话可以参考下面的代码，修改themes/butterfly/layout/includes/layout.pug
+``` PUG
+if page.type !== '404'
+  #body-wrap(class=pageType)
+    include ./header/index.pug
++   if (is_home())
++     include ./bbTimeList.pug
+```
+
+## 十二.引入 swiper 依赖
+在_config.butterfly.yml引入依赖, 如果有使用轮播图插件的话此处无需引入
+``` YML
+inject:
+  head:
+    - <link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
+  bottom:
+    - <script data-pjax src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script>
+```
+## 十三.添加自定义 css
+创建source/css/essay_page/home_essay_bar.css, 然后在_config.butterfly.yml中的inject下的head引入, 注意缩进
+``` YML
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/essay_page/home_essay_bar.css">
+```
+``` CSS
+#bbTimeList {
+  background: var(--anzhiyu-white);
+  color: var(--anzhiyu-fontcolor);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  box-shadow: var(--anzhiyu-shadow-lightblack);
+  display: flex;
+  transition: all 0.3s ease 0s;
+  margin: 1rem auto 0;
+  border: var(--style-border);
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+[data-theme="dark"] #bbTimeList {
+  background: #000 !important;
+}
+#bbtalk {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#bber-talk {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.bber-logo {
+  font-size: 1.5rem;
+  line-height: 22px;
+  margin-right: 1rem;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.bber-gotobb {
+  line-height: 25px;
+  margin-left: 1rem;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+#bber-talk .li-style {
+  width: 100%;
+  max-width: 100%;
+  height: 25px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.3s;
+  font-weight: 700;
+  margin: auto;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#bbTimeList:hover {
+  border: var(--style-border-hover);
+  box-shadow: var(--anzhiyu-shadow-main);
+}
+
+/* 文章页H1-H6图标样式效果 */
+.bbTimeList .bber-logo {
+  -webkit-animation: rotate 1.6s linear infinite;
+  animation: rotate 1.6s linear infinite;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+```
+
+## 十四.修改自定义 js
+修改custom.js
+``` JS
+var percentFlag = false; // 节流阀
+function essayScroll() {
+  let a = document.documentElement.scrollTop || window.pageYOffset; // 卷去高度
+  const waterfallResult = a % document.documentElement.clientHeight; // 卷去一个视口
+  result <= 99 || (result = 99);
+
+  if (
+    !percentFlag &&
+    waterfallResult + 100 >= document.documentElement.clientHeight &&
+    document.querySelector("#waterfall")
+  ) {
+    // console.info(waterfallResult, document.documentElement.clientHeight);
+    setTimeout(() => {
+      waterfall("#waterfall");
+    }, 500);
+  } else {
+    setTimeout(() => {
+      document.querySelector("#waterfall") && waterfall("#waterfall");
+    }, 500);
+  }
+
+  const r = window.scrollY + document.documentElement.clientHeight;
+
+  let p = document.getElementById("post-comment") || document.getElementById("footer");
+
+  (p.offsetTop + p.offsetHeight / 2 < r || 90 < result) && (percentFlag = true);
+}
+function replaceAll(e, n, t) {
+  return e.split(n).join(t);
+}
+var anzhiyu = {
+  diffDate: function (d, more = false) {
+    const dateNow = new Date();
+    const datePost = new Date(d);
+    const dateDiff = dateNow.getTime() - datePost.getTime();
+    const minute = 1000 * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+    const month = day * 30;
+
+    let result;
+    if (more) {
+      const monthCount = dateDiff / month;
+      const dayCount = dateDiff / day;
+      const hourCount = dateDiff / hour;
+      const minuteCount = dateDiff / minute;
+
+      if (monthCount >= 1) {
+        result = datePost.toLocaleDateString().replace(/\//g, "-");
+      } else if (dayCount >= 1) {
+        result = parseInt(dayCount) + " " + GLOBAL_CONFIG.date_suffix.day;
+      } else if (hourCount >= 1) {
+        result = parseInt(hourCount) + " " + GLOBAL_CONFIG.date_suffix.hour;
+      } else if (minuteCount >= 1) {
+        result = parseInt(minuteCount) + " " + GLOBAL_CONFIG.date_suffix.min;
+      } else {
+        result = GLOBAL_CONFIG.date_suffix.just;
+      }
+    } else {
+      result = parseInt(dateDiff / day);
+    }
+    return result;
+  },
+  changeTimeInEssay: function () {
+    document.querySelector("#bber") &&
+      document.querySelectorAll("#bber time").forEach(function (e) {
+        var t = e,
+          datetime = t.getAttribute("datetime");
+        (t.innerText = anzhiyu.diffDate(datetime, true)), (t.style.display = "inline");
+      });
+  },
+  reflashEssayWaterFall: function () {
+    document.querySelector("#waterfall") &&
+      setTimeout(function () {
+        waterfall("#waterfall");
+        document.getElementById("waterfall").classList.add("show");
+      }, 500);
+  },
+  commentText: function (txt) {
+    const postCommentDom = document.querySelector("#post-comment");
+    var domTop = postCommentDom.offsetTop;
+    window.scrollTo(0, domTop - 80);
+    if (txt == "undefined" || txt == "null") txt = "好棒！";
+    function setText() {
+      setTimeout(() => {
+        var input = document.getElementsByClassName("el-textarea__inner")[0];
+        if (!input) setText();
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("input", true, true);
+        let inputValue = replaceAll(txt, "\n", "\n> ");
+        input.value = "> " + inputValue + "\n\n";
+        input.dispatchEvent(evt);
+        input.focus();
+        input.setSelectionRange(-1, -1);
+        if (document.getElementById("comment-tips")) {
+          document.getElementById("comment-tips").classList.add("show");
+        }
+      }, 100);
+    }
+    setText();
+  },
+  initIndexEssay: function () {
+    setTimeout(() => {
+      let essay_bar_swiper = new Swiper(".essay_bar_swiper_container", {
+        passiveListeners: true,
+        direction: "vertical",
+        loop: true,
+        autoplay: {
+          disableOnInteraction: true,
+          delay: 3000,
+        },
+        mousewheel: true,
+      });
+
+      let essay_bar_comtainer = document.getElementById("bbtalk");
+      if (essay_bar_comtainer !== null) {
+        essay_bar_comtainer.onmouseenter = function () {
+          essay_bar_swiper.autoplay.stop();
+        };
+        essay_bar_comtainer.onmouseleave = function () {
+          essay_bar_swiper.autoplay.start();
+        };
+      }
+    }, 100);
+  },
+};
+
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.reflashEssayWaterFall();
+```
 <!-- endtab -->
 {% endtabs %}
 {% endfolding %}
