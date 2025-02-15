@@ -1,0 +1,1 @@
+function whenDOMReady(){initEssay()}if(whenDOMReady(),document.addEventListener("pjax:complete",whenDOMReady),document.querySelector("#bber-talk"))var swiper=new Swiper(".swiper-container",{direction:"vertical",loop:!0,autoplay:{delay:3e3,pauseOnMouseEnter:!0}});
