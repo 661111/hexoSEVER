@@ -63,7 +63,6 @@ jobs:
           github_token: ${{ secrets.HEXO_TOKEN }}
           publish_branch: gh-page
           publish_dir: ./public
-          user_name: '661111'
-          user_email: '3227988255@qq.com'
-          user_password: ${{ secrets.user_password }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
           full_commit_message: ${{ github.event.head_commit.message }}
