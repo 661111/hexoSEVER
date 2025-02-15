@@ -58,10 +58,11 @@ jobs:
           gulp
 
       - name: 部署到Github
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           token: ${{ secrets.HEXO_TOKEN }}
-          repository-name: 661111/hexoSEVER
-          branch: master
-          folder: public
-          commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
+          publish_branch: gh-page
+          publish_dir: public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          full_commit_message: ${{ github.event.head_commit.message }}
