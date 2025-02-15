@@ -1,0 +1,10 @@
+#footer_content, #footer_icons {
+    background: transparent!important;
+}
+#footer {
+    background: transparent!important;
+}
+#footer-bottom {
+    background: transparent!important;
+    border-top: none!important;
+}

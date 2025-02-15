@@ -1,0 +1,121 @@
+/* 功能性调整 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年2月4日 */
+
+/* 1.个人介绍中的头像旋转关闭 */
+.avatar-img img:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+/* 2.iconfont的css样式表 */
+svg.icon {
+    width: 1.28em;
+    height: 1.28em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta-label {
+    display: inline;
+}
+/* 3.强制开启页面固定长度 */
+.layout.hide-aside {
+    max-width: 1300px;
+}
+
+/* 4.即刻短文卡片颜色更改 */
+#bbTimeList {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6);
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67);
+}
+/* 5.首页hometop卡片更改 */
+/** 5.1: 随机文章卡片设置 **/
+div#banners {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6)!important;
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67)!important;
+}
+/** 5.2：文章展示卡片设置 **/
+.recent-post-top .recent-post-item {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6)!important;
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67)!important;
+}
+.sticky {
+    font-size: 0.5em;
+}
+/* 6.滚动条调整适配 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e58a8a;
+    background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-moz-selection {
+    color: #fff;
+    background-color: #e58a8a;
+}
+/* 7.markdown展开收回栏 */
+summary {
+    background: #e8fafe;
+}
+summary {
+    cursor: pointer;
+    padding: 16px;
+    margin: -16px;
+    border-radius: 4px;
+    color: rgba(68, 68, 68, 0.7);
+    font-size: 0.875rem !important;
+    font-weight: bold;
+    position: relative;
+    line-height: normal;
+}
+details {
+    display: block;
+    padding: 16px;
+    margin: 1em 0;
+    border-radius: 4px;
+    background: #fff;
+    font-size: var(--global-font-size);
+    transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    border: 1px solid #f6f6f6;
+}
+details {
+    border-color: #e8fafe;
+}
+/* 8.文章页面整体修改 */
+#post {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-size: 14.5px;
+    background: rgba(255, 255, 255, .67);
+    animation: slide-in .5s .1s backwards;
+    -webkit-animation: slide-in .5s .1s backwards;
+}

@@ -1,0 +1,15 @@
+:root {
+    --mj-white: #fff;
+    --mj-card-bg: rgba(255, 255, 255, 0.67);
+    --mj-theme: #128adadb;
+    --mj-secondbg: #ededed;
+    --mj-card-border: #e3e8f7;
+    --mj-style-border: 2px solid rgba(0, 255, 255, 0.6);
+    --anchor-border: 1px solid rgba(21, 158, 208, 0.8);
+    --style-hover-border: 2px solid var(--mj-theme)
+}
+
+[data-theme=dark] {
+    --mj-card-bg: rgba(0, 0, 0, 0.6);
+    --style-border: 2px solid rgba(56, 211, 203, 0.8)
+}
