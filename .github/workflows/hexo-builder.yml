@@ -61,7 +61,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.HEXO_TOKEN }}
-          repository-name: 661111/661111.github.io
-          branch: main
+          repository-name: 661111/hexoSEVER
+          branch: master
           folder: public
           commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
