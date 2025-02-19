@@ -119,3 +119,16 @@
     border-radius: 12px;
     transform: none;
 }
+
+/* 9.优化设置 */
+.card-widget.card-friend-link details.card-friend-class-name[open] summary.card-friend-class-desc {
+    position: sticky;
+    top: 0;
+    border-radius: 5px;
+    background: var(--card-friend-class-desc-bgcolor);
+    z-index: 1;
+}
+
+.card-widget.card-friend-link summary.card-friend-class-desc {
+    padding: 0 15px;
+}
