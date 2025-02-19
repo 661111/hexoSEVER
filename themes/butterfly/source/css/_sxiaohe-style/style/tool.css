@@ -80,38 +80,7 @@ div#banners {
     color: #fff;
     background-color: #e58a8a;
 }
-/* 7.markdown展开收回栏 */
-summary {
-    background: #e8fafe;
-}
-summary {
-    cursor: pointer;
-    padding: 16px;
-    margin: -16px;
-    border-radius: 4px;
-    color: rgba(68, 68, 68, 0.7);
-    font-size: 0.875rem !important;
-    font-weight: bold;
-    position: relative;
-    line-height: normal;
-}
-details {
-    display: block;
-    padding: 16px;
-    margin: 1em 0;
-    border-radius: 4px;
-    background: #fff;
-    font-size: var(--global-font-size);
-    transition: all 0.28s ease;
-    -moz-transition: all 0.28s ease;
-    -webkit-transition: all 0.28s ease;
-    -o-transition: all 0.28s ease;
-    border: 1px solid #f6f6f6;
-}
-details {
-    border-color: #e8fafe;
-}
-/* 8.文章页面整体修改 */
+/* 7.文章页面整体修改 */
 #post {
     border: 2px solid rgba(0, 255, 255, .6);
     font-size: 14.5px;
