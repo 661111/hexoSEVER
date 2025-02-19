@@ -1,4 +1,7 @@
-/* 一.即刻短文页面样式 */
+/* 即刻短文美化（安知鱼） */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年2月4日 */
+
 #page:has(#essay_page) {
     border: 0;
     box-shadow: none !important;

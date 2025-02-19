@@ -1,3 +1,7 @@
+/* 页面关于内容卡片美化（icat） */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年2月4日 */
+
 #page:has(#icat_page) {
     border: 0;
     box-shadow: none !important;

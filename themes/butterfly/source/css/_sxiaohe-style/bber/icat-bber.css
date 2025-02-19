@@ -1,7 +1,7 @@
-/* 引入式兼容模式 */
+/* 即刻短文首页美化（icat） */
 /* 由苏晓河进行编写以及调整 */
 /* 时间：2025年2月5日 */
-/*首页bber*/
+
 #icat-bber {
     margin-top: 1.5rem;
     width: 100%;
@@ -478,5 +478,3 @@
     background: var(--icat-card-bg);
     color: var(--icat-fontcolor);
   }
-  
-  /* 即刻短文样式 */
