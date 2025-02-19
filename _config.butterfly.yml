@@ -810,6 +810,9 @@ aside:
     post_count: true
     last_push_date: true
     sort_order: # Don't modify the setting unless you know how it works
+  card_friend_link: #友链通讯录
+    enable: true
+    sort_order: # Don't modify the setting unless you know
 
 # busuanzi count for PV / UV in site
 # 訪問人數
@@ -1077,6 +1080,7 @@ CDN:
     # prismjs_autoloader:
     artalk_js: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.js
     artalk_css: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.css
+    card_weibo:  /sxiaohe_source/js/weibo.js ## 或者填写自己的 js 地址
 
 #hexo-butterfly-footer-marcus
 #see https://blog.marcus233.top/p/footer.html
