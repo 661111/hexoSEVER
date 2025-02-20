@@ -4,6 +4,7 @@ block content
   if theme.tag_ui == 'index'
     include ./includes/mixins/post-ui.pug
     #recent-posts.recent-posts
+      #tags-chart(data-length="10" style="border-radius: 8px; height: 300px; padding: 10px;")
       +postUI
       include includes/pagination.pug
   else
