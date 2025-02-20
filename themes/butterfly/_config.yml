@@ -662,9 +662,9 @@ aside:
   mobile: false # display on mobile
   position: left # left or right
   display:
-    archive: true
-    tag: true
-    category: true
+    archive: false
+    tag: false
+    category: false
   card_author:
     enable: true
     description: 随风飘起 如同浮云
