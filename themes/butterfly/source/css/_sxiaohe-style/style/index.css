@@ -121,6 +121,7 @@
 }
 
 /* 9.优化设置 */
+/* 9.1.侧边栏内容设置 */
 .card-widget.card-friend-link details.card-friend-class-name[open] summary.card-friend-class-desc {
     position: sticky;
     top: 0;
@@ -132,6 +133,8 @@
 .card-widget.card-friend-link summary.card-friend-class-desc {
     padding: 0 15px;
 }
+/* 9.2.页面标题设置 */
 #page h1.page-title {
-    margin: -20px 0 -14px!important;
+    margin: 10px 0 4px !important;
+    text-align:center
 }
