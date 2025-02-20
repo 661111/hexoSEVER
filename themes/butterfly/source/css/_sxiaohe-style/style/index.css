@@ -138,3 +138,16 @@
     margin: 10px 0 4px !important;
     text-align:center
 }
+/* 9.3.页面卡片设置 */
+div#page {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-size: 15.5px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .67);
+    animation: slide-in .5s .1s backwards;
+    -webkit-animation: slide-in .5s .1s backwards;
+}
+.layout>div:first-child:not(.recent-posts) {
+    border-radius: 18px;
+    padding: 10px 35px!important;
+}
