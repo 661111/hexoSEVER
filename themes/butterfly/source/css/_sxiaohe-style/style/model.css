@@ -202,3 +202,8 @@
     font-weight: 700;
     background: rgba(255, 255, 255, .67);
 }
+
+/* 7.优化归档内容 */
+#archive,#page,#category,#tag{
+    box-shadow: none;
+}
