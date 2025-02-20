@@ -34,19 +34,21 @@
     color: var(--june-blue) !important;
 }
 .category-lists ul li:before {
-    position: unset;
-    width: auto;
-    height: auto;
-    border: 0;
-    border-radius: 0;
-    background: 0;
-    color: var(--june-fontcolor) !important;
+    position: absolute;
+    top: .67em;
+    left: 0;
+    width: .43em;
+    height: .43em;
+    border: .215em solid #49b1f5;
+    border-radius: .43em;
+    background: 0 0;
+    content: '';
     cursor: pointer;
-    content: "\e038" !important;
-    font-family: "iconfont" !important;
-    opacity: 0.4;
-    padding-top: 2px;
-    padding-right: 2px;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    transition: all .3s ease-out;
 }
 .category-lists .category-list .category-list-count {
     background: var(--june-secondbg);

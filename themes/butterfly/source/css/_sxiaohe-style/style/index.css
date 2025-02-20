@@ -151,3 +151,8 @@ div#page {
     border-radius: 18px;
     padding: 10px 35px!important;
 }
+/* 9.4.分类图标设置 */
+#page .category-lists ul li:before {
+    left: 5px;
+    border: 3px solid #425aef;
+}
