@@ -5,8 +5,8 @@
 menu:
   文章 || icon--article || faa-tada:
     归档: /archives/ || icon-guidang1 || faa-tada
-    标签: /tags/ || icon-sekuaibiaoqian || faa-tada
-    分类: /categories/ || icon-fenlei || faa-tada
+    标签: /tags || icon-sekuaibiaoqian || faa-tada
+    分类: /categories || icon-fenlei || faa-tada
   社交 || icon-shejiaoxinxi || faa-tada || hide:
     朋友圈: /moment/ || icon-pengyouquan || faa-tada
     # 留言板: /comments/ || icon-liuyan || faa-tada
