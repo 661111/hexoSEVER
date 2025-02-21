@@ -1030,7 +1030,7 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    # main_css: /css/index.css
+    main_css: /css/index.css
     # main:
     # utils:
     # translate:

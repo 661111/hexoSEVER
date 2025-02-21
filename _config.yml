@@ -134,3 +134,8 @@ service_worker:
       handler: cacheFirst
       options:
         origin: lf3-cdn-tos.bytecdntp.com
+
+preload:
+  enable: false
+  files:
+    - /css/index.css
