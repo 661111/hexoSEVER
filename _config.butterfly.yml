@@ -990,19 +990,18 @@ css_prefix: true
 inject:
   head:
     - <script data-pjax src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
-    - <link rel="stylesheet" href="https://cdn.sxiaohe.top/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
-    - <link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
-    - <script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script>
+    - <link rel="stylesheet" href="/css/swiper.min.css">
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
-    - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://cdn.jsdmirror.com/npm/pace-js@latest/pace.min.js"></script>
+    - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
     - <script data-pjax src="/js/sxiaohe.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
     - <script defer src="/js/bbtalk.js"></script> # 即刻逻辑文件
-    - <script data-pjax src="https://cdn.bootcdn.net/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
+    - <script data-pjax src="/css/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
     - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js" ></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3612150_gkavascgf3n.js" ></script>
@@ -1037,18 +1036,18 @@ CDN:
     # algolia_js:
     # algolia_search_v4:
     # instantsearch_v4:
-    # pjax:
+    pjax: https://lib.baomitu.com/pjax/0.2.8/pjax.min.js
     # gitalk:
     # gitalk_css:
     # blueimp_md5:
     # valine:
     # disqusjs:
     # disqusjs_css:
-    # twikoo:
+    twikoo: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/twikoo/1.4.18/twikoo.all.min.js
     # waline_js:
     # waline_css:
-    # sharejs:
-    # sharejs_css:
+    sharejs: https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js
+    sharejs_css: https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css
     # mathjax:
     # katex:
     # katex_copytex:
@@ -1056,28 +1055,28 @@ CDN:
     # canvas_ribbon:
     # canvas_fluttering_ribbon:
     # canvas_nest:
-    # lazyload:
-    # instantpage:
-    # typed:
+    lazyload: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js
+    instantpage: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js
+    typed: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.min.js
     # pangu:
-    # fancybox_css_v4:
-    # fancybox_v4:
-    # medium_zoom:
-    # snackbar_css:
-    # snackbar:
+    fancybox_css_v4: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css
+    fancybox_v4: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js
+    medium_zoom: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/medium-zoom/1.0.6/medium-zoom.min.js
+    snackbar_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css
+    snackbar: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js
     # activate_power_mode:
     # fireworks:
     # click_heart:
     # ClickShowText:
-    # fontawesomeV6:
-    # flickr_justified_gallery_js:
-    # flickr_justified_gallery_css:
-    # aplayer_css:
-    # aplayer_js:
-    # meting_js:
-    # prismjs_js:
-    # prismjs_lineNumber_js:
-    # prismjs_autoloader:
+    fontawesomeV6: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css
+    flickr_justified_gallery_js: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
+    flickr_justified_gallery_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/css/justifiedGallery.min.css
+    aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
+    aplayer_js: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
+    meting_js: https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js
+    prismjs_js: https://cdn1.tianli0.top/npm/prismjs@1.1.0/prism.js
+    prismjs_lineNumber_js: https://cdn1.tianli0.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+    prismjs_autoloader: https://cdn1.tianli0.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
     artalk_js: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.js
     artalk_css: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.css
     card_weibo:  /sxiaohe_source/js/weibo.js ## 或者填写自己的 js 地址
@@ -1113,7 +1112,7 @@ footer_beautify:
         class: out
     right:
       - icon: fa-brands fa-github
-        link: https://github.com/Marcusyyds
+        link: https://github.com/661111
         desrc: Github主页
         class: out
       - icon: fa-brands fa-bilibili
