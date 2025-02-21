@@ -993,6 +993,7 @@ inject:
     - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
     - <link rel="stylesheet" href="/css/swiper.min.css">
+    - <script src="/js/echarts.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
