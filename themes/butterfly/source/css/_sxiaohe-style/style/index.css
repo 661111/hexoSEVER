@@ -156,3 +156,17 @@ div#page {
     left: 5px;
     border: 3px solid #425aef;
 }
+a.category-list-link {
+    padding-left: 18px;
+}
+/* 9.5.导航栏仿轻笑 */
+/* 9.5.1.未下滑导航栏 */
+#page-header.not-top-img #nav {
+    background: rgba(255, 255, 255, 0);
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+#page-header.nav-fixed #nav {
+    background: rgba(255, 255, 255, .37);
+    box-shadow: none!important;
+}
