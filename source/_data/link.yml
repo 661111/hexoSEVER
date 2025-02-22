@@ -2,13 +2,8 @@
   flink_style: volantis
   random: true
   link_list:
-    - name: 清羽飞扬
-      link: https://blog.liushen.fun/
-      avatar: https://cdn.qyliu.top/i/2024/03/21/65fc56832e37d.png
-      descr: 柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜
-      siteshot: https://cdn.qyliu.top/i/2024/03/21/65fc57d6b8615.png
-    - name: Akilarの糖果屋
-      link: https://akilar.top/
-      siteshot: https://cdn.qyliu.top/i/2024/03/21/65fc582187f19.png
-      avatar: https://cdn.qyliu.top/i/2024/04/06/661170950f7a2.png
-      descr: 欢迎光临糖果屋
+    - name: 苏晓河
+      link: https://www.sxiaohe.top/
+      siteshot: /img/link/苏晓河.avif
+      avatar: https://www.sxiaohe.top/img/avatar.avif
+      descr: 随风飘起 如同浮云
