@@ -1,4 +1,34 @@
 #footer-wrap
+  if theme.other.footer.enable && is_post()
+    div#st-footer-bar
+      div.footer-logo
+        if theme.site.name.class === 'i_class'
+          i.solitude(class=theme.site.name.custom)
+        else if theme.site.name.class === 'img'
+          img.solitude.nolazyload(src=url_for(theme.site.name.custom))
+        else if theme.site.name.class === 'text'
+          span= theme.site.name.custom
+      div.footer-bar-description=theme.other.footer.desc
+      if theme.other.footer.button.enable
+        a.footer-bar-link(href=url_for(theme.other.footer.button.url))= theme.other.footer.button.name
+  if theme.yejiao.information.left || theme.yejiao.information.right || theme.yejiao.information.author
+    div#footer_deal
+      - var leftInfo = theme.yejiao.information.left || []
+      - var rightInfo = theme.yejiao.information.right || []
+
+      each value, label in leftInfo
+        - var array = value.split('||')
+        a.deal_link(href=url_for(trim(array[0])), title=label)
+          i.solitude(class=array[1])
+
+      if theme.yejiao.information.author
+        div#footer_mini_logo.nolazyload.footer_mini_logo(title=_p('nav.backtop'), onclick="sco.toTop()")
+          img(src=theme.yejiao.information.author, alt=_p('nav.backtop'))
+
+      each value, label in rightInfo
+        - var array = value.split('||')
+        a.deal_link(href=url_for(trim(array[0])), title=label)
+          i.solitude(class=array[1])
   if theme.footer.owner.enable
     - var now = new Date()
     - var nowYear = now.getFullYear()

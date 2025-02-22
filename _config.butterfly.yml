@@ -16,6 +16,37 @@ menu:
     关于本站: /about/ || icon-paperplane || faa-tada
     我的装备: /equipment/ || icon-paperplane || faa-tada
 
+other:
+  # footer post
+  # 文章作者信息介绍
+  footer:
+    enable: true
+    desc: # Articles from Ever Fu. / 文章来自 Ever Fu # description
+    button: # Button
+      enable: true
+      name: # Learn more / 了解更多
+      url: /about/
+  # Site information
+  # 网站信息
+  site:
+    name:
+      class: text # text / i_class / img
+      custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
+    icon: /img/pwa/favicon.png # Site icon / 网站图标
+
+# Footer
+# 页脚
+yejiao:
+  # 社交图标
+  information:
+    author: false # img url / false
+    left:
+      # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
+      # Mail: mailto:o@everfu.org || far fa-envelope
+    right:
+      # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
+      # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
+
 # essay 即刻短文
 # MeuiCat设计
 # https://meuicat.com/blog/67/
@@ -54,7 +85,7 @@ abbrlink:
 # tag-plugins-plus
 # see https://akilar.top/posts/615e2dec/
 tag_plugins:
-  enable: false # 开关
+  enable: true # 开关
   priority: 5 #过滤器优先权
   issues: false #issues标签依赖注入开关
   link:
@@ -67,7 +98,7 @@ tag_plugins:
     tag_plugins_css: https://jsd.onmicrosoft.cn/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
 
 wowjs:
-  enable: true #控制动画开关。true是打开，false是关闭
+  enable: false #控制动画开关。true是打开，false是关闭
   priority: 10 #过滤器优先级
   mobile: false #移动端是否启用，默认移动端禁用
   animateitem:
@@ -1082,135 +1113,3 @@ CDN:
     artalk_js: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.js
     artalk_css: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.css
     card_weibo:  /sxiaohe_source/js/weibo.js ## 或者填写自己的 js 地址
-
-#hexo-butterfly-footer-marcus
-#see https://blog.marcus233.top/p/footer.html
-footer_beautify:
-  enable: true
-  priority: 5 #过滤器优先权
-  enable_page: all # 应用页面
-  layout: # 挂载容器类型
-      type: id
-      name: footer
-      index: 1
-  footer_icons:
-    enable: true
-    left:
-      - icon: fa-solid fa-compass
-        link: https://www.marcus233.top/
-        desrc: 个人主页
-        class: out
-      - icon: fa-brands fa-qq
-        link: https://res.abeim.cn/api/qq/?qq=3105950984
-        desrc: 联系QQ
-        class: out
-      - icon: fa-brands fa-weixin
-        link: /wechat/
-        desrc: 联系微信
-        class: in
-      - icon: fa-solid fa-envelope
-        link: mailto:marcus@marcus233.top
-        desrc: 发送邮件
-        class: out
-    right:
-      - icon: fa-brands fa-github
-        link: https://github.com/661111
-        desrc: Github主页
-        class: out
-      - icon: fa-brands fa-bilibili
-        link: https://space.bilibili.com/1024450661
-        desrc: 哔哩哔哩主页
-        class: out
-      - icon: fa-solid fa-star
-        link: /stars/
-        desrc: 藏宝阁
-        class: in
-      - icon: fa-solid fa-comment
-        link: /message/
-        desrc: 留言
-        class: in
-  footer_logo:
-    enable: true
-    url: https://www.sxiaohe.top/img/avatar.avif
-  footer_group:
-    enable: true
-    footer_group_link:
-      - group_title: 直达
-        footer_links: 
-          - text: 藏宝阁
-            link: /stars/
-            class: in
-          - text: 优秀句子
-            link: /sentence/
-            class: in
-          - text: 空间说说
-            link: /zone/
-            class: in
-          - text: 友链订阅
-            link: /fcircle/
-            class: in
-          - text: 切换背景
-            link: /bg/
-            class: in
-      - group_title: 关于
-        footer_links: 
-          - text: 关于我
-            link: /about/
-            class: in
-          - text: RSS订阅
-            link: /atom.xml
-            class: in
-          - text: 站点监控
-            link: https://uptime.marcus233.top/
-            class: out
-          - text: 更新记录
-            link: /timeline/
-            class: in
-          - text: 我的相册
-            link: /picture/
-            class: in
-      - group_title: 分类
-        footer_links: 
-          - text: 博客相关
-            link: /categories/博客相关
-            class: in
-          - text: 生活点滴
-            link: /categories/生活点滴
-            class: in 
-          - text: 资源分享
-            link: /categories/资源分享
-            class: in
-          - text: 学习笔记
-            link: /categories/学习笔记
-            class: in 
-          - text: 实用教程
-            link: /categories/实用教程
-            class: in 
-          - text: 查看全部
-            link: /categories/
-            class: in 
-  footer_friend_links:
-    enable: true
-    number: 5
-  footer_bottom:
-    copyright:
-      enable: true
-      author: Marcus
-      link: https://marcus233.top/
-      time: 2022
-    left:
-      - text: Staticfile
-        desrc: 本站CDN支持
-        link: https://www.staticfile.net/
-    right:
-      - text: Hexo
-        desrc: 框架
-        link: https://hexo.io/zh-cn/
-      - text: Butterfly
-        desrc: 主题
-        link: https://butterfly.js.org/
-    runtime:
-      enable: true
-      time: 2022/08/09 00:00:00
-  footer_css: /css/waizhi.css
-  footer_js: /js/date.js
