@@ -173,9 +173,8 @@ a.category-list-link {
 /* 9.6.页面夜晚 */
 [data-theme=dark] #aside-content .card-widget {
     border: 2px solid rgba(56,211,203,.8)!important;
-    backgr;background: rgba(0,0,0,.6)!important;
+    background: rgba(0,0,0,.6)!important;
 }
-
 [data-theme=dark] div#post {
     border: 2px solid rgba(56,211,203,.8);
     background: rgba(0,0,0,.6)!important

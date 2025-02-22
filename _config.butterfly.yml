@@ -951,7 +951,7 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: true
+  enable: false
   field: site # site/post
   placeholder:
   blur: false
@@ -989,8 +989,8 @@ css_prefix: true
 # 如果需要引用跨域文件，需要添加网址
 inject:
   head:
-    - <script data-pjax src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
-    - <script data-pjax src="https://jsd.sxiaohe.top/npm/echarts@4.7.0/dist/echarts.min.js"></script>
+    - <script async src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
+    - <script async src="https://jsd.sxiaohe.top/npm/echarts@4.7.0/dist/echarts.min.js"></script>
     - <link rel="preload" src="/img/todayCardCover.avif" />
     - <script src="/sw.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
@@ -1000,11 +1000,11 @@ inject:
     - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
     - <link rel="stylesheet" href="/css/swiper.min.css">
     - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://jsd.sxiaohe.top/npm/pace-js@latest/pace.min.js"></script>
-    - <script data-pjax src="/js/sxiaohe.js"></script>
+    - <script async src="/js/sxiaohe.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
     - <script defer src="/js/bbtalk.js"></script> # 即刻逻辑文件
-    - <script data-pjax src="https://jsd.sxiaohe.top/npm/swiper/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
+    - <script async src="https://jsd.sxiaohe.top/npm/swiper/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
     - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js" ></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3612150_gkavascgf3n.js" ></script>
