@@ -170,3 +170,17 @@ a.category-list-link {
     background: rgba(255, 255, 255, .37);
     box-shadow: none!important;
 }
+/* 9.6.页面夜晚 */
+[data-theme=dark] #aside-content .card-widget {
+    border: 2px solid rgba(56,211,203,.8)!important;
+    backgr;background: rgba(0,0,0,.6)!important;
+}
+
+[data-theme=dark] div#post {
+    border: 2px solid rgba(56,211,203,.8);
+    background: rgba(0,0,0,.6)!important
+}
+[data-theme=dark] #recent-posts>.recent-post-item,[data-theme=dark] div#archive,[data-theme=dark] div#category,[data-theme=dark] div#page,[data-theme=dark] div#tag {
+    border: 2px solid rgba(56,211,203,.8);
+    background: rgba(0,0,0,.6)
+}
