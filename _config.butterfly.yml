@@ -16,37 +16,6 @@ menu:
     关于本站: /about/ || icon-paperplane || faa-tada
     我的装备: /equipment/ || icon-paperplane || faa-tada
 
-other:
-  # footer post
-  # 文章作者信息介绍
-  footer:
-    enable: true
-    desc: # Articles from Ever Fu. / 文章来自 Ever Fu # description
-    button: # Button
-      enable: true
-      name: # Learn more / 了解更多
-      url: /about/
-  # Site information
-  # 网站信息
-  site:
-    name:
-      class: text # text / i_class / img
-      custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
-    icon: /img/pwa/favicon.png # Site icon / 网站图标
-
-# Footer
-# 页脚
-yejiao:
-  # 社交图标
-  information:
-    author: false # img url / false
-    left:
-      # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
-      # Mail: mailto:o@everfu.org || far fa-envelope
-    right:
-      # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
-      # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
-
 # essay 即刻短文
 # MeuiCat设计
 # https://meuicat.com/blog/67/
@@ -1034,7 +1003,7 @@ inject:
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
     - <script defer src="/js/bbtalk.js"></script> # 即刻逻辑文件
-    - <script data-pjax src="/css/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
+    - <script data-pjax src="/js/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
     - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js" ></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3612150_gkavascgf3n.js" ></script>
