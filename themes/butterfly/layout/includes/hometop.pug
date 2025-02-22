@@ -65,7 +65,9 @@ if is_home()
                                 | 山河远阔，人间烟火
                                 br
                                 | 无一是你，无一不是你
-                        .todayCard-cover(loading="lazy" style='background:url(/img/todayCardCover.avif) no-repeat center/cover')
+                        //- 使用 picture 元素提供多种图片格式
+                        picture.todayCard-cover
+                            source(type="image/avif" srcset="/img/todayCardCover.avif")
                         .banner-button-group
                             a.banner-button(onclick='window.event.cancelBubble=!0,bywind.hideTodayCard()')
                                 i.hnfont.icon-add-circle-fill
