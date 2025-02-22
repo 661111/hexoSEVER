@@ -991,13 +991,13 @@ inject:
   head:
     - <script data-pjax src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
     - <link rel="preload" src="/img/todayCardCover.avif" />
-    - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
-    - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
-    - <link rel="stylesheet" href="/css/swiper.min.css">
     - <script src="/js/echarts.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
+    - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
+    - <link rel="stylesheet" href="/css/swiper.min.css">
     - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
     - <script data-pjax src="/js/sxiaohe.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
