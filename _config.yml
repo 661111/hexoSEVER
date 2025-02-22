@@ -114,28 +114,8 @@ search:
   format: html
   limit: 10000
 
-# PWA -- offline config passed to sw-precache.
-service_worker:
-  maximumFileSizeToCacheInBytes: 52428800
-  staticFileGlobs:
-  - public/**/*.{js,html,xml,json,css,png,jpg,gif,svg,eot,ttf,woff,woff2,ico,cur}  # code 1
-  stripPrefix: public
-  verbose: true
-  runtimeCaching:
-    - urlPattern: /*
-      handler: cacheFirst
-      options:
-        origin: cdn.sxiaohe.top
-    - urlPattern: /*
-      handler: cacheFirst
-      options:
-        origin: npm.elemecdn.com
-    - urlPattern: /*
-      handler: cacheFirst
-      options:
-        origin: lf3-cdn-tos.bytecdntp.com
-
-preload:
-  enable: false
-  files:
-    - /css/index.css
+swpp:
+  enable: true
+  # rules 文件的名称（缺省值为 'sw-rules'）
+  # 没有需求不建议更改，当主题和用户配置项不同时会导致主题和插件无法正常配合工作
+  # rules:
