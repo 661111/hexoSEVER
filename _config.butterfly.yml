@@ -60,11 +60,11 @@ tag_plugins:
   link:
     placeholder: /img/link.png #link_card标签默认的图标图片
   CDN:
-    anima: https://jsd.onmicrosoft.cn/npm/hexo-butterfly-tag-plugins-plus@1.0.18/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
-    jquery: https://jsd.onmicrosoft.cn/npm/jquery@latest/dist/jquery.min.js #issues标签依赖
-    issues: https://jsd.onmicrosoft.cn/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
-    carousel: https://jsd.onmicrosoft.cn/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
-    tag_plugins_css: https://jsd.onmicrosoft.cn/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
+    anima: https://jsd.sxiaohe.top/npm/hexo-butterfly-tag-plugins-plus@1.0.18/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: https://jsd.sxiaohe.top/npm/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: https://jsd.sxiaohe.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    carousel: https://jsd.sxiaohe.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    tag_plugins_css: https://jsd.sxiaohe.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
 
 wowjs:
   enable: false #控制动画开关。true是打开，false是关闭
@@ -79,9 +79,9 @@ wowjs:
       iteration: 1 #选填项，动画重复的次数
     - class: card-widget
       style: animate__zoomIn
-  animate_css: https://jsd.onmicrosoft.cn/npm/hexo-butterfly-wowjs/lib/animate.min.css
-  wow_js: https://jsd.onmicrosoft.cn/npm/hexo-butterfly-wowjs/lib/wow.min.js
-  wow_init_js: https://jsd.onmicrosoft.cn/npm/hexo-butterfly-wowjs/lib/wow_init.js
+  animate_css: https://jsd.sxiaohe.top/npm/hexo-butterfly-wowjs/lib/animate.min.css
+  wow_js: https://jsd.sxiaohe.top/npm/hexo-butterfly-wowjs/lib/wow.min.js
+  wow_init_js: https://jsd.sxiaohe.top/npm/hexo-butterfly-wowjs/lib/wow_init.js
 
 # hexo-safego安全跳转插件
 # see https://blog.liushen.fun/posts/1dfd1f41/
