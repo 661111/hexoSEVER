@@ -1032,6 +1032,8 @@ CDN:
 
   option:
     main_css: /css/index.css
+    jquery: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js
+    echarts: https://jsd.sxiaohe.top/npm/echarts@4.7.0/dist/echarts.min.js
     # main:
     # utils:
     # translate:
