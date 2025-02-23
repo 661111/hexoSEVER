@@ -80,6 +80,10 @@ div#banners {
     color: #fff!important;
     background-color: #e58a8a!important;
 }
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color) transparent;
+}
 /* 7.文章页面整体修改 */
 #post {
     border: 2px solid rgba(0, 255, 255, .6);
