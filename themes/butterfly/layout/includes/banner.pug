@@ -11,7 +11,7 @@ div.banners-title
 
 - var group = theme.hometop.group
 if group
-    div.banners-links
+    div.banners-link
         each value,label in group
             - var array = value.split('||')
             a.banners-link-btn(href=url_for(trim(array[0])) style=`background-image: ${array[2]} `)

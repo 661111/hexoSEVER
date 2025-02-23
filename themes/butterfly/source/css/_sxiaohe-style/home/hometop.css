@@ -5,6 +5,14 @@
     margin-bottom: .5rem;
     padding: 0 1.5rem
 }
+.recent-post-top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow-x: scroll;
+    gap: .5rem;
+}
 .recent-top-post-group {
     border-radius: 12px;
     overflow: hidden;
