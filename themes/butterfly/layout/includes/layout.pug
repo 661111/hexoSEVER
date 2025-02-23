@@ -23,6 +23,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
           #home_top
             if theme.essay.enable && theme.essay.home_mini
               include ./bbtimelist.pug
+            include ./hometop.top
 
         main#content-inner.layout(class=hideAside)
           if body
