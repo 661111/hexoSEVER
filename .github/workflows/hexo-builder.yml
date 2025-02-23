@@ -52,7 +52,6 @@ jobs:
           hexo clean
           hexo generate
           gulp
-          hexo swpp
       - name: 部署到Github
         uses: JamesIves/github-pages-deploy-action@v4
         with:
