@@ -17,10 +17,13 @@ if ('serviceWorker' in window.navigator && navigator.serviceWorker.controller) {
     })
 }
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw-rules.js').then(() => {
-    if (localStorage.getItem('install') !== 'true') {
-      localStorage.setItem('install', 'true')
-      location.reload()
-    }
-  })
+  window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+        .catch(function(err) {
+              console.log('ServiceWorker registration failed: ', err);
+          });
+  });
 }

@@ -1,0 +1,74 @@
+style(type='text/css')
+  | .pace {
+  |   -webkit-pointer-events: none;
+  |   pointer-events: none;
+  |   -webkit-user-select: none;
+  |   -moz-user-select: none;
+  |   user-select: none;
+  | }
+  | .pace-inactive {
+  |   display: none;
+  | }
+  | .pace .pace-progress {
+  |   background: #29d;
+  |   position: fixed;
+  |   z-index: 2000;
+  |   top: 0;
+  |   right: 100%;
+  |   width: 100%;
+  |   height: 2px;
+  | }
+script(type='text/javascript')
+  | // 注册 Service Worker 的函数
+  | function registerServiceWorker() {
+  |   if ('serviceWorker' in navigator) {
+  |     window.addEventListener('load', () => {
+  |       navigator.serviceWorker.register('/service-worker.js')
+  |        .then((registration) => {
+  |           console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  |         })
+  |        .catch((err) => {
+  |           console.error('ServiceWorker registration failed: ', err);
+  |         });
+  |     });
+  |   }
+  | }
+  | 
+  | // 向 Service Worker 发送消息并监听响应的函数
+  | function sendMessageToServiceWorker() {
+  |   if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+  |     try {
+  |       // 发送更新指令到 Service Worker
+  |       // 'update' 改为 'refresh' 即可触发缓存刷新
+  |       navigator.serviceWorker.controller.postMessage('update');
+  |       console.log('已向 Service Worker 发送 update 消息');
+  | 
+  |       // 监听 Service Worker 发送的消息
+  |       navigator.serviceWorker.addEventListener('message', (event) => {
+  |         const data = event.data;
+  |         if (data && data.type) {
+  |           switch (data.type) {
+  |             case 'update':
+  |               // 这里写更新后的操作
+  |               console.log('收到 update 消息，执行更新后的操作');
+  |               break;
+  |             case 'refresh':
+  |               // 这里写强刷缓存后的操作
+  |               console.log('收到 refresh 消息，执行强刷缓存后的操作');
+  |               break;
+  |             default:
+  |               console.error(`未知事件：${data.type}`);
+  |           }
+  |         } else {
+  |           console.error('收到的消息缺少 type 属性', data);
+  |         }
+  |       });
+  |     } catch (error) {
+  |       console.error('向 Service Worker 发送消息时出错', error);
+  |     }
+  |   }
+  | }
+  | 
+  | // 调用注册和发送消息的函数
+  | registerServiceWorker();
+  | sendMessageToServiceWorker();
