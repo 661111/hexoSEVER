@@ -1,313 +1,334 @@
-// noinspection JSIgnoredPromiseFromCall
-
-(() => {
-    /** 缓存库名称 */
-    const CACHE_NAME = 'SxiaoHeCache'
-    /** 版本名称存储地址（必须以`/`结尾） */
-    const VERSION_PATH = 'https://www.sxiaohe.top/'
-
-    self.addEventListener('install', () => self.skipWaiting())
-
-    /** 缓存列表 */
-    const cacheList = {
-        /* 样例 */
-        static: {
-            // 标记在删除所有缓存时是否移除该缓存
-            clean: false,
-            /**
-             * 接收一个URL对象，判断是否符合缓存规则
-             * @param url {URL}
-             */
-            match: url => run(url.pathname, it => it.match(/\.(woff2|woff|ttf|cur)$/) ||
-                it.match(/\/(pjax\.min|fancybox\.umd\.min|twikoo\.all\.min)\.js$/) ||
-                it.match(/\/(all\.min|fancybox\.min)\.css/) || it.match(/\.(png|jpg|jpeg|webp|avif)$/)
-            )
+const CACHE_NAME = "苏晓河"
+  , VERSION_CACHE_NAME = "sxiaoheTime"
+  , MAX_ACCESS_CACHE_TIME = 345600;
+function time() {
+    return (new Date).getTime()
+}
+const dbHelper = {
+    read: e => new Promise((t => {
+        caches.match(e).then((function(e) {
+            e || t(null),
+            e.text().then((e => t(e)))
         }
+        )).catch(( () => {
+            t(null)
+        }
+        ))
     }
-
-    /**
-     * 链接替换列表
-     * @param source 源链接
-     * @param dist 目标链接
-     */
-    const replaceList = {
-        github: {
-            source: ['//cdn.jsdelivr.net/gh'],
-            dist: '//jsd.sxiaohe.top/gh'
+    )),
+    write: (e, t) => new Promise(( (n, c) => {
+        caches.open("ChuckleTime").then((function(c) {
+            c.put(e, new Response(t)),
+            n()
+        }
+        )).catch(( () => {
+            c()
+        }
+        ))
+    }
+    )),
+    delete: e => {
+        caches.match(e).then((t => {
+            t && caches.open("ChuckleTime").then((t => t.delete(e)))
+        }
+        ))
+    }
+}
+  , dbTime = {
+    read: e => dbHelper.read(new Request(`https://LOCALCACHE/${encodeURIComponent(e)}`)),
+    write: (e, t) => dbHelper.write(new Request(`https://LOCALCACHE/${encodeURIComponent(e)}`), t),
+    delete: e => dbHelper.delete(new Request(`https://LOCALCACHE/${encodeURIComponent(e)}`))
+}
+  , dbAccess = {
+    update: e => dbHelper.write(new Request(`https://ACCESS-CACHE/${encodeURIComponent(e)}`), time()),
+    check: async e => {
+        const t = new Request(`https://ACCESS-CACHE/${encodeURIComponent(e)}`)
+          , n = await dbHelper.read(t);
+        return !!n && (dbHelper.delete(t),
+        time() - n < 345600)
+    }
+};
+self.addEventListener("install", ( () => self.skipWaiting()));
+const cacheList = {
+    sxiaohecdn: {
+        url: /(^(https:\/\/jsd\.sxiaohe\.top).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    pai: {
+        url: /(^(https:\/\/jsdelivr\.pai233\.top).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    n: {
+        url: /(^(https:\/\/img\.cdn\.nesxc\.com).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    jsdcdn: {
+        url: /(^(https:\/\/cdn\.jsdelivr\.net).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    bootcdn: {
+        url: /(^(https:\/\/cdn\.bootcdn\.net).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    alfonts: {
+        url: /(^(https:\/\/at\.alicdn\.com).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    fastly: {
+        url: /(^(https:\/\/fastly\.jsdelivr\.net).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    lf3: {
+        url: /(^(https:\/\/lf3-cdn-tos\.bytecdntp\.com).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    lf26: {
+        url: /(^(https:\/\/lf26-cdn-tos\.bytecdntp\.com).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    zhimg: {
+        url: /(^(https:\/\/unpkg\.zhimg\.com).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    unpkg: {
+        url: /(^(https:\/\/unpkg\.com).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    elemecdn: {
+        url: /(^(https:\/\/npm\.elemecdn\.com).*@\d.*)/g,
+        time: 259200,
+        clean: !0
+    },
+    update: {
+        url: /.*((\/article.*\/)|search\.xml)$/g,
+        time: 259200,
+        clean: !0
+    },
+    chuckle: {
+        url: /(^(https:\/\/www\.sxiaohe\.top).*(\/)$)/g,
+        time: 259200,
+        clean: !0
+    },
+    resources: {
+        url: /(^(https:\/\/www\.sxiaohe\.top)).*\.(css|html|webp|png|jpg|gif|ico|js|woff2|woff|ttf|json|svg)$/g,
+        time: 259200,
+        clean: !0
+    }
+}
+  , replaceList = {};
+function findCache(e) {
+    for (let t in cacheList) {
+        const n = cacheList[t];
+        if (e.match(n.url))
+            return n
+    }
+    return null
+}
+function replaceRequest(e) {
+    let t = e.url
+      , n = !1;
+    for (let e in replaceList) {
+        const c = replaceList[e];
+        for (let e of c.source)
+            t.match(e) && (t = t.replace(e, c.dist),
+            n = !0)
+    }
+    return n ? new Request(t) : null
+}
+function blockRequest(e) {
+    return !1
+}
+async function fetchEvent(e, t, n) {
+    const c = time();
+    dbAccess.update(e.url);
+    const s = n.time;
+    let l = !1;
+    if (t) {
+        const n = await dbTime.read(e.url);
+        if (n && c - n < s)
+            return t;
+        l = !0
+    }
+    const r = () => fetch(e).then((t => {
+        if (dbTime.write(e.url, c),
+        t.ok || 0 === t.status) {
+            const n = t.clone();
+            caches.open("Chuckle").then((t => t.put(e, n)))
+        }
+        return t
+    }
+    ));
+    return l ? Promise.race([new Promise((e => setTimeout(( () => e(t)), 400))), r()]).catch((t => console.error("不可达的链接：" + e.url + "\n错误信息：" + t))) : r()
+}
+self.addEventListener("fetch", (async e => {
+    const t = replaceRequest(e.request)
+      , n = null === t ? e.request : t
+      , c = findCache(n.url);
+    blockRequest(n) ? e.respondWith(new Response(null,{
+        status: 204
+    })) : null !== c ? e.respondWith(caches.match(n).then((async e => fetchEvent(n, e, cacheList)))) : null !== t && e.respondWith(fetch(n))
+}
+)),
+self.addEventListener("message", (function(e) {
+    "refresh" === e.data && caches.open("Chuckle").then((function(t) {
+        t.keys().then((function(n) {
+            for (let e of n) {
+                const n = findCache(e.url);
+                null != n && !n.clean && dbAccess.check(e.url) || (t.delete(e),
+                dbTime.delete(e))
+            }
+            e.source.postMessage("success")
+        }
+        ))
+    }
+    ))
+}
+));
+let cachelist = [];
+self.addEventListener("install", (async function(e) {
+    self.skipWaiting(),
+    e.waitUntil(caches.open("Chuckle").then((function(e) {
+        return console.log("Opened cache"),
+        e.addAll(cachelist)
+    }
+    )))
+}
+)),
+self.addEventListener("fetch", (async e => {
+    try {
+        e.respondWith(handle(e.request))
+    } catch (t) {
+        e.respondWith(handleerr(e.request, t))
+    }
+}
+));
+const handleerr = async (e, t) => new Response(`<h1>CDN分流器遇到了致命错误</h1>\n      <b>${t}</b>`,{
+    headers: {
+        "content-type": "text/html; charset=utf-8"
+    }
+});
+let cdn = {
+    gh: {
+        jsdelivr: {
+            url: "https://jsdelivr.pai233.top/gh"
         },
-        npm: {
-            source: ['//cdn.jsdelivr.net/npm'],
-            dist: '//jsd.sxiaohe.top/npm'
+        tianli: {
+            url: "https://cdn1.tianli0.top/gh"
         },
-        onmicrosoft: {
-            source: ['//jsd.onmicrosoft.cn/npm'],
-            dist: '//jsd.sxiaohe.top/npm'
+        fastly: {
+            url: "https://fastly.jsdelivr.net/gh"
+        },
+        sxiaohe: {
+            url: "https://jsd.sxiaohe.top/gh"
+        }
+    },
+    combine: {
+        jsdelivr: {
+            url: "https://jsdelivr.pai233.top/combine"
+        },
+        tianli: {
+            url: "https://cdn1.tianli0.top/combine"
+        },
+        jsdelivr_fastly: {
+            url: "https://fastly.jsdelivr.net/combine"
+        }
+    },
+    npm: {
+        eleme: {
+            url: "https://npm.elemecdn.com"
+        },
+        pai: {
+            url: "https://jsdelivr.pai233.top/npm"
+        },
+        zhimg: {
+            url: "https://unpkg.zhimg.com"
+        },
+        unpkg: {
+            url: "https://unpkg.com"
+        },
+        tianli: {
+            url: "https://cdn1.tianli0.top/npm"
+        },
+        fastly: {
+            url: "https://fastly.jsdelivr.net/npm"
+        },
+        sxiaohe: {
+            url: "https://jsd.sxiaohe.top/npm"
         }
     }
-
-    /**
-     * 删除指定缓存
-     * @param list 要删除的缓存列表
-     * @return {Promise<Array<string>>} 删除的缓存的URL列表
-     */
-    const deleteCache = list => new Promise(resolve => {
-        caches.open(CACHE_NAME).then(cache => cache.keys()
-            .then(keys => Promise.all(keys.map(
-                it => new Promise(async resolve1 => {
-                    const url = it.url
-                    if (url !== VERSION_PATH && list.match(url)) {
-                        await cache.delete(it)
-                        resolve1(url)
-                    } else resolve1(undefined)
-                })
-            )).then(removeList => resolve(removeList)))
-        )
-    })
-
-    self.addEventListener('fetch', event => {
-        const replace = replaceRequest(event.request)
-        const request = replace || event.request
-        const url = new URL(request.url)
-        if (findCache(url)) {
-            event.respondWith(new Promise(async resolve => {
-                const key = new Request(`${url.protocol}//${url.host}${url.pathname}`)
-                let response = await caches.match(key)
-                if (!response) {
-                    response = await fetchNoCache(request)
-                    const status = response.status
-                    if ((status > 199 && status < 400) || status === 0) {
-                        const clone = response.clone()
-                        caches.open(CACHE_NAME).then(cache => cache.put(key, clone))
+};
+const handle = async function(e) {
+    const t = e.url
+      , n = t.split("/")[2];
+    let c = [];
+    for (let s in cdn)
+        for (let l in cdn[s])
+            if (n == cdn[s][l].url.split("https://")[1].split("/")[0] && t.match(cdn[s][l].url)) {
+                c = [];
+                for (let e in cdn[s])
+                    c.push(t.replace(cdn[s][l].url, cdn[s][e].url));
+                return t.indexOf("@latest/") > -1 ? lfetch(c, t) : caches.match(e).then((function(n) {
+                    return n || lfetch(c, t).then((function(t) {
+                        return caches.open("Chuckle").then((function(n) {
+                            return n.put(e, t.clone()),
+                            t
+                        }
+                        ))
                     }
+                    ))
                 }
-                resolve(response)
-            }))
-        } else if (replace !== null) {
-            event.respondWith(fetch(request))
+                ))
+            }
+    return fetch(e)
+}
+  , lfetch = async (e, t) => {
+    let n = new AbortController;
+    const c = async e => new Response(await e.arrayBuffer(),{
+        status: e.status,
+        headers: e.headers
+    });
+    return Promise.any || (Promise.any = function(e) {
+        return new Promise(( (t, n) => {
+            let c = (e = Array.isArray(e) ? e : []).length
+              , s = [];
+            if (0 === c)
+                return n(new AggregateError("All promises were rejected"));
+            e.forEach((e => {
+                e.then((e => {
+                    t(e)
+                }
+                ), (e => {
+                    c--,
+                    s.push(e),
+                    0 === c && n(new AggregateError(s))
+                }
+                ))
+            }
+            ))
         }
-    })
-
-    self.addEventListener('message', event => {
-        const data = event.data
-        switch (data) {
-            case 'update':
-                updateJson().then(info => {
-                    // noinspection JSUnresolvedVariable
-                    event.source.postMessage({
-                        type: 'update',         // 信息类型
-                        update: info.update,    // 删除的缓存URL列表
-                        version: info.version,  // 更新后的版本号
-                    })
-                })
-                break
-            default:
-                const list = new VersionList()
-                list.push(new CacheChangeExpression({'flag': 'all'}))
-                deleteCache(list).then(() => {
-                    if (data === 'refresh')
-                        event.source.postMessage({type: 'refresh'})
-                })
-                break
-        }
-    })
-
-    const run = (it, task) => task(it)
-
-    /** 忽略浏览器HTTP缓存的请求指定request */
-    const fetchNoCache = request => fetch(request, {cache: "no-store"})
-
-    /** 判断指定url击中了哪一种缓存，都没有击中则返回null */
-    function findCache(url) {
-        for (let key in cacheList) {
-            const value = cacheList[key]
-            if (value.match(url)) return value
-        }
-        return null
+        ))
     }
-
-    /**
-     * 检查连接是否需要重定向至另外的链接，如果需要则返回新的Request，否则返回null<br/>
-     * 该函数会顺序匹配{@link replaceList}中的所有项目，即使已经有可用的替换项<br/>
-     * 故该函数允许重复替换，例如：<br/>
-     * 如果第一个匹配项把链接由"http://abc.com/"改为了"https://abc.com/"<br/>
-     * 此时第二个匹配项可以以此为基础继续进行修改，替换为"https://abc.net/"<br/>
-     * @return {Request|null}
-     */
-    function replaceRequest(request) {
-        let url = request.url;
-        let flag = false
-        for (let key in replaceList) {
-            const value = replaceList[key]
-            for (let source of value.source) {
-                if (url.match(source)) {
-                    url = url.replace(source, value.dist)
-                    flag = true
-                }
-            }
+    ),
+    Promise.any(e.map((e => new Promise(( (t, s) => {
+        fetch(e, {
+            signal: n.signal
+        }).then(c).then((e => {
+            200 == e.status ? (n.abort(),
+            t(e)) : s(e)
         }
-        return flag ? new Request(url) : null
+        ))
     }
-
-    /**
-     * 根据JSON删除缓存
-     * @returns {Promise<boolean>} 返回值用于标记当前页是否被刷新
-     */
-    function updateJson() {
-        /**
-         * 解析elements，并把结果输出到list中
-         * @return boolean 是否刷新全站缓存
-         */
-        const parseChange = (list, elements, version) => {
-            for (let element of elements) {
-                const ver = element['version']
-                if (ver === version) return false
-                const jsonList = element['change']
-                if (jsonList) {
-                    for (let it of jsonList)
-                        list.push(new CacheChangeExpression(it))
-                }
-            }
-            // 运行到这里表明读取了已存在的所有版本信息后依然没有找到客户端当前的版本号
-            // 说明跨版本幅度过大，直接清理全站
-            return true
-        }
-        /** 解析字符串 */
-        const parseJson = json => new Promise(resolve => {
-            /** 版本号读写操作 */
-            const dbVersion = {
-                write: (id) => new Promise((resolve, reject) => {
-                    caches.open(CACHE_NAME).then(function (cache) {
-                        cache.put(
-                            new Request(VERSION_PATH),
-                            new Response(id)
-                        ).then(() => resolve())
-                    }).catch(() => reject())
-                }), read: () => new Promise((resolve) => {
-                    caches.match(new Request(VERSION_PATH))
-                        .then(function (response) {
-                            if (!response) resolve(null)
-                            response.text().then(text => resolve(text))
-                        }).catch(() => resolve(null))
-                })
-            }
-            let list = new VersionList()
-            dbVersion.read().then(oldData => {
-                const oldVersion = JSON.parse(oldData)
-                const elementList = json['info']
-                const global = json['global']
-                const newVersion = {global: global, local: elementList[0].version}
-                //新用户不进行更新操作
-                if (!oldVersion) {
-                    dbVersion.write(`{"global":${global},"local":"${newVersion.local}"}`)
-                    return resolve(newVersion)
-                }
-                const refresh = parseChange(list, elementList, oldVersion.local)
-                dbVersion.write(JSON.stringify(newVersion))
-                //如果需要清理全站
-                if (refresh) {
-                    if (global === oldVersion.global) {
-                        list._list.length = 0
-                        list.push(new CacheChangeExpression({'flag': 'all'}))
-                    } else list.refresh = true
-                }
-                resolve({list: list, version: newVersion})
-            })
-        })
-        const url = `/update.json` //需要修改JSON地址的在这里改
-        return new Promise(resolve => fetchNoCache(url)
-            .then(response => response.text().then(text => {
-                const json = JSON.parse(text)
-                parseJson(json).then(result => {
-                    if (!result.list) return resolve({version: result})
-                    deleteCache(result.list).then(list => resolve({
-                            update: list.filter(it => it),
-                            version: result.version
-                        })
-                    )
-                })
-            }))
-        )
-    }
-
-    /** 版本列表 */
-    class VersionList {
-
-        _list = []
-        refresh = false
-
-        push(element) {
-            this._list.push(element)
-        }
-
-        clean(element = null) {
-            this._list.length = 0
-            if (!element) this.push(element)
-        }
-
-        match(url) {
-            if (this.refresh) return true
-            else {
-                for (let it of this._list) {
-                    if (it.match(url)) return true
-                }
-            }
-            return false
-        }
-
-    }
-
-    /**
-     * 缓存更新匹配规则表达式
-     * @param json 格式{"flag": ..., "value": ...}
-     * @see https://kmar.top/posts/bcfe8408/#JSON格式
-     */
-    class CacheChangeExpression {
-
-        constructor(json) {
-            const checkCache = url => {
-                const cache = findCache(new URL(url))
-                return !cache || cache.clean
-            }
-            /**
-             * 遍历所有value
-             * @param action {function(string): boolean} 接受value并返回bool的函数
-             * @return {boolean} 如果value只有一个则返回`action(value)`，否则返回所有运算的或运算（带短路）
-             */
-            const forEachValues = action => {
-                const value = json.value
-                if (Array.isArray(value)) {
-                    for (let it of value) {
-                        if (action(it)) return true
-                    }
-                    return false
-                } else return action(value)
-            }
-            switch (json['flag']) {
-                case 'all':
-                    this.match = checkCache
-                    break
-                case 'post':
-                    this.match = url => url.endsWith('postsInfo.json') ||
-                        forEachValues(post => url.endsWith(`posts/${post}/`))
-                    break
-                case 'html':
-                    this.match = cacheList.html.match
-                    break
-                case 'file':
-                    this.match = url => forEachValues(value => url.endsWith(value))
-                    break
-                case 'new':
-                    this.match = url => url.endsWith('postsInfo.json') || url.match(/\/archives\//)
-                    break
-                case 'page':
-                    this.match = url => forEachValues(value => url.match(new RegExp(`\/${value}(\/|)$`)))
-                    break
-                case 'str':
-                    this.match = url => forEachValues(value => url.includes(value))
-                    break
-                default: throw `未知表达式：${JSON.stringify(json)}`
-            }
-        }
-
-    }
-})()
+    )))))
+}
+;
