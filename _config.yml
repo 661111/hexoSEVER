@@ -125,3 +125,7 @@ browsersync:
   js: true
   css: true
   img: true
+
+server:
+  middleware:
+    - ./cache-middleware.js
