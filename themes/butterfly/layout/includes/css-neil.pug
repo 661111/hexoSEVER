@@ -72,3 +72,41 @@ script(type='text/javascript')
   | // 调用注册和发送消息的函数
   | registerServiceWorker();
   | sendMessageToServiceWorker();
+script(type='text/javascript')
+  | // 定义当 DOM 准备好时执行的函数
+  | function whenDOMReady() {
+  |   try {
+  |     // 调用初始化文章相关的函数
+  |     initEssay();
+  |   } catch (error) {
+  |     // 捕获并打印初始化过程中可能出现的错误
+  |     console.error('初始化文章时出现错误:', error);
+  |   }
+  | }
+  | 
+  | // 页面加载完成时执行初始化函数
+  | whenDOMReady();
+  | 
+  | // 监听 PJAX 加载完成事件，再次执行初始化函数
+  | document.addEventListener("pjax:complete", whenDOMReady);
+  | 
+  | // 声明 Swiper 实例变量
+  | let swiper;
+  | 
+  | // 检查页面中是否存在 #bber-talk 元素
+  | if (document.querySelector('#bber-talk')) {
+  |   // 初始化 Swiper 轮播组件
+  |   swiper = new Swiper('.swiper-container', {
+  |     // 设置轮播方向为垂直方向
+  |     direction: 'vertical',
+  |     // 开启循环播放
+  |     loop: true,
+  |     // 配置自动播放功能
+  |     autoplay: {
+  |       // 自动播放间隔时间为 3000 毫秒（即 3 秒）
+  |       delay: 3000,
+  |       // 鼠标悬停时暂停自动播放
+  |       pauseOnMouseEnter: true
+  |     }
+  |   });
+  | }
