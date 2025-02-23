@@ -10,6 +10,7 @@ tags:
   - hexo
   - butterfly
 abbrlink: 4222
+recommend: true
 ---
 > **魔改前必看（我当你们都懂了，太细节的就不写在教程中了🤣🤣🤣）**
 > 1.博客魔改有风险，如果博客魔改出问题了又没有备份，可通过此项目查看基础源码进行回滚：jerryc127/hexo-theme-butterfly、ccknbc-actions/blog-butterfly.这部分魔改基本上都是大佬们造好的轮子，我按照大佬们的轮子结合自己的喜好进行魔改的，具体见我友人帐第一个栏目大佬们的网站，本处仅做一个总结，如有侵权请联系删除。
