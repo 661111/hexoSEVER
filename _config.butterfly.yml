@@ -1079,7 +1079,6 @@ inject:
     - <link rel="stylesheet" href="/css/swiper.min.css">
     - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://jsd.sxiaohe.top/npm/pace-js@latest/pace.min.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
-    - <script defer src="/js/essay.js"></script> # 即刻逻辑文件
     - <script async src="https://jsd.sxiaohe.top/npm/swiper/swiper-bundle.min.js"></script> # Swiper - 轮播动画库
     - <script async src="https://cdn.sxiaohe.top/js/font_3586335_hsivh70x0fm.js"></script>
     - <script async src="https://cdn.sxiaohe.top/js/font_3636804_glcijzcpx7f.js" ></script>
