@@ -1069,7 +1069,6 @@ inject:
   head:
     - <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
     - <script async src="https://jsd.sxiaohe.top/npm/echarts@4.7.0/dist/echarts.min.js"></script>
-    - <link rel="preload" src="/img/todayCardCover.avif" />
     - <script src="/sw.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
