@@ -27,7 +27,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     overflow-x: score;
     border-radius: 11px;
 }
