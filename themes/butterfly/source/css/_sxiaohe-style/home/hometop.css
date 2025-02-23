@@ -19,7 +19,9 @@
     overflow-x: auto;
     width: 100%;
     margin-bottom: 0;
-    -webkit-user-select: none
+    -webkit-user-select: none;
+    scrollbar-width: none!important;
+    scrollbar-color: none!important;
 }
 
 .recent-top-post-group.more-page {
@@ -28,7 +30,8 @@
 @media screen and (min-width: 1200px) {
     .recent-top-post-group {
         overflow: visible;
-        overflow-x: visible
+        overflow-x: visible;
+        width: 1297px;
     }
 }
 .recent-post-group {
