@@ -92,3 +92,12 @@ div#banners {
     animation: slide-in .5s .1s backwards;
     -webkit-animation: slide-in .5s .1s backwards;
 }
+/* 8.CSS3 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

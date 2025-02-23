@@ -187,3 +187,10 @@ a.category-list-link {
 #bbTimeList {
     margin-bottom: 20px;
 }
+/* 9.8.优化图片加载 */
+.top_post_group .top_post_item .post_cover img {
+    animation: fadeIn 1s ease;
+}
+#recent-posts>.recent-post-item .post_cover img.post_bg {
+    animation: fadeIn 1s ease;
+}
