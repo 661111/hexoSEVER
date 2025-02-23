@@ -200,3 +200,6 @@ a.category-list-link {
 #aside-content .aside-list>.aside-list-item .thumbnail>img, #recent-posts>.recent-post-item .post_cover img.post_bg, .article-sort-item-img img, .imgHover {
     animation: fadeIn 1s ease;
 }
+img {
+    animation: fadeIn 1s ease;
+}
