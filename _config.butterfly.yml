@@ -67,15 +67,49 @@ hometop:
       # Git:
       #   img: https://i.postimg.cc/nhgjwjCS/git.png
       #   color: "#df5b40"
+    Vue:
+      color: "#b8f0ae"
+      img: https://cdn.sxiaohe.top/img/banners/vue.webp
+    Java:
+      color: "#fff"
+      img: https://cdn.sxiaohe.top/img/banners/Java.webp
+    Docker:
+      color: "#57b6e6"
+      img: https://cdn.sxiaohe.top/img/banners/docker.webp
+    Webpack:
+      color: "#2e3a41"
+      img: https://cdn.sxiaohe.top/img/banners/webpack.webp
+    Photoshop:
+      color: "#4082c3"
+      img: https://cdn.sxiaohe.top/img/banners/PS.webp
+    Swift:
+      color: "#eb6840"
+      img: https://cdn.sxiaohe.top/img/banners/swift.webp
+    Python:
+      color: "#fff"
+      img: https://cdn.sxiaohe.top/img/banners/python.webp
+    Node:
+      color: "#333"
+      img: https://cdn.sxiaohe.top/img/banners/node-logo.svg
+    Git:
+      color: "#df5b40"
+      img: https://cdn.sxiaohe.top/img/banners/git.webp
+    Css:
+      color: "#2c51db"
+      img: https://cdn.sxiaohe.top/img/banners/css.webp
+    Js:
+      color: "#f7cb4f"
+      img: https://cdn.sxiaohe.top/img/banners/js.webp
   group:
-    # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+    热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
   recommendList:
     enable: true
     sup: 置顶
     title: Solitude 官方文档
     url: https://solitude.js.org/
-    img: /img/default.avif
+    img: /img/todayCardCover.avif
     color: "none"
+
 # Article Top Banner
 # 文章推荐轮播图
 carousel: true
