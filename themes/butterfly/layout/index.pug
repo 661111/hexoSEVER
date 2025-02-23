@@ -3,6 +3,8 @@ extends includes/layout.pug
 block content
   include ./includes/mixins/post-ui.pug
   #recent-posts.recent-posts
+    include ./bbtimelist.pug
+    include ./hometop.pug
     include includes/categoryBar.pug
     +postUI
     include includes/pagination.pug
