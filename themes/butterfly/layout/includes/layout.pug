@@ -20,10 +20,12 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       #body-wrap(class=pageType)
         include ./header/index.pug
         if is_home()
-          #home_top
-            if theme.essay.enable && theme.essay.home_mini
-              include ./bbtimelist.pug
-            include ./hometop.top
+          if theme.hometop.enable || (theme.brevity.home_mini && theme.brevity.enable)
+            #home_top
+              if theme.brevity.home_mini && theme.brevity.enable
+                include ./bbtimelist.pug
+              if theme.hometop.enable
+                include ./hometop.pug
 
         main#content-inner.layout(class=hideAside)
           if body
