@@ -183,3 +183,7 @@ a.category-list-link {
     border: 2px solid rgba(56,211,203,.8);
     background: rgba(0,0,0,.6)
 }
+/* 9.7.页面间隔 */
+#bbTimeList {
+    margin-bottom: 10px;
+}
