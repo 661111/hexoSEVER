@@ -1067,9 +1067,8 @@ css_prefix: true
 # 如果需要引用跨域文件，需要添加网址
 inject:
   head:
-    - <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
+    - <script defer src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
     - <script async src="https://jsd.sxiaohe.top/npm/echarts@4.7.0/dist/echarts.min.js"></script>
-    - <script src="/sw.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
