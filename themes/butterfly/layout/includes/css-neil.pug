@@ -174,3 +174,28 @@ script(type='text/javascript')
   | 
   | anzhiyu.changeTimeInEssay();
   | anzhiyu.reflashEssayWaterFall();
+script(type='text/javascript')
+  | async function loadModuleBasedOnCondition() {
+  |   const condition = true;
+  |   try {
+  |     if (condition) {
+  |       const moduleA = await import('/js/main.js');
+  |       if (typeof moduleA.doSomething === 'function') {
+  |         moduleA.doSomething();
+  |       } else {
+  |         console.error('main 中不存在 doSomething 方法');
+  |       }
+  |     } else {
+  |       const moduleB = await import('/js/utils.js');
+  |       if (typeof moduleB.doSomethingElse === 'function') {
+  |         moduleB.doSomethingElse();
+  |       } else {
+  |         console.error('utils 中不存在 doSomethingElse 方法');
+  |       }
+  |     }
+  |   } catch (error) {
+  |     console.error('模块加载失败:', error);
+  |   }
+  | }
+  | 
+  | loadModuleBasedOnCondition();
