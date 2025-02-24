@@ -70,28 +70,3 @@ script(type='text/javascript')
   |   typeof FB === 'object' && window.loadFBComment();
   |   window.DISQUS && document.getElementById('disqus_thread').children.length && setTimeout(() => window.disqusReset(), 200);
   | } 
-script(type='text/javascript')
-  | async function loadModuleBasedOnCondition() {
-  |   const condition = true;
-  |   try {
-  |     if (condition) {
-  |       const moduleB = await import('/js/utils.js');
-  |       if (typeof moduleB.doSomethingElse === 'function') {
-  |         moduleB.doSomethingElse();
-  |       } else {
-  |         console.error('utils 中不存在 doSomethingElse 方法');
-  |       }
-  |     } else {
-  |       const moduleB = await import('/js/essay.js');
-  |       if (typeof moduleB.doSomethingElse === 'function') {
-  |         moduleB.doSomethingElse();
-  |       } else {
-  |         console.error('essay 中不存在 doSomethingElse 方法');
-  |       }
-  |     }
-  |   } catch (error) {
-  |     console.error('模块加载失败:', error);
-  |   }
-  | }
-  | 
-  | loadModuleBasedOnCondition();

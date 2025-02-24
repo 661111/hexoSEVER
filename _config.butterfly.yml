@@ -1076,6 +1076,7 @@ inject:
     - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
     - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://jsd.sxiaohe.top/npm/pace-js@latest/pace.min.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
+    - <script async src="/js/essay.js"></script>
     - <script async src="https://jsd.sxiaohe.top/gh/wanlany/CDN/js/font_3586335_hsivh70x0fm.js"></script>
     - <script async src="https://jsd.sxiaohe.top/gh/wanlany/CDN/js/font_3636804_glcijzcpx7f.js" ></script>
     - <script async src="https://jsd.sxiaohe.top/gh/wanlany/CDN/js/font_3612150_gkavascgf3n.js" ></script>
