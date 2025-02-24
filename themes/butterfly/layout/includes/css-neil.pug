@@ -75,13 +75,6 @@ script(type='text/javascript')
   |   const condition = true;
   |   try {
   |     if (condition) {
-  |       const moduleA = await import('/js/main.js');
-  |       if (typeof moduleA.doSomething === 'function') {
-  |         moduleA.doSomething();
-  |       } else {
-  |         console.error('main 中不存在 doSomething 方法');
-  |       }
-  |     } else {
   |       const moduleB = await import('/js/utils.js');
   |       if (typeof moduleB.doSomethingElse === 'function') {
   |         moduleB.doSomethingElse();
