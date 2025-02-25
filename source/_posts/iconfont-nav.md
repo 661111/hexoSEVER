@@ -16,8 +16,12 @@ abbrlink: 18107
 进入到图标库后可以选择项目设置，设置彩色图标,设置页面如下，我们选择彩色，如果需要自定义图标，可以在这里自定义, **这里不推荐自定义**
 ![如图所示](/img/2025/01/iconfont/1.avif)
 # 二.添加到菜单
+{% note info flat %}
+
 前置教程：[Hexo引入阿里矢量图标库-iconfont inject](https://akilar.top/posts/d2ebecef/)和[基于Butterfly的外挂标签引入-Tag Plugins Plus](https://akilar.top/posts/615e2dec/#%E5%8A%A8%E6%80%81%E6%A0%87%E7%AD%BE-anima)中关于动态标签anima的内容。请确保您已经完成了前置教程，并实现了在文章中使用symbol写法来引入iconfont图标。同时引入了fontawesome_animation的前置依赖。
 主要检查您的inject配置项中是否有这两个依赖
+{% endnote %}
+
 ``` YAML
 inject:
   head:
