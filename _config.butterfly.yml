@@ -789,7 +789,7 @@ beautify:
 font:
   global-font-size:
   code-font-size:
-  font-family: LXGWBright-Regular
+  font-family:
   code-font-family:
 
 # Font settings for the site title and site subtitle
@@ -1073,7 +1073,6 @@ inject:
   bottom:
     # - <script src="xxxx"></script>
     - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
-    - <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Regular/result.css">
     - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://jsd.sxiaohe.top/npm/pace-js@latest/pace.min.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script async src="/js/essay.js"></script>
