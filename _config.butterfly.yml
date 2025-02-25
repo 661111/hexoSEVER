@@ -3,18 +3,18 @@
 # --------------------------------------
 
 menu:
-  文章:
-    归档: /archives
-    标签: /tags
-    分类: /categories
-  社交:
-    朋友圈: /moment
+  文章 || icon--article || faa-tada:
+    归档: /archives/ || icon-guidang1 || faa-tada
+    标签: /tags || icon-sekuaibiaoqian || faa-tada
+    分类: /categories || icon-fenlei || faa-tada
+  社交 || icon-shejiaoxinxi || faa-tada || hide:
+    朋友圈: /moment/ || icon-pengyouquan || faa-tada
     # 留言板: /comments/ || icon-liuyan || faa-tada
-    友人帐: /link
-    即刻短文: /essay
-  关于:
-    关于本站: /about
-    我的装备: /equipment
+    友人帐: /link/ || icon-lianjie || faa-tada
+    即刻短文: /essay/ || icon-qunliaotian || faa-tada
+  关于 || icon-maoliang || faa-tada || hide:
+    关于本站: /about/ || icon-paperplane || faa-tada
+    我的装备: /equipment/ || icon-paperplane || faa-tada
 
 # essay 即刻短文
 # MeuiCat设计
