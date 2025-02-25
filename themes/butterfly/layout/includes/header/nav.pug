@@ -19,24 +19,17 @@ nav#nav
       i.fa-solid.fa-house
 
   #menus
+    !=partial('includes/header/menu_item', {}, {cache: true})
+
     if (theme.algolia_search.enable || theme.local_search.enable)
       div.nav-button#search-button
         a.site-page.social-icon.search
           i.fas.fa-search.fa-fw
-          span=' '+_p('search.title')
 
       div.nav-button#search-button
         a.nav-rightbutton.site-page.darkmode_switchbutton(onclick="switchDarkMode()")
           i.fas.fa-adjust
-
-    div.nav-button#nav-totop
-      a.totopbtn
-        i.fas.fa-arrow-up
-        span#percent(onclick="btf.scrollToDest(0,500)") 0
-
-
-    !=partial('includes/header/menu_item', {}, {cache: true})
-
+          
     #toggle-menu
       a.site-page
         i.fas.fa-bars.fa-fw
