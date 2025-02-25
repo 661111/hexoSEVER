@@ -1,0 +1,205 @@
+/* 首页设置 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年2月4日 */
+
+/* 1.侧边栏整体卡片样式调整 */
+#aside-content .card-widget {
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6);
+    border-image: initial;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, .67);
+}
+/* 2.侧边栏整体卡片文字样式调整 */
+#aside-content .card-widget.card-friend-link, .card-webinfo {
+    font-size: 105%;
+}
+/* 3.侧边栏整体卡片和首页文章列表样式调整 */
+#aside-content .card-widget, #recent-posts>.recent-post-item {
+    border-radius: 18px;
+}
+/* 4.侧边栏本人介绍卡片样式调整 */
+.avatar-img {
+    border-radius: 25px!important;
+    box-shadow: 2.2px 2.2px 2.2px rgba(10, 207, 233, .3)!important;
+}
+#aside-content > .card-widget:first-child {
+    clip-path: polygon(0px 0px, 100% 0px, 100% 50%, 100% 100%, 80% 100%, 75% 99%, 25% 99%, 20% 100%, 0px 100%);
+}
+#aside-content .card-info .author-info__name {
+    font-weight: 800!important;
+    font-size: 1.8em!important;
+}
+#aside-content .card-info .author-info__description {
+    margin-top: -.2em!important;
+    font-size: 16.5px!important;
+    font-weight: 700;
+}
+.card-info-data-item:not(:last-child)::after {
+    opacity: .3;
+    position: absolute;
+    top: 11px;
+    right: 0;
+    content: "";
+    width: 1px;
+    height: 35px;
+    background: var(--font-color);
+}
+.site-data > a .headline {
+    color: var(--font-color);
+    font-size: 1em!important;
+}
+.site-data > a .length-num {
+    margin-top: -.42em!important;
+    color: var(--text-highlight-color);
+    font-size: 1.4em!important;
+}
+/* 5.侧边栏其他卡片样式调整 */
+#aside-content .card-widget:not(.card-info):not(#card-tuijian):before {
+    content: "";
+    width: 12.5px;
+    background: linear-gradient(to top, transparent, #ee6363bb);
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 113px;
+    bottom: 27px;
+}
+#aside-content .card-widget:not(.card-info):not(#card-tuijian) {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 52.5px), 12.5px calc(100% - 40px), 12.5px calc(100% - 50px), 0 calc(100% - 62.5px), 0 calc(100% - 82.5px), 12.5px calc(100% - 70px), 12.5px calc(100% - 80px), 0 calc(100% - 92.5px), 0 calc(100% - 112.5px), 12.5px calc(100% - 100px), 12.5px calc(100% - 112.5px), 12.5px calc(100% - 110px), 0 calc(100% - 122.5px), 0 calc(100% - 142.5px), 12.5px calc(100% - 130px), 12.5px calc(100% - 141.5px), 0 calc(100% - 154px), 0 0);
+    border-left: none !important;
+}
+/* 6.首页文章卡片样式表调整 */
+#recent-posts > .recent-post-item >.recent-post-info > .article-title {
+    text-align: center;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap {
+    text-align: center;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .content {
+    text-align: center;
+}
+/* 7.QCQX 首页文章卡片设置 */
+#recent-posts>.recent-post-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    overflow: hidden;
+    height: 200px
+}
+@media screen and (max-width: 768px) {
+    #recent-posts>.recent-post-item {
+        -webkit-box-orient:vertical;
+        -moz-box-orient: vertical;
+        -o-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: 300px
+    }
+}
+/* 8.QCQX 首页文章卡片设置 */
+#recent-posts > .recent-post-item .post_cover img.post_bg {
+    border-radius: 12px;
+    transform: none;
+}
+
+/* 9.优化设置 */
+/* 9.1.侧边栏内容设置 */
+.card-widget.card-friend-link details.card-friend-class-name[open] summary.card-friend-class-desc {
+    position: sticky;
+    top: 0;
+    border-radius: 5px;
+    background: var(--card-friend-class-desc-bgcolor);
+    z-index: 1;
+}
+
+.card-widget.card-friend-link summary.card-friend-class-desc {
+    padding: 0 15px;
+}
+/* 9.2.页面标题设置 */
+#page h1.page-title {
+    margin: 10px 0 4px !important;
+    text-align:center
+}
+/* 9.3.页面卡片设置 */
+div#page {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-size: 15.5px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .67);
+    animation: slide-in .5s .1s backwards;
+    -webkit-animation: slide-in .5s .1s backwards;
+}
+.layout>div:first-child:not(.recent-posts) {
+    border-radius: 18px;
+    padding: 10px 35px!important;
+}
+/* 9.4.分类图标设置 */
+#page .category-lists ul li:before {
+    left: 5px;
+    border: 3px solid #425aef;
+}
+a.category-list-link {
+    padding-left: 18px;
+}
+/* 9.5.导航栏仿轻笑 */
+/* 9.5.1.未下滑导航栏 */
+#page-header.not-top-img #nav {
+    background: rgba(255, 255, 255, 0);
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+#page-header.nav-fixed #nav {
+    background: rgba(255, 255, 255, .37);
+    box-shadow: none!important;
+}
+/* 9.6.页面夜晚 */
+[data-theme=dark] #aside-content .card-widget {
+    border: 2px solid rgba(56,211,203,.8)!important;
+    background: rgba(0,0,0,.6)!important;
+}
+[data-theme=dark] div#post {
+    border: 2px solid rgba(56,211,203,.8);
+    background: rgba(0,0,0,.6)!important
+}
+[data-theme=dark] #recent-posts>.recent-post-item,[data-theme=dark] div#archive,[data-theme=dark] div#category,[data-theme=dark] div#page,[data-theme=dark] div#tag {
+    border: 2px solid rgba(56,211,203,.8);
+    background: rgba(0,0,0,.6)
+}
+/* 9.7.页面间隔 */
+#bbTimeList {
+    margin-bottom: 20px;
+}
+/* 9.8.优化图片加载 */
+.top_post_group .top_post_item .post_cover img {
+    animation: fadeIn 1s ease;
+}
+#recent-posts>.recent-post-item .post_cover img.post_bg {
+    animation: fadeIn 1s ease;
+}
+.avatar-img img {
+    animation: fadeIn 3s ease;
+}
+#aside-content .aside-list>.aside-list-item .thumbnail>img, #recent-posts>.recent-post-item .post_cover img.post_bg, .article-sort-item-img img, .imgHover {
+    animation: fadeIn 1s ease;
+}
+img {
+    animation: fadeIn 1s ease;
+}

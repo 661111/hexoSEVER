@@ -1,0 +1,209 @@
+/* 模块化调整 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年2月4日 */
+
+/* 1.首页文章卡片bar */
+#recent-posts>.recent-post-item>.recent-post-info {
+    padding: 0 40px;
+    width: 57%
+}
+
+@media screen and (max-width: 768px) {
+    #recent-posts>.recent-post-item>.recent-post-info {
+        padding:2px 10px;
+        width: 100%
+    }
+}
+.recent-posts .recent-post-item .post-card-bar {
+    width: 5px;
+    height: 60px;
+    margin: auto;
+    position: absolute;
+    border-radius: 30px
+}
+.recent-posts .recent-post-item .left+.recent-post-info+.post-card-bar {
+    background: #00c4b6b6;
+    right: 5px
+}
+.recent-posts .recent-post-item .right+.recent-post-info+.post-card-bar {
+    background: #1dbfffb6;
+    left: 5px
+}
+@media screen and (min-width: 768px) {
+    #recent-posts>.recent-post-item .post_cover.left {
+        padding:7px 0 7px 7px;
+    }
+
+    #recent-posts>.recent-post-item .post_cover.right {
+        padding: 7px 7px 7px 0
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .recent-posts .recent-post-item .post-card-bar {
+        display:none
+    }
+
+    .ai-btn-box {
+        justify-content: center
+    }
+
+    .ai-recommend .ai-recommend-item {
+        width: 100%
+    }
+
+    #recent-posts>.recent-post-item .post_cover.left,#recent-posts>.recent-post-item .post_cover.right {
+        transition: all .3s;
+        padding: 5px 5px 0 5px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s
+    }
+
+    #recent-posts>.recent-post-item:hover .post_cover.left,#recent-posts>.recent-post-item:hover .post_cover.right {
+        padding: 0
+    }
+
+    #recent-posts>.recent-post-item .post_cover img.post_bg {
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s
+    }
+
+    #recent-posts>.recent-post-item:hover .post_cover img.post_bg {
+        border-radius: 12px 12px 5px 5px;
+        -webkit-border-radius: 12px 12px 5px 5px;
+        -moz-border-radius: 12px 12px 5px 5px;
+        -ms-border-radius: 12px 12px 5px 5px;
+        -o-border-radius: 12px 12px 5px 5px
+    }
+}
+/* 2.首页文章卡片隐藏简介 */
+#recent-posts>.recent-post-item:hover .recent-post-info .content {
+    opacity: 1;
+    line-height: 1.5;
+    transition: all .3s
+}
+
+#recent-posts>.recent-post-item:hover .recent-post-info {
+    top: 0;
+    transition: all .3s
+}
+
+#recent-posts>.recent-post-item>.recent-post-info>.content {
+    opacity: 0;
+    line-height: .7;
+    transition: all .3s;
+    bottom: 0
+}
+/* 3.首页文章卡片的图片样式 */
+#recent-posts>.recent-post-item .post_cover img.post_bg:hover {
+    transform: none
+}
+/* 4.首页分类条 */
+.layout #recent-posts .home-catalog-bar {
+    background: var(--mj-card-bg);
+    border: var(--mj-style-border);
+    margin-top: 12px;
+    border-radius: 11px !important;
+    transition: .3s;
+    font-size: 15px;
+    padding: 5px .8rem;
+    animation: slide-in .5s .2s backwards;
+    will-change: transform;
+    -webkit-animation: slide-in .5s .2s backwards;
+}
+
+#catalog-bar {
+    padding: .4rem .8rem;
+    border-radius: .5rem;
+    display: flex;
+    border: 1px solid rgba(150, 150, 150, .2);
+    justify-content: space-between;
+}
+
+#catalog-bar i {
+    line-height: inherit;
+}
+
+#catalog-list {
+    margin: 0 .5rem;
+    display: flex;
+}
+
+.layout #recent-posts #catalog-bar #home-catalog-item {
+    border-radius: .5rem;
+}
+
+.layout #recent-posts #catalog-bar .catalog-shouye-item {
+    margin-right: 10px;
+}
+
+.layout #recent-posts #catalog-bar #home-catalog-item a {
+    background: #00c4b6f1;
+    color: #fff !important;
+    margin: 0 .2em;
+    padding: .2em .4em .3em;
+    font-weight: 700;
+    border-radius: .5rem;
+    color: var(--font-color);
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.catalog-list-item a {
+    margin: 0 .2em;
+    padding: .2em .4em .3em;
+    font-weight: 700;
+    border-radius: .5rem;
+    color: var(--font-color);
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.catalog-list-item a {
+    margin: 0 .2em;
+    padding: .2em .4em .3em;
+    font-weight: 700;
+    border-radius: .5rem;
+    color: var(--font-color);
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+/* 5.首页文章列表修改 */
+.recent-posts {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+@media screen and (max-width: 900px) {
+    .recent-posts {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* 6.首页文章列表卡片颜色修改 */
+#recent-posts>.recent-post-item {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-size: 14.5px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .67);
+}
+
+/* 7.优化归档内容 */
+#archive,#page,#category,#tag{
+    box-shadow: none;
+}

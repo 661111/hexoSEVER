@@ -1,0 +1,9 @@
+.home-catalog-bar#catalog-bar
+  i.fa-fw.fas.fa-shapes
+  #catalog-list(class=is_home() ? 'home' : '')
+    .category-bar-item.catalog-shouye-item(class=is_home() ? 'select' : '', id="home-catalog-item")
+      a(href=url_for('/'))= __('博客')
+    each item in site.categories.find({ parent: { $exists: false } }).data
+      .category-bar-item.catalog-shouye-item(class=select ? (select === item.name ? 'select' : '') : '', id=item.name)
+        a(href=url_for(item.path))= item.name
+  a.category-bar-more(href=url_for('/categories/'))= __('更多分类')

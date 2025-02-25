@@ -1,0 +1,35 @@
+#icat-equipment
+  - var result = ''
+  each i in site.data.equipment
+    - let className = i.class_name ? markdown(`## ${i.class_name}`) : ""
+    - let classDesc = i.class_desc ? `<div class="equipment-desc">${i.class_desc}</div>` : ""
+
+    - let listResult = `${className}${classDesc} `
+    - let listContent = ''
+    each j in i.equipment_list
+      - let details = ''
+      -
+        if (j.details_link) {
+          details = `<a href="${j.details_link}" title="本站关于 ${j.name} 的产品体验报告" target="_blank" rel="external nofollow">查看文章</a>`
+        } else if (j.details_flink) {
+          details = `<a href="${j.details_flink}" title="跳转到 ${j.name} 的产品详情" target="_blank" rel="external nofollow">详情</a>`
+        }
+        listContent += `
+          <div class="icat-equipment-box">
+            <img src="${j.image}">
+            <div class="icat-equipment-content">
+              <div class="icat-equipment-name">${j.name}</div>
+              <div class="icat-equipment-custom">${j.custom}</div>
+              <div class="icat-equipment-opinion">${j.opinion}</div>
+              <div class="icat-equipment-box-more">
+                ${details}
+                <div class="icat-bber-reply" onclick="icatequipment.commentText('${j.name} (${j.custom})')">
+                  <i class="iconfont icat-message"></i>
+                </div>
+              </div>
+            </div>
+          </div>`
+      -
+    - listResult += `<div class="equipment">${listContent}</div>`
+    - result += listResult
+  != result + page.content

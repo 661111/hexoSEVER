@@ -1,0 +1,103 @@
+/* 功能性调整 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年2月4日 */
+
+/* 1.个人介绍中的头像旋转关闭 */
+.avatar-img img:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+/* 2.iconfont的css样式表 */
+svg.icon {
+    width: 1.28em;
+    height: 1.28em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta-label {
+    display: inline;
+}
+/* 3.强制开启页面固定长度 */
+.layout.hide-aside {
+    max-width: 1300px;
+}
+
+/* 4.即刻短文卡片颜色更改 */
+#bbTimeList {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6);
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67);
+}
+/* 5.首页hometop卡片更改 */
+/** 5.1: 随机文章卡片设置 **/
+div#banners {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6)!important;
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67)!important;
+}
+/** 5.2：文章展示卡片设置 **/
+.recent-post-top .recent-post-item {
+    font-size: 14.5px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 255, 255, 0.6)!important;
+    border-image: initial;
+    background: rgba(255, 255, 255, 0.67)!important;
+}
+.sticky {
+    font-size: 0.5em;
+}
+/* 6.滚动条调整适配 */
+::-webkit-scrollbar {
+    width: 10px!important;
+    height: 10px!important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e58a8a!important;
+    background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent)!important;
+    border-radius: 2em!important;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent!important;
+}
+
+::-moz-selection {
+    color: #fff!important;
+    background-color: #e58a8a!important;
+}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color) transparent;
+}
+/* 7.文章页面整体修改 */
+#post {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-size: 14.5px;
+    background: rgba(255, 255, 255, .67);
+    animation: slide-in .5s .1s backwards;
+    -webkit-animation: slide-in .5s .1s backwards;
+}
+/* 8.CSS3 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
