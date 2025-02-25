@@ -41,6 +41,7 @@ jobs:
         if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         run: |
           npm install gulp-cli -g #全局安装gulp
+          npm update hexo --save
           npm install --save
           
       - name: 生成轻量朋友圈需要的json文件
