@@ -36,9 +36,12 @@
     "hexo-theme-landscape": "^1.0.0",
     "hexo-wordcount-fomal": "^1.0.0",
     "ioredis": "^5.5.0",
+    "markdown-it-checkbox": "^1.1.0",
     "markdown-it-container": "^4.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-emoji": "^3.0.0",
+    "markdown-it-expandable": "^1.0.2",
+    "markdown-it-imsize": "^2.0.1",
     "markdown-it-mark": "^4.0.0",
     "rgbaster": "^2.1.1",
     "yamljs": "^0.3.0"
