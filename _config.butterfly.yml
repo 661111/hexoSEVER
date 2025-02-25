@@ -3,7 +3,7 @@
 # --------------------------------------
 
 menu:
-  文章 || icon--article || faa-tada:
+  文章:
     归档: /archives/ || icon-guidang1 || faa-tada
     标签: /tags || icon-sekuaibiaoqian || faa-tada
     分类: /categories || icon-fenlei || faa-tada
