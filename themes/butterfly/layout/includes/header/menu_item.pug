@@ -2,7 +2,7 @@ if theme.menu
   .menus_items
     each value, label in theme.menu
       if typeof value !== 'object'
-        ul.menus_item
+        .menus_item
           - const valueArray = value.split('||')
           a.site-page.faa-parent.animated-hover(href=url_for(trim(value.split('||')[0])))
             if valueArray[1]
@@ -15,7 +15,7 @@ if theme.menu
                   use(xlink:href=`#`+ icon_value)
             span=' '+label
       else
-        ul.menus_item
+        .menus_item
           - const labelArray = label.split('||')
           - const hideClass = labelArray[2] && trim(labelArray[2]) === 'hide' ? 'hide' : ''
           a.site-page.group(class=`${hideClass}` href='javascript:void(0);')
