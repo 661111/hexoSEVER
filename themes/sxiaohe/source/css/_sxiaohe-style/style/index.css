@@ -228,3 +228,27 @@ img {
     border-radius: 0 10px 0px 10px;
 }
 }
+
+/* 11.悬浮侧边栏内容显示 */
+.something {
+    display: none;
+    position: fixed;
+    width: 600px;
+    height: 450px;
+    left: 50%;
+    top: 50%;
+    border-radius: 18px;
+    border: solid 2px #ece9e9;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    -ms-transform-origin-y: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    z-index: 1010;
+    background: url(https://jsd.sxiaohe.top/cover.avif) no-repeat center;
+    animation: fadenum1 .6s 1;
+}
