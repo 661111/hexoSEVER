@@ -1,11 +1,10 @@
-User - Agent: *
-Allow: /
-Allow: /home/
-Allow: /archives/
-Allow: /tags/
-Allow: /categories/
-Allow: /about/
-Disallow: /js/
-Disallow: /css/
+User-agent: *
+
+Disallow: /archives/
+Disallow: /categories/
+Disallow: /tags/
 Disallow: /images/
+
+Allow: /
+
 Sitemap: https://www.sxiaohe.top/sitemap.xml
