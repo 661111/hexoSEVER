@@ -12,10 +12,11 @@ if theme.menu
         .menus_item
           - const labelArray = label.split('||')
           - const hideClass = labelArray[2] && trim(labelArray[2]) === 'hide' ? 'hide' : ''
-          a.site-page.group(href='javascript:void(0);' rel="external nofollow noreferrer")
+          a.site-page.group(rel="external nofollow noreferrer")
             if labelArray[1]
               i.fa-fw(class=trim(labelArray[1]))
             span=' '+ trim(labelArray[0])
+            i.fas.fa-chevron-down
           ul.menus_item_child
             each val,lab in value 
               - const valArray = val.split('||')
