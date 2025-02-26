@@ -119,3 +119,8 @@ swpp:
   # rules 文件的名称（缺省值为 'sw-rules'）
   # 没有需求不建议更改，当主题和用户配置项不同时会导致主题和插件无法正常配合工作
   # rules:
+
+# Hexo-hash
+# https://github.com/Lete114/Hexo-hash
+hash:
+  enable: true  
