@@ -993,8 +993,8 @@ css_prefix: true
 # 如果需要引用跨域文件，需要添加网址
 inject:
   head:
-    - <script defer src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
-    - <script async src="https://jsd.sxiaohe.top/npm/echarts@4.7.0/dist/echarts.min.js"></script>
+    - <script defer src="/js/jquery.min.js"></script>
+    - <script async src="/js/echarts.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
@@ -1065,7 +1065,7 @@ CDN:
     # fireworks:
     # click_heart:
     # ClickShowText:
-    fontawesomeV6: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css
+    fontawesomeV6: /css/all.min.css
     flickr_justified_gallery_js: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
     flickr_justified_gallery_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/css/justifiedGallery.min.css
     aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
