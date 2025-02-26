@@ -3,18 +3,15 @@
 # --------------------------------------
 
 menu:
-  文章 || icon--article || faa-tada:
-    归档: /archives/ || icon-guidang1 || faa-tada
-    标签: /tags/ || icon-sekuaibiaoqian || faa-tada
-    分类: /categories/ || icon-fenlei || faa-tada
-  社交 || icon-shejiaoxinxi || faa-tada || hide:
-    朋友圈: /moment/ || icon-pengyouquan || faa-tada
-    # 留言板: /comments/ || icon-liuyan || faa-tada
-    友人帐: /link/ || icon-lianjie || faa-tada
-    即刻短文: /essay/ || icon-qunliaotian || faa-tada
-  关于 || icon-maoliang || faa-tada || hide:
-    关于本站: /about/ || icon-paperplane || faa-tada
-    我的装备: /privacy-policy/ || icon-paperplane || faa-tada
+  # Home: / || fas fa-home
+  # Archives: /archives/ || fas fa-archive
+  # Tags: /tags/ || fas fa-tags
+  # Categories: /categories/ || fas fa-folder-open
+  # List||fas fa-list:
+  #   Music: /music/ || fas fa-music
+  #   Movie: /movies/ || fas fa-video
+  # Link: /link/ || fas fa-link
+  # About: /about/ || fas fa-heart
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -79,18 +76,18 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: https://www.sxiaohe.top/img/avatar.avif
+favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://www.sxiaohe.top/img/avatar.avif
+  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: false
+index_img:
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:
@@ -659,23 +656,23 @@ aside:
   enable: true
   hide: false
   button: true
-  mobile: false # display on mobile
-  position: left # left or right
+  mobile: true # display on mobile
+  position: right # left or right
   display:
-    archive: false
-    tag: false
-    category: false
+    archive: true
+    tag: true
+    category: true
   card_author:
     enable: true
-    description: 随风飘起 如同浮云
+    description:
     button:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/661111
+      link: https://github.com/xxxxxx
   card_announcement:
     enable: true
-    content: 欢迎来到『苏晓河DawnRiver』的小站<br>(￣▽￣)～■干杯□～(￣▽￣)<br>如果有什么加载不出来或者其它滴小bug,「刷新网页/Ctrl+F5」应该、也许能解决
+    content: This is my Blog
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -877,10 +874,9 @@ css_prefix: true
 # Inject
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
-# 如果需要引用跨域文件，需要添加网址
 inject:
   head:
-    #- <link rel="stylesheet" href="/xxx.css">
+    # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
 

@@ -2,21 +2,18 @@ extends includes/layout.pug
 
 block content
   #page
-    if page.top_page && page.top_page === true
-      include includes/page/icat_change.pug
-    else
-      if top_img === false
-        h1.page-title= page.title
+    if top_img === false
+      h1.page-title= page.title
 
     case page.type
       when 'jike'
-        include includes/page/jike.pug
+        include includes/sxiaohe_pug/page/jike.pug
       when 'essay'
-        include includes/page/essay.pug
+        include includes/sxiaohe_pug/page/essay.pug
       when 'about'
-        include includes/page/about.pug
+        include includes/sxiaohe_pug/page/about.pug
       when 'equipment'
-        include includes/page/equipment.pug
+        include includes/sxiaohe_pug/page/equipment.pug
       when 'tags'
         include includes/page/tags.pug
       when 'link'

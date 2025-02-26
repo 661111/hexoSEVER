@@ -3,32 +3,32 @@ div
   script(src=url_for(theme.asset.main))
 
   if theme.translate.enable
-    script(defer src=url_for(theme.asset.translate))
+    script(src=url_for(theme.asset.translate))
 
   if theme.medium_zoom
-    script(defer src=url_for(theme.asset.medium_zoom))
+    script(src=url_for(theme.asset.medium_zoom))
   else if theme.fancybox
-    script(defer src=url_for(theme.asset.fancybox_v4))
+    script(src=url_for(theme.asset.fancybox_v4))
 
   if theme.instantpage
-    script(defer src=url_for(theme.asset.instantpage), type='module')
+    script(src=url_for(theme.asset.instantpage), type='module')
 
   if theme.lazyload.enable
-    script(defer src=url_for(theme.asset.lazyload))
+    script(src=url_for(theme.asset.lazyload))
 
   if theme.snackbar.enable
-    script(defer src=url_for(theme.asset.snackbar))
+    script(src=url_for(theme.asset.snackbar))
 
   if theme.pangu.enable
     != partial("includes/third-party/pangu.pug", {}, { cache: true })
 
   //- search
   if theme.algolia_search.enable
-    script(defer src=url_for(theme.asset.algolia_search_v4))
-    script(defer src=url_for(theme.asset.instantsearch_v4))
-    script(defer src=url_for(theme.asset.algolia_js))
+    script(src=url_for(theme.asset.algolia_search_v4))
+    script(src=url_for(theme.asset.instantsearch_v4))
+    script(src=url_for(theme.asset.algolia_js))
   else if theme.local_search.enable
-    script(defer src=url_for(theme.asset.local_search))
+    script(src=url_for(theme.asset.local_search))
 
   .js-pjax
     if needLoadCountJs
@@ -66,4 +66,4 @@ div
     != partial("includes/third-party/pjax", {}, { cache: true })
 
   if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
-    script(async data-pjax src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+    script(async data-pjax src='https://bsz.xhto.eu.org/js')
