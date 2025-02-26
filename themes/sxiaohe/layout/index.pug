@@ -3,12 +3,8 @@ extends includes/layout.pug
 block content
   include ./includes/mixins/post-ui.pug
   #recent-posts.recent-posts
-    case theme.essay.modeOptions
-      when 'heo'
-        include includes/sxiaohe_pug/home/heo.pug
-      when 'icat'
-        include includes/sxiaohe_pug/home/bbtimelist/icat.pug
-    include includes/sxiaohe_pug/home/hometop.pug
+    include includes/heo.pug
+    //- include includes/sxiaohe_pug/home/hometop.pug
     include includes/sxiaohe_pug/home/categoryBar.pug
     +postUI
     include includes/pagination.pug

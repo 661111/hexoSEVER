@@ -123,4 +123,4 @@ swpp:
 # Hexo-hash
 # https://github.com/Lete114/Hexo-hash
 hash:
-  enable: true  
+  enable: false
