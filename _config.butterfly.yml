@@ -1068,7 +1068,7 @@ CDN:
     fontawesomeV6: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css
     flickr_justified_gallery_js: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
     flickr_justified_gallery_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/css/justifiedGallery.min.css
-    aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
+    aplayer_css: /css/aplayer.css
     aplayer_js: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
     meting_js: https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js
     prismjs_js: https://cdn1.tianli0.top/npm/prismjs@1.1.0/prism.js
