@@ -260,3 +260,7 @@ img {
     text-align: center;
     pointer-events: none;
 }
+/* 13.修复悬浮侧边栏播放器问题 */
+.aplayer.aplayer-fixed {
+    left: -300px!important;
+}
