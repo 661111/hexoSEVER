@@ -1,10 +1,68 @@
-#footer_content, #footer_icons {
-    background: transparent!important;
+div#footer_icon {
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+    align-items: center
 }
-#footer {
-    background: transparent!important;
+
+#footer_icon {
+    margin: auto;
+    max-width: 1200px;
+    width: 97%
 }
-#footer-bottom {
-    background: transparent!important;
-    border-top: none!important;
+
+.icon_left,.icon_right {
+    display: flex
+}
+
+a.icon_link {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    background-color: #363636e2;
+    border-radius: 3rem
+}
+
+img.footer_logo {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: all .25s
+}
+
+#footer_icon i {
+    padding-top: 1px;
+    font-size: 20px;
+    color: #fff;
+    transition: .3s
+}
+
+[data-theme=dark] a.icon_link {
+    background-color: #ececece7
+}
+
+[data-theme=dark] #footer_icon i {
+    color: #202020
+}
+
+#footer_icon a:hover {
+    background-color: #49b1f5;
+    text-decoration: none!important
+}
+
+@media screen and (max-width: 768px) {
+    #enlargePage-btn,#footer_icon,#narrowPage-btn,.footer-banner {
+        display:none!important
+    }
+
+    #footer-wrap {
+        padding: 20px 5px
+    }
 }
