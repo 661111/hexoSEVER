@@ -990,7 +990,7 @@ inject:
   bottom:
     # - <script src="xxxx"></script>
     - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
-    - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://jsd.sxiaohe.top/npm/pace-js@latest/pace.min.js"></script>
+    - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script async src="/js/essay.js"></script>
 
@@ -1060,8 +1060,8 @@ CDN:
     flickr_justified_gallery_js: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
     flickr_justified_gallery_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/css/justifiedGallery.min.css
     aplayer_css: /css/APlayer.min.css
-    aplayer_js: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
-    meting_js: https://jsd.sxiaohe.top/npm/js-heo@1.0.12/metingjs/Meting.min.js
+    aplayer_js: /js/APlayer.min.js
+    meting_js: /js/Meting.min.js
     prismjs_js: https://jsd.sxiaohe.top/npm/prismjs@1.1.0/prism.js
     prismjs_lineNumber_js: https://jsd.sxiaohe.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
     prismjs_autoloader: https://jsd.sxiaohe.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
