@@ -262,5 +262,5 @@ img {
 }
 /* 13.修复悬浮侧边栏播放器问题 */
 .aplayer.aplayer-fixed {
-    left: -300px!important;
+    left: -300px;
 }

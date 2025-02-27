@@ -16,7 +16,7 @@
     .blokbottom
     .text.aplayertext
       .strip
-      #aplayer.no-destroy(mutex='true', listfolded='true', data-id='你的网易云歌单id', data-preload="none" , data-server='netease', data-volume='0.25', data-order='random', data-type='playlist', data-fixed='true', data-autoplay='false')
+      #aplayer
         script.
           const ap = new APlayer({
             container: document.getElementById('aplayer'),
@@ -24,7 +24,7 @@
             order: 'random',
             preload: 'none',
             volume: 0.25,
-            audio: [
+            audio: [ 
               {
               name: 'L E V E I S(Cyberpunk)(Remix)',
               artist: 'vodKe',
