@@ -140,6 +140,10 @@
 .card-widget.card-friend-link summary.card-friend-class-desc {
     padding: 0 15px;
 }
+
+#aside-content .card-info #card-info-btn {
+    border-radius: 8px;
+}
 /* 9.2.页面标题设置 */
 #page h1.page-title {
     margin: 10px 0 4px !important;

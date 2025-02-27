@@ -530,7 +530,7 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text: Another branch will grow and flourish in the future』
+  custom_text: 『Another branch will grow and flourish in the future』
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -1068,3 +1068,4 @@ CDN:
     artalk_js: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.js
     artalk_css: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.css
     card_weibo:  /sxiaohe_source/js/weibo.js ## 或者填写自己的 js 地址
+    runtime: /js/sj.js
