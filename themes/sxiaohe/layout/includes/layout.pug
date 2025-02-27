@@ -38,7 +38,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
         else
           - var footer_bg = ''
 
-        footer#footer(style=footer_bg)
+        footer#footer(style=background: rgba(0, 0, 0, 0);)
           !=partial('includes/footer', {}, {cache: true})
 
     else
