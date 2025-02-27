@@ -179,11 +179,11 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: https://www.sxiaohe.top/img/avatar.avif
+favicon: /img/avatar.avif
 
 # Avatar (頭像)
 avatar:
-  img: https://www.sxiaohe.top/img/avatar.avif
+  img: /img/avatar.avif
   effect: false
 
 # Disable all banner image
@@ -745,7 +745,7 @@ subtitle:
 
 # Loading Animation (加載動畫)
 preloader:
-  enable: true
+  enable: false
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
@@ -987,6 +987,7 @@ inject:
   head:
     - <script defer src="/js/jquery.min.js"></script>
     - <script async src="/js/echarts.min.js"></script>
+    - <script defer src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>

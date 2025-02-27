@@ -252,3 +252,11 @@ img {
     background: url(https://jsd.sxiaohe.top/cover.avif) no-repeat center;
     animation: fadenum1 .6s 1;
 }
+/* 12.修复悬浮侧边栏问题 */
+.post-reward {
+    position: relative;
+    margin-top: 0!important;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
