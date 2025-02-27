@@ -530,7 +530,7 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text:
+  custom_text: Another branch will grow and flourish in the future』
   copyright: true # Copyright of theme and framework
 
 # Analysis
