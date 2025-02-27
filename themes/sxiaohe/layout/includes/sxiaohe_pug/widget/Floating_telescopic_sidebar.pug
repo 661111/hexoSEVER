@@ -16,7 +16,7 @@
     .blokbottom
     .text.aplayertext
       .strip
-      #aplayer
+      #aplayer.no-destroy(mutex='true', listfolded='true', data-id='', data-preload="none" , data-server='netease', data-volume='0.25', data-order='random', data-type='playlist', data-fixed='true', data-autoplay='false')
         script.
           const ap = new APlayer({
             container: document.getElementById('aplayer'),
