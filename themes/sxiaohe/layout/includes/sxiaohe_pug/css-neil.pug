@@ -16,3 +16,14 @@ script(type='text/javascript')
   |   typeof FB === 'object' && window.loadFBComment();
   |   window.DISQUS && document.getElementById('disqus_thread').children.length && setTimeout(() => window.disqusReset(), 200);
   | } 
+script(type='text/javascript')
+  | if ('serviceWorker' in navigator)
+  |   window.addEventListener('load', () => {
+  |     navigator.serviceWorker.register('/service-worker.js')
+  |      .then(registration => {
+  |         console.log('Service Worker registered with scope:', registration.scope);
+  |       })
+  |      .catch(error => {
+  |         console.error('Service Worker registration failed:', error);
+  |       });
+  |   });
