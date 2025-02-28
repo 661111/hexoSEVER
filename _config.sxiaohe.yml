@@ -959,6 +959,7 @@ inject:
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script async src="/js/essay.js"></script>
     - <script async src="//at.alicdn.com/t/c/font_3612150_gkavascgf3n.js"></script>
+    - <script data-pjax defer src="/js/custom/fixed_card_widget.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
