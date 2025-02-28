@@ -959,7 +959,7 @@ inject:
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
     - <script async src="/js/essay.js"></script>
     - <script async src="//at.alicdn.com/t/c/font_3612150_gkavascgf3n.js"></script>
-    - <script data-pjax defer src="/js/custom/fixed_card_widget.js"></script>
+    - <script data-pjax defer src="/js/fixed_card_widget.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -1035,4 +1035,60 @@ CDN:
     artalk_js: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.js
     artalk_css: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.css
     card_weibo:  /sxiaohe_source/js/weibo.js ## 或者填写自己的 js 地址
-    runtime: /js/sj.js
+
+#侧栏悬浮卡片控制按钮
+#https://akilar.top/posts/451ac5f8/
+fixed_card_widget:
+  enable: true
+  page:  #页面显示按钮
+    - type: class #侧栏卡片选择器类型
+      name: card-info #侧栏卡片选择器名称
+      index: 0 #侧栏卡片选择器序列
+      icon: fas fa-address-book #图标
+      title: 用户信息 #悬停显示提示
+    - type: class
+      name: card-clock
+      index: 0
+      icon: fas fa-cloud-sun
+      title: 电子钟
+    - type: class
+      name: card-shuo
+      index: 0
+      icon: fas fa-comments
+      title: 碎碎念
+    - type: class
+      name: card-recent-post
+      index: 0
+      icon: fas fa-history
+      title: 最新文章
+    - type: id
+      name: card-newest-comments
+      index: 0
+      icon: fas fa-comment-dots
+      title: 最新评论
+    - type: class
+      name: card-tags
+      index: 0
+      icon: fas fa-tags
+      title: 标签
+    - type: class
+      name: card-webinfo
+      index: 0
+      icon: fas fa-chart-line
+      title: 网站咨询
+  post: #文章页显示按钮
+    - type: class
+      name: card-info
+      index: 0
+      icon: fas fa-address-book
+      title: 用户信息
+    - type: class
+      name: card-clock
+      index: 0
+      icon: fas fa-cloud-sun
+      title: 电子钟
+    - type: class
+      name: card-recent-post
+      index: 0
+      icon: fas fa-history
+      title: 最新文章
