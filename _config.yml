@@ -124,3 +124,15 @@ swpp:
 # https://github.com/Lete114/Hexo-hash
 hash:
   enable: true
+
+bangumi:
+  enable: true
+  path:
+  vmid: 3546572553980802
+  title:
+  quote:
+  show: 1
+  loading:
+  metaColor:
+  color:
+  webp:
