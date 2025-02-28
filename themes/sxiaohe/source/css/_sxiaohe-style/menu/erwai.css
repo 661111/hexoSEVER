@@ -1,7 +1,6 @@
 #nav .menus_items .menus_item {
-    padding: 0 .4rem!important;
     border-radius: 50px;
-    font-size: 1.3em;
+    font-size: 0.95em;
 }
 ul.menus_item_child {
     padding: 6px 4px;
@@ -16,4 +15,9 @@ ul.menus_item_child {
 
 #nav #blog_name a, #nav #menus a, #nav #nav-right #toggle-menu a, #nav #nav-right .nav-button a, #nav .mask-name-container a {
     border-radius: 50px;
+}
+
+span.menuname {
+    font-weight: 700;
+    padding: 0 .8em 0 1em;
 }
