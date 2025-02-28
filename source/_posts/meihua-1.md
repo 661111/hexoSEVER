@@ -5,6 +5,7 @@ date: '2025-02-05 8:00'
 cover: /img/2025/01/meihua-post/cover.avif
 category:
   - hexo
+  - butterfly
 top_img: /img/2025/01/meihua-post/cover.avif
 tags:
   - hexo

@@ -5,6 +5,7 @@ date: '2025-02-05 9:00'
 cover: /img/2025/01/daohanglan/cover.avif
 category:
   - hexo
+  - butterfly
 top_img: /img/2025/01/daohanglan/cover.avif
 tags:
   - hexo
