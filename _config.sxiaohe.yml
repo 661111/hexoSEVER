@@ -11,18 +11,18 @@
 
 menu:
   文章:
-    归档: /archives/ || icon-guidang1 || faa-tada
-    标签: /tags || icon-sekuaibiaoqian || faa-tada
-    分类: /categories || icon-fenlei || faa-tada
+    归档: /archives/ || anzhiyufont anzhiyu-icon-book || faa-tada
+    分类: /categories || anzhiyufont anzhiyu-icon-shapes || faa-tada
+    标签: /tags || anzhiyufont anzhiyu-icon-tags || faa-tada
   社交:
-    朋友圈: /moment/ || icon-pengyouquan || faa-tada
+    朋友圈: /moment/ || anzhiyufont anzhiyu-icon-artstation || faa-tada
     # 留言板: /comments/ || icon-liuyan || faa-tada
-    友人帐: /link/ || icon-lianjie || faa-tada
-    即刻短文: /essay/ || icon-qunliaotian || faa-tada
+    友人帐: /link/ || anzhiyufont anzhiyu-icon-link || faa-tada
+    即刻短文: /essay/ || anzhiyufont anzhiyu-icon-lightbulb || faa-tada
   关于:
-    关于本站: /about/ || icon-paperplane || faa-tada
-    我的装备: /equipment/ || icon-paperplane || faa-tada
-    开往: https://travellings.cn/ || fa-fw fa-solid fa-subway || faa-tada
+    关于本站: /about/ || anzhiyufont anzhiyu-icon-paper-plane || faa-tada
+    我的装备: /equipment/ || anzhiyufont anzhiyu-icon-dice-d20 || faa-tada
+    开往: https://www.travellings.cn/go.html || fa-fw fa-solid fa-subway || faa-tada
 
 # --------------------------- end ---------------------------
 
@@ -990,6 +990,7 @@ inject:
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
+    - <link rel="stylesheet" href="https://jsd.sxiaohe.top/npm/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
     - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
     - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
