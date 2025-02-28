@@ -1,0 +1,88 @@
+#nav .menus_items {
+    display: inline;
+    font-size: 1.3em;
+}
+
+#nav .menus_items .menus_item {
+    padding: 0 .4rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    border-radius: 30px;
+}
+
+#nav #blog_name a, #nav #menus a, #nav #nav-right #toggle-menu a, #nav #nav-right .nav-button a, #nav .mask-name-container a {
+    border-radius: 50px;
+}
+
+#nav .menus_items .menus_item .menus_item_child {
+    position: absolute;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity = 0);
+    width: max-content;
+    border-radius: 5px;
+    top: 35px;
+    -webkit-box-shadow: var(--anzhiyu-shadow-black);
+    box-shadow: var(--anzhiyu-shadow-black);
+    border: var(--style-border);
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    -ms-transition: .2s;
+    transition: .2s;
+    background-color: var(--anzhiyu-card-bg);
+    border-radius: 50px;
+    right: auto;
+    left: auto;
+    padding: 6px 4px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    line-height: 35px;
+    -webkit-transform: translateY(-10px) scale(0);
+    -moz-transform: translateY(-10px) scale(0);
+    -o-transform: translateY(-10px) scale(0);
+    -ms-transform: translateY(-10px) scale(0);
+    transform: translateY(-10px) scale(0);
+    -webkit-transform-origin: top;
+    -moz-transform-origin: top;
+    -o-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    pointer-events: none;
+    margin-top: 8px;
+}
+
+#nav .menus_items .menus_item .menus_item_child li:first-child {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+#nav .menus_items .menus_item .menus_item_child li {
+    border-radius: 50px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+    display: inline-block;
+    margin: 0 3px;
+}
