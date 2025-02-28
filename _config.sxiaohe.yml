@@ -953,7 +953,7 @@ inject:
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
-    - <link rel="stylesheet" href="https://jsd.sxiaohe.top/npm/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
+    - <link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
     - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
     - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
     - <script async src="/js/waterfall.js"></script> # 瀑布流JS
