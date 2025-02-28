@@ -2,11 +2,11 @@
 title: 底部美化（图标）
 description: 对底部进行添加图标，建站时间以及美化
 date: '2025-02-27 10:00'
-cover: /img/2025/01/daohanglan/cover.avif
+cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 category:
   - hexo
   - butterfly
-top_img: /img/2025/01/daohanglan/cover.avif
+top_img: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 tags:
   - hexo
   - butterfly

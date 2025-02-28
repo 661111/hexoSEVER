@@ -2,11 +2,11 @@
 title: Banner随机文章展示
 description: 首页显示文章
 date: '2025-02-27 10:00'
-cover: /img/2025/01/daohanglan/cover.avif
+cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 category:
   - hexo
   - butterfly
-top_img: /img/2025/01/daohanglan/cover.avif
+top_img: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 tags:
   - hexo
   - butterfly

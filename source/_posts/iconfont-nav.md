@@ -2,11 +2,11 @@
 title: 菜单栏多色动态图标
 description: 对导航栏进行修改，以支持多色图标
 date: '2025-02-05 10:00'
-cover: /img/2025/01/daohanglan/cover.avif
+cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 category:
   - hexo
   - butterfly
-top_img: /img/2025/01/daohanglan/cover.avif
+top_img: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 tags:
   - hexo
   - butterfly
