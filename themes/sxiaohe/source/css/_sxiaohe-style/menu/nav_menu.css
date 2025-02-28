@@ -368,7 +368,6 @@ center#name-container {
 }
 .back-home-button .back-menu-list {
   display: flex;
-  flex-direction: column;
 }
 .back-home-button .back-menu-list::before {
   position: absolute;
