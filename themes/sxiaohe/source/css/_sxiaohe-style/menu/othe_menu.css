@@ -20,3 +20,7 @@ span.menuname {
     font-weight: 700;
     padding: 0 .8em 0 1em;
 }
+
+#menus>div.menus_items>div>a {
+    padding: 0!important;
+}
