@@ -207,3 +207,29 @@
 #archive,#page,#category,#tag{
     box-shadow: none;
 }
+
+/* 8.优化侧边栏的卡片 */
+/* 8.1.主体 */
+#aside-content .card-archives ul.card-archive-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* 8.2.列表 */
+li.card-archive-list-item {
+    width: 100%;
+    flex: 0 0 48%;
+}
+/* 8.3.卡片 */
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(227, 232, 247);
+    border-image: initial;
+    margin: 4px 0px;
+}
