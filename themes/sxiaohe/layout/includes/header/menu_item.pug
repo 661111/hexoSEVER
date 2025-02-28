@@ -20,7 +20,7 @@ if theme.menu
           ul.menus_item_child
             each val,lab in value 
               - const valArray = val.split('||')
-              li
+              li.menu-color(style="border-radius: 50px;")
                 a.site-page.child(href=url_for(trim(valArray[0])))
                   if valArray[1]
                     i.fa-fw(class=trim(valArray[1]))
