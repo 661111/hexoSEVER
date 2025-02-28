@@ -40,26 +40,26 @@
     .times
     script.
       if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
-        function createtime() {
-          var now = new Date();
-          var grt= new Date("03/10/2022 00:00:00");
-          now.setTime(now.getTime()+1000);
-          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-          document.getElementById("timeDate").innerHTML = "自 2022-3-10 建站以来，小站已苟活 "+dnum+" 天 ";
-          document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 ( =•ω•= )m";
-        }
-        createtime();
-        if(typeof footer_time == "undefined"){
-          var footer_time = setInterval("createtime()",1000*60);
-        }else{
-          clearInterval(footer_time);
-          footer_time = setInterval("createtime()",1000*60);
-        }
+      function createtime() {
+      var now = new Date();
+      var grt= new Date("03/10/2022 00:00:00");
+      now.setTime(now.getTime()+1000);
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+      document.getElementById("timeDate").innerHTML = "自 2022-3-10 建站以来，小站已苟活 "+dnum+" 天 ";
+      document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 ( =•ω•= )m";
+      }
+      createtime();
+      if(typeof footer_time == "undefined"){
+      var footer_time = setInterval("createtime()",1000*60);
+      }else{
+      clearInterval(footer_time);
+      footer_time = setInterval("createtime()",1000*60);
+      }
       }
   p#ghbdages
     a.github-badge(href="https://hexo.io/" style="margin-inline:5px" target="_blank")
