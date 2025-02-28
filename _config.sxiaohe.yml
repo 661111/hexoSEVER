@@ -529,9 +529,9 @@ messenger:
 footer:
   owner:
     enable: true
-    since: 2020
+    since: 2022
   custom_text: 『Another branch will grow and flourish in the future』
-  copyright: true # Copyright of theme and framework
+  copyright: false # Copyright of theme and framework
 
 # Analysis
 # --------------------------------------
