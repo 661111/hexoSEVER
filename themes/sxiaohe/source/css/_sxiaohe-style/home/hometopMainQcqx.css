@@ -119,7 +119,6 @@ a.category_button:after {
       overflow: visible;
   }
   .homeTopGroup {
-      width: calc(100% + 17px);
       margin-left: -17px;
   }
   .homeTopGroup .category_group{
