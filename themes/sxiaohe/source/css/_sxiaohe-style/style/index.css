@@ -277,3 +277,28 @@ img {
     background-color: transparent !important;
     content: '';
 }
+
+/* 15.修改分类，标签，归档的样式 */
+.article-sort-item:before {
+    display: none;
+}
+.article-sort-item:after {
+    display: none;
+}
+.article-sort-title:before {
+    display: none;
+}
+.article-sort-title:after {
+    display: none;
+}
+.article-sort {
+    border-left: none!important;
+}
+#archive {
+    padding: 10px;
+}
+div#archive, div#category, div#tag {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-weight: 700;
+    background: rgba(255, 255, 255, .67);
+}

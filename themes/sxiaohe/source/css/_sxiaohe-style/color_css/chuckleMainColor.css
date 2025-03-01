@@ -13,3 +13,118 @@
     --mj-card-bg: rgba(0, 0, 0, 0.6);
     --style-border: 2px solid rgba(56, 211, 203, 0.8)
 }
+
+:root {
+    --heo-white: #fff;
+    --heo-black: #000;
+    --heo-none: rgba(0,0,0,0);
+    --heo-gray: #999999;
+    --heo-yellow: #ffc93e;
+    --heo-main: var(--heo-theme);
+    --heo-main-op: var(--heo-theme-op);
+    --heo-shadow-theme: 0 8px 12px -3px var(--heo-theme-op);
+    --heo-shadow-main: 0 8px 12px -3px var(--heo-main-op);
+    --heo-shadow-blue: 0 8px 12px -3px rgba(40, 109, 234,.20);
+    --heo-shadow-white: 0 8px 12px -3px rgba(255, 255, 255,.20);
+    --heo-shadow-black: 0 0 12px 4px rgba(0, 0, 0,.05);
+    --heo-shadow-yellow: 0px 38px 77px -26px rgba(255, 201, 62,.12);
+    --heo-shadow-red: 0 8px 12px -3px #ee7d7936;
+    --heo-shadow-green: 0 8px 12px -3px #87ee7936;
+    --heo-logo-color: linear-gradient(215deg,#4584ff 30%,#ff7676 70%);
+    --style-border-hover: 1px solid #18beff;
+    --dark-grey: #a0a0a0;
+    --btn-hover-color: #00c4b6;
+    --ah-hover-bg: rgba(0,0,0,0.1);
+    --ah-card-bg: rgba(240,241,245,0.7);
+    --post-bj-hx: #8a8a8a21;
+    --post-bj-sx: hsla(0,100%,50%,.45);
+    --copyright-notice-color: rgba(255,255,255,0.3);
+    --todo-border: 1px solid #f7a796;
+    --qx-ai-post-bg: rgba(255,255,255,0.32);
+    --qx-ai-border: 1px solid #e3e8f7bd;
+    --qx-ai-tag-bg: rgba(48, 52, 63, 0.86);
+    --reward-main: #f1f3f8
+}
+
+::selection {
+    background: var(--heo-fontcolor);
+    color: var(--heo-background)
+}
+
+[data-theme=light] {
+    --heo-theme: #1dbffff1;
+    --heo-theme-op: #4259ef23;
+    --heo-blue: #1dbffff1;
+    --heo-red: #D8213C;
+    --heo-pink: #FF7C7C;
+    --heo-green: #57bd6a;
+    --heo-fontcolor: #353535;
+    --heo-background: #f7f9fe;
+    --heo-reverse: #000;
+    --heo-maskbg: rgba(255, 255, 255, 0.6);
+    --heo-hovertext: var(--heo-theme);
+    --heo-ahoverbg: #F7F7FA;
+    --heo-lighttext: var(--heo-main);
+    --heo-secondtext: rgba(60, 60, 67, 0.6);
+    --heo-scrollbar: rgba(60, 60, 67, 0.4);
+    --heo-card-btn-bg: #edf0f7;
+    --heo-post-blockquote-bg: #fafcff;
+    --heo-post-tabs-bg: #f2f5f8;
+    --heo-secondbg: #edf0f7;
+    --heo-shadow-nav: 0 5px 12px -5px rgba(102, 68, 68, 0.05);
+    --heo-card-bg: rgba(255, 253, 253, 0.67);
+    --chuckle-card-bg: rgba(255,255,255,0.67);
+    --style-border-always: 1px solid #e3e8f7a6;
+    --heo-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.00);
+    --heo-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.00);
+    --heo-card-border: #e3e8f7;
+    --font-color: #353535;
+    --text-highlight-color: #1f2d3d;
+    --anzhiyu-card-bg: linear-gradient(55deg, #0095c2 21%, #64E1C8 100%);
+    --heo-shadow-border: 0 8px 16px -4px #2c2d300c
+}
+
+[data-theme=dark] {
+    --anzhiyu-card-bg: #1a191b;
+    --text-highlight-color: rgba(255,255,255,0.9);
+    --ah-card-bg: #232326;
+    --style-border-always: 1px solid var(--heo-card-border);
+    --font-color: rgba(255,255,255,0.86);
+    --ah-hover-bg: rgba(255,255,255,0.2);
+    --dark-grey: rgba(255, 255, 255, 0.746);
+    --btn-hover-color: #00c4b6;
+    --heo-theme: #1dbfffe8;
+    --heo-theme-op: #0084FF23;
+    --heo-blue: #1dbfffe8;
+    --heo-red: #FF3842;
+    --heo-pink: #FF7C7C;
+    --heo-green: #57bd6a;
+    --heo-fontcolor: #F7F7FA;
+    --heo-background: #18171d;
+    --heo-reverse: #fff;
+    --heo-maskbg: rgba(0,0,0, 0.6);
+    --heo-hovertext: #0A84FF;
+    --heo-ahoverbg: #fff;
+    --heo-lighttext: #f2b94b;
+    --heo-secondtext: #a1a2b8;
+    --heo-scrollbar: rgba(200, 200, 223, 0.4);
+    --heo-card-btn-bg: #30343f;
+    --heo-post-blockquote-bg: #000;
+    --heo-post-tabs-bg: #121212;
+    --heo-secondbg: #30343f;
+    --heo-shadow-nav: 0 5px 20px 0px rgba(28, 28, 28, 0.4);
+    --heo-card-bg: #1d1b26;
+    --chuckle-card-bg: rgba(0,0,0,0.6);
+    --heo-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.0);
+    --heo-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.0);
+    --heo-card-border: #42444a;
+    --heo-shadow-border: 0 8px 16px -4px #00000050;
+    --post-bj-hx: #8a8a8a2f;
+    --post-bj-sx: rgba(0, 255, 250, 0.6);
+    --copyright-notice-color: rgba(255,255,255,0.1);
+    --todo-border: 1px solid #51908b;
+    --qx-ai-post-bg: rgba(48, 52, 63, 0.35);
+    --qx-ai-border: 1px solid #3d3d3f;
+    --qx-ai-tag-bg: #30343f;
+    --reward-main: #30343f
+}
