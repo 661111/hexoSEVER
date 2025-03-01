@@ -139,7 +139,8 @@
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    padding-left: 10px
+    padding-left: 10px;
+    padding: 0!important
 }
 
 .article-sort-item-info a.article-meta__tags {
