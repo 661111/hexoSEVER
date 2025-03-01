@@ -16,7 +16,6 @@ mixin articleSort(posts)
         .article-sort-item-info
           div
             a.article-sort-item-title(href=url_for(article.path) title=title)= title
-            .article-sort-description= article.description
           .article-sort-meta
             .article-meta-wrap
               if (theme.post_meta.page.categories && article.categories.data.length > 0)
