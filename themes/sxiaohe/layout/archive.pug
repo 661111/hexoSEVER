@@ -8,15 +8,6 @@ block content
     +articleSort(page.posts)
     include includes/pagination.pug
     style.
-      .article-sort-description {
-        display: none;
-      }
-      i.far.fa-calendar-alt {
-        display: none;
-      }
-      .i.fas.fa-chevron-right {
-        display: none;
-      }
       @media screen and (max-width: 600px) {
         .layout>div:first-child:not(.recent-posts) {
           padding: 3px 11px 10px!important ;
@@ -24,10 +15,4 @@ block content
       }
       .article-sort {
         padding-left: 0!important;
-      }
-      .fa-chevron-right:before {
-        content: ""!important;
-      }
-      .fa-angle-right:before {
-        content: ""!important;
       }
