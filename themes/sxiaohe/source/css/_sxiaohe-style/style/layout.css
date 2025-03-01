@@ -119,7 +119,7 @@
 
 @media screen and (max-width: 768px) {
     .article-sort-item-img {
-        width:80px;
+        width: 100px;
         height: 80px
     }
 }
