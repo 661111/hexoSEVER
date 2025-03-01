@@ -3,9 +3,6 @@
 /* 时间：2025年2月4日 */
 
 /* 归档 */
-.article-sort-item::before {
-    display: none
-}
 .article-sort {
     display: -webkit-box;
     display: -moz-box;
@@ -48,7 +45,7 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: box;
-    /* display:flex; */
+    display: flex;
     -webkit-box-align: center;
     -moz-box-align: center;
     -o-box-align: center;
