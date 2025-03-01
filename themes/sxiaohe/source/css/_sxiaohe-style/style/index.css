@@ -310,3 +310,11 @@ div#archive, div#category, div#tag {
 .article-sort {
   padding-left: 0!important;
 }
+
+/* 15.修复移动端部分面板 */
+/* 15.1.我的面板 */
+@media screen and (max-width: 768px) {
+    #aside-content .card-widget:not(#card-toc) {
+        max-height: 400px;
+    }
+}
