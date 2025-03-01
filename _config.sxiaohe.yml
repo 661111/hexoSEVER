@@ -1039,7 +1039,7 @@ CDN:
 #侧栏悬浮卡片控制按钮
 #https://akilar.top/posts/451ac5f8/
 fixed_card_widget:
-  enable: true
+  enable: false
   page:  #页面显示按钮
     - type: class #侧栏卡片选择器类型
       name: card-info #侧栏卡片选择器名称
