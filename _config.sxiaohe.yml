@@ -1047,15 +1047,10 @@ fixed_card_widget:
       icon: fas fa-address-book #图标
       title: 用户信息 #悬停显示提示
     - type: class
-      name: card-clock
+      name: card-announcement
       index: 0
-      icon: fas fa-cloud-sun
-      title: 电子钟
-    - type: class
-      name: card-shuo
-      index: 0
-      icon: fas fa-comments
-      title: 碎碎念
+      icon: fa fa-bullhorn
+      title: 公告
     - type: class
       name: card-recent-post
       index: 0
