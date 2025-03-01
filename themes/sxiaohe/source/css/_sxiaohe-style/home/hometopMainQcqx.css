@@ -120,6 +120,8 @@ a.category_button:after {
   }
   .homeTopGroup {
       margin-left: -17px;
+      scrollbar-width: none;
+      width: calc(100% + 17px);
   }
   .homeTopGroup .category_group{
       margin-left: 17px;
