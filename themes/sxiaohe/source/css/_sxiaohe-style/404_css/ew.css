@@ -23,8 +23,8 @@ div#error-wrap {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-    padding: 1rem;
-    padding-top: 0;
+    padding-top: 1rem!important;
+    padding: 0!important;
     position: relative;
 }
 .aside-list {
