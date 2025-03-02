@@ -34,5 +34,4 @@ mixin articleSort(posts)
                       span.article-meta__link •
             .article-sort-item-time
               time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))= date(article.date, config.date_format)
-        i.fas.fa-chevron-right
     - })
