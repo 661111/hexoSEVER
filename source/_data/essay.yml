@@ -1,5 +1,9 @@
 - class_name: 即刻短文
   essay_list:
+    - content: 最近长牙包了，没办法完善一些东西
+      date: 2025/03/03
+      from: 天选4锐龙版
+
     - content: 目前基本上已经完成了仿照轻笑的博客样式
       date: 2025/02/07
       from: 天选4锐龙版
