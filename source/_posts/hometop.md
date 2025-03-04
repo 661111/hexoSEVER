@@ -11,7 +11,9 @@ tags:
   - hexo
   - butterfly
   - 美化
-abbrlink: 18107
+abbrlink: 18108
 ---
 ## 1.前言
 为了把lighthouse的性能优化到极致，所以采用了这种方式来优化
+
+## 2.添加hometop
