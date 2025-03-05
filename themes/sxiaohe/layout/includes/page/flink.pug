@@ -52,7 +52,7 @@
               a.flink-list-item(style="position: relative;" target='_blank' rel='noopener' href=url_for(item.link))
                 .img(style="border-radius: 12px;")
                   - var siteshot = item.siteshot ? url_for(item.siteshot) : 'https://s0.wp.com/mshots/v1/' + item.link + '?w=400&h=300'
-                  img.nolazyload.no-lightbox(src=siteshot onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.post_page) + `'` alt='' )
+                  img.nolazyload.no-lightbox(src=siteshot onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.post_page) + `'` alt='' style="border-radius: 12px;")
                 .info
                   img.nolazyload.no-lightbox(src=url_for(item.avatar) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt='' )
                   span.title= item.name
