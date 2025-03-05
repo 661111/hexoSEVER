@@ -48,6 +48,7 @@ jobs:
         run: |
           npm install yamljs --save
           node link.js
+          node friend.js
 
       - name: 生成追番页面文件
         run: |
