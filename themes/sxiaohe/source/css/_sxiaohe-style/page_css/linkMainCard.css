@@ -100,7 +100,7 @@
     color: #ff5722
 }
 
-#article-container .btn-beautify, #aside-content .card-widget, #recent-posts .recent-post-item, .butterfly-flink-list>.flink-list-item, .cardHover, .error-flink-list>.flink-list-item, .layout .pagination>:not(.space), .layout>div:first-child:not(.nc), .smoothcard-flink-list .flink-list-item, .type-404 .error-content, .volantis-flink-list .flink-list-item .img {
+.volantis-flink-list .flink-list-item .img {
     background: var(--card-bg);
     -webkit-box-shadow: var(--card-box-shadow);
     box-shadow: var(--card-box-shadow);
