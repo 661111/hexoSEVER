@@ -1,7 +1,8 @@
 ---
 title: Banner随机文章展示(轻笑同款)
 description: 首页显示随机文章，修复一些bug
-date: '2025-02-27 10:00'
+date: '2025-03-01 10:00'
+updated: '2025-03-05 12:09'
 cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 category:
   - hexo
