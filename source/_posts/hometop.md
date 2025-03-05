@@ -1,5 +1,5 @@
 ---
-title: Banner随机文章展示
+title: Banner随机文章展示(轻笑同款)
 description: 首页显示随机文章，修复一些bug
 date: '2025-02-27 10:00'
 cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
@@ -14,8 +14,9 @@ tags:
 abbrlink: 18108
 ---
 ## 1.前言
-为了把lighthouse的性能优化到极致，所以采用了这种方式来优化
-
+为了把lighthouse的性能优化到极致，所以采用了这种轻笑方案的随机banner来优化
+文章来源：
+{% link Banner随机文章展示,『轻笑Chuckle』,https://www.qcqx.cn/article/a1bf85bf.html %}
 ## 2.添加hometop
 ### 1.在 [BlogRoot]\themes\sxiaohe\scripts\helpers中新建home_random_post.js:
 ``` JS
