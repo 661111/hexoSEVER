@@ -21,7 +21,6 @@ abbrlink: 18107
 
 前置教程：[Hexo引入阿里矢量图标库-iconfont inject](https://akilar.top/posts/d2ebecef/)和[基于Butterfly的外挂标签引入-Tag Plugins Plus](https://akilar.top/posts/615e2dec/#%E5%8A%A8%E6%80%81%E6%A0%87%E7%AD%BE-anima)中关于动态标签anima的内容。请确保您已经完成了前置教程，并实现了在文章中使用symbol写法来引入iconfont图标。同时引入了fontawesome_animation的前置依赖。
 主要检查您的inject配置项中是否有这两个依赖
-{% endnote %}
 
 ``` YAML
 inject:
@@ -32,6 +31,7 @@ inject:
     # 阿里矢量图标,这串是我的图标库，你的链接会有所不同。
     - <script async src="//at.alicdn.com/t/font_2032782_ev6ytrh30f.js"></script>
 ```
+{% endnote %}
 
 **1.修改PUG文件**
 替换**BlogRoot\themes\butterfly\layout\includes\header\menu_item.pug**为以下代码，本方案默认使用观感最佳的悬停父元素触发子元素动画效果，默认动画为faa-tada。**注意：可以把之前的代码注释掉，再在后面加上如下代码，以便于回滚**。我这里放出fomal的4.3.1版本以及我修改的4.5.0版本（当然4.5.1也可以自己进行修改）。

@@ -2,11 +2,11 @@
 title: 博客魔改教程总结(二)
 description: 从零开始魔改butterfly
 date: '2025-02-07 8:00'
-cover: /img/2025/01/meihua-post/cover.avif
+cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/meihua-post/cover.avif
 category:
   - hexo
   - butterfly
-top_img: /img/2025/01/meihua-post/cover.avif
+top_img: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/meihua-post/cover.avif
 tags:
   - hexo
   - butterfly
