@@ -11,99 +11,55 @@ top_tips: 靠谱的日常伙伴 让工作与生活充满期待
 top_link: /blog/42#好物推荐页
 top_text: 关于本页
 ---
-<style>
-    .status-tag {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        padding: 3px 8px;
-        border-radius: 12px 0px 12px 0px;
-        font-size: 12px;
-        color: white;
-        font-weight: bold;
-        transition: font-size 0.3s ease-out, width 0.3s ease-out, opacity 0.3s ease-out;
-    }
-    .flink-list-item:hover .status-tag {
-        font-size: 0px;
-        opacity: 0;
-    }
-    /* 固态颜色 */
-    .status-tag-green {
-        background-color: #005E00; /* 绿色 */
-    }
-    .status-tag-light-yellow {
-        background-color: #FED101; /* 浅黄色 */
-    }
-    .status-tag-dark-yellow {
-        background-color: #F0B606; /* 深黄色 */
-    }
-    .status-tag-red {
-        background-color: #B90000; /* 红色 */
-    }
-</style>
 <script>
-function addStatusTagsWithCache(jsonUrl) {
-    const cacheKey = "statusTagsData";
-    const cacheExpirationTime = 30 * 60 * 1000; // 半小时
-    function applyStatusTags(data) {
-        const linkStatus = data.link_status;
-        document.querySelectorAll('.flink-list-item').forEach(card => { // 一定要注意这里的类名，小心匹配不上
-            if (!card.href) return;
-            const link = card.href.replace(/\/$/, '');
-            const statusTag = document.createElement('div');
-            statusTag.classList.add('status-tag');
-            let matched = false;
-            // 查找链接状态
-            const status = linkStatus.find(item => item.link.replace(/\/$/, '') === link);
-            if (status) {
-                let latencyText = '未知';
-                let className = 'status-tag-red'; // 默认红色
-                if (status.latency === -1) {
-                    latencyText = '未知';
-                } else {
-                    latencyText = status.latency.toFixed(2) + ' s';
-                    if (status.latency <= 2) {
-                        className = 'status-tag-green';
-                    } else if (status.latency <= 5) {
-                        className = 'status-tag-light-yellow';
-                    } else if (status.latency <= 10) {
-                        className = 'status-tag-dark-yellow';
+    function addStatusTagsWithCache(t) {
+        const a = "statusTagsData";
+        function e(t) {
+            const a = t.link_status;
+            document.querySelectorAll(".flink-list-item").forEach((t => {
+                if (!t.href)
+                    return;
+                const e = t.href.replace(/\/$/, "")
+                  , s = document.createElement("div");
+                s.classList.add("status-tag");
+                let i = !1;
+                const l = a.find((t => t.link.replace(/\/$/, "") === e));
+                if (l) {
+                    let t = '<i class="fa-solid fa-signal"></i>ERR'
+                      , a = "status-tag-red";
+                    if (-1 === l.latency)
+                        t = '<i class="fa-solid fa-signal"></i>ERR';
+                    else {
+                        t = '<i class="fa-solid fa-signal"></i>' + (1e3 * l.latency).toFixed(0) + " MS",
+                        l.latency <= 3 ? a = "status-tag-green" : l.latency <= 5 ? a = "status-tag-light-yellow" : l.latency <= 10 && (a = "status-tag-dark-yellow")
                     }
+                    s.innerHTML = t,
+                    s.classList.add(a),
+                    i = !0
                 }
-                statusTag.textContent = latencyText;
-                statusTag.classList.add(className);
-                matched = true;
+                i && (t.style.position = "relative",
+                t.appendChild(s))
             }
-            if (matched) {
-                card.style.position = 'relative';
-                card.appendChild(statusTag);
-            }
-        });
-    }
-    function fetchDataAndUpdateUI() {
-        fetch(jsonUrl)
-            .then(response => response.json())
-            .then(data => {
-                applyStatusTags(data);
-                const cacheData = {
-                    data: data,
-                    timestamp: Date.now()
-                };
-                localStorage.setItem(cacheKey, JSON.stringify(cacheData));
-            })
-            .catch(error => console.error('Error fetching test-flink result.json:', error));
-    }
-    const cachedData = localStorage.getItem(cacheKey);
-    if (cachedData) {
-        const { data, timestamp } = JSON.parse(cachedData);
-        if (Date.now() - timestamp < cacheExpirationTime) {
-            applyStatusTags(data);
-            return;
+            ))
         }
+        const s = localStorage.getItem(a);
+        if (s) {
+            const {data: t, timestamp: a} = JSON.parse(s);
+            if (Date.now() - a < 18e5)
+                return void e(t)
+        }
+        fetch(t).then((t => t.json())).then((t => {
+            e(t);
+            const s = {
+                data: t,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(a, JSON.stringify(s))
+        }
+        )).catch((t => console.error("Error fetching test-flink result.json:", t)))
     }
-    fetchDataAndUpdateUI();
-}
-setTimeout(() => {
-    addStatusTagsWithCache('https://link-api.vercel.sxiaohe.top/result.json');
-}, 0);
+    setTimeout(( () => {
+        addStatusTagsWithCache("https://link-api.vercel.sxiaohe.top/result.json")
+    }
+    ), 0)
 </script>
