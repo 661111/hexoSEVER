@@ -1,7 +1,13 @@
-/*!
- * clipboard.js v2.0.10
- * https://clipboardjs.com/
- */
+document.addEventListener('DOMContentLoaded', function () {
+    const posts = document.querySelectorAll('#post-info');
+    posts.forEach(function (post) {
+        const cover = post.getAttribute('data-cover');
+        if (cover) {
+            post.style.backgroundImage = `url(${cover})`;
+        }
+    });
+});
+/*  1.backgroud */
 try {
     let e = loadData("blogbg", 1440);
     e ? changeBg(e, 1) : localStorage.removeItem("blogbg")

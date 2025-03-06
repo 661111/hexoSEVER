@@ -1,11 +1,4 @@
-#post {
-    padding: 50px 40px!important;
-}
-@media screen and (max-width: 900px) {
-    #post {
-        padding: 20px 20px 30px!important;
-    }
-}
+
 .layout {
     max-width: 1300px;
     padding: 0.35rem 2.5px;
