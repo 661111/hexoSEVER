@@ -34,14 +34,5 @@ else
   nav#pagination
     .pagination
       if is_home()
-        - options.format = 'page/%d/'
+        - options.format = 'page/%d/#content-inner'
       !=paginator(options)
-      if is_home()
-        input#textnumer(oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" onkeyup='this.value=this.value.replace(/[^u4e00-u9fa5w]/g,"")')
-        a#textbtn(onclick='textbtn()') 跳转
-    if is_home()
-      .js-css
-        script.
-          function textbtn(){var e=document.querySelectorAll(".page-number"),t=e[e.length-1].innerHTML,n=Number(t),a=document.getElementById("textnumer"),o=Number(a.value);if(""!=o&&!isNaN(o)&&o%1==0)if(1==o)document.getElementById("textbtn").href="/";else if(o>n){var d="/page/"+n+"/";document.getElementById("textbtn").href=d}else d="/page/"+a.value+"/",document.getElementById("textbtn").href=d}
-        style.
-          #pagination .pagination .extend{display: none!important}
