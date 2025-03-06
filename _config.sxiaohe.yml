@@ -668,16 +668,16 @@ beautify:
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
-  global-font-size: "15px"
-  code-font-size: "14px"
-  font-family: var(--global-font), -apple-system, 'Quicksand', 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
-  code-font-family: Consolas_1, var(--global-font), "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif
+  global-font-size:
+  code-font-size:
+  font-family:
+  code-font-family:
 
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
 blog_title_font:
   font_link:
-  font-family: var(--global-font)
+  font-family:
 
 # The setting of divider icon (水平分隔線圖標設置)
 hr_icon:
