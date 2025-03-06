@@ -1,3 +1,79 @@
+var paramNumber = 1;
+function narrowPage() {
+    paramNumber > .2 && (paramNumber -= .1),
+    document.getElementsByTagName("body")[0].style.zoom = paramNumber
+}
+function enlargePage() {
+    paramNumber < 5 && (paramNumber += .1),
+    document.getElementsByTagName("body")[0].style.zoom = paramNumber
+}
+function postAddToc() {
+    let e = document.querySelector("#post>#article-container.post-content")
+      , t = document.getElementById("card-toc");
+    if (e && t) {
+        let e = t.getElementsByClassName("toc-number")
+          , n = t.getElementsByClassName("toc-link");
+        for (let t = 0; t < n.length; t++)
+            document.getElementById(decodeURIComponent(n[t].attributes.href.value).slice(1)).dataset.toc = e[t].innerText
+    }
+}
+function FixedCardWidget(e, t, n) {
+    if ("id" === e)
+        var o = document.getElementById(t);
+    else
+        o = document.getElementsByClassName(t)[n];
+    o && (o.className.indexOf("fixed-card-widget") > -1 ? RemoveFixedCardWidget() : (RemoveFixedCardWidget(),
+    CreateQuitBox(),
+    o.classList.add("fixed-card-widget")))
+}
+function CreateQuitBox() {
+    document.getElementById("aside-content").insertAdjacentHTML("beforebegin", '<div id="quit-box" onclick="RemoveFixedCardWidget()"></div>')
+}
+function RemoveFixedCardWidget() {
+    var e = document.querySelectorAll(".fixed-card-widget");
+    if (e)
+        for (i = 0; i < e.length; i++)
+            e[i].classList.remove("fixed-card-widget");
+    var t = document.getElementById("quit-box");
+    t && t.remove()
+}
+function refreshCache() {
+    "serviceWorker"in window.navigator && navigator.serviceWorker.controller ? confirm("是否确定刷新全站缓存") && navigator.serviceWorker.controller.postMessage("refresh") : GLOBAL_CONFIG.Snackbar ? btf.snackbarShow("ServiceWorker未激活,请刷新浏览器") : alert("ServiceWorker未激活,请刷新浏览器")
+}
+function percent() {
+    let e = document.documentElement.scrollTop
+      , t = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
+      , n = Math.round(e / t * 100)
+      , o = document.querySelector("#go-up");
+    n < 95 ? (o.childNodes[0].style.display = "none",
+    o.childNodes[1].style.display = "block",
+    o.childNodes[1].innerHTML = n + "<span>%</span>") : (o.childNodes[1].style.display = "none",
+    o.childNodes[0].style.display = "block")
+}
+postAddToc(),
+document.removeEventListener("pjax:complete", postAddToc),
+document.addEventListener("pjax:complete", postAddToc),
+RemoveFixedCardWidget(),
+navigator.serviceWorker.addEventListener("message", (e => {
+    "success" === e.data && window.location.reload(!0)
+}
+)),
+window.removeEventListener("scroll", window.percentScroll),
+window.percentScroll = btf.throttle(percent, 50),
+window.addEventListener("scroll", window.percentScroll);
+let kk = {};
+function hideRightMenu() {
+    kk.showRightMenu(!1)
+}
+function linkCom(e) {
+    var t = document.querySelector(".veditor");
+    "bf" == e ? (t.value = "```yml\n",
+    t.value += "- name: \n  link: \n  avatar: \n  descr: \n  siteshot: ",
+    t.value += "\n```",
+    t.setSelectionRange(15, 15)) : (t.value = "站点名称：\n站点地址：\n头像链接：\n站点描述：\n站点截图[可选]：",
+    t.setSelectionRange(5, 5)),
+    t.focus()
+}
 /*!
  * clipboard.js v2.0.10
  * https://clipboardjs.com/
@@ -21,6 +97,11 @@ kk.switchDarkMode = function() {
     "function" == typeof utterancesTheme && utterancesTheme(),
     "object" == typeof FB && window.loadFBComment(),
     window.DISQUS && document.getElementById("disqus_thread").children.length && setTimeout(( () => window.disqusReset()), 200)
+}
+,
+kk.copySelect = function() {
+    document.execCommand("Copy", !1, null),
+    btf.snackbarShow("你的剪切板已被窝占领惹~")
 }
 ,
 kk.scrollToTop = function() {
