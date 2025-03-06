@@ -80,12 +80,10 @@
     --heo-card-border: #e3e8f7;
     --font-color: #353535;
     --text-highlight-color: #1f2d3d;
-    --anzhiyu-card-bg: linear-gradient(55deg, #0095c2 21%, #64E1C8 100%);
     --heo-shadow-border: 0 8px 16px -4px #2c2d300c
 }
 
 [data-theme=dark] {
-    --anzhiyu-card-bg: #1a191b;
     --text-highlight-color: rgba(255,255,255,0.9);
     --ah-card-bg: #232326;
     --style-border-always: 1px solid var(--heo-card-border);
