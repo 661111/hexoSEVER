@@ -960,8 +960,7 @@ inject:
     - <script async src="/js/essay.js"></script>
     - <script async src="//at.alicdn.com/t/c/font_3612150_gkavascgf3n.js"></script>
     - <script data-pjax defer src="/js/fixed_card_widget.js"></script>
-    - <script defer src="https://jsd.sxiaohe.top/gh/nextapps-de/winbox/dist/winbox.bundle.min.js"></script>
-    - <script defer data-pjax src="/js/bbtalk.js"></script> 
+    - <script defer data-pjax src="/js/qcqx.js"></script> 
 
 # CDN
 # Don't modify the following settings unless you know how they work

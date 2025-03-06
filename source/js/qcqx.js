@@ -1,3 +1,621 @@
+/*!
+ * clipboard.js v2.0.10
+ * https://clipboardjs.com/
+ */
+function getNowURL() {
+    return location.protocol + "//" + location.host + location.pathname
+}
+kk.showRightMenu = function(e, t=0, n=0) {
+    let o = document.getElementById("rightMenu");
+    o.style.top = t + "px",
+    o.style.left = n + "px",
+    o.style.display = e ? "block" : "none"
+}
+,
+kk.switchDarkMode = function() {
+    "light" == ("dark" === document.documentElement.getAttribute("data-theme") ? "dark" : "light") ? (activateDarkMode(),
+    saveToLocal.set("theme", "dark", 2),
+    void 0 !== GLOBAL_CONFIG.Snackbar && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)) : (activateLightMode(),
+    saveToLocal.set("theme", "light", 2),
+    void 0 !== GLOBAL_CONFIG.Snackbar && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)),
+    "function" == typeof utterancesTheme && utterancesTheme(),
+    "object" == typeof FB && window.loadFBComment(),
+    window.DISQUS && document.getElementById("disqus_thread").children.length && setTimeout(( () => window.disqusReset()), 200)
+}
+,
+kk.scrollToTop = function() {
+    btf.scrollToDest(0, 500)
+}
+,
+navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i) || (window.oncontextmenu = function(e) {
+    if (e.ctrlKey)
+        return !0;
+    if ("block" === document.getElementById("rightMenu").style.display)
+        return kk.showRightMenu(!1),
+        !1;
+    document.querySelectorAll(".rightMenu-group.hide").forEach((function(e) {
+        e.style.display = "none"
+    }
+    )),
+    document.getSelection().toString() && (document.getElementById("menu-text").style.display = "block"),
+    "INPUT" !== document.activeElement.tagName && "TEXTAREA" !== document.activeElement.tagName || (document.getElementById("menu-read").style.display = "block");
+    let t = e.clientX + 10
+      , n = e.clientY;
+    return t + 144 > window.innerWidth && (t -= 144),
+    n + 237 > window.innerHeight && (n -= 237),
+    kk.showRightMenu(!0, n, t),
+    !1
+}
+),
+window.removeEventListener("click", hideRightMenu),
+window.addEventListener("click", hideRightMenu),
+document.getElementById("menu-backward").addEventListener("click", (function() {
+    window.history.back()
+}
+)),
+document.getElementById("menu-forward").addEventListener("click", (function() {
+    window.history.forward()
+}
+)),
+document.getElementById("menu-refresh").addEventListener("click", (function() {
+    window.location.reload()
+}
+)),
+document.getElementById("menu-darkmode").addEventListener("click", kk.switchDarkMode),
+document.getElementById("menu-top").addEventListener("click", kk.scrollToTop),
+function(e, t) {
+    "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? exports.ClipboardJS = t() : e.ClipboardJS = t()
+}(this, (function() {
+    return function() {
+        var e = {
+            686: function(e, t, n) {
+                "use strict";
+                n.d(t, {
+                    default: function() {
+                        return v
+                    }
+                });
+                var o = n(279)
+                  , i = n.n(o)
+                  , r = n(370)
+                  , a = n.n(r)
+                  , s = n(817)
+                  , c = n.n(s);
+                function l(e) {
+                    try {
+                        return document.execCommand(e)
+                    } catch (e) {
+                        return !1
+                    }
+                }
+                var d = function(e) {
+                    var t = c()(e);
+                    return l("cut"),
+                    t
+                };
+                function u(e) {
+                    var t = "rtl" === document.documentElement.getAttribute("dir")
+                      , n = document.createElement("textarea");
+                    n.style.fontSize = "12pt",
+                    n.style.border = "0",
+                    n.style.padding = "0",
+                    n.style.margin = "0",
+                    n.style.position = "absolute",
+                    n.style[t ? "right" : "left"] = "-9999px";
+                    var o = window.pageYOffset || document.documentElement.scrollTop;
+                    return n.style.top = "".concat(o, "px"),
+                    n.setAttribute("readonly", ""),
+                    n.value = e,
+                    n
+                }
+                var h = function(e) {
+                    var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {
+                        container: document.body
+                    }
+                      , n = "";
+                    if ("string" == typeof e) {
+                        var o = u(e);
+                        t.container.appendChild(o),
+                        n = c()(o),
+                        l("copy"),
+                        o.remove()
+                    } else
+                        n = c()(e),
+                        l("copy");
+                    return n
+                };
+                function m(e) {
+                    return m = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                        return typeof e
+                    }
+                    : function(e) {
+                        return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                    }
+                    ,
+                    m(e)
+                }
+                function f(e) {
+                    return f = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                        return typeof e
+                    }
+                    : function(e) {
+                        return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                    }
+                    ,
+                    f(e)
+                }
+                function g(e, t) {
+                    for (var n = 0; n < t.length; n++) {
+                        var o = t[n];
+                        o.enumerable = o.enumerable || !1,
+                        o.configurable = !0,
+                        "value"in o && (o.writable = !0),
+                        Object.defineProperty(e, o.key, o)
+                    }
+                }
+                function b(e, t) {
+                    return b = Object.setPrototypeOf || function(e, t) {
+                        return e.__proto__ = t,
+                        e
+                    }
+                    ,
+                    b(e, t)
+                }
+                function p(e, t) {
+                    return !t || "object" !== f(t) && "function" != typeof t ? function(e) {
+                        if (void 0 === e)
+                            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                        return e
+                    }(e) : t
+                }
+                function w(e) {
+                    return w = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+                        return e.__proto__ || Object.getPrototypeOf(e)
+                    }
+                    ,
+                    w(e)
+                }
+                function y(e, t) {
+                    var n = "data-clipboard-".concat(e);
+                    if (t.hasAttribute(n))
+                        return t.getAttribute(n)
+                }
+                var x = function(e) {
+                    !function(e, t) {
+                        if ("function" != typeof t && null !== t)
+                            throw new TypeError("Super expression must either be null or a function");
+                        e.prototype = Object.create(t && t.prototype, {
+                            constructor: {
+                                value: e,
+                                writable: !0,
+                                configurable: !0
+                            }
+                        }),
+                        t && b(e, t)
+                    }(r, e);
+                    var t, n, o, i = function(e) {
+                        var t = function() {
+                            if ("undefined" == typeof Reflect || !Reflect.construct)
+                                return !1;
+                            if (Reflect.construct.sham)
+                                return !1;
+                            if ("function" == typeof Proxy)
+                                return !0;
+                            try {
+                                return Date.prototype.toString.call(Reflect.construct(Date, [], (function() {}
+                                ))),
+                                !0
+                            } catch (e) {
+                                return !1
+                            }
+                        }();
+                        return function() {
+                            var n, o = w(e);
+                            if (t) {
+                                var i = w(this).constructor;
+                                n = Reflect.construct(o, arguments, i)
+                            } else
+                                n = o.apply(this, arguments);
+                            return p(this, n)
+                        }
+                    }(r);
+                    function r(e, t) {
+                        var n;
+                        return function(e, t) {
+                            if (!(e instanceof t))
+                                throw new TypeError("Cannot call a class as a function")
+                        }(this, r),
+                        (n = i.call(this)).resolveOptions(t),
+                        n.listenClick(e),
+                        n
+                    }
+                    return t = r,
+                    n = [{
+                        key: "resolveOptions",
+                        value: function() {
+                            var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                            this.action = "function" == typeof e.action ? e.action : this.defaultAction,
+                            this.target = "function" == typeof e.target ? e.target : this.defaultTarget,
+                            this.text = "function" == typeof e.text ? e.text : this.defaultText,
+                            this.container = "object" === f(e.container) ? e.container : document.body
+                        }
+                    }, {
+                        key: "listenClick",
+                        value: function(e) {
+                            var t = this;
+                            this.listener = a()(e, "click", (function(e) {
+                                return t.onClick(e)
+                            }
+                            ))
+                        }
+                    }, {
+                        key: "onClick",
+                        value: function(e) {
+                            var t = e.delegateTarget || e.currentTarget
+                              , n = this.action(t) || "copy"
+                              , o = function() {
+                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}
+                                  , t = e.action
+                                  , n = void 0 === t ? "copy" : t
+                                  , o = e.container
+                                  , i = e.target
+                                  , r = e.text;
+                                if ("copy" !== n && "cut" !== n)
+                                    throw new Error('Invalid "action" value, use either "copy" or "cut"');
+                                if (void 0 !== i) {
+                                    if (!i || "object" !== m(i) || 1 !== i.nodeType)
+                                        throw new Error('Invalid "target" value, use a valid Element');
+                                    if ("copy" === n && i.hasAttribute("disabled"))
+                                        throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
+                                    if ("cut" === n && (i.hasAttribute("readonly") || i.hasAttribute("disabled")))
+                                        throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes')
+                                }
+                                return r ? h(r, {
+                                    container: o
+                                }) : i ? "cut" === n ? d(i) : h(i, {
+                                    container: o
+                                }) : void 0
+                            }({
+                                action: n,
+                                container: this.container,
+                                target: this.target(t),
+                                text: this.text(t)
+                            });
+                            this.emit(o ? "success" : "error", {
+                                action: n,
+                                text: o,
+                                trigger: t,
+                                clearSelection: function() {
+                                    t && t.focus(),
+                                    document.activeElement.blur(),
+                                    window.getSelection().removeAllRanges()
+                                }
+                            })
+                        }
+                    }, {
+                        key: "defaultAction",
+                        value: function(e) {
+                            return y("action", e)
+                        }
+                    }, {
+                        key: "defaultTarget",
+                        value: function(e) {
+                            var t = y("target", e);
+                            if (t)
+                                return document.querySelector(t)
+                        }
+                    }, {
+                        key: "defaultText",
+                        value: function(e) {
+                            return y("text", e)
+                        }
+                    }, {
+                        key: "destroy",
+                        value: function() {
+                            this.listener.destroy()
+                        }
+                    }],
+                    o = [{
+                        key: "copy",
+                        value: function(e) {
+                            var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {
+                                container: document.body
+                            };
+                            return h(e, t)
+                        }
+                    }, {
+                        key: "cut",
+                        value: function(e) {
+                            return d(e)
+                        }
+                    }, {
+                        key: "isSupported",
+                        value: function() {
+                            var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : ["copy", "cut"]
+                              , t = "string" == typeof e ? [e] : e
+                              , n = !!document.queryCommandSupported;
+                            return t.forEach((function(e) {
+                                n = n && !!document.queryCommandSupported(e)
+                            }
+                            )),
+                            n
+                        }
+                    }],
+                    n && g(t.prototype, n),
+                    o && g(t, o),
+                    r
+                }(i())
+                  , v = x
+            },
+            828: function(e) {
+                if ("undefined" != typeof Element && !Element.prototype.matches) {
+                    var t = Element.prototype;
+                    t.matches = t.matchesSelector || t.mozMatchesSelector || t.msMatchesSelector || t.oMatchesSelector || t.webkitMatchesSelector
+                }
+                e.exports = function(e, t) {
+                    for (; e && 9 !== e.nodeType; ) {
+                        if ("function" == typeof e.matches && e.matches(t))
+                            return e;
+                        e = e.parentNode
+                    }
+                }
+            },
+            438: function(e, t, n) {
+                var o = n(828);
+                function i(e, t, n, o, i) {
+                    var a = r.apply(this, arguments);
+                    return e.addEventListener(n, a, i),
+                    {
+                        destroy: function() {
+                            e.removeEventListener(n, a, i)
+                        }
+                    }
+                }
+                function r(e, t, n, i) {
+                    return function(n) {
+                        n.delegateTarget = o(n.target, t),
+                        n.delegateTarget && i.call(e, n)
+                    }
+                }
+                e.exports = function(e, t, n, o, r) {
+                    return "function" == typeof e.addEventListener ? i.apply(null, arguments) : "function" == typeof n ? i.bind(null, document).apply(null, arguments) : ("string" == typeof e && (e = document.querySelectorAll(e)),
+                    Array.prototype.map.call(e, (function(e) {
+                        return i(e, t, n, o, r)
+                    }
+                    )))
+                }
+            },
+            879: function(e, t) {
+                t.node = function(e) {
+                    return void 0 !== e && e instanceof HTMLElement && 1 === e.nodeType
+                }
+                ,
+                t.nodeList = function(e) {
+                    var n = Object.prototype.toString.call(e);
+                    return void 0 !== e && ("[object NodeList]" === n || "[object HTMLCollection]" === n) && "length"in e && (0 === e.length || t.node(e[0]))
+                }
+                ,
+                t.string = function(e) {
+                    return "string" == typeof e || e instanceof String
+                }
+                ,
+                t.fn = function(e) {
+                    return "[object Function]" === Object.prototype.toString.call(e)
+                }
+            },
+            370: function(e, t, n) {
+                var o = n(879)
+                  , i = n(438);
+                e.exports = function(e, t, n) {
+                    if (!e && !t && !n)
+                        throw new Error("Missing required arguments");
+                    if (!o.string(t))
+                        throw new TypeError("Second argument must be a String");
+                    if (!o.fn(n))
+                        throw new TypeError("Third argument must be a Function");
+                    if (o.node(e))
+                        return function(e, t, n) {
+                            return e.addEventListener(t, n),
+                            {
+                                destroy: function() {
+                                    e.removeEventListener(t, n)
+                                }
+                            }
+                        }(e, t, n);
+                    if (o.nodeList(e))
+                        return function(e, t, n) {
+                            return Array.prototype.forEach.call(e, (function(e) {
+                                e.addEventListener(t, n)
+                            }
+                            )),
+                            {
+                                destroy: function() {
+                                    Array.prototype.forEach.call(e, (function(e) {
+                                        e.removeEventListener(t, n)
+                                    }
+                                    ))
+                                }
+                            }
+                        }(e, t, n);
+                    if (o.string(e))
+                        return function(e, t, n) {
+                            return i(document.body, e, t, n)
+                        }(e, t, n);
+                    throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList")
+                }
+            },
+            817: function(e) {
+                e.exports = function(e) {
+                    var t;
+                    if ("SELECT" === e.nodeName)
+                        e.focus(),
+                        t = e.value;
+                    else if ("INPUT" === e.nodeName || "TEXTAREA" === e.nodeName) {
+                        var n = e.hasAttribute("readonly");
+                        n || e.setAttribute("readonly", ""),
+                        e.select(),
+                        e.setSelectionRange(0, e.value.length),
+                        n || e.removeAttribute("readonly"),
+                        t = e.value
+                    } else {
+                        e.hasAttribute("contenteditable") && e.focus();
+                        var o = window.getSelection()
+                          , i = document.createRange();
+                        i.selectNodeContents(e),
+                        o.removeAllRanges(),
+                        o.addRange(i),
+                        t = o.toString()
+                    }
+                    return t
+                }
+            },
+            279: function(e) {
+                function t() {}
+                t.prototype = {
+                    on: function(e, t, n) {
+                        var o = this.e || (this.e = {});
+                        return (o[e] || (o[e] = [])).push({
+                            fn: t,
+                            ctx: n
+                        }),
+                        this
+                    },
+                    once: function(e, t, n) {
+                        var o = this;
+                        function i() {
+                            o.off(e, i),
+                            t.apply(n, arguments)
+                        }
+                        return i._ = t,
+                        this.on(e, i, n)
+                    },
+                    emit: function(e) {
+                        for (var t = [].slice.call(arguments, 1), n = ((this.e || (this.e = {}))[e] || []).slice(), o = 0, i = n.length; o < i; o++)
+                            n[o].fn.apply(n[o].ctx, t);
+                        return this
+                    },
+                    off: function(e, t) {
+                        var n = this.e || (this.e = {})
+                          , o = n[e]
+                          , i = [];
+                        if (o && t)
+                            for (var r = 0, a = o.length; r < a; r++)
+                                o[r].fn !== t && o[r].fn._ !== t && i.push(o[r]);
+                        return i.length ? n[e] = i : delete n[e],
+                        this
+                    }
+                },
+                e.exports = t,
+                e.exports.TinyEmitter = t
+            }
+        }
+          , t = {};
+        function n(o) {
+            if (t[o])
+                return t[o].exports;
+            var i = t[o] = {
+                exports: {}
+            };
+            return e[o](i, i.exports, n),
+            i.exports
+        }
+        return n.n = function(e) {
+            var t = e && e.__esModule ? function() {
+                return e.default
+            }
+            : function() {
+                return e
+            }
+            ;
+            return n.d(t, {
+                a: t
+            }),
+            t
+        }
+        ,
+        n.d = function(e, t) {
+            for (var o in t)
+                n.o(t, o) && !n.o(e, o) && Object.defineProperty(e, o, {
+                    enumerable: !0,
+                    get: t[o]
+                })
+        }
+        ,
+        n.o = function(e, t) {
+            return Object.prototype.hasOwnProperty.call(e, t)
+        }
+        ,
+        n(686)
+    }().default
+}
+));
+const clipboard = new ClipboardJS("button#share-link",{
+    text: function() {
+        return document.title + "：" + getNowURL()
+    }
+});
+function RemoveFixedComment() {
+    var e = document.querySelectorAll(".fixedcomment");
+    if (e)
+        for (i = 0; i < e.length; i++)
+            e[i].classList.remove("fixedcomment")
+}
+function AddFixedComment() {
+    var e = document.getElementById("post-comment")
+      , t = document.getElementById("quit-board");
+    e.classList.add("fixedcomment"),
+    t.classList.add("fixedcomment")
+}
+function CreateQuitBoard() {
+    document.getElementById("post-comment").insertAdjacentHTML("beforebegin", '<div id="quit-board" onclick="RemoveFixedComment()"></div>')
+}
+function FixedCommentBtn() {
+    var e = document.getElementById("post-comment");
+    e && (e.className.indexOf("fixedcomment") > -1 ? RemoveFixedComment() : (CreateQuitBoard(),
+    AddFixedComment()))
+}
+function saveData(e, t) {
+    localStorage.setItem(e, JSON.stringify({
+        time: Date.now(),
+        data: t
+    }))
+}
+function loadData(e, t) {
+    let n = JSON.parse(localStorage.getItem(e));
+    return null != n && 0 < Date.now() - n.time < 60 * t * 1e3 ? n.data : 0
+}
+clipboard.on("success", (function() {
+    btf.snackbarShow("成功复制本页的分享链接，快去粘贴吧~")
+}
+)),
+clipboard.on("error", (function() {
+    btf.snackbarShow("复制失败")
+}
+)),
+kk.copyURL = function() {
+    btf.snackbarShow("成功复制本页的分享链接，快去粘贴吧~"),
+    new ClipboardJS("#share-chuckle",{
+        text: function() {
+            return document.title + "：" + getNowURL()
+        }
+    })
+}
+,
+document.getElementById("share-chuckle").addEventListener("click", kk.copyURL),
+kk.postURL = function() {
+    btf.snackbarShow("成功复制本页的分享链接，快去粘贴吧~"),
+    new ClipboardJS("#share-post",{
+        text: function() {
+            return document.title + "：" + getNowURL()
+        }
+    })
+}
+,
+kk.pasteText = function() {
+    btf.snackbarShow("粘贴请使用Ctrl+V，原生右键:Ctrl+右键")
+}
+,
+RemoveFixedComment(),
 function() {
     "use strict";
     var e, t = document.createElement("style");
@@ -560,6 +1178,7 @@ function() {
     ,
     window.WinBox = v
 }
+.call(this);
 try {
     let e = loadData("blogbg", 1440);
     e ? changeBg(e, 1) : localStorage.removeItem("blogbg")
