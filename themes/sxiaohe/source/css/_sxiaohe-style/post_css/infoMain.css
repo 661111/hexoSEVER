@@ -32,3 +32,109 @@
     margin-bottom: 30px;
     background-position-y: 30%;
 }
+#post-info::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, .32);
+    border-radius: 18px;
+}
+#post #post-info>#post-meta-top {
+    font-size: 105%;
+}
+
+#post-info #post-meta, #post-meta-top {
+    z-index: 1;
+}
+#post-info #post-meta-top .post-categories {
+    padding: 0 10px;
+    display: inline-block;
+    background: rgba(58, 58, 58, .36);
+    color: #fff !important;
+    border-radius: 6px;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    -o-transition: .25s;
+    -ms-transition: .25s;
+    transition: .25s;
+}
+#post-info #post-meta-top .post-categories i {
+    color: #fff;
+    margin-right: 4px;
+    font-size: 13px;
+}
+#post-info #post-meta-top .post-meta-categories, #post-info #post-meta-top .post-meta-tags {
+    color: #fff;
+    text-decoration: none !important;
+    font-size: 17px;
+}
+#post-info #post-meta-top .post-meta-tags {
+    margin-left: 10px;
+}
+
+#post-info #post-meta-top .post-meta-categories, #post-info #post-meta-top .post-meta-tags {
+    color: #fff;
+    text-decoration: none !important;
+    font-size: 17px;
+}
+#post>#post-info .post-title {
+    color: #fff;
+    margin: 3px 0 10px 0 !important;
+    font-weight: 600 !important;
+    font-size: 40px !important;
+    border-bottom: none;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+}
+[data-theme=dark] a {
+    color: rgba(255, 255, 255, .9);
+}
+#share-post i.fa.fa-share-alt {
+    font-size: 25px;
+    color: #0fd9e7;
+    padding-left: 8px;
+    text-shadow: -.5px .5px 0 #fff, .5px .5px 0 #fff, .5px -.5px 0 #fff, -.5px -.5px 0 #fff;
+}
+#post>#post-info #post-meta, #post>#post-info #post-meta a {
+    color: rgba(255, 255, 255, .9);
+}
+
+#post>#post-info #post-meta, #post>#post-info #post-meta a {
+    color: #78818a;
+}
+#post-info #post-meta, #post-meta-top {
+    z-index: 1;
+}
+#post-info #post-meta {
+    color: var(--light-grey);
+    font-size: 105%;
+}
+#post-info #post-meta>.meta-firstline, #post-info #post-meta>.meta-secondline {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+#post-info #post-meta>.meta-firstline>span, #post-info #post-meta>.meta-secondline>span {
+    margin: 5px 10px 5px 0;
+    padding: 0 10px;
+    display: inline-block;
+    background: rgba(58, 58, 58, .36);
+    color: #fff !important;
+    border-radius: 6px;
+}
+#post-info #post-meta .post-meta-icon, #post-info #post-meta .post-meta-label {
+    margin-right: 4px;
+}
