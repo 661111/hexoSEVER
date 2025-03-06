@@ -1,0 +1,20 @@
+.card-widget#card-tuijian
+    #tj-box
+        #tj-box1
+            #tj-left
+                <p>扫一扫</p>
+                <span>快速打开移动端➤</span>
+            #tj-right
+                #tj-img-box
+                    if is_home()
+                        img(src=qrcode(full_url_for(page.current_url),{margin:4}))
+                    else
+                        img(src=qrcode(full_url_for(page.path),{margin:4}))
+                        
+        #tj-box2
+            #tj-left
+                <p>扫一扫</p>
+                <span>下载移动端APP➤</span>
+            #tj-right
+                #tj-img-box
+                    img(src=qrcode("/",{margin:4}))

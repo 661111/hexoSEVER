@@ -8,6 +8,7 @@
         include ./card_post_toc.pug
     else
       !=partial('includes/widget/card_author', {}, {cache: true})
+      !=partial('includes/sxiaohe_pug/widget/card_tuijian', {}, {cache: false})
       !=partial('includes/widget/card_announcement', {}, {cache: true})
       !=partial('includes/widget/card_top_self', {}, {cache: true})
       .sticky_layout
@@ -24,6 +25,7 @@
     .sticky_layout
       if showToc
         include ./card_post_toc.pug
+      !=partial('includes/sxiaohe_pug/widget/card_tuijian', {}, {cache: false})
       !=partial('includes/widget/card_recent_post', {}, {cache: true})
       !=partial('includes/widget/card_ad', {}, {cache: true})
       !=partial('includes/widget/card_newest_comment', {}, {cache: true})
