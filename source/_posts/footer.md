@@ -11,7 +11,7 @@ tags:
   - hexo
   - butterfly
   - 美化
-abbrlink: 18107
+abbrlink: 10001
 ---
 ## 1.前言
 这篇文章根据[轻笑](https://qcqx.cn)的css文件和html进行美化，本篇文章的主题为：4.5.0，其他版本需自己适配

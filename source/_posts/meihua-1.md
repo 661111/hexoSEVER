@@ -2,7 +2,7 @@
 title: 博客魔改教程总结(一)
 description: 从零开始魔改butterfly
 date: '2025-02-05 8:00'
-updated: '2025-02-07 10:00'
+updated: '2025-03-06 18:00'
 cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/meihua-post/cover.avif
 category:
   - hexo
@@ -11,26 +11,28 @@ top_img: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/meihua-p
 tags:
   - hexo
   - butterfly
-abbrlink: 4220
+abbrlink: 20250205mg1
 ---
-> **魔改前必看（我当你们都懂了，太细节的就不写在教程中了🤣🤣🤣）**
-> 1.博客魔改有风险，如果博客魔改出问题了又没有备份，可通过此项目查看基础源码进行回滚：jerryc127/hexo-theme-butterfly、ccknbc-actions/blog-butterfly.这部分魔改基本上都是大佬们造好的轮子，我按照大佬们的轮子结合自己的喜好进行魔改的，如有侵权请联系删除。
-> 2.鉴于每个人的根目录名称都不一样，本帖博客根目录一律以[BlogRoot]指代。
-> 3.本帖涉及魔改源码的内容，会使用diff代码块标识，复制时请不要忘记删除前面的+、-符号。
-> 4.因为.pug和.styl以及.yml等对缩进要求较为严格，请尽量不要使用记事本等无法提供语法高亮的文本编辑器进行修改。
-> 5.本帖基于Butterfly主题进行魔改方案编写，因此请读者优先掌握Butterfly主题官方文档的内容后再来进行魔改。
-> 6.魔改会过程常常引入自定义的css与js文件，方法见Hexo博客添加自定义css和js文件(后续引入)
-> **博客搭建与魔改系列教程导航🚥🚥🚥**
-> 1.[🥬Hexo博客搭建基础教程(一)]()
-> 2.[🍒Hexo博客搭建基础教程(二)]()
-> 3.[🥪Hexo博客搭建基础教程(三)]()
-> 4.[🍀博客魔改教程总结(一)](https://www.sxiaohe.top/posts/4220.html) ⇦当前位置🪂
-> 5.[🍚博客魔改教程总结(二)]()
-> 6.[🎋博客魔改教程总结(三)]()
-> 7.[🥕博客魔改教程总结(四)]()
-> 8.[🍊博客魔改教程总结(五)]()
+{% note info no-icon flat %}
+**魔改前必看（我当你们都懂了，太细节的就不写在教程中了🤣🤣🤣）**
+1.博客魔改有风险，如果博客魔改出问题了又没有备份，可通过此项目查看基础源码进行回滚：[jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly)、[ccknbc-actions/blog-butterfly](https://github.com/ccknbc-actions/blog-butterfly).这部分魔改基本上都是大佬们造好的轮子，我按照大佬们的轮子结合自己的喜好进行魔改的，如有侵权请联系删除。
+2.鉴于每个人的根目录名称都不一样，本帖博客根目录一律以[BlogRoot]指代。
+3.本帖涉及魔改源码的内容，会使用diff代码块标识，复制时请不要忘记删除前面的+、-符号。
+4.因为.pug和.styl以及.yml等对缩进要求较为严格，请尽量不要使用记事本等无法提供语法高亮的文本编辑器进行修改。
+5.本帖基于Butterfly主题进行魔改方案编写，因此请读者优先掌握Butterfly主题官方文档的内容后再来进行魔改。
+6.魔改会过程常常引入自定义的css与js文件，方法见Hexo博客添加自定义css和js文件(后续引入)
+**博客搭建与魔改系列教程导航🚥🚥🚥**
+1.[🥬Hexo博客搭建基础教程(一)](https://www.sxiaohe.top/posts/20250205jc1.html)
+2.[🍒Hexo博客搭建基础教程(二)](https://www.sxiaohe.top/posts/20250205jc2.html)
+3.[🥪Hexo博客搭建基础教程(三)](https://www.sxiaohe.top/posts/20250205jc3.html)
+4.[🍀博客魔改教程总结(一)](https://www.sxiaohe.top/posts/20250205mg1.html) ⇦当前位置🪂
+5.[🍚博客魔改教程总结(二)](https://www.sxiaohe.top/posts/20250207mg2.html)
+6.[🎋博客魔改教程总结(三)](https://www.sxiaohe.top/posts/20250208mg3.html)
+7.[🥕博客魔改教程总结(四)](https://www.sxiaohe.top/posts/20250205mg4.html)
+8.[🍊博客魔改教程总结(五)](https://www.sxiaohe.top/posts/20250205mg5.html)
+{% endnote %}
 
-# 1.仿轻笑博客背景美化
+## 1.仿轻笑博客背景美化
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 {% folding cyan, 请查看教程内容 %}
@@ -78,14 +80,14 @@ abbrlink: 4220
 ```
 {% endfolding %}
 
-# 2.导航栏居中教程
+## 2.导航栏居中教程
 这里我放当前比较有效的教程
 {% link butterfly导航栏修改方案(自用方案),安知鱼,https://blog.anheyu.com/posts/8e53.html %}
 {% link 关于Butterfly的导航栏的一些教程,Ariasakaの小窝,https://blog.yaria.top/posts/895003b5 %}
 {% link Butterfly的魔改教程：导航栏魔改美化,Meuicat,https://meuicat.com/posts/2dbd58d6.html %}
 {% link butterfly导航栏修改方案,苏晓河,https://www.sxiaohe.top/posts/36435.html %}
 
-# 3.图标引入
+## 3.图标引入
 这里分为两种不同位置的自定义iconfont图标
 **1.导航栏添加**
 {% link 菜单栏多色动态图标（店长）,Fomalhaut🥝,https://www.fomal.cc/posts/5389e93f.html#%E5%BC%95%E5%85%A5iconfont%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E6%A0%87%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89 %}
@@ -94,7 +96,7 @@ abbrlink: 4220
 **2.社交添加**
 {% link Social卡片彩色图标引入（店长）,Fomalhaut🥝,https://www.fomal.cc/posts/5389e93f.html#Social%E5%8D%A1%E7%89%87%E5%BD%A9%E8%89%B2%E5%9B%BE%E6%A0%87%E5%BC%95%E5%85%A5%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89 %}
 
-# 5.侧边栏美化以及侧边栏卡片美化（轻笑）
+## 4.侧边栏美化以及侧边栏卡片美化（轻笑）
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 
@@ -177,7 +179,7 @@ abbrlink: 4220
 ```
 {% endfolding %}
 
-# 5.侧边栏美化以及侧边栏卡片美化（轻笑）
+## 5.首页文章卡片美化（轻笑）
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 {% folding cyan, 请查看教程内容 %}
@@ -238,3 +240,11 @@ abbrlink: 4220
 }
 ```
 {% endfolding %}
+
+## 6.首页添加随机banner（轻笑）
+
+**原作者**
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+
+**教程地址**
+{% link Banner随机文章展示(轻笑同款),苏晓河,https://www.sxiaohe.top/posts/18108.html %}
