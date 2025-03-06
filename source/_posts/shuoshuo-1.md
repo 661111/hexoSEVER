@@ -1,8 +1,8 @@
 ---
-title: Banner随机文章展示(轻笑同款)
-description: 首页显示随机文章，修复一些bug
-date: '2025-03-01 10:00'
-updated: '2025-03-05 12:09'
+title: 即刻短文的三种部署方案
+description: 本篇转载三种不同方案（已经放好原文章链接）
+date: '2025-03-06 12:45'
+updated: '2025-03-05 14:09'
 cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 category:
   - hexo
@@ -12,7 +12,7 @@ tags:
   - hexo
   - butterfly
   - 美化
-abbrlink: 18108
+abbrlink: 2900kf
 ---
 # 壹.原文来源
 {% link Butterfly的魔改教程：即刻短文页,亦小封,https://meuicat.com/posts/1cdf15f7.html %}
