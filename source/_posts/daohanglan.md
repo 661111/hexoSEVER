@@ -6,7 +6,7 @@ cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan
 category:
   - hexo
   - butterfly
-top_img: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
+top_img: false
 tags:
   - hexo
   - butterfly

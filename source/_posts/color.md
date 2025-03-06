@@ -5,7 +5,7 @@ date: '2025-02-14 9:00'
 cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
 category:
   - hexo
-top_img: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
+top_img: false
 tags:
   - hexo
   - butterfly

@@ -6,10 +6,10 @@ cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/meihua-pos
 category:
   - hexo
   - butterfly
-top_img: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/meihua-post/cover.avif
 tags:
   - hexo
   - butterfly
+top_img: false
 abbrlink: 20250207mg2
 ---
 {% note info no-icon flat %}
