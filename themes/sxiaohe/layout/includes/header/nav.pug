@@ -30,10 +30,15 @@ nav#nav
       .nav-button#search-button
         a.site-page.social-icon.search
           i.fas.fa-search.fa-fw
-
+      
       .nav-button#search-button
         a.nav-rightbutton.site-page.darkmode_switchbutton(onclick="switchDarkMode()")
           i.fas.fa-adjust
+      
+      .nav-button#search-button(title="随机前往一个开往项目网站")
+        a.site-page(data-pjax-state="external" draggable="false" href="https://www.travellings.cn/go.html" rel="external nofollow" title="随机前往一个开往项目网站")
+          i.anzhiyu-icon-train.anzhiyufont
+
       //- 美化设置
       .nav-button#search-button
         a.site-page.social-icon.search(onclick="toggleWinbox()" title="美化设置-自定义你的风格" id="meihua-button" rel="noopener external nofollow")
