@@ -1,5 +1,5 @@
 ---
-title: 友链朋友圈前端部署翻案
+title: 友链朋友圈前端部署方案
 description: 本篇转载几种不同方案（已经放好原文章链接）
 date: '2025-03-06 12:45'
 updated: '2025-03-06 17:04'
@@ -13,7 +13,7 @@ tags:
   - butterfly
   - 美化
   - 友链朋友圈
-abbrlink: 2900kf
+abbrlink: 2901kf
 ---
 # 壹.原文来源
 {% link 友链朋友圈5 - 我的部署历程与主题样式分享,张洪Heo,https://blog.zhheo.com/p/4e18a507.html %}
