@@ -14,18 +14,18 @@ tags:
   - 美化
 abbrlink: 2900kf
 ---
-# 壹.原文来源
+## 原文来源
 {% link Butterfly的魔改教程：即刻短文页,亦小封,https://meuicat.com/posts/1cdf15f7.html %}
 {% link 即刻短文（瀑布流）部署方案,安知鱼,https://blog.anheyu.com/posts/3753.html %}
 {% link Heo即刻短文：分享自我与精彩生活,随风起,https://blog.bywind.xyz/posts/10b1d3b5.html %}
 
 注意：本章节没有bbtalk，artitalk和ispeak（配置麻烦），因为教程方案有些老需要额外再出教程
 
-# 贰.配置部署方案（icat方案）
+## 配置部署方案（icat方案）
 {% note info flat %}
 提示：此方案有三种不同类型，可能导致无法正常显示（可以选择去原作者那里查看，本篇只是收集并整理进来）
 {% endnote %}
-## 一.功能对比
+### 功能对比
 
 **todolist**  |	**本地yml**     | ***动态JSON**  |	**动态Memos**
 --------------|------------|------------|-----------------------------
@@ -39,9 +39,9 @@ abbrlink: 2900kf
 **视频模块**	 | ✔️支持     |✔️支持    |	✔️支持
 **说说置顶**	 | ✔️支持     |✔️支持    |	✔️支持
 
-## 二.部署历程
-### 1.创建数据
-#### (1).创建页面配置
+### 部署历程
+#### 创建数据
+##### 创建页面配置
 创建 [blogRoot]/source/essay/index.md 页面，配置以下内容：
 ``` MARKDOWN
 ---
@@ -59,8 +59,8 @@ top_link: /about/
 top_text: 关于博主
 ---
 ```
-#### (2).新建页面内容
-##### 新建页面选择（在配置文件中进行设置）
+##### 新建页面内容
+(1).新建页面选择（在配置文件中进行设置）
 创建 [blogRoot]/themes/butterfly/layout/includes/page/essay.pug 页面文件，并新增以下内容:
 ``` PUG
 #icat-bber
@@ -73,7 +73,7 @@ top_text: 关于博主
             when 'memos'
                 include ./essay/memos.pug
 ```
-##### 新建静态本地
+(2).新建静态本地
 创建 [blogRoot]/themes/butterfly/layout/includes/page/essay/local.pug 页面文件，并新增以下内容
 （注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
 ``` PUG
@@ -140,7 +140,7 @@ mixin renderArticle(item)
     else
         | - 只展示最近 #{theme.essay.strip} 条短文 -
 ```
-##### 新建动态JSON
+(3).新建动态JSON
 新建 [blogRoot]/themes/butterfly/layout/includes/page/essay/json.pug 页面文件，并新增以下内容
 （注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
 ``` PUG
@@ -206,7 +206,7 @@ mixin renderArticle(item)
                 </div>`;
         }
 ```
-##### 新建MEMOS页面
+(4).新建MEMOS页面
 创建 [blogRoot]/themes/butterfly/layout/includes/page/essay/memos.pug 页面文件，并新增以下内容
 （注意该页面中可能存在部分 fontawesome 图标 需要自行替换）
 ``` PUG
@@ -296,7 +296,7 @@ mixin renderArticle(item)
                 </div>`;
         }
 ```
-##### 修改页面文件（页面匹配markdown的type）
+(5).修改页面文件（页面匹配markdown的type）
 修改 [blogRoot]/themes/butterfly/layout/page.pug 来使页面匹配
 （ + 号直接删除 即是正常缩进）
 ``` PUG
@@ -307,7 +307,7 @@ mixin renderArticle(item)
       default
         include includes/page/default-page.pug
 ```
-###### 开启PJAX设置（可选）
+(6).开启PJAX设置（可选）
 【可选】在 _config.butterfly.yml 主题配置文件中开启站点的 pjax
 ``` YML
 # Pjax
@@ -321,7 +321,7 @@ pjax:
     # - xxxx
     # - xxxx
 ```
-##### 设置样式（styl或者css）
+(7).设置样式（styl或者css）
 新建 [blogRoot]/themes/butterfly/source/css/_page/essay.styl 样式文件，并新增以下内容:
 ``` STYL
 #icat-bber
@@ -1098,7 +1098,7 @@ pjax:
 
 /* 即刻短文样式 */
 ```
-###### 添加css样式到配置文件
+(8).添加css样式到配置文件
 在 _config.butterfly.yml 主题配置文件中 inject 下的 head 引入 essay.css 样式文件:
 ``` YML
   ···
@@ -1113,7 +1113,7 @@ inject:
 ```
 {% endfolding %}
 
-##### 新建js文件
+(9).新建js文件
 创建 [blogRoot]/source/js/essay.js 文件，并新增以下内容，用来处理即刻短文的逻辑
 （或写在自建的公共 js 中也可以）
 ``` JS
@@ -1251,7 +1251,7 @@ function waterfall(a) {
   window.addEventListener ? window.addEventListener("resize", k) : (document.body.onresize = k);
 }
 ```
-##### 引入js文件
+(10).引入js文件
 在 _config.butterfly.yml 主题配置文件中 inject 下的 bottom 引入 essay.js 和 waterfall.js
 ``` YML
   ···
@@ -1265,7 +1265,7 @@ inject:
 
   ···
 ```
-##### 添加以下配置
+(11).添加以下配置
 在 _config.butterfly.yml 主题配置文件中，新增以下配置项
 ``` YML
 # essay 即刻短文
@@ -1281,7 +1281,7 @@ essay:
   mode: memos # local：本地静态 / json：动态json / memos：动态Memos
   mode_link: https://memos.meuicat.com/api/v1/memo?creatorId=1&tag=说说 #动态模式地址
 ```
-### 2.创建数据内容
+#### 创建数据内容
 
 {% tabs 数据模式 %}
 
@@ -1449,8 +1449,8 @@ Memos用法：
 
 {% endtabs %}
 
-### 3.即刻Mini
-#### (1)创建页面内容
+#### 即刻Mini
+(1).创建页面内容
 新增 [blogRoot]/themes/butterfly/layout/includes/mixins/post-ui.pug 页面内容
 （ + 号直接删除 即是正常缩进）
 ``` PUG
@@ -1513,7 +1513,7 @@ mixin postUI(posts)
                         })()
     i.iconfont.icat-right-btn(title="查看全文" onclick=`pjax.loadUrl('${theme.essay.home_mini_link}')` style="margin-left: 1rem")
 ```
-#### (2).新建样式文件
+(2).新建样式文件
 
 新建 [blogRoot]/themes/butterfly/source/css/_page/homepage.styl 样式文件内容
 （ + 号直接删除 即是正常缩进）
@@ -1675,7 +1675,7 @@ mixin postUI(posts)
 /* 即刻mini样式 */
 ```
 {% endfolding %}
-#### (3).新建js文件
+(3).新建js文件
 
 新增 [blogRoot]/source/js/essay.js 文件内容
 （或写在自建的公共 js 中也可以）
@@ -1713,8 +1713,8 @@ inject:
   ···
 ```
 
-# 叁.随风起（即刻短文）
-## 1.支持类型
+## 随风起（即刻短文）
+### 支持类型
 
 **列表**	     | **是否支持**
 ---------------|----------------
@@ -1725,7 +1725,7 @@ inject:
 **首页滚动**   |	✅
 **位置信息**   |	✅
 
-## 2.创建数据
+### 创建数据
 
 在source/_data目录下创建essay.yml：
 ``` YML
@@ -1748,7 +1748,7 @@ inject:
         id: 001wG84E4bOj3V
       date: 2022-12-19 08:07:23
 ```
-## 3.配置参数介绍
+### 配置参数介绍
 
 **参数**                                     |	**含义**
 ---------------------------------------------|---------------------------------------------
@@ -1760,7 +1760,7 @@ inject:
 **location**                                 |	位置信息
 **date**                                     |	日期
 
-## 4.创建md页面
+### 创建md页面
 创建md页面，在控制台输入hexo new page essay，生成文件在source/essay/index.md
 ``` MARKDOWN
 ---
@@ -1773,7 +1773,7 @@ type: essay
 ---
 ```
 
-## 5.创建页面文件
+### 创建页面文件
 
 在themes/butterfly/layout/includes/page目录下创建essay.pug
 ``` PUG
@@ -1826,7 +1826,7 @@ type: essay
     | - 只展示最近30条短文 -
 ```
 
-## 6.修改Page文件
+### 修改Page文件
 
 修改themes/butterfly/layout/page.pug
 
@@ -1840,7 +1840,7 @@ type: essay
 +        include includes/page/essay.pug
 ```
 
-## 7.首页即刻（可选）
+### 首页即刻（可选）
 
 新建themes/butterfly/layout/includes/bbTimeList.pug
 ``` PUG
@@ -1863,9 +1863,9 @@ script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',data-pjax=
 
 ```
 
-## 8.首页即刻（可选）
+### 首页即刻（可选）
 
-### (1).新建首页轮播内容
+(1).新建首页轮播内容
 
 新建themes/butterfly/layout/includes/bbTimeList.pug
 
@@ -1887,7 +1887,7 @@ script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',data-pjax=
     i.bber-gotobb.fas.fa-arrow-circle-right(onclick=`pjax.loadUrl("/essay/")`,title="查看全文")
 script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',data-pjax='')
 ```
-### (2).引入到主页
+(2).引入到主页
 
 ``` PUG
 block content
@@ -1899,7 +1899,7 @@ block content
     include includes/pagination.pug
 ```
 
-### (3).引入样式文件
+(3).引入样式文件
 ``` YML
 inject:
   head:
@@ -1908,7 +1908,7 @@ inject:
 		- <script src="https://cdn.staticaly.com/gh/haonan15/CDN@main/source/waterfall.min.js"></script> # 瀑布流
 ```
 
-### (4).添加自定义js
+(4).添加自定义js
 ``` JS
 if (document.querySelector('#bber-talk')) {
       var swiper = new Swiper('.swiper-container', {
@@ -1922,7 +1922,7 @@ if (document.querySelector('#bber-talk')) {
     }
 ```
 
-### (5).添加CSS文件
+(5).添加CSS文件
 ``` CSS
 #bber>section>ul>li>div .bber-info-time ,
 #bber > section > ul > li > div .bber-info-address{
@@ -1946,8 +1946,8 @@ if (document.querySelector('#bber-talk')) {
 }
 ```
 
-# 肆.安知鱼（即刻短文）
-## 一.功能对比
+## 安知鱼（即刻短文）
+### 功能对比
 
 **todolist**              |	**支持度**
 --------------------------|--------------------------
@@ -1962,10 +1962,10 @@ if (document.querySelector('#bber-talk')) {
 **单曲音乐**              |  ✅
 **插件版本**	            |  ❌
 
-## 二.添加颜色内容
+### 添加颜色内容
 详情可以前往这个文章查看[颜色样式](https://www.sxiaohe.top/posts/2013454d.html)
 
-## 三.创建数据
+### 创建数据
 
 创建 source/_data/essay.yml
 
@@ -1991,7 +1991,7 @@ if (document.querySelector('#bber-talk')) {
         id: 001FGQba3i10mw
 ```
 
-## 四.数据参数释义
+### 数据参数释义
 
 **参数** 	                       | **备选值/类型**             |	**释义**
 ---------------------------------|----------------------------|---------------------------------------------------------------
@@ -2006,7 +2006,7 @@ if (document.querySelector('#bber-talk')) {
 **essay_list.aplayer.server**    |	String	                  |	 【essay_list.aplayer 后必选】aplayer 服务商
 **essay_list.aplayer.id**        |	String	                  |  【essay_list.aplayer 后必选】单曲 id
 
-## 五.创建 md 页面文件
+### 创建 md 页面文件
 
 创建source/essay/index.md 来生成页面 page
 ``` MARKDOWN
@@ -2020,7 +2020,7 @@ type: essay
 ---
 ```
 
-## 六.创建 dom 文件
+### 创建 dom 文件
 创建themes/butterfly/layout/includes/page/essay.pug, 页面内容, 注意该页面中可能存在部分fontawesome 图标需要自行替换。
 ``` PUG
 #essay_page
@@ -2075,7 +2075,7 @@ type: essay
     | - 只展示最近30条短文 -
 ```
 
-## 七.修改 Page 文件
+### 修改 Page 文件
 修改themes/butterfly/layout/page.pug 来使页面内容匹配
 在 case page.type 子项里面添加, 注意缩进
 ``` pug
@@ -2090,7 +2090,7 @@ type: essay
         include includes/page/categories.pug
 ```
 
-## 八.加入 css
+### 加入 css
 创建source/css/essay_page/essay_page.css, 然后在_config.butterfly.yml中的inject下的head引入, 注意缩进
 ``` YML
 inject:
@@ -2367,7 +2367,7 @@ inject:
   color: var(--anzhiyu-fontcolor);
 }
 ```
-## 九.js 处理
+### js 处理
 新建一个 js 文件用来处理即刻短文的逻辑, 或者写在公共 js 中也可以, 博主写在公共 js 中, 即custom.js, 该 js 在_config.butterfly.yml中的inject使用如下方式引入, 加入了data-pjax, 并且开启了站点的pjax, 然后再引入waterfall.js用于处理瀑布流。
 ``` YML
 inject:
@@ -2556,7 +2556,7 @@ anzhiyu.reflashEssayWaterFall();
 
 方法essayScroll为检查滚动条卷去一个视口高度的 100 范围内执行一次, 滑动到底部或评论区取消监听执行。此处博主未做 else 处理取消监听, 如果有写percent函数监听滑动可以一起写在同一个方法里面。（博主就是写在同一个方法里面）, 如果即刻文章很少的话其实是可以不监听滑动的, 即只显示近 30 条, 因为进入页面后会执行一次瀑布流, 页面不会乱, 但是如果您把 essay.pug 中 17 行左右修改后可以达到无限的效果就会出现 dom 结构还没渲染瀑布流就已经执行完了的情况就需要监听滚动来再次执行瀑布流以完成布局。
 
-## 十.首页滚动显示即刻(可选)
+### 首页滚动显示即刻(可选)
 创建 themes/butterfly/layout/includes/bbTimeList.pug, 部分fontawesome图标可能需要您自行修改。
 ``` PUG
 #bbTimeList.bbTimeList.container
@@ -2573,7 +2573,7 @@ anzhiyu.reflashEssayWaterFall();
     i.bber-gotobb.fas.fa-arrow-circle-right(onclick=`pjax.loadUrl("/essay/")`,title="查看全文")
 ```
 
-## 十一.引入到主页
+### 引入到主页
 修改themes/butterfly/layout/index.pug, 注意缩进
 ``` PUG
 block content
@@ -2593,7 +2593,7 @@ if page.type !== '404'
 +     include ./bbTimeList.pug
 ```
 
-## 十二.引入 swiper 依赖
+### 引入 swiper 依赖
 在_config.butterfly.yml引入依赖, 如果有使用轮播图插件的话此处无需引入
 ``` YML
 inject:
@@ -2602,7 +2602,7 @@ inject:
   bottom:
     - <script data-pjax src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script>
 ```
-## 十三.添加自定义 css
+### 添加自定义 css
 创建source/css/essay_page/home_essay_bar.css, 然后在_config.butterfly.yml中的inject下的head引入, 注意缩进
 ``` YML
 inject:
@@ -2701,7 +2701,7 @@ inject:
 }
 ```
 
-## 十四.修改自定义 js
+### 修改自定义 js
 修改custom.js
 ``` JS
 var percentFlag = false; // 节流阀
