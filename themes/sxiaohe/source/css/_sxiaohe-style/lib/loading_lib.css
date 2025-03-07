@@ -1,3 +1,7 @@
+/* 图片延长加载（lighthouse性能图片优化） */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年3月7日 */
+
 @keyframes fadenum1 {
     0% {
         opacity: 0

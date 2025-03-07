@@ -1,3 +1,7 @@
+/* 友链页面模块美化 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年3月7日 */
+
 .volantis-flink-list .flink-list-item {
     margin: 8px;
     width: calc(100% / 4 - 16px);

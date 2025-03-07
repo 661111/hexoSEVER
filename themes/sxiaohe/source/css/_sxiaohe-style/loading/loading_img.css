@@ -1,3 +1,7 @@
+/* 加载图片选项 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年2月4日 */
+
 .loading-img {
     background: url(/img/avatar.avif) no-repeat center center;
     background-size: cover;

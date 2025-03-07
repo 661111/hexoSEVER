@@ -251,7 +251,7 @@ toc:
   page: false
   number: true
   expand: false
-  style_simple: true # for post
+  style_simple: false # for post
 
 post_copyright:
   enable: true
@@ -743,7 +743,7 @@ aside:
     enable: true
     content: 欢迎来到『苏晓河DawnRiver』的小站<br>(￣▽￣)～■干杯□～(￣▽￣)<br>如果有什么加载不出来或者其它滴小bug,「刷新网页/Ctrl+F5」应该、也许能解决
   card_recent_post:
-    enable: false
+    enable: true
     limit: 5 # if set 0 will show all
     sort: date # date or updated
     sort_order: # Don't modify the setting unless you know how it works
@@ -763,7 +763,7 @@ aside:
     format: YYYY # eg: YYYY年MM月
     order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
     limit: 8 # if set 0 will show all
-    sort_order: # Don't modify the setting unless you know how it works
+    sort_order:  # Don't modify the setting unless you know how it works
   card_webinfo:
     enable: true
     post_count: true

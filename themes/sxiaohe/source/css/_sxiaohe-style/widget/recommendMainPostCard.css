@@ -1,0 +1,8 @@
+/* 随机文章模块美化 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年3月7日 */
+
+/* 美化图片 */
+#aside-content .aside-list>.aside-list-item .thumbnail {
+    border-radius: 8px;
+}
