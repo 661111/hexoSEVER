@@ -1,0 +1,25 @@
+:root {
+    --post-bj-hx: #8a8a8a21;
+    --post-bj-sx: hsla(0, 100%, 50%, .45);
+}
+[data-theme="dark"] {
+    --post-bj-hx: #8a8a8a2f;
+    --post-bj-sx: rgba(0, 255, 250, 0.6);
+}
+div#post #article-container {
+    line-height: 1.5;
+    background-size: 100% 39px;
+    background-image: linear-gradient(transparent 38px, var(--post-bj-hx) 1px), linear-gradient(to right, transparent 11px, var(--post-bj-sx), transparent 12px);
+    padding-bottom: 32px !important;
+}
+.layout>div:first-child:not(.recent-posts) {
+    border-radius: 18px;
+    padding: 0!important;
+    padding-bottom: 10px;
+}
+#post>:not(#post-info):not(.fixedcomment) {
+    width: calc(100% - 26px);
+    padding: 0 18px;
+    margin-left: auto;
+    margin-right: auto;
+}

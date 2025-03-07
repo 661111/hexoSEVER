@@ -158,10 +158,6 @@ div#page {
     animation: slide-in .5s .1s backwards;
     -webkit-animation: slide-in .5s .1s backwards;
 }
-.layout>div:first-child:not(.recent-posts) {
-    border-radius: 18px;
-    padding: 10px 35px!important;
-}
 /* 9.4.分类图标设置 */
 #page .category-lists ul li:before {
     left: 5px;
