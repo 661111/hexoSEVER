@@ -12,7 +12,7 @@ div#post #article-container {
     background-image: linear-gradient(transparent 38px, var(--post-bj-hx) 1px), linear-gradient(to right, transparent 11px, var(--post-bj-sx), transparent 12px);
     padding-bottom: 32px !important;
 }
-.layout>div:first-child:not(.recent-posts) {
+div#post {
     border-radius: 18px;
     padding: 0;
     padding-bottom: 10px;

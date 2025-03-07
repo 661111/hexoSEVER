@@ -36,3 +36,7 @@
     background-position: center;
     z-index: -998;
 }
+.layout>div:first-child:not(.recent-posts) {
+    border-radius: 18px;
+    padding: 10px 35px;
+}

@@ -290,9 +290,6 @@ img {
 .article-sort {
     border-left: none!important;
 }
-#archive {
-    padding: 10px;
-}
 div#archive, div#category, div#tag {
     border: 2px solid rgba(0, 255, 255, .6);
     font-weight: 700;
