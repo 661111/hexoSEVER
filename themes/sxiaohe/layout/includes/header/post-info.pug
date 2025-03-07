@@ -5,7 +5,7 @@
     if (theme.post_meta.post.categories && page.categories.data.length > 0)
       span.post-meta-categories
         if (theme.post_meta.post.date_type)
-          span.post-meta-separator |
+          span.post-meta-separator
         each item, index in page.categories.data
           i.fas.fa-inbox.fa-fw.post-meta-icon
           a(href=url_for(item.path)).post-meta-categories #[=item.name]
