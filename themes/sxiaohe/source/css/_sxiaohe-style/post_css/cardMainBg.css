@@ -14,7 +14,7 @@ div#post #article-container {
 }
 .layout>div:first-child:not(.recent-posts) {
     border-radius: 18px;
-    padding: 0!important;
+    padding: 0;
     padding-bottom: 10px;
 }
 #post>:not(#post-info):not(.fixedcomment) {
