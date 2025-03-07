@@ -960,7 +960,8 @@ inject:
     - <script async src="/js/essay.js"></script>
     - <script async src="//at.alicdn.com/t/c/font_3612150_gkavascgf3n.js"></script>
     - <script data-pjax defer src="/js/fixed_card_widget.js"></script>
-    - <script defer data-pjax src="/js/qcqx.js"></script>
+    - <script defer data-pjax src="/js/qcqx.js"></script> # 首页图片更换
+    - <script defer data-pjax src="/js/post-info-bg.js"></script> # 文章页封面生成
     - <script defer src="https://jsd.sxiaohe.top/gh/nextapps-de/winbox/dist/winbox.bundle.min.js"></script> # winbox支持
     - <link rel="stylesheet" href="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.css">
     - <script src="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.js"></script>
