@@ -5,10 +5,14 @@
     if (theme.post_meta.post.categories && page.categories.data.length > 0)
       each item, index in page.categories.data
         span.post-categories
+          i.iconfont.icon-fenlei.fa-fw.post-meta-icon
           a(href=url_for(item.path)).post-meta-categories #[=item.name]
           if (index < page.categories.data.length - 1)
-            i.fas.fa-angle-right.post-meta-separator
-
+    if (theme.post_meta.post.tags && page.categories.data.length > 0)
+      each item, index in page.tags.data
+        span.post-meta-tags
+          a(href=url_for(item.path)).post-meta-tags #[=item.name]
+          if (index < page.tags.data.length - 1)
   h1.post-title= page.title || _p('no_title')
     if theme.post_edit.enable
       a.post-edit-link(href=theme.post_edit.url + page.source title=_p('post.edit') target="_blank")
