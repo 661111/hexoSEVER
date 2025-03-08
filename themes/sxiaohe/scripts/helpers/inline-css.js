@@ -3,7 +3,7 @@ const path = require('path');
 
 hexo.extend.filter.register('after_render:html', function (str, data) {
   // 生成的 CSS 文件路径
-  const cssPath = path.join(hexo.public_dir, 'css', 'index.css');
+  const cssPath = path.join(hexo.public_dir, 'css/index.css');
 
   // 检查 CSS 文件是否存在
   if (fs.existsSync(cssPath)) {
