@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 hexo.extend.filter.register('after_generate', function () {
-  // 动态获取 Hexo 生成的 CSS 文件路径
+  // CSS 文件路径
   const cssPath = path.join(hexo.public_dir, 'css', 'index.css');
 
-  // 调试信息
+  // 未生成前调试信息
   console.log('Hexo 公共目录:', hexo.public_dir);
   console.log('CSS 文件路径:', cssPath);
   console.log('CSS 文件是否存在:', fs.existsSync(cssPath));
