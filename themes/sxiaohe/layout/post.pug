@@ -1,4 +1,7 @@
 extends includes/layout.pug
+link(href="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.css" rel="stylesheet")
+script(src="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.js")
+script(data-pjax defer) new ChucklePostAI({el:'#post>#article-container',key:'05fe901f1c9cb1049496',title_el:'.post-title',rec_method:'web'})
 
 block content
   #post
