@@ -173,3 +173,9 @@ bangumi:
   metaColor:
   color:
   webp:
+
+# 可选配置示例（根据插件文档调整）
+image_link:
+  prefix: 'img/' # 默认图片路径前缀
+  enable: true
+  post_asset_folder: true

@@ -2,7 +2,7 @@
 title: 颜色样式
 description: 适配样式的颜色（后续会更新）
 date: '2025-02-14 9:00'
-cover: https://jsd.sxiaohe.top/gh/661111/hexoSEVER/source/img/2025/01/daohanglan/cover.avif
+cover: /img/2025/01/daohanglan/cover.avif
 category:
   - hexo
 top_img: false
