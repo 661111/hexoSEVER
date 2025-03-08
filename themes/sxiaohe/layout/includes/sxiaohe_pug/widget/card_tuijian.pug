@@ -7,9 +7,9 @@
             #tj-right
                 #tj-img-box
                     if is_home()
-                        img(src=qrcode(full_url_for(page.current_url),{margin:4}))
+                        img(src=qrcode(full_url_for(page.current_url),{margin:4}) alt="qrcode")
                     else
-                        img(src=qrcode(full_url_for(page.path),{margin:4}))
+                        img(src=qrcode(full_url_for(page.path),{margin:4}) alt="qrcode")
                         
         #tj-box2
             #tj-left
@@ -17,4 +17,4 @@
                 <span>下载移动端APP➤</span>
             #tj-right
                 #tj-img-box
-                    img(src=qrcode("/",{margin:4}))
+                    img(src=qrcode("/",{margin:4})  alt="qrcode")
