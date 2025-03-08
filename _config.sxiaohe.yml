@@ -948,7 +948,7 @@ css_prefix: true
 # 如果需要引用跨域文件，需要添加网址
 inject:
   head:
-    - <script defer src="/js/jquery.min.js"></script>
+    - <script defer src="/js/lib/zeptojs.min.js"></script>
     - <style id="defineBg"></style> # 自定义背景选项
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
