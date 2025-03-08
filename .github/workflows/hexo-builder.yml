@@ -54,6 +54,10 @@ jobs:
         run: |
           hexo bangumi -u
 
+      - name: 查看目录有没有生成css
+        run: |
+          ls -l /home/runner/work/hexoSEVER/hexoSEVER/public/css/
+
       - name: 生成静态文件
         run: |
           hexo clean
