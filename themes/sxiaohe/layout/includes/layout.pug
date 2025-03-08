@@ -7,6 +7,7 @@ doctype html
 html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
   head
     include ./head.pug
+    style.neilian-class
   body(style="overflow: auto;")
     if theme.preloader.enable
       !=partial('includes/loading/index', {}, {cache: true})

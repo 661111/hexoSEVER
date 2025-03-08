@@ -59,8 +59,8 @@ jobs:
           hexo clean
           hexo generate
           ls -l /home/runner/work/hexoSEVER/hexoSEVER/public/css/
-          node inline-css.js
           gulp
+          node inline-css.js
 
       - name: 推送到Github仓库
         uses: JamesIves/github-pages-deploy-action@v4
