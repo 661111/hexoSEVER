@@ -987,11 +987,11 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    main_css: /css/index.css
-    # main:
+    main_css: https://jsd.sxiaohe.top/gh/661111/661111.github.io@master/css/index.css
+    main: https://jsd.sxiaohe.top/gh/661111/661111.github.io@master/js/index.js
     # utils:
     # translate:
-    # local_search:
+    local_search: https://jsd.sxiaohe.top/gh/661111/661111.github.io@master/js/search/local-search.js
     # algolia_js:
     # algolia_search_v4:
     # instantsearch_v4:
