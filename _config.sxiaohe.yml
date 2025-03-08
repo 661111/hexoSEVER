@@ -961,7 +961,7 @@ inject:
     - <script async src="//at.alicdn.com/t/c/font_3612150_gkavascgf3n.js"></script>
     - <script data-pjax defer src="/js/fixed_card_widget.js"></script>
     - <link rel="stylesheet" href="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.css">
-    - <script src="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.js"></script>
+    - <script src="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.js"></script>
     - <script data-pjax defer>new ChucklePostAI({el:'#post>#article-container',key:'05fe901f1c9cb1049496',title_el:'.post-title',rec_method:'web'})</script>
 
 # CDN
