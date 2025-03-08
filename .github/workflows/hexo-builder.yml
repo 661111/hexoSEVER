@@ -59,6 +59,7 @@ jobs:
           hexo clean
           hexo generate
           ls -l /home/runner/work/hexoSEVER/hexoSEVER/public/css/
+          node post-build.js
           gulp
 
       - name: 推送到Github仓库
