@@ -960,7 +960,6 @@ inject:
     - <script async src="/js/essay.js"></script>
     - <script async src="//at.alicdn.com/t/c/font_3612150_gkavascgf3n.js"></script>
     - <script data-pjax defer src="/js/fixed_card_widget.js"></script>
-    - <script defer data-pjax src="/js/post-info-bg.js"></script> # 文章页封面生成
     - <link rel="stylesheet" href="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.css">
     - <script src="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.js"></script>
     - <script data-pjax defer>new ChucklePostAI({el:'#post>#article-container',key:'05fe901f1c9cb1049496',title_el:'.post-title',rec_method:'web'})</script>
@@ -987,11 +986,11 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    main_css: https://jsd.sxiaohe.top/gh/661111/661111.github.io@master/css/index.css
-    main: https://jsd.sxiaohe.top/gh/661111/661111.github.io@master/js/index.js
+    main_css: /css/index.css
+    # main:
     # utils:
     # translate:
-    local_search: https://jsd.sxiaohe.top/gh/661111/661111.github.io@master/js/search/local-search.js
+    # local_search:
     # algolia_js:
     # algolia_search_v4:
     # instantsearch_v4:
