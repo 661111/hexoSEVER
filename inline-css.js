@@ -20,6 +20,4 @@ if (fs.existsSync(cssPath)) {
     fs.writeFileSync(filePath, htmlContent);
     console.log(`已内联 CSS 到文件: ${file}`);
   });
-} else {
-  console.error('CSS 文件未找到:', cssPath);
 }
