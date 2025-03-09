@@ -107,13 +107,6 @@ deploy:
   repository: https://github.com/661111/hexo-site-page
   branch: main
 
-# Generator-Search
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-
 swpp:
   enable: true
   # rules 文件的名称（缺省值为 'sw-rules'）
@@ -174,8 +167,18 @@ bangumi:
   color:
   webp:
 
-# 可选配置示例（根据插件文档调整）
-image_link:
-  prefix: 'img/' # 默认图片路径前缀
-  enable: true
-  post_asset_folder: true
+algolia:
+  appId: "CAKYRDMPII"
+  apiKey: "4d72594f1f59d36564979dcee1242419"
+  adminApiKey: "5a6c5f332c7271172e27439587f9e15c"
+  chunkSize: 5000
+  indexName: "www_sxiaohe_top_cakyrdmpii_pages"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title

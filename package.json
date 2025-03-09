@@ -17,6 +17,7 @@
     "gulp": "^4.0.0",
     "hexo": "^6.3.0",
     "hexo-abbrlink": "^2.2.1",
+    "hexo-algoliasearch": "^2.0.1",
     "hexo-bilibili-bangumi": "^1.10.8",
     "hexo-butterfly-tag-plugins-plus": "^1.0.18",
     "hexo-butterfly-wowjs": "^1.0.5",
