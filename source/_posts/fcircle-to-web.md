@@ -3,7 +3,7 @@ title: 友链朋友圈前端部署方案
 description: 本篇转载几种不同方案（已经放好原文章链接）
 date: '2025-03-06 12:45'
 updated: '2025-03-06 17:04'
-cover: /img/2025/01/daohanglan/cover.avif
+cover: https://hexo-img.s3.bitiful.net/2025/01/daohanglan/cover.avif
 category:
   - hexo
   - butterfly
