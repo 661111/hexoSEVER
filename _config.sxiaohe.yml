@@ -984,8 +984,8 @@ CDN:
 
   option:
     main_css: /css/index.css
-    main: https://jsd.sxiaohe.top/js/main.js
-    utils: https://jsd.sxiaohe.top/js/utils.js
+    main: /js/main.js
+    utils: /js/utils.js
     # translate:
     # local_search:
     # algolia_js:
