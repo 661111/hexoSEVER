@@ -948,7 +948,7 @@ css_prefix: true
 # 如果需要引用跨域文件，需要添加网址
 inject:
   head:
-    - <script defer src="/js/lib/zeptojs.min.js"></script>
+    #- <script defer src="/js/lib/zeptojs.min.js"></script>
     - <style id="defineBg"></style> # 自定义背景选项
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
@@ -984,8 +984,8 @@ CDN:
 
   option:
     main_css: /css/index.css
-    # main:
-    # utils:
+    main: https://jsd.sxiaohe.top/js/main.js
+    utils: https://jsd.sxiaohe.top/js/utils.js
     # translate:
     # local_search:
     # algolia_js:
