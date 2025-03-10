@@ -1,6 +1,9 @@
 link(rel="preconnect" href="//www.sxiaohe.top")
 link(href="https://www.sxiaohe.top" rel="dns-prefetch")
 link(rel="preconnect" href="//jsd.sxiaohe.top")
+link(as="style" href="/css/index.css" rel="preload")
+link(as="script" href="/js/main.js" rel="preload")
+link(as="script" href="/js/utils.js" rel="preload")
 
 if theme.google_analytics
   link(rel="preconnect" href="//www.google-analytics.com" crossorigin='')
@@ -22,7 +25,3 @@ if theme.blog_title_font && theme.blog_title_font.font_link && theme.blog_title_
 
 if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
   link(rel="preconnect" href="//busuanzi.ibruce.info")
-
-<link rel="preload" href="/css/index.css" as="style">
-<link rel="preload" href="/js/main.js" as="script">
-<link rel="preload" href="/js/utils.js" as="script">
