@@ -3,7 +3,7 @@ title: 菜单栏多色动态图标
 description: 对导航栏进行修改，以支持多色图标
 date: '2025-02-05 10:00'
 updated: '2025-02-07 12:00'
-cover: https://hexo-img.s3.bitiful.net/2025/01/daohanglan/cover.avif
+cover: /img/2025/01/daohanglan/cover.avif
 category:
   - hexo
   - butterfly
