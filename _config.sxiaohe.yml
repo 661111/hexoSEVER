@@ -991,6 +991,7 @@ CDN:
     # algolia_js:
     # algolia_search_v4:
     # instantsearch_v4:
+    algolia_js: https://jsd.sxiaohe.top/npm/js-heo@1.0.11/algolia/algolia.js
     pjax: https://lib.baomitu.com/pjax/0.2.8/pjax.min.js
     # gitalk:
     # gitalk_css:
