@@ -390,6 +390,7 @@ script(type='text/javascript')
 ``` PUG
 include ./hexo-js.pug
 ```
+
 ## 查看效果
 ``` BASH
 hexo cl
