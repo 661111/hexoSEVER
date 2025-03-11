@@ -1,3 +1,7 @@
+[data-theme=dark] img {
+    filter: blur(0) brightness(.8);
+}
+
 div#error-wrap {
     display: -webkit-box;
     display: -moz-box;

@@ -26,7 +26,7 @@ const compressJS = () => {
 
 // 压缩 CSS
 const minifyCSS = () => {
-    return src(['./public/**/*.css'])
+    return src(['./public/**/*.css', './public/**/css/*.css'])
        .pipe(plumber({ errorHandler: handleError }))
        .pipe(cleanCSS({
             compatibility: 'ie11',
