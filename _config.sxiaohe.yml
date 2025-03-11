@@ -956,10 +956,10 @@ inject:
     - <link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
     - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
     - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
-    - <script async src="/js/waterfall.js"></script> # 瀑布流JS
-    - <script async src="/js/essay.js"></script>
+    - <script async src="https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/waterfall.js"></script> # 瀑布流JS
+    - <script async src="https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/essay.js"></script>
     - <script async src="/https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/font/font_3612150_gkavascgf3n.js"></script>
-    - <script defer src="/js/fixed_card_widget.js"></script>
+    - <script defer src="https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/fixed_card_widget.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -983,7 +983,7 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    main_css: /css/index.css
+    main_css: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/css/index.css
     main: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/main.js
     utils: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/utils.js
     # translate:
