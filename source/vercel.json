@@ -24,5 +24,13 @@
           }
         ]
       }
+    ],
+    "plugins": [
+      {
+        "package": "@vercel/speed-insights",
+        "config": {
+          "run": "lighthouse --preset default --output ./lighthouse-reports"
+        }
+      }
     ]
   }
