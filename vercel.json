@@ -1,0 +1,36 @@
+{
+    "headers": [
+      {
+        "source": "/sw.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, s-maxage=86400, max-age=86400, immutable, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, s-maxage=86400, max-age=86400, immutable"
+          }, {
+            "key": "Vercel-CDN-Cache-Control",
+            "value": "public, s-maxage=86400, max-age=86400, immutable"
+          }, { 
+            "key": "Content-Encoding", 
+            "value": "br"
+          }
+        ]
+      }
+    ],
+    "plugins": [
+      {
+        "package": "@vercel/speed-insights",
+        "config": {
+          "run": "lighthouse --preset default --output ./lighthouse-reports"
+        }
+      }
+    ]
+  }
