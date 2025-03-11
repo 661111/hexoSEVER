@@ -59,3 +59,11 @@ script(type="text/javascript")
   |   // 浏览器不支持 IntersectionObserver，立即触发 JS 加载
   |   loadComment();
   | }
+script(type="text/javascript")
+  | quicklink();
+  | quicklink({
+  |   timeout: 1000, // 预取链接的超时时间（毫秒）
+  |   el: document.getElementById('content'), // 指定要监听的元素
+  |   urls: ['https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/css/index.css'], // 预取的 URL 列表
+  |   priority: true, // 是否优先预取高优先级链接
+  | });
