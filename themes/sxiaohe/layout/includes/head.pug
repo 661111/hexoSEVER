@@ -7,20 +7,31 @@
 
 - var isSubtitle = config.subtitle ? ' - ' + config.subtitle : ''
 - var tabTitle = is_home() || !pageTitle ? config.title + isSubtitle : pageTitle + ' | ' + config.title
-- var pageAuthor = config.email ? config.author + ',' + config.email : config.author
+
+- var pageKeywords
+- if (page.keywords) pageKeywords = Array.isArray(page.keywords) ? (page.keywords).join(',') :  ([]).join(',') || page.keywords
+- else if (page.tags && page.tags.length) pageKeywords = page.tags.data.map(function(tag) {return tag.name;}).join(',')
+- else pageKeywords = Array.isArray(config.keywords) ? (config.keywords).join(','):  ([]).join(',') || config.keywords
+- var pageAuthor = config.author
+- var pagedescr = page.description || config.description ||default_text
+- var pageimage = page.cover || theme.avatar.img || default_img
 - var pageCopyright = config.copyright || config.author
-- var themeColorLight = theme.theme_color && theme.theme_color.enable && theme.theme_color.meta_theme_color_light || '#ffffff'
-- var themeColorDark = theme.theme_color && theme.theme_color.enable && theme.theme_color.meta_theme_color_dark || '#0d0d0d'
+- var themeColorLight = "#425AEF"
+- var themeColorDark = "#f2b94b"
 - var themeColor = theme.display_mode === 'dark' ? themeColorDark : themeColorLight
 
 meta(charset='UTF-8')
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(http-equiv='content-language' content='zh-cn')
 meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5")
 title= tabTitle
+if pageKeywords
+  meta(name="keywords" content=pageKeywords)
 meta(name="author" content=pageAuthor)
 meta(name="copyright" content=pageCopyright)
 meta(name ="format-detection" content="telephone=no")
 meta(name="theme-color" content=themeColor)
+meta(name='description' content=pagedescr)
 
 link(rel="canonical" href="https://www.sxiaohe.top/")
 #web_bg
