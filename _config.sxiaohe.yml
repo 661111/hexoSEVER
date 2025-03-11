@@ -954,7 +954,6 @@ inject:
   bottom:
     # - <script src="xxxx"></script>
     - <link rel="stylesheet" href="https://jsd.sxiaohe.top/npm/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
-    - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
     - <script src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
     - <script defer src="https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/fixed_card_widget.js"></script>
 
