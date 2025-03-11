@@ -1,0 +1,32 @@
+/* 友链检查延迟美化 */
+/* 由苏晓河进行编写以及调整 */
+/* 时间：2025年3月7日 */
+.status-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 8px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 9px;
+    color: #fff;
+    font-weight: 700;
+    transition: font-size .3s ease-out, width .3s ease-out, opacity .3s ease-out;
+}
+.flink-list-item:hover .status-tag {
+    font-size: 0px;
+    opacity: 0;
+}
+/* 固态颜色 */
+.status-tag-green {
+    background-color: #005E00; /* 绿色 */
+}
+.status-tag-light-yellow {
+    background-color: #FED101; /* 浅黄色 */
+}
+.status-tag-dark-yellow {
+    background-color: #F0B606; /* 深黄色 */
+}
+.status-tag-red {
+    background-color: #B90000; /* 红色 */
+}
