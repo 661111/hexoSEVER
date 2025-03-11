@@ -38,28 +38,6 @@ script(type='text/javascript')
   |       });
   |   });
 script(type="text/javascript")
-  | function loadComment() {
-  |   // 插入 script 标签
-  | }
-  | if ('IntersectionObserver' in window) {
-  |   const observer = new IntersectionObserver(function (entries) {
-  |     // 浏览器视口与监听的元素有交集时会触发该回调
-  |     if (entries[0].isIntersecting) {
-  |       // 触发 JS 加载
-  |       loadComment();
-  |       // 取消监听，避免重复触发这个回调
-  |       observer.disconnect();
-  |     }
-  |   }, {
-  |     // 回调触发的阈值，这里是 10% 的部分出现在屏幕中时会触发以上的回调
-  |     threshold: [0.1],
-  |   });
-  |   observer.observe(document.getElementById('comment'));
-  | } else {
-  |   // 浏览器不支持 IntersectionObserver，立即触发 JS 加载
-  |   loadComment();
-  | }
-script(type="text/javascript")
   | quicklink();
   | quicklink({
   |   timeout: 1000, // 预取链接的超时时间（毫秒）
