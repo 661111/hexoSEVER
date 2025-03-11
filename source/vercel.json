@@ -18,6 +18,9 @@
           }, {
             "key": "Vercel-CDN-Cache-Control",
             "value": "public, s-maxage=86400, max-age=86400, immutable"
+          }, { 
+            "key": "Content-Encoding", 
+            "value": "br"
           }
         ]
       }
