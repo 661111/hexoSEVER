@@ -20,17 +20,9 @@
             "value": "public, s-maxage=86400, max-age=86400, immutable"
           }, { 
             "key": "Content-Encoding", 
-            "value": "br"
+            "value": "br, zstd, gzip"
           }
         ]
-      }
-    ],
-    "plugins": [
-      {
-        "package": "@vercel/speed-insights",
-        "config": {
-          "run": "lighthouse --preset default --output ./lighthouse-reports"
-        }
       }
     ]
   }
