@@ -949,16 +949,15 @@ css_prefix: true
 inject:
   head:
     #- <script defer src="/js/lib/zeptojs.min.js"></script>
-    - <style id="defineBg"></style> # 自定义背景选项
     #- <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
     - <link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
-    - <link rel="stylesheet" href="/css/font-awesome-animation.min.css"  media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="/css/font-awesome-animation.min.css" media="only x" onload="this.onload=null;this.media='all'">
     - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
     - <script async src="https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/waterfall.js"></script> # 瀑布流JS
     - <script async src="https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/essay.js"></script>
-    - <script async src="/https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/font/font_3612150_gkavascgf3n.js"></script>
+    - <script async src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
     - <script defer src="https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/fixed_card_widget.js"></script>
 
 # CDN
