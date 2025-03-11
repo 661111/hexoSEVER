@@ -1,6 +1,6 @@
 div
-  script(src=url_for(theme.asset.utils))
-  script(src=url_for(theme.asset.main))
+  script(defer src=url_for(theme.asset.utils))
+  script(defer src=url_for(theme.asset.main))
 
   if theme.translate.enable
     script(src=url_for(theme.asset.translate))
@@ -28,7 +28,7 @@ div
     script(src=url_for(theme.asset.instantsearch_v4))
     script(src=url_for(theme.asset.algolia_js))
   else if theme.local_search.enable
-    script(src=url_for(theme.asset.local_search))
+    script(defer src=url_for(theme.asset.local_search))
 
   .js-pjax
     if needLoadCountJs
