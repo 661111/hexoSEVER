@@ -21,9 +21,6 @@
         }, { 
           "key": "Content-Encoding", 
           "value": "br, zstd, gzip"
-        }, { 
-          "key": "Vary",
-          "value": "Accept-Encoding"
         }
       ]
     }
