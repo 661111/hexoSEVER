@@ -953,7 +953,7 @@ inject:
     <script async src="https://jsd.sxiaohe.top/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
   bottom:
     # - <script src="xxxx"></script>
-    - <link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
+    - <link rel="stylesheet" href="https://jsd.sxiaohe.top/npm/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
     - <link rel="stylesheet" href="/css/font-awesome-animation.min.css" media="only x" onload="this.onload=null;this.media='all'">
     - <script async data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="/js/pace.min.js"></script>
     - <script async src="https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/waterfall.js"></script> # 瀑布流JS
