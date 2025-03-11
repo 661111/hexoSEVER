@@ -950,7 +950,7 @@ inject:
   head:
     #- <script defer src="/js/lib/zeptojs.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
-    - <script async src="https://jsd.sxiaohe.top/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+    - <script src="https://jsd.sxiaohe.top/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
   bottom:
     # - <script src="xxxx"></script>
     - <link rel="stylesheet" href="https://jsd.sxiaohe.top/npm/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css">
