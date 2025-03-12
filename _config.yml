@@ -116,7 +116,7 @@ swpp:
 # Hexo-hash
 # https://github.com/Lete114/Hexo-hash
 hash:
-  enable: true
+  enable: false
 
 # hexo-safego安全跳转插件
 # see https://blog.liushen.fun/posts/1dfd1f41/
