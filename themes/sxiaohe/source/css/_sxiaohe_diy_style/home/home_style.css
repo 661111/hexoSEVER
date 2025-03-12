@@ -1,4 +1,3 @@
-
 .layout {
     max-width: 1300px;
     padding: 0.35rem 2.5px;
@@ -23,18 +22,6 @@
     -moz-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-}
-#svg_bg {
-    background-image: url(/img/background.svg);
-    -webkit-background-size: initial;
-    -moz-background-size: initial;
-    background-size: initial;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    opacity: .2;
-    background-position: center;
-    z-index: -998;
 }
 .layout>div:first-child:not(.recent-posts) {
     border-radius: 18px;
