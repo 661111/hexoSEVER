@@ -70,6 +70,15 @@ jobs:
           folder: public
           commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
 
+      - name: 推送到Github仓库(备份)
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.HEXO_TOKEN }}
+          repository-name: 661111/hexo-site-page
+          branch: main
+          folder: public
+          commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
+
       - name: 推送到服务器仓库
         uses: easingthemes/ssh-deploy@main
         env:
