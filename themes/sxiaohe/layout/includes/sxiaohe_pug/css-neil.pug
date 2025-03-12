@@ -37,11 +37,3 @@ script(type='text/javascript')
   |         console.error('Service Worker registration failed:', error);
   |       });
   |   });
-script(type="text/javascript")
-  | quicklink();
-  | quicklink({
-  |   timeout: 1000, // 预取链接的超时时间（毫秒）
-  |   el: document.getElementById('content'), // 指定要监听的元素
-  |   urls: ['https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/css/index.css', '/page2'], // 预取的 URL 列表
-  |   priority: true, // 是否优先预取高优先级链接
-  | });
