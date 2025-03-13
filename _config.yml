@@ -182,3 +182,12 @@ algolia:
     - slug
     - tags
     - title
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content: true
+  content_limit:
+  content_limit_delim: ' '
