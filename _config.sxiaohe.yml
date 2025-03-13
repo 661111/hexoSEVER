@@ -978,7 +978,7 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    main_css: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/css/index.css
+    main_css: /css/index.css
     main: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/main.js
     utils: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/utils.js
     # translate:
