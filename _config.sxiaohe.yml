@@ -978,8 +978,8 @@ CDN:
 
   option:
     main_css: /css/index.css
-    main: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/main.js
-    utils: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/utils.js
+    main: /js/main.js
+    utils: /js/utils.js
     # translate:
     local_search: https://jsd.sxiaohe.top/gh/661111/661111.GITHUB.IO@master/js/search/local-search.js
     # algolia_js:
