@@ -1027,8 +1027,8 @@ CDN:
     prismjs_js: https://jsd.sxiaohe.top/npm/prismjs@1.1.0/prism.js
     prismjs_lineNumber_js: https://jsd.sxiaohe.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
     prismjs_autoloader: https://jsd.sxiaohe.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
-    artalk_js: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.js
-    artalk_css: https://cdn.staticfile.net/artalk/2.6.0/Artalk.min.css
+    artalk_js: https://jsd.sxiaohe.top/npm/artalk@2.9.1/dist/Artalk.js
+    artalk_css: https://jsd.sxiaohe.top/npm/artalk@2.9.1/dist/Artalk.css
     card_weibo:  /sxiaohe_source/js/weibo.js ## 或者填写自己的 js 地址
 
 #侧栏悬浮卡片控制按钮
