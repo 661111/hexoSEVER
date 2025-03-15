@@ -884,7 +884,7 @@ pjax:
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
+  enable: true
   per_page: false
 
 # Snackbar (Toast Notification 彈窗)
