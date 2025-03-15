@@ -2,7 +2,7 @@
 /* 由苏晓河进行编写以及调整 */
 /* 时间：2025年2月4日 */
 
-#page:has(#essay_page) {
+  #page:has(#essay_page) {
     border: 0;
     box-shadow: none !important;
     padding: 0 !important;
@@ -10,9 +10,6 @@
   }
   #page:has(#essay_page) .page-title {
     display: none;
-  }
-  #web_bg ~ .page:has(#essay_page) {
-    background: var(--anzhiyu-background);
   }
   #bber .bber-container-img {
     display: flex;
