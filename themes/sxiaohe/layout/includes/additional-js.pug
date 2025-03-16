@@ -58,13 +58,9 @@ div
 
   if theme.aplayerInject && theme.aplayerInject.enable
     if theme.pjax.enable || theme.aplayerInject.per_page
-      link(rel='stylesheet' href="https://blog.zhheo.com/plugin/aplayer/APlayer.min.css" media="print" onload="this.media='all'")
-      script(src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js")
-      script(src="https://blog.zhheo.com/plugin/aplayer/Meting2.min.js")
+      != partial("includes/third-party/aplayer", {}, { cache: true })
     else if page.aplayer
-      link(rel='stylesheet' href="https://blog.zhheo.com/plugin/aplayer/APlayer.min.css" media="print" onload="this.media='all'")
-      script(src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js")
-      script(src="https://blog.zhheo.com/plugin/aplayer/Meting2.min.js")
+      != partial("includes/third-party/aplayer", {}, { cache: true })
 
   if theme.pjax.enable
     != partial("includes/third-party/pjax", {}, { cache: true })
