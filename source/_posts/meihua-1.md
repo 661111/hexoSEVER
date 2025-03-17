@@ -3,7 +3,7 @@ title: 博客魔改教程总结(一)
 description: 从零开始魔改butterfly
 date: '2025-02-05 8:00'
 updated: '2025-03-06 18:00'
-cover: /img/2025/01/meihua-post/cover.avif
+cover: https://sourceimage.s3.bitiful.net/img/default_cover_21.webp
 category:
   - hexo
   - butterfly

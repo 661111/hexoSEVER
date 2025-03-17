@@ -3,7 +3,7 @@ title: Banner随机文章展示(轻笑同款)
 description: 首页显示随机文章，修复一些bug
 date: '2025-03-01 10:00'
 updated: '2025-03-05 12:09'
-cover: /img/2025/01/daohanglan/cover.avif
+cover: https://sourceimage.s3.bitiful.net/img/default_cover_10.webp
 category:
   - hexo
   - butterfly

@@ -2,7 +2,7 @@
 title: 底部美化（图标）
 description: 对底部进行添加图标，建站时间以及美化
 date: '2025-02-27 10:00'
-cover: /img/2025/01/daohanglan/cover.avif
+cover: https://sourceimage.s3.bitiful.net/img/default_cover_15.webp
 category:
   - hexo
   - butterfly
