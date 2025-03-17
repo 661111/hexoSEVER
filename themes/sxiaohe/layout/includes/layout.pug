@@ -7,6 +7,13 @@ doctype html
 html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
   head
     include ./head.pug
+  music
+    if theme.aplayerInject && theme.aplayerInject.enable
+      if theme.pjax.enable || theme.aplayerInject.per_page
+        != partial("includes/third-party/aplayer", {}, { cache: true })
+      else if page.aplayer
+        != partial("includes/third-party/aplayer", {}, { cache: true })
+    include ./sxiaohe_pug/widget/Floating_telescopic_sidebar.pug
   body(style="overflow: auto;")
     if theme.preloader.enable
       !=partial('includes/loading/index', {}, {cache: true})
@@ -47,4 +54,3 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
     include ./rightside.pug
     !=partial('includes/third-party/search/index', {}, {cache: true})
     include ./additional-js.pug
-    include ./sxiaohe_pug/widget/Floating_telescopic_sidebar.pug
