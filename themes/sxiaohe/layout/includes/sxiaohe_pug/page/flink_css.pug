@@ -185,11 +185,9 @@ style.
   /* 友链检查延迟美化以及卡片美化(轻笑) */
   /* 由苏晓河进行编写以及调整 */
   /* 时间：2025年3月7日 */
-  .site-card-group.link-no-img .site-card .state {
-    left: 3px;
-    top: 3px;
-  }
-  .site-card-group .site-card .state {
+
+  /* 1.美化延迟卡片 */
+  .state {
     position: absolute;
     left: 10px;
     top: 5px;
@@ -203,4 +201,70 @@ style.
   }
   .site-card .img {
     border-radius: 11.5px !important;
+  }
+  .site-card-group.link-no-img .site-card .state {
+    left: 3px;
+    top: 3px;
+  }
+
+  /* 2.美化友链卡片 */
+  .site-card-group.link-no-img .site-card {
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd !important;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    background: rgba(255, 255, 255, .35);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    height: 69px;
+    overflow: hidden;
+    padding: 0 .2em;
+  }
+  .site-card-group.link-no-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: -8px;
+    align-items: stretch;
+  }
+  .site-card-group.link-no-img {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -o-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    margin: -8px;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    -o-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+  }
+  .site-card-group.link-no-img .site-card .info img {
+    margin: 3px 4px 0 0 !important;
+    width: 50px;
+    height: 50px;
+  }
+  .site-card .info {
+    margin: 6px 5px 7px;
   }
