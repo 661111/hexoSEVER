@@ -116,6 +116,38 @@ style.
     transition: all .3s;
     border-radius: 12px;
   }
+  #article-container img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    -webkit-transition: filter 375ms ease-in .2s;
+    -moz-transition: filter 375ms ease-in .2s;
+    -o-transition: filter 375ms ease-in .2s;
+    -ms-transition: filter 375ms ease-in .2s;
+    transition: filter 375ms ease-in .2s;
+    border-radius: 12px;
+    }
+
+  .volantis-flink-list .flink-list-item .info img {
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    border-radius: 16px !important;
+    float: left;
+    margin-right: 8px !important;
+    -webkit-transition: height .5s ease, width .5s ease, margin .5s ease !important;
+    -moz-transition: height .5s ease, width .5s ease, margin .5s ease !important;
+    -o-transition: height .5s ease, width .5s ease, margin .5s ease !important;
+    -ms-transition: height .5s ease, width .5s ease, margin .5s ease !important;
+    transition: height .5s ease, width .5s ease, margin .5s ease !important;
+  }
+  .volantis-flink-list .flink-list-item {
+    margin: 8px;
+    width: calc(100% / 4 - 16px);
+    display: block;
+    line-height: 1.4;
+    height: 100%;
+  }
 style.
   /* 友链检查延迟美化 */
   /* 由苏晓河进行编写以及调整 */

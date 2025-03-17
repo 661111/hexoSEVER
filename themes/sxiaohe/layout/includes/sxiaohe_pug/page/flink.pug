@@ -2,6 +2,7 @@
   if top_img === false
     h1.page-title= page.title
   .flink
+    include ./flink_css.pug
     if site.data.link
       each i in site.data.link
         if i.class_name
