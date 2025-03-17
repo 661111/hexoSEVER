@@ -53,7 +53,7 @@ aside: false
         )).catch((t => console.error("Error fetching test-flink result.json:", t)))
     }
     setTimeout(( () => {
-        addStatusTagsWithCache("https://link-api.vercel.sxiaohe.top/result.json")
+        addStatusTagsWithCache("https://www.sxiaohe.top/result.json")
     }
     ), 0)
 </script>
