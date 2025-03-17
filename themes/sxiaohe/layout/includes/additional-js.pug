@@ -56,6 +56,12 @@ div
 
   != partial("includes/third-party/chat/index", {}, { cache: true })
 
+  if theme.aplayerInject && theme.aplayerInject.enable
+    if theme.pjax.enable || theme.aplayerInject.per_page
+      != partial("includes/third-party/aplayer", {}, { cache: true })
+    else if page.aplayer
+      != partial("includes/third-party/aplayer", {}, { cache: true })
+
   if theme.pjax.enable
     != partial("includes/third-party/pjax", {}, { cache: true })
 

@@ -4,8 +4,8 @@
       each i in site.data.link
         if i.class_name
           h2!= i.class_name
-        //- if i.class_desc
-        //-  .flink-desc!=i.class_desc
+        if i.class_desc
+          .flink-desc!=i.class_desc
         if i.flink_style === 'img-link'
           .volantis-flink-list
             - let randomList = i.link_list.slice()
