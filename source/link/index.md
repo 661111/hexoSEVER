@@ -10,22 +10,22 @@ aside: false
         const a = "statusTagsData";
         function e(t) {
             const a = t.link_status;
-            document.querySelectorAll(".flink-list-item").forEach((t => {
+            document.querySelectorAll(".site-card").forEach((t => {
                 if (!t.href)
                     return;
                 const e = t.href.replace(/\/$/, "")
                   , s = document.createElement("div");
-                s.classList.add("status-tag");
+                s.classList.add("state");
                 let i = !1;
                 const l = a.find((t => t.link.replace(/\/$/, "") === e));
                 if (l) {
-                    let t = '<i class="fa-solid fa-signal"></i>ERR'
-                      , a = "status-tag-red";
+                    let t = 'ERR'
+                      , a = "error";
                     if (-1 === l.latency)
-                        t = '<i class="fa-solid fa-signal"></i>ERR';
+                        t = 'ERR';
                     else {
-                        t = '<i class="fa-solid fa-signal"></i>' + (1e3 * l.latency).toFixed(0) + " MS",
-                        l.latency <= 3 ? a = "status-tag-green" : l.latency <= 5 ? a = "status-tag-light-yellow" : l.latency <= 10 && (a = "status-tag-dark-yellow")
+                        t = '' + (1e3 * l.latency).toFixed(0) + " ms",
+                        l.latency <= 3 ? a = "success" : l.latency <= 5 ? a = "success" : l.latency <= 10 && (a = "success")
                     }
                     s.innerHTML = t,
                     s.classList.add(a),

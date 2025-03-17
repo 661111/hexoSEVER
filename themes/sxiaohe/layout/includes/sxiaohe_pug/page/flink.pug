@@ -1,8 +1,8 @@
 #article-container
+  link(rel='stylesheet', href="https://jsd.sxiaohe.top/hexo/css/page_css.css")
   if top_img === false
     h1.page-title= page.title
   .flink
-    include ./flink_css.pug
     if site.data.link
       each i in site.data.link
         if i.class_name
