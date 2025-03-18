@@ -3,7 +3,7 @@ title: 即刻短文的三种部署方案
 description: 本篇转载三种不同方案（已经放好原文章链接）
 date: '2025-03-10 12:45'
 updated: '2025-03-10 14:09'
-cover: https://sourceimage.s3.bitiful.net/img/default_cover_47.webp
+cover: https://sourceimage.s3.bitiful.net/img/default_cover_47.avif
 category:
   - hexo
   - butterfly

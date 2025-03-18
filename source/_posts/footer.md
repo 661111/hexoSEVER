@@ -2,7 +2,7 @@
 title: 底部美化（图标）
 description: 对底部进行添加图标，建站时间以及美化
 date: '2025-02-27 10:00'
-cover: https://sourceimage.s3.bitiful.net/img/default_cover_15.webp
+cover: https://sourceimage.s3.bitiful.net/img/default_cover_15.avif
 category:
   - hexo
   - butterfly

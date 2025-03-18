@@ -2,7 +2,7 @@
 title: butterfly导航栏修改方案
 description: 对导航栏进行修改
 date: '2025-02-05 9:00'
-cover: https://sourceimage.s3.bitiful.net/img/default_cover_1.webp
+cover: https://sourceimage.s3.bitiful.net/img/default_cover_1.avif
 category:
   - hexo
   - butterfly
