@@ -302,10 +302,11 @@
   }
   .author-content-item.myphoto {
     height: 60%;
-    min-height: 240px;
     position: relative;
     overflow: hidden;
-    width: 39%;
+    min-height: 200px;
+    max-height: 400px;
+    width: 45%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -419,20 +420,10 @@
     color: var(--anzhiyu-gray);
     font-size: 14px;
   }
-  
-  .author-content-item.single.reward .post-reward {
-    position: absolute;
-    margin-top: 0px;
-    width: auto;
-    text-align: none;
-    pointer-events: none;
-    right: 2rem;
-    top: 2rem;
-  }
   .tip-button {
     border: 0;
-    border-radius: 2.25rem;
-    cursor: pointer;
+    border-radius: 8px;
+    padding: .2rem 1.5rem;
     font-size: 20px;
     font-weight: 600;
     height: 2.6rem;
@@ -549,7 +540,6 @@
   }
   .tip-button__text {
     color: #fff;
-    margin-right: 1.8rem;
     opacity: 1;
     position: relative;
     transition: opacity 0.1s linear 0.5s;
@@ -595,7 +585,7 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    width: 39%;
+    width: 53%;
   }
   .author-content-item .author-content-item-tips {
     opacity: 0.8;
@@ -647,7 +637,7 @@
     min-height: 300px;
     overflow: hidden;
     color: var(--anzhiyu-white);
-    width: 59%;
+    width: 49%;
   }
   
   .author-content-item .content-bottom {
@@ -702,6 +692,7 @@
     background-size: cover;
     min-height: 230px;
     color: var(--anzhiyu-white);
+    width: 49%!important;
   }
   
   .author-content-item.like-music {
@@ -774,7 +765,7 @@
       width: 100% !important;
     }
     .post-reward {
-      display: none;
+      margin-top: 2px !important;
     }
     .reward-list-item {
       width: 100% !important;

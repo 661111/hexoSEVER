@@ -262,11 +262,11 @@ post_copyright:
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
+    - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png
+      link:
+      text: wechat
     # - img: /img/alipay.jpg
     #   link:
     #   text: alipay
@@ -948,7 +948,7 @@ css_prefix: true
 # 如果需要引用跨域文件，需要添加网址
 inject:
   head:
-    #- <script defer src="/js/lib/zeptojs.min.js"></script>
+    - <script defer src="/js/lib/zeptojs.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
     - <script defer src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
   bottom:
