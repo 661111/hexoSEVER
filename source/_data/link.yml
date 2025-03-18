@@ -1,5 +1,5 @@
-- class_name: 『推荐友链』[2]
-  class_desc: 本人推荐友链
+- class_name: 『推荐友链』[4]
+  class_desc: 对窝博客搭建有帮助以及提供魔改美化、博客质量高的大佬们(时间排序)
   flink_style: img-link
   random: true
   link_list:
@@ -23,8 +23,8 @@
       avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
       descr: 生活明朗，万物可爱
       siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
-- class_name: 『2025』[2]
-  class_desc: 在2025年添加的网站
+- class_name: 『2025』[4]
+  class_desc: 评论留下友链吧~(时间排序)
   flink_style: not-img-link
   random: true
   link_list:
@@ -49,8 +49,12 @@
       descr: 人有悲欢离合 月有阴晴圆缺
       siteshot: https://bu.dusays.com/2024/09/19/66ec130ad1de0.png
       theme_color: '#ed709b'
-- class_name: 『博主』[1]
-  class_desc: 本人旗下网站
+    - name: 随风起
+      link: https://blog.bywind.xyz/
+      avatar: https://blog.bywind.xyz/img/avatar.png
+      descr: 爱意随风起，风止意难平
+- class_name: 『博主』[3]
+  class_desc: 窝自己以及旗下网站（公示）
   flink_style: img-link
   random: true
   link_list:
