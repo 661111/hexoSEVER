@@ -3,6 +3,7 @@ extends includes/layout.pug
 block content
   if theme.category_ui == 'index'
     include ./includes/mixins/post-ui.pug
+    link(rel='stylesheet', href="/css/thyuu.css")
     #recent-posts.recent-posts.category_ui
       .backdrop-blur-sm.overflow-hidden.relative.rounded-xl.w-full(x-data="scrollTag(0.5)" @destroy.window="$cleanup" @mouseout="isPaused = false" @mouseover="isPaused = true")
         #scrollTagContainer.overflow-x-hidden.whitespace-nowrap
