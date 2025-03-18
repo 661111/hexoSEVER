@@ -10,7 +10,7 @@ categories:
 abbrlink: 2013454d
 sticky: 2
 swiper_index: 2
-cover: https://sourceimage.s3.bitiful.net/img/default_cover_27.webp
+cover: https://sourceimage.s3.bitiful.net/img/default_cover_27.avif
 date: 2022-08-09 18:19:03
 updated: 2022-10-23 22:00:00
 top_img: false
@@ -1100,7 +1100,7 @@ Any content (support inline tags too.io).
 ```Markdown
 {% timeline 时间轴样式,blue %}
 
-<!-- timeline 2020-07-24 [2.6.6 -> 3.0](https://github.com/volantis-x/hexo-theme-volantis/releases) -->
+<!-- timeline 2020-07-24 [2.6.6 -> 3.0](https://gh-proxy.com/github.com/volantis-x/hexo-theme-volantis/releases) -->
 
 1. 如果有 `hexo-lazyload-image` 插件，需要删除并重新安装最新版本，设置 `lazyload.isSPA: true`。
 2. 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 `use_cdn: true` 则需要删除。
@@ -1110,13 +1110,13 @@ Any content (support inline tags too.io).
 
 <!-- endtimeline -->
 
-<!-- timeline 2020-05-15 [2.6.3 -> 2.6.6](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6) -->
+<!-- timeline 2020-05-15 [2.6.3 -> 2.6.6](https://gh-proxy.com/github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6) -->
 
 不需要额外处理。
 
 <!-- endtimeline -->
 
-<!-- timeline 2020-04-20 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) -->
+<!-- timeline 2020-04-20 [2.6.2 -> 2.6.3](https://gh-proxy.com/github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) -->
 
 1. 全局搜索 `seotitle` 并替换为 `seo_title`。
 2. group 组件的索引规则有变，使用 group 组件的文章内，`group: group_name` 对应的组件名必须是 `group_name`。
@@ -1131,7 +1131,7 @@ Any content (support inline tags too.io).
 <!-- tab 渲染演示 -->
 {% timeline 时间轴样式,blue %}
 
-<!-- timeline 2020-07-24 [2.6.6 -> 3.0](https://github.com/volantis-x/hexo-theme-volantis/releases) -->
+<!-- timeline 2020-07-24 [2.6.6 -> 3.0](https://gh-proxy.com/github.com/volantis-x/hexo-theme-volantis/releases) -->
 
 1. 如果有 `hexo-lazyload-image` 插件，需要删除并重新安装最新版本，设置 `lazyload.isSPA: true`。
 2. 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 `use_cdn: true` 则需要删除。
@@ -1141,13 +1141,13 @@ Any content (support inline tags too.io).
 
 <!-- endtimeline -->
 
-<!-- timeline 2020-05-15 [2.6.3 -> 2.6.6](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6) -->
+<!-- timeline 2020-05-15 [2.6.3 -> 2.6.6](https://gh-proxy.com/github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6) -->
 
 不需要额外处理。
 
 <!-- endtimeline -->
 
-<!-- timeline 2020-04-20 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) -->
+<!-- timeline 2020-04-20 [2.6.2 -> 2.6.3](https://gh-proxy.com/github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) -->
 
 1. 全局搜索 `seotitle` 并替换为 `seo_title`。
 2. group 组件的索引规则有变，使用 group 组件的文章内，`group: group_name` 对应的组件名必须是 `group_name`。
@@ -1315,7 +1315,7 @@ Any content (support inline tags too.io).
 | hide          | stars,commits,prs,issues,contribs                            | 隐藏指定统计                     |
 | count_private | true                                                         | 将私人项目贡献添加到总提交计数中 |
 | show_icons    | true                                                         | 显示图标                         |
-| theme         | 查阅:[Available Themes](https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md) | 主题                             |
+| theme         | 查阅:[Available Themes](https://gh-proxy.com/github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md) | 主题                             |
 
 <!-- endtab -->
 
@@ -1404,7 +1404,7 @@ Any content (support inline tags too.io).
 ```markdown
 {% bdage CDN,JsDelivr,jsDelivr||abcdef,https://metroui.org.ua/index.html,本站使用JsDelivr为静态资源提供CDN加速 %}
 //如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割
-{% bdage Source,GitHub,GitHub||,https://github.com/ %}
+{% bdage Source,GitHub,GitHub||,https://gh-proxy.com/github.com/ %}
 ```
 
 3.拓展参数，支持shields的API的全部参数内容
@@ -1427,7 +1427,7 @@ Any content (support inline tags too.io).
 
 {% bdage CDN,JsDelivr,jsDelivr||abcdef,https://metroui.org.ua/index.html,本站使用JsDelivr为静态资源提供CDN加速 %}
 //如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割
-{% bdage Source,GitHub,GitHub||,https://github.com/ %}
+{% bdage Source,GitHub,GitHub||,https://gh-proxy.com/github.com/ %}
 
 3.拓展参数，支持shields的API的全部参数内容
 
@@ -1575,12 +1575,12 @@ Any content (support inline tags too.io).
 <!-- tab 示例源码 -->
 
 ```Markdown
-{% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
+{% audio https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
 ```
 <!-- endtab -->
 
 <!-- tab 渲染演示 -->
-{% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
+{% audio https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -1604,53 +1604,53 @@ Any content (support inline tags too.io).
 1.100%宽度
 
 ```Markdown
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
 ```
 2.50%宽度
 ```Markdown
 {% videos, 2 %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
 {% endvideos %}
 ```
 3.25%宽度
 
 ```Markdown
 {% videos, 4 %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
 {% endvideos %}
 ```
 <!-- endtab -->
 <!-- tab 渲染演示 -->
 
 1.100%宽度
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
 2.50%宽度
 {% videos, 2 %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
 {% endvideos %}
 3.25%宽度
 {% videos, 4 %}
-   {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-   {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-   {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-   {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-   {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-   {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-   {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
-   {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+   {% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+   {% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+   {% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+   {% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+   {% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+   {% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+   {% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+   {% video https://gh-proxy.com/github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
 {% endvideos %}
 <!-- endtab -->
 
