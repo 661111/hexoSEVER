@@ -8,8 +8,6 @@ tags:
 categories:
   - 演示
 abbrlink: 2013454d
-sticky: 2
-swiper_index: 2
 cover: https://sourceimage.s3.bitiful.net/img/default_cover_27.avif
 date: 2022-08-09 18:19:03
 updated: 2022-10-23 22:00:00
