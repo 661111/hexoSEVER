@@ -545,12 +545,6 @@
     transition: opacity 0.1s linear 0.5s;
     z-index: 3;
   }
-  .author-content .post-reward .reward-main {
-    bottom: 0;
-    top: 50px;
-    left: auto;
-    right: 0;
-  }
   .author-content .post-reward .reward-main .reward-all:before {
     top: -11px;
     bottom: auto;
