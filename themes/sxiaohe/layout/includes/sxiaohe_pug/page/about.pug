@@ -82,6 +82,7 @@
       .author-tag:nth-child(4) {
         animation-delay: 1.8s;
       }
+      /* 5.动画css */
       @keyframes floating {
         0% {
           transform: translate(0, -4px);
@@ -91,6 +92,14 @@
         }
         100% {
           transform: translate(0, -4px);
+        }
+      }
+      @keyframes animate {
+        0% {
+          transform: rotate(0)
+        }
+        100% {
+          transform: rotate(360deg)
         }
       }
     .author-tag-left
