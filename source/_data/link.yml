@@ -43,6 +43,12 @@
       avatar: https://q1.qlogo.cn/g?b=qq&nk=990320751&s=5
       descr: 进一寸有进一寸的欢喜。
       rss: /atom.xml
+    - name: Ariasakaの小窝
+      link: https://blog.yaria.top
+      avatar: https://bu.dusays.com/2024/12/05/67517bcf104da.png
+      descr: 人有悲欢离合 月有阴晴圆缺
+      siteshot: https://bu.dusays.com/2024/09/19/66ec130ad1de0.png
+      theme_color: '#ed709b'
 - class_name: 『博主』[1]
   class_desc: 本人旗下网站
   flink_style: img-link
