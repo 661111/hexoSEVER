@@ -1,15 +1,5 @@
-- class_name: 『博主』[1]
-  class_desc: 本人旗下网站
-  flink_style: img-link
-  random: true
-  link_list:
-    - name: 苏晓河
-      link: https://www.sxiaohe.top/
-      siteshot: https://www.sxiaohe.top/img/link/苏晓河.avif
-      avatar: https://www.sxiaohe.top/img/avatar.avif
-      descr: 随风飘起 如同浮云
-- class_name: 『魔改来源』[2]
-  class_desc: 魔改内容以及部分html来源
+- class_name: 『推荐友链』[2]
+  class_desc: 本人推荐友链
   flink_style: img-link
   random: true
   link_list:
@@ -23,6 +13,11 @@
       link: https://www.qcqx.cn
       avatar: https://www.qcqx.cn/head.webp
       descr: 漫天倾尘风中轻笑
+    - name: 贰猹的小窝
+      link: https://noionion.top/
+      avatar: https://pub-noionion.oss-cn-hangzhou.aliyuncs.com/head.jpg
+      descr: 用这生命中的每一秒，给自己一个不后悔的未来：
+      siteshot: https://pub-noionion.oss-cn-hangzhou.aliyuncs.com/noionion.top.png
 - class_name: 『2025』[2]
   class_desc: 在2025年添加的网站
   flink_style: not-img-link
@@ -43,3 +38,23 @@
       avatar: https://q1.qlogo.cn/g?b=qq&nk=990320751&s=5
       descr: 进一寸有进一寸的欢喜。
       rss: /atom.xml
+- class_name: 『博主』[1]
+  class_desc: 本人旗下网站
+  flink_style: img-link
+  random: true
+  link_list:
+    - name: 苏晓河
+      link: https://www.sxiaohe.top/
+      siteshot: https://www.sxiaohe.top/img/link/苏晓河.avif
+      avatar: https://www.sxiaohe.top/img/avatar.avif
+      descr: 随风飘起 如同浮云
+    - name: 苏晓河生活站（还未想好名字）
+      link: https://cat.sxiaohe.top/
+      siteshot: https://www.sxiaohe.top/img/link/苏晓河.avif
+      avatar: https://www.sxiaohe.top/img/avatar.avif
+      descr: 随风飘起 如同浮云
+    - name: jsd镜像站
+      link: https://jsd.sxiaohe.top/
+      siteshot: https://www.sxiaohe.top/img/link/苏晓河.avif
+      avatar: https://www.sxiaohe.top/img/avatar.avif
+      descr: 自用
