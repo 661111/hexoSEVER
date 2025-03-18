@@ -1,0 +1,9 @@
+link(rel='stylesheet', href="/css/thyuu.css")
+.backdrop-blur-sm.overflow-hidden.relative.rounded-xl.w-full(x-data="scrollTag(0.5)" @destroy.window="$cleanup" @mouseout="isPaused = false" @mouseover="isPaused = true")
+  #scrollTagContainer.overflow-x-hidden.whitespace-nowrap
+    .inline-flex.whitespace-nowrap(style="transform: translateX(-223.5px);")
+      .inline-flex.items-center.py-2.tag-list
+        a(class="group w-36 relative flex flex-col gap-y-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg will-change-transform mx-2 first:ml-2" href="/tags/springboot" style="font-family: '快看世界体'")
+        p(class="line-clamp-1 group-hover:text-primary transition-colors duration-500 text-lg font-light tracking-wider" style="color:#677589") SpringBoot
+        span(class="text-xl font-bold text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors duration-500") 3
+        span(class="absolute -bottom-2 -right-2 icon-[ei--tag] text-5xl text-gray-300 dark:text-gray-400")
