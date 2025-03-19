@@ -68,6 +68,15 @@
       avatar: https://www.wuxingzzz.top/hexo/1716691173759791105.jpg
       siteshot: https://www.wuxingzzz.top/article/1592180893591904258.jpg
       descr: A programmer of vegetable chicken
+    - name: 前尘小筑
+      link: https://mnchen.cn/
+      avatar: https://image.mnchen.cn/2023/12/mnochen.jpg
+      descr: 虽多尘色染，犹见墨痕浓
+    - name: 唐志远
+      link: https://fe32.top/
+      avatar: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
+      desc: 古今之成大事者，不惟有超世之才，亦必有坚忍不拔之志
+      screenshot: https://bu.dusays.com/2023/07/16/64b400bf8e546.jpg
 - class_name: 『博主』[3]
   class_desc: 窝自己以及旗下网站（公示）
   flink_style: img-link
