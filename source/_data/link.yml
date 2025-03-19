@@ -27,6 +27,11 @@
       link: https://blog.bywind.xyz/
       avatar: https://blog.bywind.xyz/img/avatar.png
       descr: 爱意随风起，风止意难平
+    - name: 王先森
+      link: https://www.boysec.cn
+      avatar: https://images.boysec.cn/medias/avatar.jpg
+      descr: 运维与安全从业者！
+      siteshot: https://cdn.jsdelivr.net/gh/5279314/ScreenShot@gh-pages/www.boysec.cn.jpg
 - class_name: 『2025』[5]
   class_desc: 评论留下友链吧~(随机排序)
   flink_style: not-img-link

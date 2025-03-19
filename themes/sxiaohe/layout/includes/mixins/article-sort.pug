@@ -14,8 +14,8 @@ mixin articleSort(posts)
           a.article-sort-item-img(href=url_for(article.path) title=title)
             img(src=url_for(article.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)
         .article-sort-item-info
-          div
-            a.article-sort-item-title(href=url_for(article.path) title=title)= title
+          a.article-sort-item-title(href=url_for(article.path) title=title)= title
+          span.article-sort-item-index
           .article-sort-meta
             .article-meta-wrap
               if (theme.post_meta.page.categories && article.categories.data.length > 0)
