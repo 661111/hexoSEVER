@@ -26,7 +26,12 @@ div#card-widget-calendar {
 div#card-widget-schedule {
     padding: 10px !important;
 }
-
+div#card-widget-calendar > .item-headline {
+    display: none;
+}
+div#card-widget-schedule > .item-headline {
+    display: none;
+}
 .card-widget {
     max-height: calc(100vh - 100px);
 }
@@ -69,6 +74,7 @@ div#card-widget-schedule {
     font-weight: bold;
     align-items: center;
     display: flex;
+    margin-top: -10px;
 }
 
 #calendar-date {
