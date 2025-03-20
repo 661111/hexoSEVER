@@ -7,10 +7,10 @@ aside: false
 ---
 {% note primary simple %}1.建议原创文章大于6篇，且有一定的质量；2.一般需要拥有自己的域名而非github.io、eu.org、vercel.app等；{% endnote %}
 ```
-- name: 苏晓河
-  link: https://www.sxiaohe.top/
-  siteshot: https://www.sxiaohe.top/img/link/苏晓河.avif
-  avatar: https://www.sxiaohe.top/img/avatar.avif
+- name: 莫言小筑
+  link: https://www.myxz.top/
+  siteshot: https://www.myxz.top/img/link/苏晓河.avif
+  avatar: https://www.myxz.top/img/avatar.avif
   descr: 随风飘起 如同浮云
 ```
 <script>
