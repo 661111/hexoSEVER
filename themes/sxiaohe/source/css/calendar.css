@@ -74,7 +74,6 @@ div#card-widget-schedule > .item-headline {
     font-weight: bold;
     align-items: center;
     display: flex;
-    margin-top: -10px;
 }
 
 #calendar-date {
