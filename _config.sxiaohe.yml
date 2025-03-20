@@ -968,7 +968,7 @@ inject:
   bottom:
     # - <script src="xxxx"></script>
     - <script defer src="/js/fixed_card_widget.js"></script>
-    - <div class="global-music"><div class="aplayer"></div></div>
+    - <script defer src="/js/lib/calendar.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
