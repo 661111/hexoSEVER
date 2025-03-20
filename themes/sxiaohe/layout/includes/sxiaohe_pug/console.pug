@@ -1,0 +1,71 @@
+div#console
+    //- 标头
+    div.console-head
+        span 控制中心
+        div.close-btn(onclick="ctrl.hideConsole()" href="javascript:void(0);")
+            i.fas.fa-circle-xmark
+
+    //- 音乐控制器
+    div.console-music-ctrl-item.item-show#console-music-item-main
+        div#console-music-cover
+        a#console-music-title 曲名
+        a#console-music-author 作者
+        div.console-progressbar-div
+            div#progress-low
+                a#progress-low-btn --:--
+            div#music-progressbar
+                div#p_bar_bg
+                    div#p_bar
+            div#progress-high
+                a#progress-high-btn --:--
+        div#console-music-ctrl-btns
+            div#music-ctrl-first
+                a#music-ctrl-btn-first
+                    i.fas.fa-shuffle
+            div#music-ctrl-left
+                a#music-ctrl-btn-left(onclick="ctrl.musicBackward()" title="上一曲" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
+                    i.fas.fa-backward
+            div#music-ctrl-center
+                a#music-ctrl-btn-center(onclick="ctrl.musicSwitch()" title="音乐开关" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
+                    i.fas.fa-play
+            div#music-ctrl-right
+                a#music-ctrl-btn-right(onclick="ctrl.musicForward()" title="下一曲" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
+                    i.fas.fa-forward
+            div#music-ctrl-end
+                a#music-ctrl-btn-end
+                    i.fas.fa-indent
+        div.console-progressbar-div
+            div#volume-low
+                a#volume-low-btn
+                    i.fas.fa-volume-off
+            div#music-volumebar
+                div#v_bar_bg
+                    div#v_bar
+            div#volume-high
+                a#volume-high-btn
+                    i.fas.fa-volume-high
+
+    div.console-music-ctrl-item#console-music-item-list
+        div.console-list-head
+            a.headline 当前歌单
+            a.music-list-title 网易云
+        div.console-list-body
+            ol#console-music-list
+        div.console-list-foot
+
+    //- 系统控制按钮
+    div.console-btn-group
+        div.console-btn-item#darkItem
+            a.switchButton#darkSwitchBtn(onclick="ctrl.switchDarkMode()" title="深色模式" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
+                i#iconDarkMode.fas.fa-moon
+        div.console-btn-item#charItem
+            a.switchButton#charSwitchBtn(type="button" title="簡/繁" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
+                i#iconCharMode.fas(style="font-size:1.5rem;") 繁
+        div.console-btn-item#ircItem
+            a.switchButton#ircSwitchBtn(onclick="ctrl.ircShowHide()" title="桌面歌词" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
+                i#iconIrcMode.fas(style="font-size:1.5rem;") 词
+        div.console-btn-item#asideItem
+            a.switchButton#asideSwitchBtn(onclick="ctrl.hideAsideBtn()" title="单栏/双栏" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
+                i#iconAside.fas.fa-arrows-alt-h
+
+    div.console-mask(onclick="ctrl.consoleBackBtn()" href="javascript:void(0);" rel="external nofollow")

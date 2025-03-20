@@ -44,8 +44,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
     else
       include ./404.pug
 
-    if (theme.nav_music.enable || theme.nav_music.console_widescreen_music)
-      include ./music.pug
+    include ./sxiaohe_pug/console.pug
     include ./rightside.pug
     !=partial('includes/third-party/search/index', {}, {cache: true})
     include ./additional-js.pug
