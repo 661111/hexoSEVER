@@ -20,8 +20,14 @@
     --gavin-theme-color: var(--gavin-theme-color-dark);
 }
 
-.card-widget {
+div#card-widget-calendar {
     padding: 10px !important;
+}
+div#card-widget-schedule {
+    padding: 10px !important;
+}
+
+.card-widget {
     max-height: calc(100vh - 100px);
 }
 
