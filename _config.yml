@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 苏晓河
+title: 莫言小筑
 subtitle: '博客'
 description: '探索设计前沿，深度解析从 UI 设计的视觉美学，到交互设计的用户体验塑造，涵盖开发全流程。这份文档为您全方位呈现设计驱动开发的奥秘，助您掌握打造卓越产品的关键，解锁创新设计与高效开发的融合密码。'
 keywords: 美化设计师,优化魔改师
-author: 『苏晓河』
+author: 『莫言』
 language: zh-CN
 email: 3227988255@qq.com
 timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://www.sxiaohe.top
+url: https://www.myxz.top
 # permalink: :year/:month/:day/:title/
 permalink: posts/:abbrlink.html
 permalink_defaults:
@@ -143,11 +143,11 @@ hexo_safego:
   # 域名白名单
   whitelist:
     domain_whitelist:           # 允许的白名单域名
-      - "www.sxiaohe.top"
+      - "www.myxz.top"
   # 页面外观设置
   appearance:
     avatar: /img/avatar.avif    # 头像路径
-    title: "苏晓河"            # 页面标题
+    title: "莫言小筑"            # 页面标题
     subtitle: "安全中心"         # 页面副标题
     darkmode: false             # 是否启用深色模式
     countdowntime: -1           # 倒计时秒数
