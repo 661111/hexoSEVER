@@ -44,8 +44,93 @@ nav#nav
         a.site-page.social-icon.search(onclick="toggleWinbox()" title="美化设置-自定义你的风格" id="meihua-button" rel="noopener external nofollow")
           i.fas.fa-images.fa-fw
       if theme.centerConsole.enable
-        input#center-console(type="checkbox")
         label.widget(for="center-console" title=_p("中控台") onclick="anzhiyu.switchConsole();")
+          style.
+            label.widget {
+              --icon-size: 1.375rem;
+              position: relative;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              height: var(--icon-size);
+              width: var(--icon-size);
+              cursor: pointer;
+              -webkit-transition: 1s;
+              -moz-transition: 1s;
+              -o-transition: 1s;
+              -ms-transition: 1s;
+              transition: 1s;
+              margin-left: 1rem;
+            }
+            i.left {
+              background: var(--font-color);
+            }
+            i.left {
+              background: var(--light-grey);
+              position: absolute;
+              border-radius: calc(var(--icon-size)* .15);
+              -webkit-transition: .5s var(--animation-on);
+              -moz-transition: .5s var(--animation-on);
+              -o-transition: .5s var(--animation-on);
+              -ms-transition: .5s var(--animation-on);
+              transition: .5s var(--animation-on);
+              inset: 0;
+              margin: auto;
+              right: auto;
+              width: calc(var(--icon-size) / 3);
+              height: calc(var(--icon-size) / 3);
+              -webkit-transform: translateY(calc(var(--icon-size) / 4));
+              -moz-transform: translateY(calc(var(--icon-size) / 4));
+              -o-transform: translateY(calc(var(--icon-size) / 4));
+              -ms-transform: translateY(calc(var(--icon-size) / 4));
+              transform: translateY(calc(var(--icon-size) / 4));
+            }
+            i.widget.center {
+              background: var(--font-color);
+            }
+            i.widget.center {
+              background: var(--light-grey);
+              position: absolute;
+              border-radius: calc(var(--icon-size)* .15);
+              -webkit-transition: .5s var(--animation-on);
+              -moz-transition: .5s var(--animation-on);
+              -o-transition: .5s var(--animation-on);
+              -ms-transition: .5s var(--animation-on);
+              transition: .5s var(--animation-on);
+              inset: 0;
+              margin: auto;
+              right: auto;
+              width: calc(var(--icon-size) / 3);
+              height: calc(var(--icon-size) / 3);
+              -webkit-transform: translateY(calc(var(--icon-size) / 4));
+              -moz-transform: translateY(calc(var(--icon-size) / 4));
+              -o-transform: translateY(calc(var(--icon-size) / 4));
+              -ms-transform: translateY(calc(var(--icon-size) / 4));
+              transform: translateY(calc(var(--icon-size) / 4));
+            }
+            i.widget.right {
+              background: var(--font-color);
+            }
+            i.widget.right {
+              background: var(--light-grey);
+              position: absolute;
+              border-radius: calc(var(--icon-size)* .15);
+              -webkit-transition: .5s var(--animation-on);
+              -moz-transition: .5s var(--animation-on);
+              -o-transition: .5s var(--animation-on);
+              -ms-transition: .5s var(--animation-on);
+              transition: .5s var(--animation-on);
+              inset: 0;
+              margin: auto;
+              right: auto;
+              width: calc(var(--icon-size) / 3);
+              height: calc(var(--icon-size) / 3);
+              -webkit-transform: translateY(calc(var(--icon-size) / 4));
+              -moz-transform: translateY(calc(var(--icon-size) / 4));
+              -o-transform: translateY(calc(var(--icon-size) / 4));
+              -ms-transform: translateY(calc(var(--icon-size) / 4));
+              transform: translateY(calc(var(--icon-size) / 4));
+            }
           i.left
           i.widget.center
           i.widget.right
