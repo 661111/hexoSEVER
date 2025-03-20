@@ -1,5 +1,5 @@
-link(rel='stylesheet' href="https://blog.zhheo.com/plugin/aplayer/APlayer.min.css" media="print" onload="this.media='all'")
-script(src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js")
-script(src="https://registry.npmmirror.com/cansin-blogdata/3.0.85/files/js/Meting.min.js")
+link(rel='stylesheet' href=url_for(theme.asset.aplayer_css) media="print" onload="this.media='all'")
+script(src=url_for(theme.asset.aplayer_js))
+script(src=url_for(theme.asset.meting_js))
 script(src="/js/lib/music.min.js")
 script(src="/js/lib/console.min.js")
