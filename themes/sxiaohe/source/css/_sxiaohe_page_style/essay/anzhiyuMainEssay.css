@@ -91,7 +91,7 @@ body[data-type="essay"] #web_bg {
 }
 #bber .timeline ul li.bber-item {
   position: relative;
-  width: 32%;
+  width: auto;
   border: var(--style-border-always);
   border-radius: 12px;
   padding: 1rem 1rem 0.5rem;

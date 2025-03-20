@@ -967,6 +967,8 @@ inject:
     - <script defer src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
   bottom:
     # - <script src="xxxx"></script>
+    - <script defer src="https://jsd.sxiaohe.top/npm/swiper@11.1.14/swiper-bundle.min.js"></script>
+    - <link rel="stylesheet" href="https://jsd.qyliu.top/npm/swiper@11.1.14/swiper-bundle.min.css" media="print" onload='this.media="all"'>
     - <script defer src="/js/fixed_card_widget.js"></script>
     - <script defer src="/js/lib/calendar.min.js"></script>
 
