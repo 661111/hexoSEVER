@@ -43,7 +43,8 @@
     --qx-ai-post-bg: rgba(255,255,255,0.32);
     --qx-ai-border: 1px solid #e3e8f7bd;
     --qx-ai-tag-bg: rgba(48, 52, 63, 0.86);
-    --reward-main: #f1f3f8
+    --reward-main: #f1f3f8;
+    --sidebar-bg: #f6f8fa
 }
 
 ::selection {
@@ -126,4 +127,5 @@
     --qx-ai-tag-bg: #30343f;
     --text-highlight-color: #fff!important;
     --reward-main: #30343f
+    --sidebar-bg: rgba(18, 18, 18, .8);
 }
