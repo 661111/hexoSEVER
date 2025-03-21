@@ -436,7 +436,7 @@ remark42:
 # https://artalk.js.org/guide/frontend/config.html
 artalk:
   server: https://comment.sxiaohe.top
-  site: 苏晓河DawnRiver
+  site: 莫言博客
   visitor: true
   option:
 
