@@ -878,7 +878,7 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   exclude:
     # - xxxx
 
@@ -951,12 +951,15 @@ inject:
     - <script defer src="/js/lib/zeptojs.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
     - <script defer src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
+    - <link rel="stylesheet" href="https://cdn.iocdn.cc/npm/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
+    - <link rel="stylesheet" href="https://blog.anheyu.com/css/essay_page/home_essay_bar.css">
   bottom:
     # - <script src="xxxx"></script>
     - <script defer src="https://cdn.iocdn.cc/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script>
     - <link rel="stylesheet" href="https://cdn.iocdn.cc/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload='this.media="all"'>
     - <script defer src="/js/fixed_card_widget.js"></script>
     - <script defer src="/js/lib/calendar.min.js"></script>
+    - <script defer src="/js/lib/jikemini.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

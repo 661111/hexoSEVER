@@ -46,8 +46,8 @@
         |           </div>
         |         </a>
         |       </div>
-        |       <div class="post_info" onclick="window.open('/article/${i.abbrlink}.html', '_self')">
-        |         <a class="article-title" href="/article/${i.abbrlink}.html" title="${i.title}">${i.title}</a>
+        |       <div class="post_info" onclick="window.open('/posts/${i.abbrlink}.html', '_self')">
+        |         <a class="article-title" href="/posts/${i.abbrlink}.html" title="${i.title}">${i.title}</a>
         |       </div>
         |     </div>`).join('');
         |   document.querySelector("#homeTopGroup>.top_post_group").innerHTML = postsHtml
