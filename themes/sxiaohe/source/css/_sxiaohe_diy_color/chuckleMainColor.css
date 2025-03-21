@@ -124,5 +124,6 @@
     --qx-ai-post-bg: rgba(48, 52, 63, 0.35);
     --qx-ai-border: 1px solid #3d3d3f;
     --qx-ai-tag-bg: #30343f;
+    --text-highlight-color: #fff;
     --reward-main: #30343f
 }
