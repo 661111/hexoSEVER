@@ -127,5 +127,5 @@
     --qx-ai-tag-bg: #30343f;
     --text-highlight-color: #fff!important;
     --reward-main: #30343f;
-    --sidebar-bg: rgba(18, 18, 18, .8)
+    --sidebar-bg: rgba(18, 18, 18, .8)!important
 }
