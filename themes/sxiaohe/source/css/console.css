@@ -57,7 +57,7 @@
 #console .console-btn-group {
   display: flex;
   position: absolute;
-  top: 565px;
+  top: auto;
   margin: 1rem auto 0 auto;
   justify-content: center;
   width: fit-content;
