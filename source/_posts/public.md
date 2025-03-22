@@ -4,6 +4,7 @@ description: 方便给需要的人使用
 date: '2025-03-22 12:45'
 updated: '2025-03-22 14:09'
 cover: https://sourceimage.s3.bitiful.net/img/default_cover_10.avif
+sticky: 1
 category:
   - 公益
 top_img: false
