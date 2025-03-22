@@ -436,7 +436,7 @@ remark42:
 # https://artalk.js.org/guide/frontend/config.html
 artalk:
   server: https://comment.sxiaohe.top
-  site: 莫言博客
+  site: 莫言小筑
   visitor: true
   option:
 
@@ -1029,7 +1029,7 @@ CDN:
     flickr_justified_gallery_css: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/css/justifiedGallery.min.css
     aplayer_css: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
     aplayer_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
-    meting_js: https://jsd.sxiaohe.top/npm/js-heo/metingjs/Meting.min.js
+    meting_js: https://cdn.iocdn.cc/npm/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js
     prismjs_js: https://jsd.sxiaohe.top/npm/prismjs@1.1.0/prism.js
     prismjs_lineNumber_js: https://jsd.sxiaohe.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
     prismjs_autoloader: https://jsd.sxiaohe.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
