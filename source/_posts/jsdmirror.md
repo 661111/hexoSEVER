@@ -98,8 +98,8 @@ X-Cache: Miss from cache
 
 ### 动态资源替换方案
 在主题模板中搜索 `custom_format`，替换为：
-```html
-<script src="https://{{yourdomain}}/npm/{{name}}@{{version}}/{{min_file}}" integrity="{{checksum}}" crossorigin="anonymous"></script>
+``` yml
+custom_format: https://{{yourdomain}}/npm/{{name}}@{{version}}/{{min_file}}
 ```
 
 ### 静态资源替换技巧
