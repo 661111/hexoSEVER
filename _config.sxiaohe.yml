@@ -877,14 +877,14 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: true
+  enable: false
   exclude:
     # - xxxx
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
 
 # Snackbar (Toast Notification 彈窗)
 # https://github.com/polonel/SnackBar
