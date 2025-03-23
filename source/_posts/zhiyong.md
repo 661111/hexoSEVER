@@ -1,0 +1,99 @@
+---
+title: 自用备忘录代码
+description: 自己的备忘录
+date: '2025-03-23 10:45'
+updated: '2025-03-23 14:09'
+cover: https://sourceimage.s3.bitiful.net/img/default_cover_65.avif
+category:
+  - hexo
+  - butterfly
+top_img: false
+tags:
+  - hexo
+  - butterfly
+  - 美化
+abbrlink: 2900kf
+---
+## hexo部署action代码
+以下为我本人目前使用的action代码（公开可参考）
+``` YML
+name: 自动部署
+on:
+  push:
+    branches:
+      - main
+  release:
+    types:
+      - published
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检查分支
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: 安装 Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "22.13.0"
+
+      - name: 安装 Hexo
+        run: |
+          export TZ='Asia/Shanghai'
+          npm install hexo-cli -g
+      - name: 缓存 Hexo
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: 安装依赖
+        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        run: |
+          npm install --global gulp-cli
+          npm update hexo --save
+          npm install --save
+          
+      - name: 生成轻量朋友圈需要的json文件
+        run: |
+          npm install yamljs --save
+          node link.js
+          node friend.js
+
+      - name: 生成追番页面文件
+        run: |
+          hexo bangumi -u
+
+      - name: 生成静态文件
+        run: |
+          hexo clean
+          hexo generate
+          gulp
+
+      - name: 推送到Github仓库
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.HEXO_TOKEN }}
+          repository-name: 661111/hexo-site-page
+          branch: main
+          folder: public
+          commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
+
+      - name: 推送到Github仓库(备份)
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.HEXO_TOKEN }}
+          repository-name: 661111/blog_html
+          branch: main
+          folder: public
+          commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
+```

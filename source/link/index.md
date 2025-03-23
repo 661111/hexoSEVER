@@ -5,6 +5,9 @@ type: link
 top_img: false
 aside: false
 ---
+<div class="addBtn"><button onclick="leonus.linkCom()"><i class="fa-solid fa-circle-plus"></i>快速申请 (默认样式)</button> <button onclick="leonus.linkCom(&quot;bf&quot;)"><i class="fa-solid fa-circle-plus"></i>快速申请 (Butterfly)</button></div>
+<link rel="stylesheet" href="/link/css/klink.css">
+<script src="/link/js/klink.js"></script>
 {% note primary simple %}1.建议原创文章大于6篇，且有一定的质量；2.一般需要拥有自己的域名而非github.io、eu.org、vercel.app等；{% endnote %}
 ```
 - name: 莫言小筑
