@@ -316,3 +316,13 @@ div#archive, div#category, div#tag {
 #article-container figure.highlight {
     border-radius: 7px;
 }
+
+/* 17.文章表格滚动条优化 */
+.table-wrap {
+    scrollbar-width: none;
+}
+
+/* 18.文章推荐卡片调整 */
+.relatedPosts>.relatedPosts-list>div {
+    border-radius: 18px;
+}
