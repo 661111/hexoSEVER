@@ -640,10 +640,10 @@ window.refreshFn = function () {
 
 {% link 友链朋友圈部署文档,友链朋友圈,https://fcircle-doc.yyyzyyyz.cn/#/backenddeploy %}
 
-# 友链朋友圈前端部署(旧朋友圈)
+## 友链朋友圈前端部署(旧朋友圈)
 
 {% link 友链朋友圈前端部署方案,苏晓河,https://www.sxiaohe.top/posts/2901kf.html %}
 
-# 主流说说部署
+## 主流说说部署
 
 {% link 即刻短文的三种部署方案,苏晓河,https://www.sxiaohe.top/posts/2900kf.html %}
