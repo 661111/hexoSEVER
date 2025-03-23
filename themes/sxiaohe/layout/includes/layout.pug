@@ -20,6 +20,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       #body-wrap(class=pageType)
         include ./header/index.pug
         include ./additional-style.pug
+        include ./sxiaohe_pug/add-js.pug
 
         main#content-inner.layout(class=hideAside)
           if body
@@ -49,5 +50,4 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
     !=partial('includes/third-party/search/index', {}, {cache: true})
     include ./additional-js.pug
     //- 自定义js文件（核心文件）
-    include ./sxiaohe_pug/add-js.pug
-    //- include ./sxiaohe_pug/widget/Floating_telescopic_sidebar.pug
+    include ./sxiaohe_pug/widget/Floating_telescopic_sidebar.pug
