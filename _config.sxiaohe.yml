@@ -960,6 +960,7 @@ inject:
     - <script defer src="/js/lib/calendar.min.js"></script>
     - <link rel="stylesheet" href="https://registry.npmmirror.com/cansin-blogdata/latest/files/css/APlayer.min.css" media="defer" onload="this.media='all'">
     - <script defer src="https://registry.npmmirror.com/cansin-blogdata/latest/files/js/APlayer.min.js" data-pjax></script>
+    - <script defer src="https://registry.npmmirror.com/cansin-blogdata/latest/files/js/gavin.min.js" data-pjax></script>
     - <script defer src="/js/lib/console.js"></script>
     - <script data-pjax>var meting_api='https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script>
     - <div class="global-music"> <div class="aplayer"> </div>
