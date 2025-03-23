@@ -326,3 +326,20 @@ div#archive, div#category, div#tag {
 .relatedPosts>.relatedPosts-list>div {
     border-radius: 18px;
 }
+
+/* 19.上下文章调整 */
+/* 19.1.上下篇文章图片调整 */
+#pagination .next-post img, #pagination .prev-post img, .postImgHover img, .relatedPosts>.relatedPosts-list>div img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1!important;
+}
+/* 19.2.边框调整 */
+nav#pagination {
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(56, 211, 203, 0.8);
+    border-image: initial;
+    border-radius: 10px;
+}
