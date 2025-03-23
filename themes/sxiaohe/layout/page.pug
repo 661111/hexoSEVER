@@ -5,7 +5,6 @@ block content
   #page
     if page.top_page && page.top_page === true
       include includes/sxiaohe_pug/page/icat_change.pug
-      link(rel='stylesheet', href="https://jsd.sxiaohe.top/hexo/css/page_css.css")
     else
       if top_img === false
         h1.page-title= page.title
