@@ -883,8 +883,8 @@ pjax:
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: true
-  per_page: true
+  enable: false
+  per_page: false
 
 # Snackbar (Toast Notification 彈窗)
 # https://github.com/polonel/SnackBar
@@ -958,6 +958,11 @@ inject:
     - <link rel="stylesheet" href="https://cdn.iocdn.cc/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload='this.media="all"'>
     - <script defer src="/js/fixed_card_widget.js"></script>
     - <script defer src="/js/lib/calendar.min.js"></script>
+    - <link rel="stylesheet" href="https://registry.npmmirror.com/cansin-blogdata/latest/files/css/APlayer.min.css" media="defer" onload="this.media='all'">
+    - <script defer src="https://registry.npmmirror.com/cansin-blogdata/latest/files/js/APlayer.min.js" data-pjax></script>
+    - <script defer src="/js/lib/console.js"></script>
+    - <script data-pjax>var meting_api='https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script>
+    - <div class="global-music"> <div class="aplayer"> </div>
     - <script defer src="/js/lib/jikemini.js"></script>
 
 # CDN
@@ -1026,9 +1031,9 @@ CDN:
     fontawesomeV6: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css
     flickr_justified_gallery_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
     flickr_justified_gallery_css: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/css/justifiedGallery.min.css
-    aplayer_css: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
-    aplayer_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
-    meting_js: https://cdn.iocdn.cc/npm/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js
+    aplayer_css: https://cdn.iocdn.cc/npm/cansin-blogdata@3.0.87/css/APlayer.min.css
+    aplayer_js: https://cdn.iocdn.cc/npm/cansin-blogdata@3.0.87/js/APlayer.min.js
+    meting_js: https://cdn.iocdn.cc/npm/cansin-blogdata@3.0.87/js/Meting.min.js
     prismjs_js: https://jsd.sxiaohe.top/npm/prismjs@1.1.0/prism.js
     prismjs_lineNumber_js: https://jsd.sxiaohe.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
     prismjs_autoloader: https://jsd.sxiaohe.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
