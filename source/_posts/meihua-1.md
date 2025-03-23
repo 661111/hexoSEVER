@@ -32,7 +32,8 @@ abbrlink: 20250205mg1
 8.[🍊博客魔改教程总结(五)](https://www.sxiaohe.top/posts/20250205mg5.html)
 {% endnote %}
 
-## 1.仿轻笑博客背景美化
+## 仿轻笑博客背景美化
+
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 {% folding cyan, 请查看教程内容 %}
@@ -80,23 +81,23 @@ abbrlink: 20250205mg1
 ```
 {% endfolding %}
 
-## 2.导航栏居中教程
+## 导航栏居中教程
 这里我放当前比较有效的教程
 {% link butterfly导航栏修改方案(自用方案),安知鱼,https://blog.anheyu.com/posts/8e53.html %}
 {% link 关于Butterfly的导航栏的一些教程,Ariasakaの小窝,https://blog.yaria.top/posts/895003b5 %}
 {% link Butterfly的魔改教程：导航栏魔改美化,Meuicat,https://meuicat.com/posts/2dbd58d6.html %}
 {% link butterfly导航栏修改方案,苏晓河,https://www.sxiaohe.top/posts/36435.html %}
 
-## 3.图标引入
+## 图标引入
 这里分为两种不同位置的自定义iconfont图标
-**1.导航栏添加**
+**导航栏添加**
 {% link 菜单栏多色动态图标（店长）,Fomalhaut🥝,https://www.fomal.cc/posts/5389e93f.html#%E5%BC%95%E5%85%A5iconfont%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E6%A0%87%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89 %}
 {% link 菜单栏多色动态图标,苏晓河,https://www.fomal.cc/ %}
 
-**2.社交添加**
+**社交添加**
 {% link Social卡片彩色图标引入（店长）,Fomalhaut🥝,https://www.fomal.cc/posts/5389e93f.html#Social%E5%8D%A1%E7%89%87%E5%BD%A9%E8%89%B2%E5%9B%BE%E6%A0%87%E5%BC%95%E5%85%A5%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89 %}
 
-## 4.侧边栏美化以及侧边栏卡片美化（轻笑）
+## 侧边栏美化以及侧边栏卡片美化（轻笑）
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 
@@ -179,7 +180,7 @@ abbrlink: 20250205mg1
 ```
 {% endfolding %}
 
-## 5.首页文章卡片美化（轻笑）
+## 首页文章卡片美化（轻笑）
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 {% folding cyan, 请查看教程内容 %}
@@ -241,10 +242,408 @@ abbrlink: 20250205mg1
 ```
 {% endfolding %}
 
-## 6.首页添加随机banner（轻笑）
+## 首页添加随机banner（轻笑）
 
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 
 **教程地址**
 {% link Banner随机文章展示(轻笑同款),苏晓河,https://www.sxiaohe.top/posts/18108.html %}
+
+## 首页文章隐藏文字
+**效果来源**
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+
+{% folding cyan, 请查看教程内容 %}
+
+这种隐藏文字的方式可以给大家展示出来，整个效果是非常可观的。
+``` CSS
+#recent-posts>.recent-post-item:hover .recent-post-info .content {
+    opacity: 1;
+    line-height: 1.5;
+    transition: all .3s
+}
+
+#recent-posts>.recent-post-item:hover .recent-post-info {
+    top: 0;
+    transition: all .3s
+}
+
+#recent-posts>.recent-post-item>.recent-post-info>.content {
+    opacity: 0;
+    line-height: .7;
+    transition: all .3s;
+    bottom: 0
+}
+```
+{% endfolding %}
+
+## 首页文章卡片美化
+**效果来源**
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+
+{% folding cyan, 请查看教程内容 %}
+既然已经添加了文章文字隐藏，那么就可以进行美化文章卡片
+``` CSS
+/* 首页文章卡片颜色 */
+#recent-posts>.recent-post-item {
+    border: 2px solid rgba(0, 255, 255, .6);
+    font-size: 14.5px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .67);
+}
+/* 首页文章卡片的图片样式 */
+#recent-posts>.recent-post-item .post_cover img.post_bg:hover {
+    transform: none
+}
+/* 首页文章卡片样式表调整 */
+#recent-posts > .recent-post-item >.recent-post-info > .article-title {
+    text-align: center;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap {
+    text-align: center;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .content {
+    text-align: center;
+}
+/* QCQX 首页文章卡片设置 */
+#recent-posts>.recent-post-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    overflow: hidden;
+    height: 200px
+}
+@media screen and (max-width: 768px) {
+    #recent-posts>.recent-post-item {
+        -webkit-box-orient:vertical;
+        -moz-box-orient: vertical;
+        -o-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: 300px
+    }
+}
+/* QCQX 首页文章卡片设置 */
+#recent-posts > .recent-post-item .post_cover img.post_bg {
+    border-radius: 12px;
+    transform: none;
+}
+/* 首页文章卡片bar */
+#recent-posts>.recent-post-item>.recent-post-info {
+    padding: 0 40px;
+    width: 57%
+}
+
+@media screen and (max-width: 768px) {
+    #recent-posts>.recent-post-item>.recent-post-info {
+        padding:2px 10px;
+        width: 100%
+    }
+}
+.recent-posts .recent-post-item .post-card-bar {
+    width: 5px;
+    height: 60px;
+    margin: auto;
+    position: absolute;
+    border-radius: 30px
+}
+.recent-posts .recent-post-item .left+.recent-post-info+.post-card-bar {
+    background: #00c4b6b6;
+    right: 5px
+}
+.recent-posts .recent-post-item .right+.recent-post-info+.post-card-bar {
+    background: #1dbfffb6;
+    left: 5px
+}
+@media screen and (min-width: 768px) {
+    #recent-posts>.recent-post-item .post_cover.left {
+        padding:7px 0 7px 7px;
+    }
+
+    #recent-posts>.recent-post-item .post_cover.right {
+        padding: 7px 7px 7px 0
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .recent-posts .recent-post-item .post-card-bar {
+        display:none
+    }
+
+    .ai-btn-box {
+        justify-content: center
+    }
+
+    .ai-recommend .ai-recommend-item {
+        width: 100%
+    }
+
+    #recent-posts>.recent-post-item .post_cover.left,#recent-posts>.recent-post-item .post_cover.right {
+        transition: all .3s;
+        padding: 5px 5px 0 5px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s
+    }
+
+    #recent-posts>.recent-post-item:hover .post_cover.left,#recent-posts>.recent-post-item:hover .post_cover.right {
+        padding: 0
+    }
+
+    #recent-posts>.recent-post-item .post_cover img.post_bg {
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s
+    }
+
+    #recent-posts>.recent-post-item:hover .post_cover img.post_bg {
+        border-radius: 12px 12px 5px 5px;
+        -webkit-border-radius: 12px 12px 5px 5px;
+        -moz-border-radius: 12px 12px 5px 5px;
+        -ms-border-radius: 12px 12px 5px 5px;
+        -o-border-radius: 12px 12px 5px 5px
+    }
+}
+```
+{% endfolding %}
+
+## 首页分类条美化
+**效果来源**
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+{% link 魔改笔记七：分类条及外链卡片,清羽飞扬,https://blog.liushen.fun/posts/a64defb4/ %}
+
+{% folding cyan, 请查看教程内容 %}
+教程基于清羽飞扬的教程和轻笑的样式进行魔改，感兴趣的可以去看。
+1.在[BlogRoot]\themes\butterfly\layout\includes中新建categoryBar.pug
+``` PUG
+.home-catalog-bar#catalog-bar
+  i.fa-fw.fas.fa-shapes
+  #catalog-list(class=is_home() ? 'home' : '')
+    .category-bar-item.catalog-shouye-item(class=is_home() ? 'select' : '', id="home-catalog-item")
+      a(href=url_for('/'))= __('博客')
+    each item in site.categories.find({ parent: { $exists: false } }).data
+      .category-bar-item(class=select ? (select === item.name ? 'select' : '') : '', id=item.name)
+        a(href=url_for(item.path))= item.name
+  a.category-bar-more(href=url_for('/categories/'))= __('更多分类')
+```
+2.然后将其添加到不同的位置，比如我这里实现了添加到分类页面等位置，配合上pjax可以做到无刷更新，效果很好，打开分类文件地址：[BlogRoot]\themes\butterfly\layout\category.pug和主页文件地址：[BlogRoot]\themes\butterfly\layout\index.pug，添加其中两行代码，去掉加号即为正常缩进。这个和原教程基本一样
+{% tabs 分栏 %}
+
+<!-- tab 分类文件 -->
+
+{% note warning flat %}
+注意：修改后需要将配置文件中，分类页面的主题改成index，否则不会显示。
+{% endnote %}
+
+``` PUG
+extends includes/layout.pug
+
+block content
+  if theme.category_ui == 'index'
+    include ./includes/mixins/post-ui.pug
+    #recent-posts.recent-posts.category_ui
++      #category-bar.category-bar
++        include includes/categoryBar.pug
+      +postUI
+      include includes/pagination.pug
+  else
+    include ./includes/mixins/article-sort.pug
+    #category
+      <div id="categories-chart" data-parent="true" style="height: 300px; padding: 10px;"></div>
+      .article-sort-title= _p('page.category') + ' - ' + page.category
+      +articleSort(page.posts)
+      include includes/pagination.pug
+```
+<!-- endtab -->
+
+<!-- tab 主页文件 -->
+``` PUG
+extends includes/layout.pug
+
+block content
+  include ./includes/mixins/post-ui.pug
+  #recent-posts.recent-posts
++    #category-bar.category-bar
++      include includes/categoryBar.pug
+    +postUI
+    include includes/pagination.pug
+```
+<!-- endtab -->
+{% endtabs %}
+3.在[BlogRoot]\source\css\custom.css自定义样式的文件中引入如下代码（这是我的，你可以自行微调）：
+```CSS
+/* 首页分类条 */
+.layout #recent-posts .home-catalog-bar {
+    background: var(--mj-card-bg);
+    border: var(--mj-style-border);
+    margin-top: 12px;
+    border-radius: 11px !important;
+    transition: .3s;
+    font-size: 15px;
+    padding: 5px .8rem;
+    animation: slide-in .5s .2s backwards;
+    will-change: transform;
+    -webkit-animation: slide-in .5s .2s backwards;
+}
+
+#catalog-bar {
+    padding: .4rem .8rem;
+    border-radius: .5rem;
+    display: flex;
+    border: 1px solid rgba(150, 150, 150, .2);
+    justify-content: space-between;
+}
+
+#catalog-bar i {
+    line-height: inherit;
+}
+
+#catalog-list {
+    margin: 0 .5rem;
+    display: flex;
+}
+
+.layout #recent-posts #catalog-bar #home-catalog-item {
+    border-radius: .5rem;
+}
+
+.layout #recent-posts #catalog-bar .catalog-shouye-item {
+    margin-right: 10px;
+}
+
+.layout #recent-posts #catalog-bar #home-catalog-item a {
+    background: #00c4b6f1;
+    color: #fff !important;
+    margin: 0 .2em;
+    padding: .2em .4em .3em;
+    font-weight: 700;
+    border-radius: .5rem;
+    color: var(--font-color);
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.catalog-list-item a {
+    margin: 0 .2em;
+    padding: .2em .4em .3em;
+    font-weight: 700;
+    border-radius: .5rem;
+    color: var(--font-color);
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.catalog-list-item a {
+    margin: 0 .2em;
+    padding: .2em .4em .3em;
+    font-weight: 700;
+    border-radius: .5rem;
+    color: var(--font-color);
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+```
+{% note warning flat %}
+注意：要想实现点击切换后，高亮部分跟随分类页面走的部分，需要修改源码，打开[BlogRoot]\themes\butterfly\source\js\main.js，添加js函数，比如我添加到了778行左右，switchComments函数的上面：
+``` JS
+/**
+   * 切换类别表
+   */ 
+  const setCategoryBarActive = () => {
+    const categoryBar = document.querySelector("#category-bar");
+    const currentPath = decodeURIComponent(window.location.pathname);
+    const isHomePage = currentPath === GLOBAL_CONFIG.root;
+
+    if (categoryBar) {
+        const categoryItems = categoryBar.querySelectorAll(".category-bar-item");
+        categoryItems.forEach(item => item.classList.remove("select"));
+
+        const activeItemId = isHomePage ? "category-bar-home" : currentPath.split("/").slice(-2, -1)[0];
+        const activeItem = document.getElementById(activeItemId);
+
+        if (activeItem) {
+            activeItem.classList.add("select");
+        }
+    }
+};
+```
+**然后再在引用部分执行这个函数，在同一个文件，找到下面的函数并添加函数的调用，位置看下方注释：**
+``` JS
+window.refreshFn = function () {
+  initAdjust()
+
+  if (GLOBAL_CONFIG_SITE.isPost) {
+    GLOBAL_CONFIG.noticeOutdate !== undefined && addPostOutdateNotice()
+    GLOBAL_CONFIG.relativeDate.post && relativeDate(document.querySelectorAll('#post-meta time'))
+  } else {
+    GLOBAL_CONFIG.relativeDate.homepage && relativeDate(document.querySelectorAll('#recent-posts time'))
+    GLOBAL_CONFIG.runtime && addRuntime()
+    addLastPushDate()
+    toggleCardCategory()
+    setCategoryBarActive()      // 切换类别栏目
+  }
+
+```
+{% endnote %}
+
+{% endfolding %}
+
+## 底部美化（其他版本）
+{% link 博客魔改教程总结(四),Fomalhaut🥝,https://www.fomal.cc/posts/d739261b.html %}
+{% link 页脚插件版,Marcus,https://blog.marcus233.top/p/footer.html %}
+
+## 侧边栏widget
+{% link 博客魔改教程总结(四),Fomalhaut🥝,https://www.fomal.cc/posts/d739261b.html %}
+{% link Butterfly 微博热搜侧边栏,Eurkon,https://blog.eurkon.com/post/38b005e1.html %}
+
+
+## 底部美化教程（轻笑版本）
+
+**原作者**
+{% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
+
+**教程地址**
+{% link 底部美化（图标）,苏晓河,https://www.sxiaohe.top/posts/10001kf.html %}
+
+## 友链朋友圈后端部署
+
+{% link Friend-Circle-Lite:轻量友链朋友圈,liushen,https://blog.liushen.fun/posts/4dc716ec/ %}
+
+{% link 友链朋友圈部署文档,友链朋友圈,https://fcircle-doc.yyyzyyyz.cn/#/backenddeploy %}
+
+# 友链朋友圈前端部署(旧朋友圈)
+
+{% link 友链朋友圈前端部署方案,苏晓河,https://www.sxiaohe.top/posts/2901kf.html %}
+
+# 主流说说部署
+
+{% link 即刻短文的三种部署方案,苏晓河,https://www.sxiaohe.top/posts/2900kf.html %}

@@ -30,17 +30,3 @@ abbrlink: 20250208mg3
 7.[🥕博客魔改教程总结(四)](https://www.sxiaohe.top/posts/20250205mg4.html)
 8.[🍊博客魔改教程总结(五)](https://www.sxiaohe.top/posts/20250205mg5.html)
 {% endnote %}
-
-## 友链朋友圈后端部署
-
-{% link Friend-Circle-Lite:轻量友链朋友圈,liushen,https://blog.liushen.fun/posts/4dc716ec/ %}
-
-{% link 友链朋友圈部署文档,友链朋友圈,https://fcircle-doc.yyyzyyyz.cn/#/backenddeploy %}
-
-# 2.友链朋友圈前端部署(旧朋友圈)
-
-{% link 友链朋友圈前端部署方案,苏晓河,https://www.sxiaohe.top/posts/2901kf.html %}
-
-# 3.主流说说部署
-
-{% link 即刻短文的三种部署方案,苏晓河,https://www.sxiaohe.top/posts/2900kf.html %}
