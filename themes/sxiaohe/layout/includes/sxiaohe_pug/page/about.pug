@@ -136,6 +136,24 @@
           transform: rotate(360deg)
         }
       }
+      /* 6.关于本站文字样式美化 */
+      [data-theme=dark] #about-page .author-title {
+        text-stroke: 1px #bccbe4;
+        -webkit-text-stroke: 1px #bccbe4;
+      }
+      #about-page .author-title {
+        font-size: 2.7rem;
+        font-weight: 700;
+        margin-top: 1px;
+        letter-spacing: 6px;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(90deg, #2ca2b4, #5598de 24%, #7f87ff 45%, #f65aad 85%, #df80b4);
+        background-clip: text;
+        display: inline-block;
+        color: transparent;
+        text-stroke: 2px #3fdaee;
+        -webkit-text-stroke: 1px #3fdaee;
+      }
     .author-tag-left
       span.author-tag 💻 Like数码科技
       span.author-tag 🥣 干饭魂 干饭人
@@ -151,7 +169,7 @@
       span.author-tag 专攻各种困难 🔨
       span.author-tag 人不狠话超多 💢
     .image-dot
-  p.p.center.logo.large 关于我
+  p.p.center.logo.large 关于本站
   .author-content
     .author-content-item.myInfoAndSayHello
       .title1 你好，很高兴认识你👋
