@@ -1,8 +1,8 @@
 ---
-title: SSH软件推荐
-description: 整合目前好用免费的SSH工具
+title: Xterminal内网穿透到服务器
+description: 在windows上的服务内网穿透到云服务器
 date: '2025-03-25 20:00'
-ipdate: '2025-03-25 8:00'
+ipdate: '2025-03-26 20:00'
 cover: 'https://sourceimage.s3.bitiful.net/img/default_cover_43.avif'
 category:
   - hexo
@@ -13,19 +13,42 @@ tags:
   - butterfly
 abbrlink: 16506
 ---
-## Xterminal(一款美观且好用的开发工具)
-Xterminal 是一款专为开发者、运维人员设计的跨平台终端管理工具，支持 Windows、macOS 和 Linux 系统。它不仅是一个高效的 SSH/SFTP 客户端，还集成了 AI 智能提示、实时系统监控、多标签管理等功能，旨在优化远程开发、服务器运维等场景的操作体验。
+## 前言
+由于我本人使用云服务器给自己搭建一些服务（比如：我的世界java版）的时候，总是被一些人恶意炸毁。导致存档频繁受损，而且服务器的负载高，所以我在想怎么根绝这种情况。在开启服务的时候可以正常游玩，且数据存放在本地。后来用上电脑后，以及游玩宝可梦整合包（其实没多少时间玩）后，发现重新启动后ip地址会变换（后来使用网线没有出现这种情况），而且端口会随机变换。在经过网上一些视频知道了内网穿透，将本机的localhost（127.0.0.1）及端口切换到云服务器（内网穿透的共享服务器）上解决。一个云服务器最高不超过65500个端口。大部分在网上公益的内网穿透工具都是基于他们自己的云服务器，可能你想要在里面新建一个内网穿透的话（可能很难找到一些靠近自己的地区），那么自己从零开始搭建内网穿透云服务器吧。
+如果想要知道原理的可以在这两篇文章中去知道，后续也会更新这个方向的：
+[内网穿透详解](https://www.cnblogs.com/cyrus0w/p/13123504.html)
+[也许你也用得上的技术，从零开始了解内网穿透](https://sspai.com/post/88937)
 
-推荐指数：🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟
-优点：具有的集中管理、独立密钥、分类配色、服务器时延、可多级创建文件夹、可以使用rdp（Windows远程工具）本地终端（PowerShell）笔记、SSH隧道（跳板机或者内网穿透，搭配SSH中已经创建的远程连接云服务器使用）、telnet（Internet远程登录服务）、SSH（远程链接服务器）、工具（软件里面的ai）、登陆凭证、快捷操作、可定制化的服务器远程终端等等······
-缺点：云端同步，一部分命令提示以及命令解释，自定义背景以及颜色想要会员。
-文档：[帮助文档](https://www.yuque.com/u64817/isrom7)
-软件下载：[Xterminal](https://www.xterminal.cn/)
+## 操作环境
+1.服务器地区：香港地区
+2.服务器版本：CentOS Stream 8 x86_64(Py3.7.9)
+3.服务器管理系统：宝塔面板企业版（开心版本）
+4.内网穿透软件：Xterminal的SSH隧道
 
-## Termius(一款跨平台的神器)
-Termius 是一款支持多平台（Windows、macOS、Linux、iOS、Android）的现代化 SSH 客户端工具，以跨设备云同步、安全性和高效操作为核心，成为开发者、运维人员及技术爱好者的远程管理利器。其界面简洁直观，功能覆盖 SSH、SFTP、Mosh、Telnet 等协议，适用于服务器管理、代码调试、网络设备配置等场景。以下是其核心特性与优势的总结：
+## 实操
 
-推荐指数：🌟🌟🌟🌟🌟🌟
-优点：SFTP 功能（不过修改只能在本地保存在上传，无法在线修改）、云同步与数据安全（免费可以保证基础数据同步）、智能补全与脚本片段（可以在脚本标签页中输入命令后后续可调用保存的命令）、多标签与分屏（免费最高不超过4个标签页）
-缺点：没有中文（中文用户不习惯且不知道是什么意思，需要手动去安装中文包且不知道是否有毒）、订阅价格（大部分没有Visa等外汇卡无法支付）
-软件下载：[TerMius](https://termius.com/)
+1. 下载Xterminal软件
+打开以下链接：[更好用的开发工具，但不止于Terminal](https://www.xterminal.cn/)，按照一步一步的去安装，安装路径不要在C盘（防止存储爆满导致的系统卡顿）
+
+2. 服务器选择
+推荐在一些比较有售后的云服务器发售平台，比如：[雨云](https://app.rainyun.com/)、[林柚云](https://www.youvps.cn/)等等······
+如果就想要低价格的话可以去[林柚云](https://www.youvps.cn/)里的一些特惠机器。
+
+3. 链接云服务器
+1.打开ssh页面
+点击左上角的SSH图标，进入SSH页面：
+![1](https://cdn.nlark.com/yuque/0/2024/png/181068/1717647325841-b21b71dd-aa2c-49ab-bb46-41c372814fb7.png?x-oss-process=image%2Fformat%2Cwebp)
+2.新建服务器
+点击SSH列表右侧的“+”按钮新建服务器并按照内容进行填写：
+![1](https://sourceimage.s3.bitiful.net/post%2Fimg%2F16506%2F1.png)
+
+4. 添加内网穿透
+1.打开内网穿透页面
+点击左上角的SSH隧道图标，进入SSH隧道：
+![1](https://sourceimage.s3.bitiful.net/post%2Fimg%2F16506%2F2.png)
+
+2.新建SSH隧道
+点击SSH隧道列表右侧的“+”按钮新建服务器并按照内容进行填写
+![1](https://sourceimage.s3.bitiful.net/post/img/16506/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=X8fla5EwxMzIjQ0aDNQLjk44%2F20250326%2F%2Fs3%2Faws4_request&X-Amz-Date=20250326T132314Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=06b84117ea4e8abf5b888658255b26acc1f66554911b82a4b3a94a15803f8702)
+
+3.服务器Nginx反向代理
