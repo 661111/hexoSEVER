@@ -52,3 +52,40 @@ abbrlink: 16506
 ![1](https://sourceimage.s3.bitiful.net/post/img/16506/3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=X8fla5EwxMzIjQ0aDNQLjk44%2F20250326%2F%2Fs3%2Faws4_request&X-Amz-Date=20250326T132314Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=06b84117ea4e8abf5b888658255b26acc1f66554911b82a4b3a94a15803f8702)
 
 3.服务器Nginx反向代理
+- 新建一个网站（需要域名已经解析到云服务器）
+![新建网站](add.png)
+
+- 开启SSL选项
+打开SSL申请页面，按照以下过程进行如果正常的话则会成功
+![](https://sourceimage.s3.bitiful.net/post%2Fimg%2F16506%2F4.png)
+
+- 开启反向代理
+
+我这里安装好了一个网盘服务端，在终端输入以下代码：
+``` BASH
+alist start
+```
+终端输出：
+``` BASH
+INFO[2025-03-27 15:01:16] reading config file: data\config.json
+INFO[2025-03-27 15:01:16] load config from env with prefix: ALIST_
+INFO[2025-03-27 15:01:16] init logrus...
+INFO[2025-03-27 15:01:16] init tool SimpleHttp success: ok
+INFO[2025-03-27 15:01:16] init tool PikPak success: ok
+WARN[2025-03-27 15:01:16] init tool qBittorrent failed: Post "http://localhost:8080/api/v2/auth/login": dial tcp 127.0.0.1:8080: connectex: No connection could be made because the target machine actively refused it.
+INFO[2025-03-27 15:01:16] init tool Thunder success: ok
+WARN[2025-03-27 15:01:16] init tool Transmission failed: failed get transmission version: can't get session values: 'session-get' rpc method failed: failed to execute HTTP request: Post "http://localhost:9091/transmission/rpc": dial tcp 127.0.0.1:9091: connectex: No connection could be made because the target machine actively refused it.
+INFO[2025-03-27 15:01:16] init tool 115 Cloud success: ok
+WARN[2025-03-27 15:01:16] init tool aria2 failed: failed get aria2 version: Post "http://localhost:6800/jsonrpc": dial tcp 127.0.0.1:6800: connectex: No connection could be made because the target machine actively refused it.
+INFO[2025-03-27 15:01:16] start HTTP server @ 0.0.0.0:5244
+FATA[2025-03-27 15:01:16] failed to start http: listen tcp 0.0.0.0:5244: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+```
+
+打开反向代理进行新建，这个目标URL替换为你自己的反代服务器的本地地址：
+
+![](https://sourceimage.s3.bitiful.net/post%2Fimg%2F16506%2F5.png)
+
+5. 打开你自己的域名，比如我自己的地址：[https://test.myxz.top](https://test.myxz.top)
+对于我本人来说，看到以下页面就说明正常：
+
+![](https://sourceimage.s3.bitiful.net/post%2Fimg%2F16506%2F6.png)
