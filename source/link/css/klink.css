@@ -33,6 +33,6 @@ button {
     margin-right: 10px;
 }
 .addBtn button:hover {
-    background: var(--theme-color);
-    color: #fff;
+    background: var(--global-bg);
+    color: var(--search-result-title);
 }
