@@ -17,15 +17,17 @@ script(type='text/javascript')
   |   window.DISQUS && document.getElementById('disqus_thread').children.length && setTimeout(() => window.disqusReset(), 200);
   | } 
 script(type='text/javascript')
-  | document.addEventListener('DOMContentLoaded', function () {
+  | function initPostBackgrounds() {
   |   const posts = document.querySelectorAll('#post-info');
   |   posts.forEach(function (post) {
-  |       const cover = post.getAttribute('data-cover');
-  |       if (cover) {
-  |           post.style.backgroundImage = `url(${cover})`;
-  |       }
+  |     const cover = post.getAttribute('data-cover');
+  |     if (cover) {
+  |       post.style.backgroundImage = `url(${cover})`;
+  |     }
   |   });
-  | });
+  | }
+  | document.addEventListener('DOMContentLoaded', initPostBackgrounds);
+  | document.addEventListener('pjax:complete', initPostBackgrounds);
 script(type='text/javascript')
   | if ('serviceWorker' in navigator)
   |   window.addEventListener('load', () => {
