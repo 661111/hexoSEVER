@@ -30,7 +30,12 @@ menu:
 # --------------------------------------
 essay:
   enable: true
-  modeOptions: heo
+  # 即刻短文仅展示前n条
+  # Jike short text only shows the first n
+  strip: 50
+  mode: local # local：本地静态 / json：动态json / memos：动态Memos
+  mode_link: https://memos.meuicat.com/api/v1/memo?creatorId=1&tag=说说 #动态模式地址
+  home_mini: heo
 
 # --------------------------- end ---------------------------
 ## abbrlink config
@@ -958,6 +963,7 @@ inject:
     - <script defer src="/js/fixed_card_widget.js"></script>
     - <script defer src="/js/lib/calendar.min.js"></script>
     - <script defer src="/js/lib/jikemini.js"></script>
+    - <script defer src="/js/waterfall.js"></script> # 瀑布流JS
 
 # CDN
 # Don't modify the following settings unless you know how they work

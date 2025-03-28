@@ -3,7 +3,10 @@ extends includes/layout.pug
 block content
   include ./includes/mixins/post-ui.pug
   #recent-posts.recent-posts
-    include includes/heo.pug
+    if theme.essay.enable && theme.essay.home_mini == 'meuicat'
+      include includes/meuicat_jike.pug
+    else if theme.essay.enable && theme.essay.home_mini == 'heo'
+      include includes/heo_jike.pug
     include includes/sxiaohe_pug/home/hometop.pug
     include includes/sxiaohe_pug/home/categoryBar.pug
     +postUI

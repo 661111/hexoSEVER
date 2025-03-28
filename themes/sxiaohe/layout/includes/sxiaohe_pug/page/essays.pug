@@ -1,25 +1,35 @@
-function whenDOMReady() {
+#icat-bber
+    section.icat-page
+        case theme.essay.mode
+            when 'local'
+                include ./jike-custom/local.pug
+            when 'json'
+                include ./jike-custom/json.pug
+            when 'memos'
+                include ./jike-custom/memos.pug
+script.
+  function whenDOMReady() {
   if (location.pathname == '/essay/') document.addEventListener('DOMContentLoaded', function () {setTimeout(() => { changeTime(), btf.loadLightbox(document.querySelectorAll('#icat-bber img')), window.lazyLoadInstance && window.lazyLoadInstance.update(), reflashWaterFall();}, 300)})
-}
-whenDOMReady()
-document.addEventListener("pjax:complete", whenDOMReady)
+  }
+  whenDOMReady()
+  document.addEventListener("pjax:complete", whenDOMReady)
 
-// 适配pjax
+  // 适配pjax
 
-window.onresize = () => {
+  window.onresize = () => {
   waterfall('#waterfall');
-};
+  };
 
-// 自适应
+  // 自适应
 
-function timeDiff(timeObj, today) => {
+  function timeDiff(timeObj, today) => {
   const timeObjUTC = Date.UTC(timeObj.getFullYear(), timeObj.getMonth(), timeObj.getDate());
   const todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
 
   const timeDiff = todayUTC - timeObjUTC;
   return Math.floor(timeDiff / (1000 * 3600 * 24));
-}
-function changeTime() {
+  }
+  function changeTime() {
   const timeElements = Array.from(document.getElementsByTagName("time"));
   const currentDate = new Date();
 
@@ -46,16 +56,16 @@ function changeTime() {
     }
     timeElement.textContent = timeString;
   });
-}
-function reflashWaterFall() {
+  }
+  function reflashWaterFall() {
   document.querySelector("#waterfall") &&
     setTimeout(function() {
       waterfall("#waterfall");
       document.getElementById("waterfall")
         .classList.add("show");
     }, 500);
-} // 加载显示 - 即刻短文
-function commentText(txt) {
+  } // 加载显示 - 即刻短文
+  function commentText(txt) {
   const inputs = ["#wl-edit", ".el-textarea__inner"];
   for (let i = 0; i < inputs.length; i++) {
     let el = document.querySelector(inputs[i]);
@@ -66,4 +76,36 @@ function commentText(txt) {
       el.setSelectionRange(-1, -1);
     }
   }
-} // 引用评论跳转 - 即刻短文
+  } // 引用评论跳转 - 即刻短文
+style.
+  #icat-bber .icat-page #waterfall .icat-bber-item .icat-bber-content .icat-bber-image .imgbox a {
+    height: 100px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    position: relative;
+  }
+  #icat-bber .icat-page #waterfall .icat-bber-item {
+    max-width: 32%;
+    width: 100%
+  }
+  @media screen and (max-width: 1200px) {
+  #icat-bber .icat-page #waterfall .icat-bber-item {
+    column-count: 3;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+  }
+  }
+  @media screen and (max-width: 900px) {
+  #icat-bber .icat-page #waterfall .icat-bber-item {
+    column-count: 2;
+  }
+  }
+  @media screen and (max-width: 480px) {
+  #icat-bber .icat-page #waterfall .icat-bber-item {
+    column-count: 1;
+  }
+  }
