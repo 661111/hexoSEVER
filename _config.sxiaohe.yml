@@ -877,7 +877,7 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   exclude:
     # - xxxx
 
@@ -951,7 +951,6 @@ inject:
     #- <link rel="stylesheet" href="/xxx.css">
     - <script defer src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
     - <link rel="stylesheet" href="https://cdn.iocdn.cc/npm/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
-    - <link rel="stylesheet" href="https://blog.anheyu.com/css/essay_page/home_essay_bar.css">
   bottom:
     # - <script src="xxxx"></script>
     - <script defer src="https://cdn.iocdn.cc/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script>
@@ -991,7 +990,7 @@ CDN:
     algolia_search_v4: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantsearch.js/2.10.5/instantsearch.min.js
     # instantsearch_v4:
     algolia_js: https://jsd.sxiaohe.top/npm/js-heo@1.0.11/algolia/algolia.min.js
-    pjax: https://lib.baomitu.com/pjax/0.2.8/pjax.min.js
+    # pjax: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js
     # gitalk:
     # gitalk_css:
     # blueimp_md5:
