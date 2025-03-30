@@ -33,6 +33,13 @@ if is_post()
 else
   nav#pagination
     .pagination
+      style.
+        .page-number {
+          border-radius: 8px;
+          padding: 0 10px 20px;
+          margin: 0 6px;
+          font-size: 1rem;
+        }
       if is_home()
         - options.format = 'page/%d/#content-inner'
       !=paginator(options)

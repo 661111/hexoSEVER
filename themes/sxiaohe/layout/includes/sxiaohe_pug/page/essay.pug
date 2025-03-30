@@ -1,6 +1,6 @@
-if site.data.essay
+#essay_page
   each i in site.data.essay
-    #essay_page
+    main
       script(async src="/js/waterfall.js")
       script(async src="/js/essay.js")
       style.
@@ -21,7 +21,7 @@ if site.data.essay
         section.timeline.page-1
           ul#waterfall.list
             each item, index in i.essay_list
-              if index < i.limit
+              if index < 30
                 li.bber-item
                   .bber-content
                     p.datacont= item.content

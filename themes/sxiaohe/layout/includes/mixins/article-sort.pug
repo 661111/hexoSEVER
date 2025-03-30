@@ -1,7 +1,7 @@
 mixin articleSort(posts, current)
   .article-sort
     - var year
-    - posts.each(function (article) {
+    - posts.each(function (article, post_index) {
       - let tempYear = date(article.date, 'YYYY')
       - let no_cover = article.cover === false || !theme.cover.archives_enable ? 'no-article-cover' : ''
       - let title = article.title || _p('no_title')
@@ -9,11 +9,10 @@ mixin articleSort(posts, current)
         - year = tempYear
         .article-sort-item.year= year
       .article-sort-item(class=no_cover)
-        a.article-sort-item-a(href=url_for(article.path) title=title)
         if article.cover && theme.cover.archives_enable
           a.article-sort-item-img(href=url_for(article.path) title=title)
             img(src=url_for(article.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)
-        .article-sort-item-info
+        .article-sort-item-info(style="margin-left: 10px;")
           a.article-sort-item-title(href=url_for(article.path) title=title)= title
           span.article-sort-item-index= (current - 1) * config.per_page + post_index + 1
           .article-sort-meta
@@ -35,3 +34,40 @@ mixin articleSort(posts, current)
             .article-sort-item-time
               time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))= date(article.date, config.date_format)
     - })
+//- mixin articleSort(posts, current)
+//-   .article-sort
+//-     - var year
+//-     - posts.each(function (article) {
+//-       - let tempYear = date(article.date, 'YYYY')
+//-       - let no_cover = article.cover === false || !theme.cover.archives_enable ? 'no-article-cover' : ''
+//-       - let title = article.title || _p('no_title')
+//-       if tempYear !== year
+//-         - year = tempYear
+//-         .article-sort-item.year= year
+//-       .article-sort-item(class=no_cover)
+//-         a.article-sort-item-a(href=url_for(article.path) title=title)
+//-         if article.cover && theme.cover.archives_enable
+//-           a.article-sort-item-img(href=url_for(article.path) title=title)
+//-             img(src=url_for(article.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)
+//-         .article-sort-item-info
+//-           a.article-sort-item-title(href=url_for(article.path) title=title)= title
+//-           span.article-sort-item-index= (current - 1) * config.per_page + post_index + 1
+//-           .article-sort-meta
+//-             .article-meta-wrap
+//-               if (theme.post_meta.page.categories && article.categories.data.length > 0)
+//-                 span.article-sort-item-categories
+//-                   i.iconfont.icon-fenlei
+//-                   each item, index in article.categories.data
+//-                     a(href=url_for(item.path)).article-meta__categories #[=item.name]
+//-                     if (index < article.categories.data.length - 1)
+//-                       span.article-meta__link •
+//-               if (theme.post_meta.page.tags && article.tags.data.length > 0)
+//-                 span.article-sort-item-tags
+//-                   i.iconfont.icon-biaoqian
+//-                   each item, index in article.tags.data
+//-                     a(href=url_for(item.path)).article-meta__tags #[=item.name]
+//-                     if (index < article.tags.data.length - 1)
+//-                       span.article-meta__link •
+//-             .article-sort-item-time
+//-               time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))= date(article.date, config.date_format)
+//-     - })
