@@ -9,6 +9,7 @@ block content
   else
     include ./includes/mixins/article-sort.pug
     #tag
+      #tags-chart(data-length="10" style="height: 300px; padding: 10px;")
       .article-sort-title= _p('page.tag') + ' - ' + page.tag
       +articleSort(page.posts, page.current)
       include includes/pagination.pug

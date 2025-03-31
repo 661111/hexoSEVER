@@ -2,13 +2,13 @@ extends includes/layout.pug
 
 block content
 block content
+  script(src="https://cdn.iocdn.cc/npm/echarts@4.9.0/dist/echarts.min.js")
   #page
     if page.top_page && page.top_page === true
       include includes/sxiaohe_pug/page/icat_change.pug
     else
       if top_img === false
         h1.page-title= page.title
-
     case page.type
       when 'essays'
         include includes/sxiaohe_pug/page/essays.pug
