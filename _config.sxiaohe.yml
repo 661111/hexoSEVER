@@ -955,12 +955,12 @@ inject:
     - <script defer src="/js/lib/zeptojs.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
     - <script defer src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
-    - <script defer src="https://cdn.smartcis.cn/npm/echarts@4.9.0/dist/echarts.min.js"></script>
-    - <link rel="stylesheet" href="https://cdn.smartcis.cn/npm/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
+    - <script defer src="https://jsdelivr.topthink.com/npm/echarts@4.9.0/dist/echarts.min.js"></script>
+    - <link rel="stylesheet" href="https://jsdelivr.topthink.com/npm/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
   bottom:
     # - <script src="xxxx"></script>
-    - <script defer src="https://cdn.smartcis.cn/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script>
-    - <link rel="stylesheet" href="https://cdn.smartcis.cn/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload='this.media="all"'>
+    - <script defer src="https://jsdelivr.topthink.com/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script>
+    - <link rel="stylesheet" href="https://jsdelivr.topthink.com/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload='this.media="all"'>
     - <script defer src="/js/fixed_card_widget.js"></script>
     - <script defer src="/js/lib/calendar.min.js"></script>
     - <script defer src="/js/lib/jikemini.js"></script>
@@ -985,7 +985,7 @@ CDN:
 
   # Custom format
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-  custom_format: https://cdn.smartcis.cn/npm/${name}@${version}/${min_file}
+  custom_format: https://s4.zstatic.net/npm/${name}@${version}/${min_file}
 
   option:
     main_css: /css/index.css
@@ -1032,9 +1032,9 @@ CDN:
     fontawesomeV6: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css
     flickr_justified_gallery_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
     flickr_justified_gallery_css: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/css/justifiedGallery.min.css
-    aplayer_css: https://cdn.smartcis.cn/npm/cansin-blogdata@3.0.87/css/APlayer.min.css
-    aplayer_js: https://cdn.smartcis.cn/npm/cansin-blogdata@3.0.87/js/APlayer.min.js
-    meting_js: https://cdn.smartcis.cn/npm/cansin-blogdata@3.0.87/js/Meting.min.js
+    # aplayer_css: https://jsdelivr.topthink.com/npm/cansin-blogdata@3.0.87/css/APlayer.min.css
+    # aplayer_js: https://jsdelivr.topthink.com/npm/cansin-blogdata@3.0.87/js/APlayer.min.js
+    # meting_js: https://jsdelivr.topthink.com/npm/cansin-blogdata@3.0.87/js/Meting.min.js
     prismjs_js: https://jsd.sxiaohe.top/npm/prismjs@1.1.0/prism.js
     prismjs_lineNumber_js: https://jsd.sxiaohe.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
     prismjs_autoloader: https://jsd.sxiaohe.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
