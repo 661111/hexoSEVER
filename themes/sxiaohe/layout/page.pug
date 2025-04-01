@@ -3,7 +3,7 @@ extends includes/layout.pug
 block content
 block content
   script(src="https://cdn.iocdn.cc/npm/echarts@4.9.0/dist/echarts.min.js")
-  #page
+  #page(style="border-radius: 18px; padding: 10px 35px;")
     if page.top_page && page.top_page === true
       include includes/sxiaohe_pug/page/icat_change.pug
     else
