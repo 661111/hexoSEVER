@@ -5,8 +5,7 @@ date: '2025-03-22 10:00'
 updated: '2025-03-22 5:03'
 cover: https://sourceimage.s3.bitiful.net/img/default_cover_21.avif
 category:
-  - 搭建
-  - 折腾
+  - 搭建网站
 top_img: false
 tags:
   - 网站内容加速

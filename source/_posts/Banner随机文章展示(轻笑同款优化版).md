@@ -6,7 +6,6 @@ updated: '2025-03-05 12:09'
 cover: https://sourceimage.s3.bitiful.net/img/default_cover_10.avif
 category:
   - hexo
-  - butterfly
 top_img: false
 tags:
   - hexo

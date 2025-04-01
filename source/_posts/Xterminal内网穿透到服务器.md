@@ -5,12 +5,11 @@ date: '2025-03-25 20:00'
 ipdate: '2025-03-26 20:00'
 cover: 'https://sourceimage.s3.bitiful.net/img/default_cover_43.avif'
 category:
-  - hexo
-  - butterfly
+  - 教程
 top_img: false
 tags:
-  - hexo
-  - butterfly
+  - 内网穿透
+  - 工具
 abbrlink: 16507
 ---
 ## 前言
