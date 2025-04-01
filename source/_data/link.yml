@@ -80,8 +80,8 @@
     - name: 葱苓小筑
       link: https://blog.ciraos.top
       avatar: https://blog.ciraos.top/avatar.avif
-      desc: Don't worry, be happy.
-      siteshot: https://blog.ciraos.top/siteshot.avif
+      desc: Don't worry, be happy
+      screenshot: https://blog.ciraos.top/siteshot.avif
 - class_name: 『博主』[3]
   class_desc: 窝自己以及旗下网站（公示）
   flink_style: img-link
