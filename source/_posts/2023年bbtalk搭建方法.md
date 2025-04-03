@@ -1,5 +1,5 @@
 ---
-title: '2023年bbtalk部署方式'
+title: 2023年bbtalk部署方式
 date: '2023-01-27 20:05'
 update: '2023-01-27 22:00'
 category:
@@ -8,7 +8,9 @@ top_img: false
 tags:
   - artalk
   - butterfly
-swiper_cover: https://cloud.myxz.top/d/img/default_cover_12.avif?sign=Fh0qjJ9vC0ggdUzVfIA6NxMOnaSx7pnhVfAzHm45oOs=:0
+swiper_cover: >-
+  https://cloud.myxz.top/d/img/default_cover_12.avif?sign=Fh0qjJ9vC0ggdUzVfIA6NxMOnaSx7pnhVfAzHm45oOs=:0
+abbrlink: 58408
 ---
 bbtalk部署方式：
 1. 在leancloud国际版去注册一个应用(没有就注册一个账号)
