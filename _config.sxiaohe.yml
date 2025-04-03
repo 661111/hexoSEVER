@@ -267,13 +267,14 @@ post_copyright:
 # Sponsor/reward
 reward:
   enable: true
+  coinAudio: https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a
   QR_code:
-    - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png
+    - img: https://cloud.myxz.top/d/pay/weixin.jpg?sign=fIEwlhu--1uH_rl6sfI7aimjDDxRmT-MaMN2F_dzg6c=:0
       link:
       text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
+    - img: https://cloud.myxz.top/d/pay/zfb.png?sign=jcRRGZcwiCDE27CtNsOPBqoTwhhRViiDtpBjgOLaaz0=:0
+      link:
+      text: alipay
 
 # Post edit
 # Easily browse and edit blog source code online.
@@ -1041,6 +1042,9 @@ CDN:
     artalk_js: https://jsd.sxiaohe.top/npm/artalk@2.9.1/dist/Artalk.js
     artalk_css: https://jsd.sxiaohe.top/npm/artalk@2.9.1/dist/Artalk.css
     card_weibo:  /sxiaohe_source/js/weibo.js ## 或者填写自己的 js 地址
+    # 打赏按钮投币效果
+    coin_js: /js/coin.js
+    coin_css: /css/coin.css
 
 #侧栏悬浮卡片控制按钮
 #https://akilar.top/posts/451ac5f8/

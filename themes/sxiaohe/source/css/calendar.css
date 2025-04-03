@@ -32,9 +32,6 @@ div#card-widget-calendar > .item-headline {
 div#card-widget-schedule > .item-headline {
     display: none;
 }
-.card-widget {
-    max-height: calc(100vh - 100px);
-}
 
 .card-times a,
 .card-times div {

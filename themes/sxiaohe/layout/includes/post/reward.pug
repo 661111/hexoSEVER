@@ -1,13 +1,78 @@
 .post-reward
-  .reward-button
-    i.fas.fa-qrcode
+  style.
+    .post-reward .reward-button {
+      display: inline-block;
+      padding: .2rem 2rem;
+      background: var(--btn-bg);
+      color: var(--btn-color);
+      cursor: pointer;
+      -webkit-transition: all .4s;
+      -moz-transition: all .4s;
+      -o-transition: all .4s;
+      -ms-transition: all .4s;
+      transition: all .4s;
+    }
+    .tip-button {
+      border: 0;
+      border-radius: 8px;
+      padding: .2rem 1.5rem;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: -4rem;
+      outline: 0;
+      position: relative;
+      top: 0;
+      transform-origin: 0 100%;
+      transition: transform 50ms ease-in-out;
+      width: auto;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .post-reward {
+      margin-top: 2px !important;
+    }
+  .tip-button.reward-button
     = ' ' + _p('donate')
-  .reward-main
+  .reward-main(style="height: 3rem;")
     ul.reward-all
       each item in theme.reward.QR_code
         - var clickTo = item.link ? item.link : item.img
         li.reward-item
           a(href=url_for(clickTo) target='_blank')
             img.post-qr-code-img(src=url_for(item.img) alt=item.text)
-          .post-qr-code-desc=item.text
-
+          .post-qr-code-desc(style="MARGIN-TOP: 0!IMPORTANT;")=item.text
+      a.reward-main-btn(href="/about/#about-reward" target="_blank")
+        .reward-text 赞赏者名单
+        .reward-dec 一个博客 一叶孤舟 一方世界
+      style.
+        .reward-main-btn {
+          background: var(--reward-main);
+          color: var(--font-color);
+          display: -webkit-box;
+          display: -moz-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: box;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -moz-box-orient: vertical;
+          -o-box-orient: vertical;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          border-radius: 12px;
+          padding: 4px 0;
+          border: var(--style-border-always);
+          margin-top: 10px;
+          width: 100%;
+        }
+        .reward-text {
+          margin-bottom: 2px;
+          font-weight: 700;
+          font-size: 18px;
+          padding: 2px 0;
+        }
+        .reward-dec {
+          font-weight: 400;
+          font-size: 14px;
+          padding: 2px 0;
+        }

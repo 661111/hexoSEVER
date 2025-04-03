@@ -10,7 +10,23 @@
     .blok
     .text
       .strip
-      <div class="post-reward"><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a class="about-reward" href="" target="_blank"><img class="post-qr-code-img" src="" alt="微信"></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a class="about-reward" href="" target="_blank"><img class="post-qr-code-img" src="" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><button class="tip-button reward-button"><span class="tip-button__text">投 喂</span></button></div>
+      .post-reward.reward-card
+        button.reward-button.tip-button
+          span.tip-button__text 投 喂
+        .reward-main(style="width: 400% !important; left: -300PX !important;")
+          ul.reward-all(style="padding: 0px 0px!important;")
+            li.reward-item
+              a.about-reward(href="" target="_blank")
+                img.post-qr-code-img(alt="微信" src="https://sourceimage.s3.bitiful.net/pay/weixin.jpg")
+              .post-qr-code-desc 微信
+            li.reward-item
+              a.about-reward(href="" target="_blank")
+                img.post-qr-code-img(alt="支付宝" src="https://cloud.myxz.top/d/pay/zfb.png?sign=jcRRGZcwiCDE27CtNsOPBqoTwhhRViiDtpBjgOLaaz0=:0")
+              .post-qr-code-desc 支付宝
+      style.
+        .post-qr-code-desc {
+          MARGIN-TOP: -30PX;
+        }
   .option
     i.fas.fa-music
     .blokbottom
