@@ -1,0 +1,1 @@
+import{a as f}from"./index.BSdFiPHn.js";let i=(o={})=>{let e=f(o);return e.setKey=function(t,a){let l=e.value;typeof a>"u"&&t in e.value?(e.value={...e.value},delete e.value[t],e.notify(l,t)):e.value[t]!==a&&(e.value={...e.value,[t]:a},e.notify(l,t))},e};const s=i({top:!1,right:!1,bottom:!1,left:!1});export{s as d};

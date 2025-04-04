@@ -1,0 +1,1 @@
+function i(){let e=16;innerHeight>innerWidth?innerWidth/innerHeight>750/1334?e*=innerHeight/1334:e*=innerWidth/750:innerWidth/innerHeight>1920/1080?e*=innerHeight/1080:e*=innerWidth/1920,document.documentElement.style.fontSize=e+"px"}i();window.addEventListener("resize",i);

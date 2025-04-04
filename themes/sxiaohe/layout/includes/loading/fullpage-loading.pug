@@ -1,26 +1,137 @@
-#loading-box(onclick='document.getElementById("loading-box").classList.add("loaded")')
-  .loading-bg
-    div.loading-img
-    .loading-image-dot
-
-script.
-  const preloader = {
-    endLoading: () => {
-      document.body.style.overflow = 'auto';
-      document.getElementById('loading-box').classList.add("loaded")
-    },
-    initLoading: () => {
-      document.body.style.overflow = '';
-      document.getElementById('loading-box').classList.remove("loaded")
-
+//- #loading-box(onclick='document.getElementById("loading-box").classList.add("loaded")' style="opacity: 1;background-color: #272727;")
+//-   .loading.line.left-0.right-0.transition-all.duration-1000.ease-in-out
+//-   .loading.line.top-0.bottom-0.transition-all.duration-1000.ease-in-out
+//-   .loading-bg(style="justify-content: center;padding-top: 8rem;")
+//-     .flex-grow
+//-     .loading-svg
+//-       i.myxzfont.myxzfonttitle_arknights(style="font-size: 35px;")
+//-     //- .loading-image-dot
+//-     .flex-grow
+//-     .loading-body(style="margin-top: 20.125rem;display: flex;align-items: flex-end;")
+//-       .loading-body-left(style="flex: none;margin-left: auto;margin-right: 18.125rem;width: 10.5rem;")
+//-         i.myxzfont.myxzfonta-wenben11(style="font-size: 10px;")
+//-       .loading-body-right(style="flex: none;margin-right: auto;width: 840px;")
+//-         .loading-body-right-bar
+//-           .loading-body-right-bar-1(style="width: 100%;height: 2px;background-color: #a4a4a4;")
+//-           .loading-body-right-bar-2
+//-         .loading-body-right-powerby
+//-           span.powername ARKNIGHTS
+//-           span.power-br
+//-           span.powersite https://ak.hypergryph.com/
+astro-island(await-children="" client="load" component-export="Init" component-url="/_astro/Init.C7nNBPoM.js" opts="{&quot;name&quot;:&quot;Init&quot;,&quot;value&quot;:true}" prefix="r0" props="{}" renderer-url="/_astro/client.BY2mA-CD.js" uid="Z21gHtG")
+  div(class="fixed inset-0 bg-[#272727] flex flex-col items-center justify-center z-50 font-benderBold transition-opacity duration-1000 opacity-0")
+    div(class="absolute left-0 right-0 h-[0.05vw] bg-[#686767] transition-all duration-1000 ease-in-out top-[-5vw]")
+    div(class="absolute top-0 bottom-0 w-[0.05vw] bg-[#686767] transition-all duration-1000 ease-in-out right-[-5vw]")
+    .flex.flex-col.h-full.items-center.justify-center.w-full
+      .flex-grow
+      div(class="flex items-center justify-center mb-[2vw]")
+        svg(class="w-[13vw] h-[17vw] max-w-full text-[rgb(164,164,164)]" viewBox="0 0 254 119")
+          use(xlink:href="#svg_def-title_arknights")
+      .flex-grow
+      div(class="w-full max-w-[90vw] px-[2vw] absolute" style="top:75%")
+        .flex.items-start
+          div(class="whitespace-nowrap mr-[15vw] text-[1.2vw]" style="color:rgb(164,164,164)")
+            span © YUE_PLUS
+          div(class="flex-grow  pl-[5vw] pr-[5.5vw]")
+            div(class="relative h-[0.3vw] flex items-center" style="background-color:transparent")
+              div(class="absolute left-0 w-[0.3vw] h-[0.3vw]" style="background-color:rgb(164,164,164)")
+              div(class="absolute right-0 w-[0.3vw] h-[0.3vw]" style="background-color:rgb(164,164,164)")
+              div(class="absolute top-[0.1vw] left-0 right-0 h-[0.1vw]" style="background-color:rgb(164,164,164)")
+              div(class="absolute top-0 left-0 h-[0.3vw] transition-all duration-300 ease-linear" style="width: 100%; background-color: rgb(97, 206, 250);")
+            div(class="flex justify-between items-center mt-[0.8vw]")
+              div(class="flex items-center text-[0.8vw]" style="color:#61cefa")
+                svg(class="w-[0.8vw] h-[0.8vw] mr-[0.4vw]" viewBox="0 0 13 11")
+                  use(xlink:href="#svg_def-icon_dblArrow")
+                span
+              div(class="flex items-center text-[0.8vw]" style="color:rgb(164,164,164)")
+                span
+                span(class="mx-[0.8vw]")
+                span
+      .flex-grow
+style.
+  /* 图标字体封装 */
+  @font-face {
+    font-family: "myxzfont"; /* Project id 4820164 */
+    src: url('//at.alicdn.com/t/c/font_4820164_njx234ke56b.woff2?t=1743686975558') format('woff2')
+  }
+  .myxzfont {
+    font-family: "myxzfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .myxzfonta-wenben11:before {
+    content: "\e604";
+  }
+  .myxzfonttitle_arknights:before {
+    content: "\e602";
+  }
+  .myxzfontgonggao:before {
+    content: "\e61d";
+  }
+  /* 加载动画主体 */
+  .loading-bg {
+    flex-direction: column!important;
+    align-items: center!important;
+  }
+  .loading-body-right-bar{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-left: 6px solid #a4a4a4;
+    border-right: 6px solid #a4a4a4;
+    display: flex;
+    align-items: center;
+  }
+  .loading-body-right-bar-2 {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #18d1ff;
+    transition: progress auto ease-in-out;
+  }
+  ._canvas-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  @keyframes progress {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 50%;
+    }
+    100% {
+      width: 100%;
     }
   }
-  window.addEventListener('load',()=> { preloader.endLoading() })
 
-  if (!{theme.pjax && theme.pjax.enable}) {
-    document.addEventListener('pjax:send', () => { preloader.initLoading() })
-    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-  }
+
+script.
+//-   const preloader = {
+//-     endLoading: () => {
+//-       document.body.style.overflow = 'auto';
+//-       document.getElementById('loading-box').classList.add("loaded")
+//-     },
+//-     initLoading: () => {
+//-       document.body.style.overflow = '';
+//-       document.getElementById('loading-box').classList.remove("loaded")
+
+//-     }
+//-   }
+//-   window.addEventListener('load',()=> { preloader.endLoading() })
+
+//-   if (!{theme.pjax && theme.pjax.enable}) {
+//-     document.addEventListener('pjax:send', () => { preloader.initLoading() })
+//-     document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+//-   }
 //- ._b775b841(style="transform: translateY(0px);")
 //-   ._7c7241c0
 //-     ._dd208b33

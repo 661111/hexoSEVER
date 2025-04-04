@@ -1,0 +1,11 @@
+.fixed {
+    position: fixed
+}
+.absolute {
+    position: absolute
+}
+@media (orientation: portrait) {
+    .portrait\:absolute {
+        position: absolute
+    }
+}
