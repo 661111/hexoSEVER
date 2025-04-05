@@ -19,7 +19,7 @@
 //-           span.power-br
 //-           span.powersite https://ak.hypergryph.com/
 astro-island(await-children="" client="load" component-export="Init" component-url="/_astro/Init.C7nNBPoM.js" opts="{&quot;name&quot;:&quot;Init&quot;,&quot;value&quot;:true}" prefix="r0" props="{}" renderer-url="/_astro/client.BY2mA-CD.js" uid="Z21gHtG")
-  div(class="fixed inset-0 bg-[#272727] flex flex-col items-center justify-center z-50 font-benderBold transition-opacity duration-1000 opacity-0")
+  div(class="fixed inset-0 bg-[#272727] flex flex-col items-center justify-center z-50 font-benderBold transition-opacity duration-1000 opacity-0" stle="display: flex;width: 100%;height: 100%;position: fixed;")
     div(class="absolute left-0 right-0 h-[0.05vw] bg-[#686767] transition-all duration-1000 ease-in-out top-[-5vw]")
     div(class="absolute top-0 bottom-0 w-[0.05vw] bg-[#686767] transition-all duration-1000 ease-in-out right-[-5vw]")
     .flex.flex-col.h-full.items-center.justify-center.w-full
@@ -48,6 +48,12 @@ astro-island(await-children="" client="load" component-export="Init" component-u
                 span(class="mx-[0.8vw]")
                 span
       .flex-grow
+script(defer src="https://sourceimage.s3.bitiful.net/js%2Flib%2F_loading_init%2FSvgIcons.TWd2scc6.js")
+script(defer src="https://sourceimage.s3.bitiful.net/js%2Flib%2F_loading_init%2Findex.B52nOzfP.js")
+script(defer src="https://sourceimage.s3.bitiful.net/js%2Flib%2F_loading_init%2Findex.BSdFiPHn.js")
+script(defer src="https://sourceimage.s3.bitiful.net/js%2Flib%2F_loading_init%2Findex.CUIWiGkV.js")
+script(defer src="https://sourceimage.s3.bitiful.net/js%2Flib%2F_loading_init%2Fjsx-runtime.CRkqtJS5.js")
+script(defer src="https://sourceimage.s3.bitiful.net/js%2Flib%2F_loading_init%2FrootLayoutStore.iSVMtIyF.js")
 style.
   /* 图标字体封装 */
   @font-face {
@@ -70,49 +76,133 @@ style.
   .myxzfontgonggao:before {
     content: "\e61d";
   }
-  /* 加载动画主体 */
-  .loading-bg {
-    flex-direction: column!important;
-    align-items: center!important;
+  /* 美化加载动画 */
+  .duration-1000 {
+    transition-duration: 1s;
   }
-  .loading-body-right-bar{
-    position: relative;
-    width: 100%;
-    height: 6px;
-    border-left: 6px solid #a4a4a4;
-    border-right: 6px solid #a4a4a4;
-    display: flex;
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+  }
+  .opacity-100 {
+    opacity: 1;
+  }
+  .font-benderBold {
+    font-family: Bender-Bold;
+  }
+  .bg-\[\#272727\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(39 39 39 / var(--tw-bg-opacity));
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .items-center {
     align-items: center;
   }
-  .loading-body-right-bar-2 {
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: #18d1ff;
-    transition: progress auto ease-in-out;
+  .flex-col {
+    flex-direction: column;
   }
-  ._canvas-loading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  .flex {
+    display: flex
+  ;
   }
-  @keyframes progress {
-    0% {
-      width: 0;
-    }
-    50% {
-      width: 50%;
-    }
-    100% {
-      width: 100%;
-    }
+  .z-50 {
+    z-index: 50;
+  }
+  .inset-0 {
+    inset: 0;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .ease-in-out {
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
   }
 
+  .duration-1000 {
+    transition-duration: 1s;
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+  }
+  .bg-\[\#686767\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(104 103 103 / var(--tw-bg-opacity));
+  }
+  .h-\[0\.05vw\] {
+    height: .05vw;
+  }
+  .top-\[5vw\] {
+    top: 5vw;
+  }
+  .right-0 {
+    right: 0;
+  }
+  .left-0 {
+    left: 0;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-grow, .grow {
+    flex-grow: 1;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+  .flex {
+    display: flex
+  ;
+  }
+  .mb-\[2vw\] {
+    margin-bottom: 2vw;
+  }
+  .text-\[rgb\(164\,164\,164\)\] {
+    --tw-text-opacity: 1;
+    color: rgb(164 164 164 / var(--tw-text-opacity));
+  }
+  .max-w-full {
+    max-width: 100%;
+  }
+  .w-\[13vw\] {
+    width: 13vw;
+  }
+  .h-\[17vw\] {
+    height: 17vw;
+  }
+  svg, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
 
 script.
 //-   const preloader = {

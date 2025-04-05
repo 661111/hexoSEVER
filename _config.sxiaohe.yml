@@ -713,7 +713,7 @@ subtitle:
 
 # Loading Animation (加載動畫)
 preloader:
-  enable: true
+  enable: false
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
@@ -954,7 +954,6 @@ css_prefix: true
 inject:
   head:
     - <script defer src="/js/lib/zeptojs.min.js"></script>
-    - <script defer src="/_astro/Init.C7nNBPoM"></srcipt>
     #- <link rel="stylesheet" href="/xxx.css">
     - <script defer src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
     - <script defer src="https://jsdelivr.topthink.com/npm/echarts@4.9.0/dist/echarts.min.js"></script>
