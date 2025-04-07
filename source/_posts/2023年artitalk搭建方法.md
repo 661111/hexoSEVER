@@ -8,8 +8,7 @@ top_img: false
 tags:
   - artalk
   - butterfly
-swiper_cover: >-
-  https://cloud.myxz.top/d/img/default_cover_12.avif?sign=Fh0qjJ9vC0ggdUzVfIA6NxMOnaSx7pnhVfAzHm45oOs=:0
+cover: https://cloud.myxz.top/d/img/default_cover_12.avif?sign=Fh0qjJ9vC0ggdUzVfIA6NxMOnaSx7pnhVfAzHm45oOs=:0
 abbrlink: 26069
 ---
 
