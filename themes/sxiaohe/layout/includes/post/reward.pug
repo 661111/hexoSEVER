@@ -30,19 +30,48 @@
     .post-reward {
       margin-top: 2px !important;
     }
-  .tip-button.reward-button
-    = ' ' + _p('donate')
-  .reward-main(style="height: 3rem;")
-    ul.reward-all
-      each item in theme.reward.QR_code
-        - var clickTo = item.link ? item.link : item.img
-        li.reward-item
-          a(href=url_for(clickTo) target='_blank')
-            img.post-qr-code-img(src=url_for(item.img) alt=item.text)
-          .post-qr-code-desc(style="MARGIN-TOP: 0!IMPORTANT;")=item.text
-      a.reward-main-btn(href="/about/#about-reward" target="_blank")
-        .reward-text 赞赏者名单
-        .reward-dec 一个博客 一叶孤舟 一方世界
+  button.tip-button.reward-button
+    span.tip-button__text(style="margin-right: 0;")= _p('donate')
+    //- .coin-wrapper
+    //-   .coin
+    //-     .coin__middle
+    //-     .coin__back
+    //-     .coin__front
+    .reward-main
+      style.
+        .post-reward .reward-button .reward-main {
+          bottom: 40px;
+          z-index: 100;
+          padding: 0 0 15px!important;
+          width: 400%!important;
+          left: -150%!important;
+        }
+        .post-reward .reward-button .reward-main .reward-all .reward-main-btn:hover {
+          color: #fff;
+          background: #49b1f5;
+          -webkit-box-shadow: 0 8px 12px -3px rgba(238, 125, 121, .212);
+          box-shadow: 0 8px 12px -3px rgba(238, 125, 121, .212);
+        }
+      .reward-all(style="margin: 0 auto")
+        ul.reward_qrcode_item
+          style.
+            .reward_qrcode_item {
+              display: inline-block;
+              display: flex;
+              margin: 0;
+              padding: 1rem 0.5rem;
+              border-radius: 12px;
+              background: var(--reward-pop);
+            }
+          each item in theme.reward.QR_code
+            - var clickTo = (item.itemlist||item).link ? (item.itemlist||item).link : (item.itemlist||item).img
+            li.reward-item
+              a(href=clickTo target='_blank')
+                img.post-qr-code-img(src=url_for((item.itemlist||item).img) alt=(item.itemlist||item).text)
+              .post-qr-code-desc(style="MARGIN-TOP: 0!IMPORTANT;")=(item.itemlist||item).text
+        a.reward-main-btn(href="/about/#about-reward" target="_blank")
+          .reward-text 赞赏者名单
+          .reward-dec 一个博客 一叶孤舟 一方世界
       style.
         .reward-main-btn {
           background: var(--reward-main);
@@ -76,3 +105,81 @@
           font-size: 14px;
           padding: 2px 0;
         }
+//- .post-reward
+//-   style.
+//-     .post-reward .reward-button {
+//-       display: inline-block;
+//-       padding: .2rem 2rem;
+//-       background: var(--btn-bg);
+//-       color: var(--btn-color);
+//-       cursor: pointer;
+//-       -webkit-transition: all .4s;
+//-       -moz-transition: all .4s;
+//-       -o-transition: all .4s;
+//-       -ms-transition: all .4s;
+//-       transition: all .4s;
+//-     }
+//-     .tip-button {
+//-       border: 0;
+//-       border-radius: 8px;
+//-       padding: .2rem 1.5rem;
+//-       font-size: 20px;
+//-       font-weight: 600;
+//-       margin-bottom: -4rem;
+//-       outline: 0;
+//-       position: relative;
+//-       top: 0;
+//-       transform-origin: 0 100%;
+//-       transition: transform 50ms ease-in-out;
+//-       width: auto;
+//-       -webkit-tap-highlight-color: transparent;
+//-     }
+//-     .post-reward {
+//-       margin-top: 2px !important;
+//-     }
+//-   .tip-button.reward-button
+//-     = ' ' + _p('donate')
+//-   .reward-main(style="height: 3rem;")
+//-     ul.reward-all
+//-       each item in theme.reward.QR_code
+//-         - var clickTo = item.link ? item.link : item.img
+//-         li.reward-item
+//-           a(href=url_for(clickTo) target='_blank')
+//-             img.post-qr-code-img(src=url_for(item.img) alt=item.text)
+//-           .post-qr-code-desc(style="MARGIN-TOP: 0!IMPORTANT;")=item.text
+//-       a.reward-main-btn(href="/about/#about-reward" target="_blank")
+//-         .reward-text 赞赏者名单
+//-         .reward-dec 一个博客 一叶孤舟 一方世界
+//-       style.
+//-         .reward-main-btn {
+//-           background: var(--reward-main);
+//-           color: var(--font-color);
+//-           display: -webkit-box;
+//-           display: -moz-box;
+//-           display: -webkit-flex;
+//-           display: -ms-flexbox;
+//-           display: box;
+//-           display: flex;
+//-           -webkit-box-orient: vertical;
+//-           -moz-box-orient: vertical;
+//-           -o-box-orient: vertical;
+//-           -webkit-flex-direction: column;
+//-           -ms-flex-direction: column;
+//-           flex-direction: column;
+//-           border-radius: 12px;
+//-           padding: 4px 0;
+//-           border: var(--style-border-always);
+//-           margin-top: 10px;
+//-           width: 100%;
+//-         }
+//-         .reward-text {
+//-           margin-bottom: 2px;
+//-           font-weight: 700;
+//-           font-size: 18px;
+//-           padding: 2px 0;
+//-         }
+//-         .reward-dec {
+//-           font-weight: 400;
+//-           font-size: 14px;
+//-           padding: 2px 0;
+//-         }
