@@ -1,0 +1,6 @@
+- wiki_list:
+    - icon: https://fastly.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/icon.svg
+      title: stellar
+      description: 测试
+      links: /
+      br: stellar

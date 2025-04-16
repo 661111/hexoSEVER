@@ -10,6 +10,10 @@ block content
       if top_img === false
         h1.page-title= page.title
     case page.type
+      when 'wiki'
+        include wikione.pug
+      when 'wiki_post'
+        include wiki_post.pug
       when 'essays'
         include includes/sxiaohe_pug/page/essays.pug
       when 'essay'
