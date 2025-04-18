@@ -1,7 +1,6 @@
 extends includes/layout.pug
 
 block content
-block content
   script(src="https://cdn.iocdn.cc/npm/echarts@4.9.0/dist/echarts.min.js")
   #page(style="border-radius: 18px; padding: 10px 35px;")
     if page.top_page && page.top_page === true
@@ -10,10 +9,6 @@ block content
       if top_img === false
         h1.page-title= page.title
     case page.type
-      when 'wiki'
-        include wikione.pug
-      when 'wiki_post'
-        include wiki_post.pug
       when 'essays'
         include includes/sxiaohe_pug/page/essays.pug
       when 'essay'

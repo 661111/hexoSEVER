@@ -1,0 +1,103 @@
+//- 文件路径: themes/butterfly/layouts/wiki/wiki_item.pug
+.article.banner.top
+  .content
+    .bread-nav.footnote.top
+      .left
+        #post-meta.flex-row
+          span.created.text
+            | 更新于：
+            time(datetime= page.date)= page.chinesedate
+    .bottom.only-title
+      .text-area
+        h1.text.title
+          span= page.title || _p('no_title')
+style.
+  .banner.top {
+    border-radius: 16px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .article.banner {
+        --button-hover-bg: rgba(255, 255, 255, 0.15);
+    }
+  }
+  .banner.top {
+    border-radius: 16px;
+  }
+  .article.banner {
+    --button-hover-bg: rgba(0, 0, 0, 0.05);
+  }
+  .article.banner {
+    --text-banner: var(--text);
+    height: unset;
+    background: var(--block);
+    margin: 0px;
+  }
+  .banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .banner .content {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .article.banner .content .top {
+    align-items: flex-start;
+    margin: 1rem calc(-4px + 1rem);
+  }
+  .banner .content .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1;
+    margin: 1rem;
+  }
+  .bread-nav {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-banner);
+  }
+  .footnote {
+    --fsp: 0.8125rem;
+    font-size: var(--fsp);
+  }
+  .bread-nav .flex-row {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+  }
+  .bread-nav span.text {
+    padding: 4px;
+  }
+  .banner .bottom {
+    display: fle;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+  .article.banner .content .bottom.only-title .title {
+    padding: 0.75rem 0px;
+  }
+  .article.banner .content .title {
+    font-size: calc(26px);
+    color: var(--text-banner);
+  }
+  .article.banner .content h1 {
+    line-height: 1.2;
+    margin: 0.25rem 0px;
+  }
+  .banner .text-area .text {
+    line-height: 1.2;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }

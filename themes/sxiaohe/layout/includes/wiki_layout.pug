@@ -26,7 +26,6 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
           if body
             div!= body
           else
-            block info-top
             block content
             if theme.aside.enable && page.aside !== false
               include widget/index.pug
