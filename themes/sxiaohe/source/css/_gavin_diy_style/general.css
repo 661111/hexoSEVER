@@ -1,0 +1,188 @@
+/* ******************通用CSS库******************** */
+/* ******************作者：gavin****************** */
+.eject {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: 0.5s ease;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.eject.show {
+    pointer-events: all;
+}
+
+.eject-mask {
+    background: var(--gavin-mask);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+}
+
+.show .eject-mask {
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+.eject-head {
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: .5s ease;
+}
+
+.show .eject-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.eject-head>span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.eject-head-btns {
+    gap: 15px;
+}
+
+.eject-head .settings-btn,
+.eject-head .close-btn {
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.eject-head .settings-btn i,
+.eject-head .close-btn i {
+    line-height: 1;
+    font-size: 35px;
+}
+
+@media screen and (max-width: 768px) {
+    .eject-head {
+        top: 15px;
+        left: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .eject-head>span {
+        font-size: 22px;
+    }
+
+    .eject-head .settings-btn,
+    .eject-head .close-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .eject-head .settings-btn i,
+    .eject-head .close-btn i {
+        font-size: 32px;
+    }
+}
+
+.c-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a:hover {
+    color: var(--gavin-highlight);
+}
+
+hr {
+    /* border: 1px dashed var(--dis-f-0); */
+    border-width: 0;
+}
+/* 
+hr::before {
+    content: "";
+} */
+
+#page-header #site-title {
+    font-family: xiaozhuan;
+    font-weight: 100;
+    user-select: none;
+    font-size: 5em;
+}
+
+#article-container {
+    /* font-family: Jinbu; */
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 加密文章适配 */
+.hbe-container > div {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    #page-header #site-title {
+        font-size: 3.6em;
+    }
+
+    #article-container {
+        font-size: 1em;
+    }
+}
+
+/* #aside-content .card-info .card-info-data {
+    font-family: Jinbu;
+} */
+
+.gc-180 {
+    transform: rotate(180deg);
+}
+
+.gc-45 {
+    transform: rotate(45deg);
+}
+
+.fs-1 {
+    font-size: 1.05em;
+    line-height: 1;
+    font-weight: 200;
+}
+
+.fs-2 {
+    font-size: 1.15em;
+    line-height: 1;
+    font-weight: 200;
+}
+
+.fs-3 {
+    font-size: 1.25em;
+    line-height: 1;
+    font-weight: 200;
+}

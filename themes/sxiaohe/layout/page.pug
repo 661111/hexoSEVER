@@ -5,9 +5,6 @@ block content
   #page(style="border-radius: 18px; padding: 10px 35px;")
     if page.top_page && page.top_page === true
       include includes/sxiaohe_pug/page/icat_change.pug
-    else
-      if top_img === false
-        h1.page-title= page.title
     case page.type
       when 'essays'
         include includes/sxiaohe_pug/page/essays.pug

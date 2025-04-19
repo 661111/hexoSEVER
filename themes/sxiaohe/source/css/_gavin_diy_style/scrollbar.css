@@ -1,0 +1,39 @@
+/* ************************************************************滚动条样式********************************************************** */
+*::-webkit-scrollbar {
+    width: 9px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: var(--gavin-background);
+}
+
+*::-webkit-scrollbar-thumb {
+    /* --gavin-scroll-bg */
+    background-color: rgba(var(--gavin-theme-color), .4);
+    border-radius: 2em;
+    border: 2px solid var(--gavin-background); /* 可以留有空隙 */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--gavin-highlight) !important;
+}
+
+*::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* ::-webkit-scrollbar-thumb {
+    background-image: -webkit-linear-gradient(
+        45deg,
+        transparent 20%,
+        var(--gavin-scrollbar-light) 20%,
+        var(--gavin-scrollbar-light) 40%,
+        transparent 40%,
+        transparent 60%,sss
+        var(--gavin-scrollbar-light) 60%,
+        var(--gavin-scrollbar-light) 80%,
+        transparent 80%,
+        transparent
+        );
+} */

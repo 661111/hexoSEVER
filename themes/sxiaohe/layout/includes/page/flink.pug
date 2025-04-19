@@ -1,5 +1,47 @@
 #article-container
   include ./flink_css.pug
+  style.
+    div#page {
+      border: none!important;
+      background: none!important;
+      padding: 0!important
+    }
+  if theme.linkPageTop && theme.linkPageTop.enable
+    #flink-banners
+      .banner-top-box
+        .flink-banners-title
+          .banners-title-small 友情链接
+          .banners-title-big=theme.linkPageTop ? theme.linkPageTop.title : "与数百名博主无限进步"
+        .banner-button-group
+          a.banner-button.secondary.no-text-decoration(onclick="friendChainRandomTransmission()")
+            i.anzhiyufont.anzhiyu-icon-paper-plane1(style="margin-right: 8px;")
+              span.banner-button-text 随机访问
+          //- if theme.linkPageTop.addFriendPlaceholder && theme.comments.use == 'Twikoo' && theme.twikoo.envId
+          //-   a.banner-button.no-text-decoration(onclick="anzhiyu.addFriendLink()")
+          //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+          //-     span.banner-button-text 申请友链
+      #skills-tags-group-all
+        .tags-group-wrapper
+          - function getAvatarWithoutExclamationMark(url) {
+          -   const index = url.indexOf('!');
+          -   return index !== -1 ? url.substring(0, index) : url;
+          - }
+          each y in [1,2]
+            each i, index in site.data.link.slice(0, 15)
+              - const link_list = i.link_list.slice()
+              - const hundredSuffix = i.hundredSuffix ? i.hundredSuffix : ""
+              - const evenNum = link_list.filter((x, index) => index % 2 === 0);
+              - const oddNum = link_list.filter((x, index) => index % 2 === 1);
+              each item, index2 in link_list.slice(0, Math.min(evenNum.length, oddNum.length))
+                - const index = index2 * 2
+                if (index <= 15 && typeof evenNum[index] !== 'undefined' && typeof oddNum[index] !== 'undefined')
+                  - let oddNumAvatar = getAvatarWithoutExclamationMark(oddNum[index].avatar);
+                  - let evenNumAvatar = getAvatarWithoutExclamationMark(evenNum[index].avatar);
+                  .tags-group-icon-pair
+                    a.tags-group-icon.no-text-decoration(href=url_for(evenNum[index].link), title=evenNum[index].name)
+                      img.no-lightbox(title=evenNum[index].name, src=url_for(evenNumAvatar + hundredSuffix) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=evenNum[index].name)
+                    a.tags-group-icon.no-text-decoration(href=url_for(oddNum[index].link), title=oddNum[index].name)
+                      img.no-lightbox(title=oddNum[index].name, src=url_for(oddNumAvatar + hundredSuffix) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=oddNum[index].name)
   .flink
     if site.data.link
       each i in site.data.link

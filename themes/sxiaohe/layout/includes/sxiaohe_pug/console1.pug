@@ -1,26 +1,21 @@
-div#console
-    div.console-head
+#console.c-c.eject
+    .eject-head
         span 控制中心
-    div.close-btn(onclick="ctrl.hideConsole()" href="javascript:void(0);")
-        i.fas.fa-circle-xmark
-    div.console-items
-        .console-left 
-            .card_bg
-            
-    div.console-btn-group
+        .c-c.eject-head-btns
+        .close-btn(onclick="ctrl.hideConsole()")
+            i.fas.fa-circle-xmark
+    .console-btn-group
         div.console-btn-item#darkItem
             a.switchButton#darkSwitchBtn(onclick="ctrl.switchDarkMode()" title="深色模式" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
                 i#iconDarkMode.fas.fa-moon
-
         div.console-btn-item#charItem
             a.switchButton#charSwitchBtn(type="button" title="簡/繁" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
                 i#iconCharMode.fas(style="font-size:1.5rem;") 繁
-
-        div.console-btn-item#ircItem
-            a.switchButton#ircSwitchBtn(onclick="ctrl.ircShowHide()" title="歌词显示" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
-                i#iconIrcMode.fas(style="font-size:1.5rem;") 词
-
+        //- div.console-btn-item#ircItem
+        //-     a.switchButton#ircSwitchBtn(onclick="ctrl.ircShowHide()" title="桌面歌词" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
+        //-         i#iconIrcMode.fas(style="font-size:1.5rem;") 词
         div.console-btn-item#asideItem
             a.switchButton#asideSwitchBtn(onclick="ctrl.hideAsideBtn()" title="单栏/双栏" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external")
                 i#iconAside.fas.fa-arrows-alt-h
-    div.console-mask(onclick="ctrl.hideConsole()" href="javascript:void(0);" rel="external nofollow")
+
+    div.console-mask(onclick="ctrl.consoleBackBtn()" href="javascript:void(0);" rel="external nofollow")
