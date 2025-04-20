@@ -15,11 +15,11 @@
         .banner-button-group
           a.banner-button.secondary.no-text-decoration(onclick="friendChainRandomTransmission()")
             i.anzhiyufont.anzhiyu-icon-paper-plane1(style="margin-right: 8px;")
-              span.banner-button-text 随机访问
-          //- if theme.linkPageTop.addFriendPlaceholder && theme.comments.use == 'Twikoo' && theme.twikoo.envId
-          //-   a.banner-button.no-text-decoration(onclick="anzhiyu.addFriendLink()")
-          //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-          //-     span.banner-button-text 申请友链
+            span.banner-button-text 随机访问
+          if theme.linkPageTop.addFriendPlaceholder && theme.comments.use == 'Twikoo' && theme.twikoo.envId
+            a.banner-button.no-text-decoration(onclick="anzhiyu.addFriendLink()")
+              i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+              span.banner-button-text 申请友链
       #skills-tags-group-all
         .tags-group-wrapper
           - function getAvatarWithoutExclamationMark(url) {
