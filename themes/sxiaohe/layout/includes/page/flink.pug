@@ -16,10 +16,9 @@
           a.banner-button.secondary.no-text-decoration(onclick="friendChainRandomTransmission()")
             i.anzhiyufont.anzhiyu-icon-paper-plane1(style="margin-right: 8px;")
             span.banner-button-text 随机访问
-          if theme.linkPageTop.addFriendPlaceholder && theme.comments.use == 'Twikoo' && theme.twikoo.envId
-            a.banner-button.no-text-decoration(onclick="anzhiyu.addFriendLink()")
-              i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-              span.banner-button-text 申请友链
+          a.banner-button.no-text-decoration(onclick="addFriendLinksInFooter()")
+            i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            span.banner-button-text 申请友链
       #skills-tags-group-all
         .tags-group-wrapper
           - function getAvatarWithoutExclamationMark(url) {
@@ -37,7 +36,7 @@
                 if (index <= 15 && typeof evenNum[index] !== 'undefined' && typeof oddNum[index] !== 'undefined')
                   - let oddNumAvatar = getAvatarWithoutExclamationMark(oddNum[index].avatar);
                   - let evenNumAvatar = getAvatarWithoutExclamationMark(evenNum[index].avatar);
-                  .tags-group-icon-pair
+                  .tags-group-icon-pair(style="margin-left: 1rem;")
                     a.tags-group-icon.no-text-decoration(href=url_for(evenNum[index].link), title=evenNum[index].name)
                       img.no-lightbox(title=evenNum[index].name, src=url_for(evenNumAvatar + hundredSuffix) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=evenNum[index].name)
                     a.tags-group-icon.no-text-decoration(href=url_for(oddNum[index].link), title=oddNum[index].name)
