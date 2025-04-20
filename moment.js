@@ -7,7 +7,7 @@ let friends = [],
     data_f = YML.parse(fs.readFileSync('source/_data/link.yml').toString().replace(/(?<=rss:)\s*\n/g, ' ""\n'));
 
 data_f.forEach((entry, index) => {
-    let lastIndex = data_f.length - 4; // 这里需要按照你们的修改，这里的4表示我后面四项是不需要的，我只需要爬取后四项之前的所有类别即可
+    let lastIndex = data_f.length; // 这里需要按照你们的修改，这里的4表示我后面四项是不需要的，我只需要爬取后四项之前的所有类别即可
     if (index < lastIndex) {
         const filteredLinkList = entry.link_list.filter(linkItem => !blacklist.includes(linkItem.name));
         friends = friends.concat(filteredLinkList);
