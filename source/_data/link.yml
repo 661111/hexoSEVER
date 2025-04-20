@@ -82,6 +82,15 @@
       avatar: https://blog.ciraos.top/avatar.avif
       desc: Don't worry, be happy
       screenshot: https://blog.ciraos.top/siteshot.avif
+    - name: ❖星港◎Star☆
+      link: https://blog.starsharbor.com
+      avatar: https://bu.dusays.com/2025/04/11/67f92f6fcfb26.webp
+      descr: 以博客记录生活与热爱！
+    - name: 呓语梦轩
+      link: https://blog.awaae001.top
+      avatar: https://image.m-c.top/?/images/2024/01/13/Pqeh0v6VaK/ico.jpg
+      descr: 用心享受生活
+      rss: https://blog.awaae001.top/atom.xml
 - class_name: 『博主』[3]
   class_desc: 窝自己以及旗下网站（公示）
   flink_style: img-link
