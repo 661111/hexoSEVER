@@ -1,4 +1,4 @@
-function friendChainRandomTransmission() {
+function travelling() {
     fetch("https://moments.myxz.top/randomfriend").then((e=>e.json())).then((e=>{
             var t = e.link
                 , o = "点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：「" + e.name + "」";
