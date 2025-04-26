@@ -1,0 +1,9 @@
+- level_up_head:
+    - name: 控制中心
+  level_up_menu:
+    - id: '#one'
+      onclick: codm.level_up()
+      level_up_item:
+        - id: '#one'
+          onclick: codm.level_up_item()
+          icon: 'fas fa-moon'

@@ -1,0 +1,108 @@
+/* 神话升级页面 */
+/* 作者：莫言小栈 */
+/* 控制台基础样式 */
+.codm_console {
+    margin: 0 auto;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s ease-out;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+.codm_console.show {
+    opacity: 1;
+    pointer-events: all;
+    background:url(https://sourceimage.s3.bitiful.net/img/default_cover_43.avif) no-repeat center/cover
+}
+/* 控制台显示头部以及基础样式 */
+.console_head {
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: .5s ease;
+}
+.show .console_head {
+    opacity: 1;
+    transform: translateY(0)
+}
+.head-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close_up_bottom{
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    right: 5%;
+    top: 5%;
+    font-size: 35px;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+}
+.level_up {
+    margin-top: 20px;
+}
+.level_up a {
+    width: 100%;
+    height: 100%;
+    background: var(--f-0);
+    border: var(--style-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--font-color);
+    transition: all .5s;
+}
+.level_up_group {
+    display: grid;
+    margin: 1rem auto 0 auto;
+    justify-content: center;
+    width: fit-content;
+    top: auto !important;
+}
+.level_up_group #left {
+    display: flex;
+    position: absolute;
+    top: 565px;
+    justify-content: space-between;
+    width: 290px;
+    opacity: 0;
+    transition: .5s ease;
+}
+.console-btn-item {
+    width: 4rem;
+    height: 4rem;
+    transition: 0.5s ease;
+    cursor: pointer;
+    transform: scale(1) translateY(0px);
+}
+a#one {
+    width: 100%;
+    height: 100%;
+    background: var(--f-0);
+    border: var(--style-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--font-color);
+    transition: all .5s;
+}

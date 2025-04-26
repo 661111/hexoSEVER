@@ -1,0 +1,28 @@
+.codm_console
+    each i in site.data.codm
+        each head in i.level_up_head
+            .console_head
+                span= head.name
+                .head-btn
+                    .close_up_bottom(onclick="codm.hideCodmConsole()")
+                        i.fas.fa-circle-xmark
+        each id in i.level_up_menu
+            .level_up_group#left(style="margin-left:360px")
+                .console-btn-item(id=id.id)
+                    a.level_up(onclick=id.onclick)
+                        i#iconDarkMode.fas.fa-moon
+        each level_up in i.level_up_menu.level_up_item
+            .level_up_group#right
+                .level_up_item(id=level_up.id)
+                    a.level_up(onclick=level_up.onclick)
+                        i(class=level_up.icon)
+        .card_info
+        //- each group in i.level_up_group
+        //-     .card_info
+        //-         .card_info_head
+        //-             h1.info_head_name= group.head_name
+        //-         .card_info_body 
+        //-             img.card_info_icon(src=group.icon style="width:200px")
+        //-             .card_info_desc
+        //-                 span= group.desc
+        //-             a.button.codm(href=group.link) 开始使用
