@@ -1,4 +1,4 @@
-var codm = {
+var codmConsoleShowOfHide = {
     // 控制台显示与隐藏
     showCodmConsole: function() {
         document.querySelector(".codm_console").classList.add("show");
@@ -8,7 +8,6 @@ var codm = {
         document.querySelector(".codm_console").classList.remove("show");
     }
 }
-
 // 全局变量定义
 var codm = {
     // 初始化标志
@@ -16,7 +15,7 @@ var codm = {
     
     // 配置参数
     config: {
-      jsonUrl: '/data/codm.json',
+      jsonUrl: '/codm.json',
       defaultContent: 'default'
     },
   
