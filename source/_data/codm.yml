@@ -1,5 +1,10 @@
 - level_up_head:
     - name: 控制中心
+  level_up_group:
+    - head_name: test1
+      icon: https://www.myxz.top/img/avatar.avif
+      desc: testtesttesttest
+      link: /
   level_up_menu:
     - id: '#one'
       onclick: codm.level_up()
