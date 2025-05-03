@@ -1,0 +1,26 @@
+- class_name: 📺 电影
+  class_desc: #分类描述
+  link_list:
+    - name: 让子弹飞 #名字
+      img: /other/s29651678.webp #图片链接
+      score: 5 # 1-5星
+      icon: fa-solid fa-film #左上角图标
+      tip: 电影 # 右上角文字
+      url: # 可选
+# - collect_list:
+#     - title: "藏宝阁"
+#       tip: "收藏"
+#       image: "https://cdn.leonus.cn/other/58549087b0d8455eb399ff0dba34f6c0.webp"
+#       collect_title_info:
+#         - collect_list_icon: "📚"
+#           collect_list_name: "书籍"
+#           collect_list_number: "4"
+#       collect_menu:
+#         - collect_list_title: "CSS世界"
+#           collect_list_image: "/other/s29651678.webp"
+#           collect_body_head:
+#             - collect_body_head_icon: "fa-solid fa-book"
+#               collect_body_head_tag: "书籍"
+#           collect_body_info:
+#             - collect_body_info_book_name: "CSS世界"
+#               collect_body_info_star_level: ★★★★★

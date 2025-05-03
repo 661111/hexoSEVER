@@ -987,7 +987,6 @@ inject:
     - <script defer src="/js/lib/random.js"></script>
     - <script defer src="/js/waterfall.js"></script> # 瀑布流JS
     - <script defer src="/js/lib/console.min.js"></script>
-    - <script defer src="/js/lib/codm.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

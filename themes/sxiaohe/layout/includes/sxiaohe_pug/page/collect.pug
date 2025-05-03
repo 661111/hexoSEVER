@@ -1,0 +1,109 @@
+#article-container
+  .collect
+    - let collectPageContent = page.content
+    if site.data.collect
+      - let result = ""
+      each i in site.data.collect
+        - let className = i.class_name ? `<h2 ${i.class_desc?'':'style="margin-bottom:12px"'}>${i.class_name} (${i.link_list.length})</h2>` : ""
+        - let classDesc = i.class_desc ? `<div class="collect-desc">${i.class_desc}</div>` : ""
+        - let listResult = ""
+        each j in i.link_list
+          - 
+            listResult += `
+              <${j.url ? "a href='" + j.url + "'" : "div"} title="${j.name}" referrerPolicy="no-referrer" class="collect_box" style="${j.img?`background-image: url(${j.img})`:'background-color: #333;'}">
+                  <div class="collect_top">
+                    <i class="${j.icon?j.icon:'fa-solid fa-film'}"></i>
+                    <span>${j.tip?j.tip:'电影'}</span>
+                  </div>
+                  <div class="collect_content">
+                    <span>${j.name?j.name:'未知'}</span>
+                    <div>${j.score?toStar(j.score):toStar(0)}</div>
+                  </div>
+                </${j.url?"a":"div"}>
+              `
+          -
+        - result += `${className}${classDesc} <div class="collect-list">${listResult}</div>`
+      - collectPageContent = collectPageContent + result
+    != collectPageContent
+//- .collect
+//-     style.
+//-         /* 页面初始化 */
+//-         .page-title{
+//-             display: none;
+//-         }
+//-         .page-top-card{
+//-             background-color: #666;
+//-         }
+//-         /* 页面初始化结束 */
+//-         .game-box {
+//-             border: var(--leonus-border);
+//-             width: calc(100% / 4 - 9px);
+//-             min-width: unset;
+//-             max-width: unset;
+//-             padding-right: 10px;
+//-             margin: 0;
+//-         }
+//-         .movie-list {
+//-             display: flex;
+//-             gap: 12px;
+//-             flex-wrap: wrap;
+//-         }
+//-         .game-box .today {
+//-             position: absolute;
+//-             right: 0;
+//-             top: 0;
+//-             background: var(--leonus-main);
+//-             padding: 2px 10px;
+//-             font-size: 14px;
+//-             border-bottom-left-radius: 12px;
+//-         }
+//-         .game-box::before {
+//-             background-color: rgba(0,0,0,0.3);
+//-         }
+//-         [data-theme='dark'] .game-box::before {
+//-             background-color: rgba(0,0,0,0.5);
+//-         }
+//-         @media screen and (max-width: 1200px) {
+//-             .game-box {
+//-                 width: calc(100% / 3 - 8px);
+//-             }
+//-         }
+//-         @media screen and (max-width: 1000px) {
+//-             .movie-list {
+//-                 gap: 16px
+//-             }
+//-             .game-box {
+//-                 width: calc(100% / 2 - 8px);
+//-             }
+//-         }
+//-         @media screen and (max-width: 600px) {
+//-             .movie-list {
+//-                 gap: 16px
+//-             }
+//-             .game-box {
+//-                 height: 233px;
+//-                 align-items: end;
+//-                 width: calc(100% / 2 - 8px);
+//-             }
+//-             .game-box>img {
+//-                 display: none !important;
+//-             }
+//-             .game-box::before {
+//-                 backdrop-filter: unset;
+//-             }
+//-         }
+//-     each collect in site.data.collect
+//-         each list in collect.collect_list
+//-             each item in list.collect_title_info
+//-                 h2(style="margin-bottom:12px")= item.collect_list_icon + " " + item.collect_list_name + " " + "(" + item.collect_list_number + ")"
+//-             each info in list.collect_menu
+//-                 .collect_list
+//-                     .collect_box(title=info.collect_list_title style="background-image: url("+ info.collect_list_image + ")")
+//-                         .collect_top
+//-                             each fa, tag_name in info.collect_body_head
+//-                                 i(class= fa.collect_body_head_icon)
+//-                                 span= tag_name.collect_body_head_tag
+//-                         .collect_content
+//-                             each book_name , star_level in info.collect_body_info
+//-                                 span= book_name.collect_body_info_book_name
+//-                                 span= star_level.collect_body_info_star_level
