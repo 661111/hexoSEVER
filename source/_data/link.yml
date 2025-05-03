@@ -1,3 +1,12 @@
+- class_name: 『推广』[1]
+  class_desc: 对窝博客搭建有帮助以及提供魔改美化、博客质量高的大佬们(时间排序)
+  flink_style: img-link
+  random: false
+  link_list:
+    - name: 雨云
+      link:
+      descr: 柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜
+      siteshot: https://blog.liushen.fun/info/siteshot.jpg
 - class_name: 『推荐友链』[5]
   class_desc: 对窝博客搭建有帮助以及提供魔改美化、博客质量高的大佬们(时间排序)
   flink_style: img-link

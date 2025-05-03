@@ -54,7 +54,7 @@
             if i.random
               - randomList.sort(() => Math.random() - 0.5)
             each item in randomList
-              a.site-card(target='_blank' rel='noopener' href=url_for(item.link))
+              a.site-card(target='_blank' rel='noopener' href=url_for(item.link) style="width: calc(100% / 5 - 16px)")
                 .img
                   - var siteshot = item.siteshot ? url_for(item.siteshot) : 'https://s0.wp.com/mshots/v1/' + item.link + '?w=400&h=300'
                   img.nolazyload.no-lightbox(src=siteshot onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.post_page) + `'` alt='' )
@@ -68,7 +68,7 @@
             if i.random
               - randomList.sort(() => Math.random() - 0.5)
             each item in randomList
-              a.site-card(target='_blank' rel='noopener' href=url_for(item.link))
+              a.site-card(target='_blank' rel='noopener' href=url_for(item.link) stle="width: calc(100% / 5 - 16px)")
                 .info
                   img.nolazyload.no-lightbox(src=url_for(item.avatar) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt='' )
                   span.title= item.name
