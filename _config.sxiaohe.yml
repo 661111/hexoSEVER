@@ -289,10 +289,10 @@ reward:
   enable: true
   coinAudio: https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a
   QR_code:
-    - img: https://cloud.myxz.top/d/pay/weixin.jpg?sign=fIEwlhu--1uH_rl6sfI7aimjDDxRmT-MaMN2F_dzg6c=:0
+    - img: https://sourceimage.s3.bitiful.net/pay/weixin.png
       link:
       text: wechat
-    - img: https://cloud.myxz.top/d/pay/zfb.png?sign=jcRRGZcwiCDE27CtNsOPBqoTwhhRViiDtpBjgOLaaz0=:0
+    - img: https://sourceimage.s3.bitiful.net/pay/zfb.png
       link:
       text: alipay
 
