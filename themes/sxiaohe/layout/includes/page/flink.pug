@@ -41,6 +41,44 @@
                       img.no-lightbox(title=evenNum[index].name, src=url_for(evenNumAvatar + hundredSuffix) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=evenNum[index].name)
                     a.tags-group-icon.no-text-decoration(href=url_for(oddNum[index].link), title=oddNum[index].name)
                       img.no-lightbox(title=oddNum[index].name, src=url_for(oddNumAvatar + hundredSuffix) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=oddNum[index].name)
+    .title-h2-a
+      .title-h2-a-left
+        h2(style='padding-top:0;margin:.6rem 0 .6rem') 🎣 钓鱼
+        a.random-post-start.no-text-decoration(href='javascript:fetchRandomPost();')
+          i.anzhiyufont.anzhiyu-icon-arrow-rotate-right
+      .title-h2-a-right
+        a.random-post-all.no-text-decoration(href='/link/') 全部友链
+    #random-post
+    script(defer data-pjax src="/js/lib/random_post.js")
+    style.
+      .title-h2-a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: .5rem;
+      }
+      .title-h2-a-left {
+          display: flex;
+          align-items: center;
+      }
+      .title-h2-a-left h2 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+      }
+      .title-h2-a a {
+          margin-left: .5rem;
+          color: var(--anzhiyu-fontcolor);
+          font-weight: 700;
+      }
+      #random-post {
+          min-height: 32px;
+          background: var(--card-bg);
+          border: var(--style-border-always);
+          box-shadow: var(--anzhiyu-shadow-border);
+          padding: 20px 30px;
+          border-radius: 12px;
+          margin-top: 8px;
+      }
   .flink
     if site.data.link
       each i in site.data.link
