@@ -82,11 +82,11 @@ tag_plugins:
   link:
     placeholder: /img/link.png #link_card标签默认的图标图片
   CDN:
-    anima: https://jsd.sxiaohe.top/npm/hexo-butterfly-tag-plugins-plus@1.0.18/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
-    jquery: https://jsd.sxiaohe.top/npm/jquery@latest/dist/jquery.min.js #issues标签依赖
-    issues: https://jsd.sxiaohe.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
-    carousel: https://jsd.sxiaohe.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
-    tag_plugins_css: https://jsd.sxiaohe.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
+    anima: https://jsd.myxz.top/npm/hexo-butterfly-tag-plugins-plus@1.0.18/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: https://jsd.myxz.top/npm/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: https://jsd.myxz.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    carousel: https://jsd.myxz.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    tag_plugins_css: https://jsd.myxz.top/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
 
 wowjs:
   enable: false #控制动画开关。true是打开，false是关闭
@@ -101,9 +101,9 @@ wowjs:
       iteration: 1 #选填项，动画重复的次数
     - class: card-widget
       style: animate__zoomIn
-  animate_css: https://jsd.sxiaohe.top/npm/hexo-butterfly-wowjs/lib/animate.min.css
-  wow_js: https://jsd.sxiaohe.top/npm/hexo-butterfly-wowjs/lib/wow.min.js
-  wow_init_js: https://jsd.sxiaohe.top/npm/hexo-butterfly-wowjs/lib/wow_init.js
+  animate_css: https://jsd.myxz.top/npm/hexo-butterfly-wowjs/lib/animate.min.css
+  wow_js: https://jsd.myxz.top/npm/hexo-butterfly-wowjs/lib/wow.min.js
+  wow_init_js: https://jsd.myxz.top/npm/hexo-butterfly-wowjs/lib/wow_init.js
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -460,7 +460,7 @@ remark42:
 # Artalk
 # https://artalk.js.org/guide/frontend/config.html
 artalk:
-  server: https://comment.sxiaohe.top
+  server: https://comment.myxz.top
   site: 莫言小筑
   visitor: true
   option:
@@ -975,7 +975,7 @@ inject:
   head:
     - <script defer src="/js/lib/zeptojs.min.js"></script>
     #- <link rel="stylesheet" href="/xxx.css">
-    - <script defer src="https://jsd.sxiaohe.top/fonts/font_3612150_gkavascgf3n.js"></script>
+    - <script defer src="https://jsd.myxz.top/fonts/font_3612150_gkavascgf3n.js"></script>
     - <script defer src="https://jsdelivr.topthink.com/npm/echarts@4.9.0/dist/echarts.min.js"></script>
     - <link rel="stylesheet" href="https://jsdelivr.topthink.com/npm/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css">
   bottom:
@@ -1018,7 +1018,7 @@ CDN:
     # algolia_js:
     algolia_search_v4: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantsearch.js/2.10.5/instantsearch.min.js
     # instantsearch_v4:
-    algolia_js: https://jsd.sxiaohe.top/npm/js-heo@1.0.11/algolia/algolia.min.js
+    algolia_js: https://jsd.myxz.top/npm/js-heo@1.0.11/algolia/algolia.min.js
     # pjax: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js
     # gitalk:
     # gitalk_css:
@@ -1057,11 +1057,11 @@ CDN:
     # aplayer_css: https://jsdelivr.topthink.com/npm/cansin-blogdata@3.0.87/css/APlayer.min.css
     # aplayer_js: https://jsdelivr.topthink.com/npm/cansin-blogdata@3.0.87/js/APlayer.min.js
     # meting_js: https://jsdelivr.topthink.com/npm/cansin-blogdata@3.0.87/js/Meting.min.js
-    prismjs_js: https://jsd.sxiaohe.top/npm/prismjs@1.1.0/prism.js
-    prismjs_lineNumber_js: https://jsd.sxiaohe.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
-    prismjs_autoloader: https://jsd.sxiaohe.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
-    artalk_js: https://jsd.sxiaohe.top/npm/artalk@2.9.1/dist/Artalk.js
-    artalk_css: https://jsd.sxiaohe.top/npm/artalk@2.9.1/dist/Artalk.css
+    prismjs_js: https://jsd.myxz.top/npm/prismjs@1.1.0/prism.js
+    prismjs_lineNumber_js: https://jsd.myxz.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+    prismjs_autoloader: https://jsd.myxz.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
+    artalk_js: https://jsd.myxz.top/npm/artalk@2.9.1/dist/Artalk.js
+    artalk_css: https://jsd.myxz.top/npm/artalk@2.9.1/dist/Artalk.css
     card_weibo:  /sxiaohe_source/js/weibo.js ## 或者填写自己的 js 地址
     # 打赏按钮投币效果
     coin_js: /js/coin.js
