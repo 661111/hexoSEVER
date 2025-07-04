@@ -6,9 +6,9 @@ block content
       include includes/header/post-info.pug
 
     article#article-container.post-content!=page.content
-      link(href="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.css" rel="stylesheet")
-      script(src="https://jsd.sxiaohe.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.js")
       script(data-pjax defer) new ChucklePostAI({el:'#post>#article-container',key:'05fe901f1c9cb1049496',title_el:'.post-title',rec_method:'web'})
+      link(href="https://jsd.myxz.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.css" rel="stylesheet")
+      script(src="https://jsd.myxz.top/gh/qxchuckle/Post-Summary-AI/chuckle-post-ai.min.js")
     include includes/post/post-copyright.pug
     .tag_share
       if (theme.post_meta.post.tags)
