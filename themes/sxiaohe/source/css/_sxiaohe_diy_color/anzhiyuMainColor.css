@@ -29,9 +29,9 @@
     --anzhiyu-white-acrylic2: #fcfdff !important;
     --anzhiyu-black-acrylic2: #08080a !important;
     --anzhiyu-black-acrylic1: #0b0b0e !important;
-  }
+}
   
-  [data-theme="light"] {
+[data-theme="light"] {
     --anzhiyu-theme: #3b70fc;
     --anzhiyu-theme-op: #4259ef23;
     --anzhiyu-blue: #3b70fc;
@@ -57,9 +57,9 @@
     --anzhiyu-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0);
     --anzhiyu-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0);
     --anzhiyu-card-border: #c0c6d8;
-  }
+}
   
-  [data-theme="dark"] {
+[data-theme="dark"] {
     --anzhiyu-theme: #0084ff;
     --anzhiyu-theme-op: #0084ff23;
     --anzhiyu-blue: #0084ff;
@@ -85,4 +85,4 @@
     --anzhiyu-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0);
     --anzhiyu-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0);
     --anzhiyu-card-border: #42444a;
-  }
+}
