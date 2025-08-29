@@ -1,0 +1,15 @@
+- class_name: 『分站』
+  class_desc:
+  flink_style:
+  random: false
+  link_list:
+    - name: EdgeOne镜像
+      link: https://blog-v3.myxz.top
+
+- class_name: 『服务』
+  class_desc:
+  flink_style:
+  random: false
+  link_list:
+    - name: 说说
+      link: https://essay.myxz.top

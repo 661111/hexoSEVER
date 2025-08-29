@@ -3,7 +3,7 @@ const YML = require('yamljs')
 const fs = require('fs')
 
 let ls   = [],
-    data = YML.parse(fs.readFileSync('source/_data/link.yml').toString().replace(/(?<=rss:)\s*\n/g, ' ""\n'));
+    data = YML.parse(fs.readFileSync('source/_data/site.yml').toString().replace(/(?<=rss:)\s*\n/g, ' ""\n'));
 
 data.forEach((e, i) => {
     let j = 2;  //获取友链数组的范围（除了最后，前面的都获取）
